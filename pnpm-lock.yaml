@@ -79,6 +79,18 @@ importers:
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
 
+  packages/DoLTimeWrapperAddonMod:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/mod-sub-ui-angular-js':
+        specifier: workspace:*
+        version: link:../ModSubUiAngularJs
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+
   packages/DoL_BeautySelectorAddonMod:
     dependencies:
       '@dol-type/utils':

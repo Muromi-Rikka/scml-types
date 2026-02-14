@@ -1,10 +1,12 @@
-import { genDeclareNamespace, genInterface } from "knitwork-x";
+import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
 
-const importPatchLinkButton = "import type { patchLinkButton } from './init';";
+const importDoLLinkButtonFilter = genImport("./init", ["patchLinkButton"], {
+  type: true,
+});
 const globalNamespace = genDeclareNamespace(
   "global",
   genInterface("window", { DoLLinkButtonFilter_patchLinkButton: " typeof patchLinkButton" })
 );
 
-writeFileSync("./type-dist/global.ts", [importPatchLinkButton, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.ts", [importDoLLinkButtonFilter, globalNamespace].join("\n"));

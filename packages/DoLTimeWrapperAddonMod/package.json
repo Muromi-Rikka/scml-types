@@ -1,10 +1,13 @@
 {
-  "name": "@dolcn/mod-check-dol-compressor-dictionaries",
+  "name": "@dolcn/time-wrapper-addon-mod",
   "version": "1.0.0",
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
-    "./CheckDoLCompressorDictionaries": "./type-dist/CheckDoLCompressorDictionaries.d.ts"
+    "./OldTimeFunctionHook": "./type-dist/OldTimeFunctionHook.d.ts",
+    "./TimeProxyManager": "./type-dist/TimeProxyManager.d.ts",
+    "./DoLTimeWrapperAddonPlugin": "./type-dist/DoLTimeWrapperAddonPlugin.d.ts",
+    "./DoLTimeWrapperAddon": "./type-dist/DoLTimeWrapperAddon.d.ts"
   },
   "scripts": {
     "download": "tsx src/download.ts",

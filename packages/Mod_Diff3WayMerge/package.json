@@ -2,6 +2,7 @@
   "name": "@dolcn/mod-diff3-way-merge",
   "version": "1.0.0",
   "type": "module",
+  "types": "./type-dist/global.ts",
   "exports": {
     "./Diff3WayMerge": "./type-dist/Diff3WayMerge.d.ts",
     "./Diff3WayMergeParams": "./type-dist/Diff3WayMergeParams.d.ts",
@@ -10,7 +11,7 @@
   },
   "scripts": {
     "download": "tsx src/download.ts",
-    "build": "tsdown"
+    "build": "tsdown && tsx src/after-build.ts"
   },
   "dependencies": {
     "@dol-type/utils": "workspace:*",

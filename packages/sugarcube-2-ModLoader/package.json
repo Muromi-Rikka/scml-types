@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
+  "types": "./type-dist/global.ts",
   "exports": {
     "./AddonPlugin": "./type-dist/AddonPlugin.d.ts",
     "./DecoratorUtils": "./type-dist/DecoratorUtils.d.ts",
@@ -44,7 +45,7 @@
   },
   "scripts": {
     "download": "tsx src/download.ts",
-    "build": "tsdown"
+    "build": "tsdown && tsx src/after-build.ts"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.20",

@@ -7,7 +7,7 @@
   "author": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "turbo build"
   },
   "dependencies": {
     "giget": "^3.1.2",

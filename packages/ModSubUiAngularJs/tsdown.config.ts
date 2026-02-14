@@ -5,7 +5,6 @@ export default defineConfig({
   clean: true,
   outDir: "./type-dist",
   fixedExtension: false,
-  publint: true,
   alias: dolTypeAlias,
   dts: {
     sourcemap: false,

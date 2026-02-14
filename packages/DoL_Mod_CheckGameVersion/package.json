@@ -1,13 +1,14 @@
 {
-  "name": "@dolcn/mod-check-dol-compressor-dictionaries",
+  "name": "@dolcn/mod-check-game-version",
   "version": "1.0.0",
   "type": "module",
+  "types": "./type-dist/global.ts",
   "exports": {
     "./CheckGameVersion": "./type-dist/CheckGameVersion.d.ts"
   },
   "scripts": {
     "download": "tsx src/download.ts",
-    "build": "tsdown"
+    "build": "tsdown && tsx src/after-build.ts"
   },
   "dependencies": {
     "@dol-type/utils": "workspace:*",

@@ -2,13 +2,14 @@
   "name": "@dolcn/conflict-checker-addon",
   "version": "1.0.0",
   "type": "module",
+  "types": "./type-dist/global.ts",
   "exports": {
     "./ConflictChecker": "./type-dist/ConflictChecker.d.ts",
     "./ConflictCheckerParams": "./type-dist/ConflictCheckerParams.d.ts"
   },
   "scripts": {
     "download": "tsx src/download.ts",
-    "build": "tsdown"
+    "build": "tsdown && tsx src/after-build.ts"
   },
   "dependencies": {
     "@dol-type/utils": "workspace:*",
