@@ -1,4 +1,4 @@
-# dol-type
+# SugarCube 2 Mod Loader Types
 
 TypeScript type definitions monorepo for the SugarCube 2 Mod Loader ecosystem. Each package fetches source from upstream repos and emits `.d.ts` for use by modules and tools in the ecosystem.
 
@@ -11,10 +11,10 @@ TypeScript type definitions monorepo for the SugarCube 2 Mod Loader ecosystem. E
 
 ## Scripts
 
-| Command | Description |
-|---------|-------------|
-| `pnpm build` | Full build: runs `download` then `build` for each package; output goes to each package’s `type-dist/` |
-| `pnpm typecheck` | Full type check |
+| Command          | Description                                                                                           |
+| ---------------- | ----------------------------------------------------------------------------------------------------- |
+| `pnpm build`     | Full build: runs `download` then `build` for each package; output goes to each package’s `type-dist/` |
+| `pnpm typecheck` | Full type check                                                                                       |
 
 Per-package commands:
 
@@ -26,43 +26,43 @@ Per-package commands:
 
 Type definition sources are documented in each package’s README.
 
-| Package | Description |
-|---------|-------------|
-| [sugarcube-2-ModLoader](packages/sugarcube-2-ModLoader) | Mod Loader core |
-| [ConflictCheckerAddon](packages/ConflictCheckerAddon) | Conflict checker addon |
-| [CoT_Mod_CheckGameVersion](packages/CoT_Mod_CheckGameVersion) | CoT game version check |
-| [DoL_Mod_CheckDoLCompressorDictionaries](packages/DoL_Mod_CheckDoLCompressorDictionaries) | DoL compressor dictionaries check |
-| [DoL_Mod_CheckGameVersion](packages/DoL_Mod_CheckGameVersion) | DoL game version check |
-| [DoL_Mod_ReplacePatch](packages/DoL_Mod_ReplacePatch) | Replace patch |
-| [DoL_Mod_TweeReplacer](packages/DoL_Mod_TweeReplacer) | Twee replacer |
-| [DoL_Mod_i18nMod](packages/DoL_Mod_i18nMod) | DoL i18n mod |
-| [DoL_BeautySelectorAddonMod](packages/DoL_BeautySelectorAddonMod) | Beauty selector addon |
-| [DoL_ImgLoaderHooker](packages/DoL_ImgLoaderHooker) | Image loader hook |
-| [DoL_ModuleCssReplacerAddon](packages/DoL_ModuleCssReplacerAddon) | Module CSS replacer addon |
-| [DoL_ModdedClothesAddon](packages/DoL_ModdedClothesAddon) | Modded clothes addon |
-| [DoL_ModdedFeatsAddon](packages/DoL_ModdedFeatsAddon) | Modded feats addon |
-| [DoL_ModdedHairAddon](packages/DoL_ModdedHairAddon) | Modded hair addon |
-| [DoLTimeWrapperAddonMod](packages/DoLTimeWrapperAddonMod) | Time wrapper addon |
-| [DoLLinkButtonFilter](packages/DoLLinkButtonFilter) | Link button filter |
-| [DoLHookMacroRng](packages/DoLHookMacroRng) | Macro RNG hook |
-| [GameOriginalImagePackMod](packages/GameOriginalImagePackMod) | Game original image pack |
-| [I18nScriptListAddonMod](packages/I18nScriptListAddonMod) | i18n script list addon |
-| [I18nTweeListAddonMod](packages/I18nTweeListAddonMod) | i18n Twee list addon |
-| [I18nTweeReplacerMod](packages/I18nTweeReplacerMod) | i18n Twee replacer |
-| [ImageLoaderHook2BeautySelectorAddon](packages/ImageLoaderHook2BeautySelectorAddon) | Image loader hook → beauty selector |
-| [Mod_Diff3WayMerge](packages/Mod_Diff3WayMerge) | Three-way merge |
-| [ModSubUiAngularJs](packages/ModSubUiAngularJs) | Sub UI (AngularJS) |
-| [ModLoaderGui](packages/ModLoaderGui) | Mod Loader GUI |
-| [SweetAlert2Mod](packages/SweetAlert2Mod) | SweetAlert2 mod |
-| [TweePrefixPostfixAddonMod](packages/TweePrefixPostfixAddonMod) | Twee prefix/postfix addon |
-| [TweeReplacerLinkerAddon](packages/TweeReplacerLinkerAddon) | Twee replacer linker addon |
-| [utils](packages/utils) | Workspace internal utilities (no external source fetch) |
+| Package                                                                               | Description                                             |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| [Addon_ConflictChecker](packages/Addon_ConflictChecker)                               | Conflict checker addon                                  |
+| [Addon_ImageLoaderHook2BeautySelector](packages/Addon_ImageLoaderHook2BeautySelector) | Image loader hook → beauty selector                     |
+| [Addon_ModuleCssReplacer](packages/Addon_ModuleCssReplacer)                           | Module CSS replacer addon                               |
+| [Addon_ModdedClothes](packages/Addon_ModdedClothes)                                   | Modded clothes addon                                    |
+| [Addon_ModdedFeats](packages/Addon_ModdedFeats)                                       | Modded feats addon                                      |
+| [Addon_ModdedHair](packages/Addon_ModdedHair)                                         | Modded hair addon                                       |
+| [Addon_TweeReplacerLinker](packages/Addon_TweeReplacerLinker)                         | Twee replacer linker addon                              |
+| [AddonMod_BeautySelector](packages/AddonMod_BeautySelector)                           | Beauty selector addon                                   |
+| [AddonMod_I18nScriptList](packages/AddonMod_I18nScriptList)                           | i18n script list addon                                  |
+| [AddonMod_I18nTweeList](packages/AddonMod_I18nTweeList)                               | i18n Twee list addon                                    |
+| [AddonMod_TweePrefixPostfix](packages/AddonMod_TweePrefixPostfix)                     | Twee prefix/postfix addon                               |
+| [AddonModTimeWrapper](packages/AddonModTimeWrapper)                                   | Time wrapper addon                                      |
+| [GameOriginalImagePackMod](packages/GameOriginalImagePackMod)                         | Game original image pack                                |
+| [Hook_ImgLoader](packages/Hook_ImgLoader)                                             | Image loader hook                                       |
+| [Hook_MacroRng](packages/Hook_MacroRng)                                               | Macro RNG hook                                          |
+| [Mod_CheckDoLCompressorDictionaries](packages/Mod_CheckDoLCompressorDictionaries)     | DoL compressor dictionaries check                       |
+| [Mod_CheckGameVersion](packages/Mod_CheckGameVersion)                                 | DoL game version check                                  |
+| [Mod_CoTCheckGameVersion](packages/Mod_CoTCheckGameVersion)                           | CoT game version check                                  |
+| [Mod_Diff3WayMerge](packages/Mod_Diff3WayMerge)                                       | Three-way merge                                         |
+| [Mod_i18n](packages/Mod_i18n)                                                         | DoL i18n mod                                            |
+| [Mod_I18nTweeReplacer](packages/Mod_I18nTweeReplacer)                                 | i18n Twee replacer                                      |
+| [Mod_LinkButtonFilter](packages/Mod_LinkButtonFilter)                                 | Link button filter                                      |
+| [Mod_LoaderGui](packages/Mod_LoaderGui)                                               | Mod Loader GUI                                          |
+| [Mod_ReplacePatch](packages/Mod_ReplacePatch)                                         | Replace patch                                           |
+| [Mod_SubUiAngularJs](packages/Mod_SubUiAngularJs)                                     | Sub UI (AngularJS)                                      |
+| [Mod_SweetAlert2](packages/Mod_SweetAlert2)                                           | SweetAlert2 mod                                         |
+| [Mod_TweeReplacer](packages/Mod_TweeReplacer)                                         | Twee replacer                                           |
+| [sugarcube-2-ModLoader](packages/sugarcube-2-ModLoader)                               | Mod Loader core                                         |
+| [utils](packages/utils)                                                               | Workspace internal utilities (no external source fetch) |
 
 ## Development
 
 ```bash
 git clone <repo>
-cd dol-type
+cd scml-types
 pnpm install
 pnpm build
 pnpm typecheck
