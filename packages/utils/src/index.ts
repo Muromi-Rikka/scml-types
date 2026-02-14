@@ -18,4 +18,7 @@ export const dolTypeAlias = {
     "@dolcn/twee-replacer-linker-addon/TweeReplacerLinkerInterface",
   "../../../src/BeforeSC2/SugarCube2": "@dolcn/sc2-modloader/SugarCube2",
   "../../../dist-BeforeSC2/HtmlTagSrcHook": "@dolcn/sc2-modloader/HtmlTagSrcHook",
+  "../../../dist-BeforeSC2/SC2ApiRef": "@dolcn/sc2-modloader/SC2ApiRef",
+  "../../../dist-BeforeSC2/WikifyTracer": "@dolcn/sc2-modloader/WikifyTracer",
+  "../../../dist-BeforeSC2/IdbKeyValRef": "@dolcn/sc2-modloader/IdbKeyValRef",
 };
