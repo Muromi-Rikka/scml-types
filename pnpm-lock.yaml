@@ -193,6 +193,15 @@ importers:
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
 
+  packages/GameOriginalImagePackMod:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+
   packages/I18nScriptListAddonMod:
     dependencies:
       '@dol-type/utils':
