@@ -1,0 +1,5 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["src", "tsdown.config.ts"],
+  "exclude": ["remote", "type-dist", "node_modules"]
+}

@@ -14,7 +14,8 @@
   },
   "scripts": {
     "download": "tsx src/download.ts",
-    "build": "tsdown && tsx src/after-build.ts"
+    "build": "tsdown && tsx src/after-build.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@scml/sc2-modloader": "workspace:*",

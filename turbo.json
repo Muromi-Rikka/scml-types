@@ -3,11 +3,14 @@
   "tasks": {
     "build": {
       "dependsOn": ["download", "^build"],
-      "inputs": ["remote/**"],
+      "inputs": ["remote/**", "tsdown.config.ts", "tsconfig.json"],
       "outputs": ["type-dist/**"]
     },
     "download": {
       "outputs": ["remote/**"]
+    },
+    "typecheck": {
+      "dependsOn": ["^build"]
     }
   }
 }
