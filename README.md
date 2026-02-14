@@ -56,7 +56,7 @@ Type definition sources are documented in each package’s README.
 | [Mod_SweetAlert2](packages/Mod_SweetAlert2)                                           | [![npm](https://img.shields.io/npm/v/@scml/mod-sweet-alert2)](https://www.npmjs.com/package/@scml/mod-sweet-alert2)                                                   | SweetAlert2 mod                                         |
 | [Mod_TweeReplacer](packages/Mod_TweeReplacer)                                         | [![npm](https://img.shields.io/npm/v/@scml/mod-twee-replacer)](https://www.npmjs.com/package/@scml/mod-twee-replacer)                                                 | Twee replacer                                           |
 | [sugarcube-2-ModLoader](packages/sugarcube-2-ModLoader)                               | [![npm](https://img.shields.io/npm/v/@scml/sc2-modloader)](https://www.npmjs.com/package/@scml/sc2-modloader)                                                         | Mod Loader core                                         |
-| [utils](packages/utils)                                                               | —                                                                                                                                                                     | Workspace internal utilities (no external source fetch) |
+| [utils](packages/utils)                                                               | [![npm](https://img.shields.io/npm/v/@scml/utils)](https://www.npmjs.com/package/@scml/utils)                                                                         | Workspace internal utilities (no external source fetch) |
 
 ## Development
 
