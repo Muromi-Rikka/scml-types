@@ -48,9 +48,6 @@ importers:
       '@dol-type/utils':
         specifier: workspace:*
         version: link:../utils
-      '@dolcn/mod-sub-ui-angular-js':
-        specifier: workspace:*
-        version: link:../ModSubUiAngularJs
       '@dolcn/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
@@ -60,9 +57,6 @@ importers:
       '@dol-type/utils':
         specifier: workspace:*
         version: link:../utils
-      '@dolcn/mod-sub-ui-angular-js':
-        specifier: workspace:*
-        version: link:../ModSubUiAngularJs
       '@dolcn/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
@@ -72,9 +66,6 @@ importers:
       '@dol-type/utils':
         specifier: workspace:*
         version: link:../utils
-      '@dolcn/mod-sub-ui-angular-js':
-        specifier: workspace:*
-        version: link:../ModSubUiAngularJs
       '@dolcn/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
@@ -84,9 +75,6 @@ importers:
       '@dol-type/utils':
         specifier: workspace:*
         version: link:../utils
-      '@dolcn/mod-sub-ui-angular-js':
-        specifier: workspace:*
-        version: link:../ModSubUiAngularJs
       '@dolcn/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
@@ -96,9 +84,6 @@ importers:
       '@dol-type/utils':
         specifier: workspace:*
         version: link:../utils
-      '@dolcn/mod-sub-ui-angular-js':
-        specifier: workspace:*
-        version: link:../ModSubUiAngularJs
       '@dolcn/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
@@ -123,18 +108,12 @@ importers:
       '@dolcn/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-      '@dolcn/twee-replacer-linker-addon':
-        specifier: workspace:*
-        version: link:../TweeReplacerLinkerAddon
 
   packages/DoL_Mod_CheckDoLCompressorDictionaries:
     dependencies:
       '@dol-type/utils':
         specifier: workspace:*
         version: link:../utils
-      '@dolcn/mod-sub-ui-angular-js':
-        specifier: workspace:*
-        version: link:../ModSubUiAngularJs
       '@dolcn/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
@@ -144,9 +123,6 @@ importers:
       '@dol-type/utils':
         specifier: workspace:*
         version: link:../utils
-      '@dolcn/mod-sub-ui-angular-js':
-        specifier: workspace:*
-        version: link:../ModSubUiAngularJs
       '@dolcn/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
@@ -171,9 +147,6 @@ importers:
       '@dolcn/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-      '@dolcn/twee-replacer-linker-addon':
-        specifier: workspace:*
-        version: link:../TweeReplacerLinkerAddon
 
   packages/DoL_ModdedFeatsAddon:
     dependencies:
@@ -183,18 +156,12 @@ importers:
       '@dolcn/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-      '@dolcn/twee-replacer-linker-addon':
-        specifier: workspace:*
-        version: link:../TweeReplacerLinkerAddon
 
   packages/I18nScriptListAddonMod:
     dependencies:
       '@dol-type/utils':
         specifier: workspace:*
         version: link:../utils
-      '@dolcn/mod-sub-ui-angular-js':
-        specifier: workspace:*
-        version: link:../ModSubUiAngularJs
       '@dolcn/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
@@ -204,9 +171,6 @@ importers:
       '@dol-type/utils':
         specifier: workspace:*
         version: link:../utils
-      '@dolcn/mod-sub-ui-angular-js':
-        specifier: workspace:*
-        version: link:../ModSubUiAngularJs
       '@dolcn/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
@@ -231,9 +195,6 @@ importers:
       '@dolcn/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-      '@dolcn/twee-replacer-linker-addon':
-        specifier: workspace:*
-        version: link:../TweeReplacerLinkerAddon
 
   packages/ModLoaderGui:
     dependencies:
@@ -265,9 +226,6 @@ importers:
       '@dol-type/utils':
         specifier: workspace:*
         version: link:../utils
-      '@dolcn/mod-sub-ui-angular-js':
-        specifier: workspace:*
-        version: link:../ModSubUiAngularJs
       '@dolcn/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
@@ -277,9 +235,6 @@ importers:
       '@dol-type/utils':
         specifier: workspace:*
         version: link:../utils
-      '@dolcn/mod-sub-ui-angular-js':
-        specifier: workspace:*
-        version: link:../ModSubUiAngularJs
       '@dolcn/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader

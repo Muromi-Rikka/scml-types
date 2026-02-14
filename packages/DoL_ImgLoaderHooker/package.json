@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "@dol-type/utils": "workspace:*",
-    "@dolcn/sc2-modloader": "workspace:*",
-    "@dolcn/twee-replacer-linker-addon": "workspace:*"
+    "@dolcn/sc2-modloader": "workspace:*"
   }
 }
