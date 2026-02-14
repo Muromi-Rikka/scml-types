@@ -1,7 +1,7 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
 
-const importImgLoaderHooker = genImport("./ImgLoaderHooker", ["ImgLoaderHooker"], {
+const importImgLoaderHooker = genImport("./ImgLoaderHooker.d.ts", ["ImgLoaderHooker"], {
   type: true,
 });
 const globalNamespace = genDeclareNamespace(

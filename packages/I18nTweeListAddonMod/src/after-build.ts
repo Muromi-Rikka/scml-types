@@ -1,7 +1,7 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
 
-const importI18nTweeList = genImport("./I18nTweeList", ["I18nTweeList"], {
+const importI18nTweeList = genImport("./I18nTweeList.d.ts", ["I18nTweeList"], {
   type: true,
 });
 const globalNamespace = genDeclareNamespace(

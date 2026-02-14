@@ -1,7 +1,7 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
 
-const importHookMacroRng = genImport("./inject_early", ["HookMacroRng"], {
+const importHookMacroRng = genImport("./inject_early.d.ts", ["HookMacroRng"], {
   type: true,
 });
 const globalNamespace = genDeclareNamespace(

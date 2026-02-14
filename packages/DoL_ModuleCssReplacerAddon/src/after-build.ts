@@ -1,7 +1,7 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
 
-const importModuleCssReplacer = genImport("./ModuleCssReplacer", ["ModuleCssReplacer"], {
+const importModuleCssReplacer = genImport("./ModuleCssReplacer.d.ts", ["ModuleCssReplacer"], {
   type: true,
 });
 const globalNamespace = genDeclareNamespace(

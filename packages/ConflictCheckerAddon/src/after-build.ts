@@ -1,7 +1,7 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
 
-const importConflictChecker = genImport("./ConflictChecker", ["ConflictChecker"], {
+const importConflictChecker = genImport("./ConflictChecker.d.ts", ["ConflictChecker"], {
   type: true,
 });
 const globalNamespace = genDeclareNamespace(

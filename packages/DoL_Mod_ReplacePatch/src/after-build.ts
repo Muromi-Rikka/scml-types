@@ -1,7 +1,7 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
 
-const importReplacePatcher = genImport("./ReplacePatcher", ["ReplacePatcher"], {
+const importReplacePatcher = genImport("./ReplacePatcher.d.ts", ["ReplacePatcher"], {
   type: true,
 });
 const globalNamespace = genDeclareNamespace(

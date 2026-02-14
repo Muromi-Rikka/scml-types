@@ -1,7 +1,7 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
 
-const importModdedFeatsAddon = genImport("./ModdedFeatsAddon", ["ModdedFeatsAddon"], {
+const importModdedFeatsAddon = genImport("./ModdedFeatsAddon.d.ts", ["ModdedFeatsAddon"], {
   type: true,
 });
 const globalNamespace = genDeclareNamespace(

@@ -2,7 +2,7 @@ import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
 
 const importGameOriginalImagePack = genImport(
-  "./GameOriginalImagePack",
+  "./GameOriginalImagePack.d.ts",
   ["GameOriginalImagePack"],
   {
     type: true,

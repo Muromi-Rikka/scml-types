@@ -1,7 +1,7 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
 
-const importDoLTimeWrapperAddon = genImport("./DoLTimeWrapperAddon", ["DoLTimeWrapperAddon"], {
+const importDoLTimeWrapperAddon = genImport("./DoLTimeWrapperAddon.d.ts", ["DoLTimeWrapperAddon"], {
   type: true,
 });
 const globalNamespace = genDeclareNamespace(

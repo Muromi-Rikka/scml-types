@@ -2,7 +2,7 @@ import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
 
 const importCheckDoLCompressorDictionaries = genImport(
-  "./CheckDoLCompressorDictionaries",
+  "./CheckDoLCompressorDictionaries.d.ts",
   ["CheckDoLCompressorDictionaries"],
   { type: true }
 );

@@ -1,7 +1,7 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
 
-const importDiff3WayMerge = genImport("./Diff3WayMerge", ["Diff3WayMerge"], { type: true });
+const importDiff3WayMerge = genImport("./Diff3WayMerge.d.ts", ["Diff3WayMerge"], { type: true });
 
 const globalNamespace = genDeclareNamespace(
   "global",

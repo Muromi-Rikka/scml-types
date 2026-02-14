@@ -1,7 +1,7 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
 
-const importSweetAlert2Mod = genImport("./SweetAlert2Mod", ["SweetAlert2Mod"], {
+const importSweetAlert2Mod = genImport("./SweetAlert2Mod.d.ts", ["SweetAlert2Mod"], {
   type: true,
 });
 const globalNamespace = genDeclareNamespace(

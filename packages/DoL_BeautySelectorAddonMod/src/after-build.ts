@@ -1,7 +1,7 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
 
-const importBeautySelectorAddon = genImport("./BeautySelectorAddon", ["BeautySelectorAddon"], {
+const importBeautySelectorAddon = genImport("./BeautySelectorAddon.d.ts", ["BeautySelectorAddon"], {
   type: true,
 });
 const globalNamespace = genDeclareNamespace(

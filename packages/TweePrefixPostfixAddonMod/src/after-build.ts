@@ -2,7 +2,7 @@ import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
 
 const importTweePrefixPostfixAddon = genImport(
-  "./TweePrefixPostfixAddon",
+  "./TweePrefixPostfixAddon.d.ts",
   ["TweePrefixPostfixAddon"],
   {
     type: true,

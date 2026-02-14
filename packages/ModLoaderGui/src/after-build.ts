@@ -1,11 +1,13 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
 
-const importLoadingProgress = genImport("./LoadingProgress", ["LoadingProgress"], { type: true });
-const importPassageTracer = genImport("./PassageTracer", ["PassageTracer"], { type: true });
-const importGui = genImport("./Gui", ["Gui"], { type: true });
+const importLoadingProgress = genImport("./LoadingProgress.d.ts", ["LoadingProgress"], {
+  type: true,
+});
+const importPassageTracer = genImport("./PassageTracer.d.ts", ["PassageTracer"], { type: true });
+const importGui = genImport("./Gui.d.ts", ["Gui"], { type: true });
 const importModSubUiAngularJsService = genImport(
-  "./ModSubUiAngularJsService",
+  "./ModSubUiAngularJsService.d.ts",
   ["ModSubUiAngularJsService"],
   { type: true }
 );

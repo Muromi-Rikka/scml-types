@@ -1,7 +1,7 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
 
-const importModI18N = genImport("./I18N", ["ModI18N"], {
+const importModI18N = genImport("./I18N.d.ts", ["ModI18N"], {
   type: true,
 });
 const globalNamespace = genDeclareNamespace(
