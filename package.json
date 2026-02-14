@@ -1,11 +1,14 @@
 {
-  "name": "@dol-type/workspace",
+  "name": "@scml/workspace",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
-  "license": "ISC",
-  "author": "",
-  "main": "index.js",
+  "private": true,
+  "description": "SugarCube 2 Mod Loader Workspace",
+  "license": "MIT",
+  "author": {
+    "name": "Rikka",
+    "email": "admin@rikka.cc",
+    "url": "https://github.com/Muromi-Rikka"
+  },
   "scripts": {
     "build": "turbo build",
     "typecheck": "turbo typecheck"

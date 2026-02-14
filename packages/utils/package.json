@@ -1,6 +1,14 @@
 {
   "name": "@scml/utils",
   "version": "1.0.0",
+  "private": true,
+  "description": "SugarCube 2 Mod Loader Workspace",
+  "license": "MIT",
+  "author": {
+    "name": "Rikka",
+    "email": "admin@rikka.cc",
+    "url": "https://github.com/Muromi-Rikka"
+  },
   "main": "src/index.ts",
   "scripts": {
     "typecheck": "tsc --noEmit"

@@ -1,6 +1,14 @@
 {
   "name": "@scml/conflict-checker-addon",
   "version": "1.0.0",
+  "private": false,
+  "description": "SugarCube 2 Mod Loader Workspace",
+  "license": "MIT",
+  "author": {
+    "name": "Rikka",
+    "email": "admin@rikka.cc",
+    "url": "https://github.com/Muromi-Rikka"
+  },
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
