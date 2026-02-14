@@ -17,14 +17,12 @@ export default defineConfig({
   },
   dts: {
     sourcemap: false,
-    sideEffects: true,
     compilerOptions: {
       emitDeclarationOnly: true,
       noImplicitAny: false,
     },
     emitDtsOnly: true,
-    build: true,
     tsconfig: "./remote/tsconfig.json",
   },
-  external: ["xxhash", "@dolcn/sc2-modloader/SC2DataManager"],
+  external: ["xxhash"],
 });

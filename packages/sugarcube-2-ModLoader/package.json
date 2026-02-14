@@ -44,8 +44,7 @@
   },
   "scripts": {
     "download": "tsx src/download.ts",
-    "compile": "pnpm tsdown",
-    "after": "tsx src/after.ts"
+    "build": "tsdown"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.20",

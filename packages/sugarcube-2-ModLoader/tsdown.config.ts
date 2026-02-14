@@ -8,13 +8,11 @@ export default defineConfig({
   publint: true,
   dts: {
     sourcemap: false,
-    sideEffects: true,
     compilerOptions: {
       emitDeclarationOnly: true,
       noImplicitAny: false,
     },
     emitDtsOnly: true,
-    build: true,
     tsconfig: "./remote/BeforeSC2/tsconfig.json",
   },
   external: [

@@ -20,6 +20,7 @@
     "oxlint-tsgolint": "^0.11.5",
     "publint": "^0.3.17",
     "tsdown": "^0.20.3",
+    "turbo": "^2.8.8",
     "typescript": "^5.9.3"
   },
   "packageManager": "pnpm@10.29.3"

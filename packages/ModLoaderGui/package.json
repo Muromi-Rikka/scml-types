@@ -4,12 +4,13 @@
   "type": "module",
   "scripts": {
     "download": "tsx src/download.ts",
-    "compile": "tsc -p ./remote/tsconfig.json --declarationMap false --emitDeclarationOnly --noImplicitAny false --outDir type-dist",
-    "after": "tsx src/after.ts"
+    "build": "tsdown"
+  },
+  "dependencies": {
+    "@dolcn/mod-sub-ui-angular-js": "workspace:*",
+    "@dolcn/sc2-modloader": "workspace:*"
   },
   "devDependencies": {
-    "@dolcn/mod-sub-ui-angular-js": "workspace:*",
-    "@dolcn/sc2-modloader": "workspace:*",
     "angular": "^1.8.3"
   }
 }

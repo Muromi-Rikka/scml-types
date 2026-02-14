@@ -23,7 +23,6 @@ export default defineConfig({
       noImplicitAny: false,
     },
     emitDtsOnly: true,
-    build: true,
     tsconfig: "./remote/tsconfig.json",
   },
   external: [],
