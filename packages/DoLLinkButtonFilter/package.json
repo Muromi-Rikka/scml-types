@@ -9,6 +9,9 @@
     "email": "admin@rikka.cc",
     "url": "https://github.com/Muromi-Rikka"
   },
+  "files": [
+    "type-dist"
+  ],
   "type": "module",
   "types": "./type-dist/global.ts",
   "scripts": {
