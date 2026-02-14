@@ -20,9 +20,9 @@
   },
   "devDependencies": {
     "@types/node": "^25.2.3",
-    "oxfmt": "^0.31.0",
-    "oxlint": "^1.46.0",
-    "oxlint-tsgolint": "^0.11.5",
+    "oxfmt": "^0.32.0",
+    "oxlint": "^1.47.0",
+    "oxlint-tsgolint": "^0.12.2",
     "publint": "^0.3.17",
     "tsdown": "^0.20.3",
     "turbo": "^2.8.8",
