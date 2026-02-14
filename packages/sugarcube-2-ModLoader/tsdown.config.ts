@@ -5,6 +5,8 @@ export default defineConfig({
   clean: true,
   outDir: "./type-dist",
   fixedExtension: false,
+  inlineOnly: false,
+  skipNodeModulesBundle: true,
   dts: {
     sourcemap: false,
     compilerOptions: {

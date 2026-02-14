@@ -7,6 +7,8 @@ export default defineConfig({
   outDir: "./type-dist",
   fixedExtension: false,
   alias: dolTypeAlias,
+  inlineOnly: false,
+  skipNodeModulesBundle: true,
   dts: {
     sourcemap: false,
     compilerOptions: {
