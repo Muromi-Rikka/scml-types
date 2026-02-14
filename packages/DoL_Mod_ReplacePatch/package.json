@@ -1,5 +1,5 @@
 {
-  "name": "@dolcn/dol-module-replacer-patch",
+  "name": "@scml/dol-module-replacer-patch",
   "version": "1.0.0",
   "type": "module",
   "types": "./type-dist/global.ts",
@@ -11,7 +11,7 @@
     "build": "tsdown && tsx src/after-build.ts"
   },
   "dependencies": {
-    "@dol-type/utils": "workspace:*",
-    "@dolcn/sc2-modloader": "workspace:*"
+    "@scml/sc2-modloader": "workspace:*",
+    "@scml/utils": "workspace:*"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@dolcn/sc2-modloader",
+  "name": "@scml/sc2-modloader",
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",

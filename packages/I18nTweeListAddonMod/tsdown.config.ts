@@ -1,5 +1,5 @@
 import { defineConfig } from "tsdown";
-import { dolTypeAlias } from "@dol-type/utils";
+import { dolTypeAlias } from "@scml/utils";
 
 export default defineConfig({
   entry: "remote/**/*.ts",
