@@ -21,6 +21,7 @@
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
+    ".": "./type-dist/global.ts",
     "./CustomReadonlyMapHelper": "./type-dist/CustomReadonlyMapHelper.d.ts",
     "./I18nTweeReplacer": "./type-dist/I18nTweeReplacer.d.ts"
   },

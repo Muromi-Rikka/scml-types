@@ -21,6 +21,7 @@
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
+    ".": "./type-dist/global.ts",
     "./I18nScriptList": "./type-dist/I18nScriptList.d.ts"
   },
   "scripts": {

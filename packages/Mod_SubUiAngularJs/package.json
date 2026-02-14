@@ -21,6 +21,7 @@
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
+    ".": "./type-dist/global.ts",
     "./AppContainerManagerMethodsInterface": "./type-dist/AppContainerManagerMethodsInterface.d.ts",
     "./ModSubUiAngularJs": "./type-dist/ModSubUiAngularJs.d.ts",
     "./ModSubUiAngularJsBody": "./type-dist/ModSubUiAngularJsBody.d.ts",

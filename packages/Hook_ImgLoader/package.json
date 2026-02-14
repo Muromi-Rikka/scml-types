@@ -21,6 +21,7 @@
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
+    ".": "./type-dist/global.ts",
     "./utils": "./type-dist/utils.d.ts",
     "./SimpleDolFunctionHook": "./type-dist/SimpleDolFunctionHook.d.ts",
     "./NodeMutationObserver": "./type-dist/NodeMutationObserver.d.ts",

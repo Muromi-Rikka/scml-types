@@ -21,6 +21,7 @@
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
+    ".": "./type-dist/global.ts",
     "./ModuleCssReplacer": "./type-dist/ModuleCssReplacer.d.ts"
   },
   "scripts": {

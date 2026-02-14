@@ -21,6 +21,7 @@
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
+    ".": "./type-dist/global.ts",
     "./Diff3WayMerge": "./type-dist/Diff3WayMerge.d.ts",
     "./Diff3WayMergeParams": "./type-dist/Diff3WayMergeParams.d.ts",
     "./DiffFormat": "./type-dist/DiffFormat.d.ts",

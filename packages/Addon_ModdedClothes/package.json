@@ -21,6 +21,7 @@
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
+    ".": "./type-dist/global.ts",
     "./ModdedClothesAddon": "./type-dist/ModdedClothesAddon.d.ts",
     "./ModdedClothesAddonParams": "./type-dist/ModdedClothesAddonParams.d.ts"
   },

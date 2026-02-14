@@ -20,6 +20,9 @@
   ],
   "type": "module",
   "types": "./type-dist/global.ts",
+  "exports": {
+    ".": "./type-dist/global.ts"
+  },
   "scripts": {
     "download": "tsx src/download.ts",
     "build": "tsdown && tsx src/after-build.ts",

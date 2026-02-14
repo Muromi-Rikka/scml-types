@@ -21,6 +21,7 @@
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
+    ".": "./type-dist/global.ts",
     "./BeautySelectorAddon": "./type-dist/BeautySelectorAddon.d.ts",
     "./BeautySelectorAddonInterface": "./type-dist/BeautySelectorAddonInterface.d.ts",
     "./BeautySelectorAddonType": "./type-dist/BeautySelectorAddonType.d.ts",

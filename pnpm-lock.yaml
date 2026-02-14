@@ -48,6 +48,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -60,6 +61,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -69,6 +71,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -78,6 +81,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -87,6 +91,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -96,6 +101,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -105,6 +111,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -114,6 +121,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -123,6 +131,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -132,6 +141,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -141,6 +151,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -150,6 +161,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -159,6 +171,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -168,6 +181,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -177,6 +191,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -186,6 +201,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -195,6 +211,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -204,6 +221,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -213,6 +231,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -225,6 +244,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -234,6 +254,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -246,10 +267,10 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
-    devDependencies:
       angular:
         specifier: ^1.8.3
         version: 1.8.3
@@ -259,6 +280,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -268,6 +290,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -277,6 +300,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -289,6 +313,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils
@@ -298,6 +323,7 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+    devDependencies:
       '@scml/utils':
         specifier: workspace:*
         version: link:../utils

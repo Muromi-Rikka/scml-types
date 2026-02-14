@@ -21,6 +21,7 @@
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
+    ".": "./type-dist/global.ts",
     "./OldTimeFunctionHook": "./type-dist/OldTimeFunctionHook.d.ts",
     "./TimeProxyManager": "./type-dist/TimeProxyManager.d.ts",
     "./DoLTimeWrapperAddonPlugin": "./type-dist/DoLTimeWrapperAddonPlugin.d.ts",

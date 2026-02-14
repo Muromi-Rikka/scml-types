@@ -21,6 +21,7 @@
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
+    ".": "./type-dist/global.ts",
     "./SweetAlert2Mod": "./type-dist/SweetAlert2Mod.d.ts"
   },
   "scripts": {

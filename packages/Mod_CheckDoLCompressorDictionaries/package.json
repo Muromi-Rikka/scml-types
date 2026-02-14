@@ -21,6 +21,7 @@
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
+    ".": "./type-dist/global.ts",
     "./CheckDoLCompressorDictionaries": "./type-dist/CheckDoLCompressorDictionaries.d.ts"
   },
   "scripts": {

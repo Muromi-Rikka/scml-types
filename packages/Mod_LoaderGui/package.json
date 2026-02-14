@@ -21,6 +21,7 @@
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
+    ".": "./type-dist/global.ts",
     "./DebugExport": "./type-dist/DebugExport.d.ts",
     "./Gui": "./type-dist/Gui.d.ts",
     "./KeyFilter": "./type-dist/KeyFilter.d.ts",

@@ -21,6 +21,7 @@
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
+    ".": "./type-dist/global.ts",
     "./GetPromiseWithResolvers": "./type-dist/GetPromiseWithResolvers.d.ts",
     "./I18N": "./type-dist/I18N.d.ts",
     "./TypeB": "./type-dist/TypeB.d.ts"

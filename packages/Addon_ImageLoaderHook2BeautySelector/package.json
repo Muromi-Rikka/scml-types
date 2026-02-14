@@ -21,6 +21,7 @@
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
+    ".": "./type-dist/global.ts",
     "./ImageLoaderHook2BeautySelectorAddon": "./type-dist/ImageLoaderHook2BeautySelectorAddon.d.ts"
   },
   "scripts": {

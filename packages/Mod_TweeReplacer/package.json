@@ -21,6 +21,7 @@
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
+    ".": "./type-dist/global.ts",
     "./I18nTweeList": "./type-dist/I18nTweeList.d.ts"
   },
   "scripts": {
