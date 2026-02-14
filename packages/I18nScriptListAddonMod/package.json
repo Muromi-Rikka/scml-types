@@ -1,5 +1,5 @@
 {
-  "name": "@dolcn/time-wrapper-addon-mod",
+  "name": "@dolcn/i18n-script-list-addon-mod",
   "version": "1.0.0",
   "type": "module",
   "types": "./type-dist/global.ts",

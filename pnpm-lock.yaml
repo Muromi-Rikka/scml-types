@@ -139,6 +139,18 @@ importers:
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
 
+  packages/DoL_Mod_TweeReplacer:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+      '@dolcn/twee-replacer-linker-addon':
+        specifier: workspace:*
+        version: link:../TweeReplacerLinkerAddon
+
   packages/I18nScriptListAddonMod:
     dependencies:
       '@dol-type/utils':
@@ -150,6 +162,30 @@ importers:
       '@dolcn/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
+
+  packages/I18nTweeListAddonMod:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/mod-sub-ui-angular-js':
+        specifier: workspace:*
+        version: link:../ModSubUiAngularJs
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+
+  packages/I18nTweeReplacerMod:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+      '@dolcn/twee-replacer-linker-addon':
+        specifier: workspace:*
+        version: link:../TweeReplacerLinkerAddon
 
   packages/ModLoaderGui:
     dependencies:
@@ -177,6 +213,18 @@ importers:
         version: link:../sugarcube-2-ModLoader
 
   packages/Mod_Diff3WayMerge:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/mod-sub-ui-angular-js':
+        specifier: workspace:*
+        version: link:../ModSubUiAngularJs
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+
+  packages/TweeReplacerLinkerAddon:
     dependencies:
       '@dol-type/utils':
         specifier: workspace:*

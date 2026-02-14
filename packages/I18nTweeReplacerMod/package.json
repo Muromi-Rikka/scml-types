@@ -1,0 +1,19 @@
+{
+  "name": "@dolcn/i18n-twee-list-addon-mod",
+  "version": "1.0.0",
+  "type": "module",
+  "types": "./type-dist/global.ts",
+  "exports": {
+    "./CustomReadonlyMapHelper": "./type-dist/CustomReadonlyMapHelper.d.ts",
+    "./I18nTweeReplacer": "./type-dist/I18nTweeReplacer.d.ts"
+  },
+  "scripts": {
+    "download": "tsx src/download.ts",
+    "build": "tsdown && tsx src/after-build.ts"
+  },
+  "dependencies": {
+    "@dol-type/utils": "workspace:*",
+    "@dolcn/sc2-modloader": "workspace:*",
+    "@dolcn/twee-replacer-linker-addon": "workspace:*"
+  }
+}

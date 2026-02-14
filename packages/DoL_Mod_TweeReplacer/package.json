@@ -1,10 +1,10 @@
 {
-  "name": "@dolcn/dol-hook-macro-rng",
+  "name": "@dolcn/dol-mod-twee-replacer",
   "version": "1.0.0",
   "type": "module",
   "types": "./type-dist/global.ts",
   "exports": {
-    "./HookMacroRng": "./type-dist/inject_early.d.ts"
+    "./I18nTweeList": "./type-dist/I18nTweeList.d.ts"
   },
   "scripts": {
     "download": "tsx src/download.ts",
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@dol-type/utils": "workspace:*",
-    "@dolcn/mod-sub-ui-angular-js": "workspace:*",
-    "@dolcn/sc2-modloader": "workspace:*"
+    "@dolcn/sc2-modloader": "workspace:*",
+    "@dolcn/twee-replacer-linker-addon": "workspace:*"
   }
 }
