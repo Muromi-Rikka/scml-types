@@ -163,6 +163,30 @@ importers:
         specifier: workspace:*
         version: link:../TweeReplacerLinkerAddon
 
+  packages/DoL_ModdedClothesAddon:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+      '@dolcn/twee-replacer-linker-addon':
+        specifier: workspace:*
+        version: link:../TweeReplacerLinkerAddon
+
+  packages/DoL_ModdedFeatsAddon:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+      '@dolcn/twee-replacer-linker-addon':
+        specifier: workspace:*
+        version: link:../TweeReplacerLinkerAddon
+
   packages/I18nScriptListAddonMod:
     dependencies:
       '@dol-type/utils':
@@ -188,6 +212,18 @@ importers:
         version: link:../sugarcube-2-ModLoader
 
   packages/I18nTweeReplacerMod:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+      '@dolcn/twee-replacer-linker-addon':
+        specifier: workspace:*
+        version: link:../TweeReplacerLinkerAddon
+
+  packages/ImageLoaderHook2BeautySelectorAddon:
     dependencies:
       '@dol-type/utils':
         specifier: workspace:*
