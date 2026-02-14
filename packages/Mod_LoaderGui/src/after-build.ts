@@ -14,7 +14,7 @@ const importModSubUiAngularJsService = genImport(
 
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", {
+  genInterface("Window", {
     modLoaderGui_LoadingProgress: "LoadingProgress",
     modLoaderGui_PassageTracer: "PassageTracer",
     modLoaderGui: "Gui",
@@ -23,7 +23,7 @@ const globalNamespace = genDeclareNamespace(
 );
 
 writeFileSync(
-  "./type-dist/global.ts",
+  "./type-dist/global.d.ts",
   [
     importLoadingProgress,
     importPassageTracer,

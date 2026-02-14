@@ -10,9 +10,9 @@ const importTweePrefixPostfixAddon = genImport(
 );
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", {
+  genInterface("Window", {
     addonTweePrefixPostfixAddon: " TweePrefixPostfixAddon",
   })
 );
 
-writeFileSync("./type-dist/global.ts", [importTweePrefixPostfixAddon, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importTweePrefixPostfixAddon, globalNamespace].join("\n"));

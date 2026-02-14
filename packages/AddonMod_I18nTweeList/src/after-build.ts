@@ -6,7 +6,7 @@ const importI18nTweeList = genImport("./I18nTweeList.d.ts", ["I18nTweeList"], {
 });
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", { modI18nTweeList: " I18nTweeList" })
+  genInterface("Window", { modI18nTweeList: " I18nTweeList" })
 );
 
-writeFileSync("./type-dist/global.ts", [importI18nTweeList, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importI18nTweeList, globalNamespace].join("\n"));

@@ -6,9 +6,9 @@ const importModI18N = genImport("./I18N.d.ts", ["ModI18N"], {
 });
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", {
+  genInterface("Window", {
     modI18N: " ModI18N",
   })
 );
 
-writeFileSync("./type-dist/global.ts", [importModI18N, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importModI18N, globalNamespace].join("\n"));

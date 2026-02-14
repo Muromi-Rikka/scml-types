@@ -19,9 +19,9 @@
     "README.md"
   ],
   "type": "module",
-  "types": "./type-dist/global.ts",
+  "types": "./type-dist/global.d.ts",
   "exports": {
-    ".": "./type-dist/global.ts",
+    ".": "./type-dist/global.d.ts",
     "./ModdedHairAddon": "./type-dist/ModdedHairAddon.d.ts",
     "./ModdedHairAddonParams": "./type-dist/ModdedHairAddonParams.d.ts"
   },

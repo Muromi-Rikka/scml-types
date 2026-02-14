@@ -6,9 +6,9 @@ const importReplacePatcher = genImport("./ReplacePatcher.d.ts", ["ReplacePatcher
 });
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", {
+  genInterface("Window", {
     addonReplacePatcher: " ReplacePatcher",
   })
 );
 
-writeFileSync("./type-dist/global.ts", [importReplacePatcher, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importReplacePatcher, globalNamespace].join("\n"));

@@ -6,7 +6,7 @@ const importBeautySelectorAddon = genImport("./BeautySelectorAddon.d.ts", ["Beau
 });
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", { addonBeautySelectorAddon: "BeautySelectorAddon" })
+  genInterface("Window", { addonBeautySelectorAddon: "BeautySelectorAddon" })
 );
 
-writeFileSync("./type-dist/global.ts", [importBeautySelectorAddon, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importBeautySelectorAddon, globalNamespace].join("\n"));

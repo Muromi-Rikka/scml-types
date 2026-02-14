@@ -8,10 +8,10 @@ const importCheckDoLCompressorDictionaries = genImport(
 );
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", { modCheckDoLCompressorDictionaries: "CheckDoLCompressorDictionaries" })
+  genInterface("Window", { modCheckDoLCompressorDictionaries: "CheckDoLCompressorDictionaries" })
 );
 
 writeFileSync(
-  "./type-dist/global.ts",
+  "./type-dist/global.d.ts",
   [importCheckDoLCompressorDictionaries, globalNamespace].join("\n")
 );

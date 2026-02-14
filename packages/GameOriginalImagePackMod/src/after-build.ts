@@ -10,7 +10,7 @@ const importGameOriginalImagePack = genImport(
 );
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", { modGameOriginalImagePack: " GameOriginalImagePack" })
+  genInterface("Window", { modGameOriginalImagePack: " GameOriginalImagePack" })
 );
 
-writeFileSync("./type-dist/global.ts", [importGameOriginalImagePack, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importGameOriginalImagePack, globalNamespace].join("\n"));

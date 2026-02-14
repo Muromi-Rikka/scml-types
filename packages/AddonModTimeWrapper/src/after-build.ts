@@ -6,7 +6,7 @@ const importDoLTimeWrapperAddon = genImport("./DoLTimeWrapperAddon.d.ts", ["DoLT
 });
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", { addonDoLTimeWrapperAddon: " DoLTimeWrapperAddon" })
+  genInterface("Window", { addonDoLTimeWrapperAddon: " DoLTimeWrapperAddon" })
 );
 
-writeFileSync("./type-dist/global.ts", [importDoLTimeWrapperAddon, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importDoLTimeWrapperAddon, globalNamespace].join("\n"));

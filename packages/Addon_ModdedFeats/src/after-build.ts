@@ -6,9 +6,9 @@ const importModdedFeatsAddon = genImport("./ModdedFeatsAddon.d.ts", ["ModdedFeat
 });
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", {
+  genInterface("Window", {
     addonModdedFeatsAddon: " ModdedFeatsAddon",
   })
 );
 
-writeFileSync("./type-dist/global.ts", [importModdedFeatsAddon, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importModdedFeatsAddon, globalNamespace].join("\n"));

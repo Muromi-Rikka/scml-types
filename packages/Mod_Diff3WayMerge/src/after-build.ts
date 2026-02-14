@@ -5,9 +5,9 @@ const importDiff3WayMerge = genImport("./Diff3WayMerge.d.ts", ["Diff3WayMerge"],
 
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", {
+  genInterface("Window", {
     diff3WayMerge: "Diff3WayMerge",
   })
 );
 
-writeFileSync("./type-dist/global.ts", [importDiff3WayMerge, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importDiff3WayMerge, globalNamespace].join("\n"));

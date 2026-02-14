@@ -6,9 +6,9 @@ const importSweetAlert2Mod = genImport("./SweetAlert2Mod.d.ts", ["SweetAlert2Mod
 });
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", {
+  genInterface("Window", {
     modSweetAlert2Mod: " SweetAlert2Mod",
   })
 );
 
-writeFileSync("./type-dist/global.ts", [importSweetAlert2Mod, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importSweetAlert2Mod, globalNamespace].join("\n"));

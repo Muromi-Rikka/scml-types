@@ -19,9 +19,9 @@
     "README.md"
   ],
   "type": "module",
-  "types": "./type-dist/global.ts",
+  "types": "./type-dist/global.d.ts",
   "exports": {
-    ".": "./type-dist/global.ts",
+    ".": "./type-dist/global.d.ts",
     "./Diff3WayMerge": "./type-dist/Diff3WayMerge.d.ts",
     "./Diff3WayMergeParams": "./type-dist/Diff3WayMergeParams.d.ts",
     "./DiffFormat": "./type-dist/DiffFormat.d.ts",

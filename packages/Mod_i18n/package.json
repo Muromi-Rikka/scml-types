@@ -19,9 +19,9 @@
     "README.md"
   ],
   "type": "module",
-  "types": "./type-dist/global.ts",
+  "types": "./type-dist/global.d.ts",
   "exports": {
-    ".": "./type-dist/global.ts",
+    ".": "./type-dist/global.d.ts",
     "./GetPromiseWithResolvers": "./type-dist/GetPromiseWithResolvers.d.ts",
     "./I18N": "./type-dist/I18N.d.ts",
     "./TypeB": "./type-dist/TypeB.d.ts"

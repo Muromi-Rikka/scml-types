@@ -6,7 +6,7 @@ const importHookMacroRng = genImport("./inject_early.d.ts", ["HookMacroRng"], {
 });
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", { hookMacroRng: " HookMacroRng" })
+  genInterface("Window", { hookMacroRng: " HookMacroRng" })
 );
 
-writeFileSync("./type-dist/global.ts", [importHookMacroRng, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importHookMacroRng, globalNamespace].join("\n"));

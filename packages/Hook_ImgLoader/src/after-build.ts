@@ -6,7 +6,7 @@ const importImgLoaderHooker = genImport("./ImgLoaderHooker.d.ts", ["ImgLoaderHoo
 });
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", { modImgLoaderHooker: " ImgLoaderHooker" })
+  genInterface("Window", { modImgLoaderHooker: " ImgLoaderHooker" })
 );
 
-writeFileSync("./type-dist/global.ts", [importImgLoaderHooker, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importImgLoaderHooker, globalNamespace].join("\n"));

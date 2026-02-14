@@ -7,9 +7,9 @@ const importModSubUiAngularJs = genImport("./ModSubUiAngularJs.d.ts", ["ModSubUi
 
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", {
+  genInterface("Window", {
     diff3WayMerge: "ModSubUiAngularJs",
   })
 );
 
-writeFileSync("./type-dist/global.ts", [importModSubUiAngularJs, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importModSubUiAngularJs, globalNamespace].join("\n"));

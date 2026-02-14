@@ -19,9 +19,9 @@
     "README.md"
   ],
   "type": "module",
-  "types": "./type-dist/global.ts",
+  "types": "./type-dist/global.d.ts",
   "exports": {
-    ".": "./type-dist/global.ts",
+    ".": "./type-dist/global.d.ts",
     "./CustomReadonlyMapHelper": "./type-dist/CustomReadonlyMapHelper.d.ts",
     "./I18nTweeReplacer": "./type-dist/I18nTweeReplacer.d.ts"
   },

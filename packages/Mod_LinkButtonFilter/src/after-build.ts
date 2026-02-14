@@ -6,7 +6,7 @@ const importDoLLinkButtonFilter = genImport("./init.d.ts", ["patchLinkButton"], 
 });
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", { DoLLinkButtonFilter_patchLinkButton: " typeof patchLinkButton" })
+  genInterface("Window", { DoLLinkButtonFilter_patchLinkButton: " typeof patchLinkButton" })
 );
 
-writeFileSync("./type-dist/global.ts", [importDoLLinkButtonFilter, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importDoLLinkButtonFilter, globalNamespace].join("\n"));

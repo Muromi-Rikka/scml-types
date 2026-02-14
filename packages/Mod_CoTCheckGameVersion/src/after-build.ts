@@ -6,7 +6,7 @@ const importCheckGameVersion = genImport("./CheckGameVersion.d.ts", ["CheckGameV
 });
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", { modCheckGameVersion: "CheckGameVersion" })
+  genInterface("Window", { modCheckGameVersion: "CheckGameVersion" })
 );
 
-writeFileSync("./type-dist/global.ts", [importCheckGameVersion, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importCheckGameVersion, globalNamespace].join("\n"));

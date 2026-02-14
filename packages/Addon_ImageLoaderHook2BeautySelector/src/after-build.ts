@@ -10,12 +10,12 @@ const importImageLoaderHook2BeautySelectorAddon = genImport(
 );
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", {
+  genInterface("Window", {
     modImageLoaderHook2BeautySelectorAddon: " ImageLoaderHook2BeautySelectorAddon",
   })
 );
 
 writeFileSync(
-  "./type-dist/global.ts",
+  "./type-dist/global.d.ts",
   [importImageLoaderHook2BeautySelectorAddon, globalNamespace].join("\n")
 );

@@ -6,7 +6,7 @@ const importConflictChecker = genImport("./ConflictChecker.d.ts", ["ConflictChec
 });
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", { addonConflictChecker: "ConflictChecker" })
+  genInterface("Window", { addonConflictChecker: "ConflictChecker" })
 );
 
-writeFileSync("./type-dist/global.ts", [importConflictChecker, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importConflictChecker, globalNamespace].join("\n"));

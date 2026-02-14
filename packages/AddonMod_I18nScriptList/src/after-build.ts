@@ -6,7 +6,7 @@ const importI18nScriptList = genImport("./I18nScriptList.d.ts", ["I18nScriptList
 });
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", { modI18nScriptList: " I18nScriptList" })
+  genInterface("Window", { modI18nScriptList: " I18nScriptList" })
 );
 
-writeFileSync("./type-dist/global.ts", [importI18nScriptList, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importI18nScriptList, globalNamespace].join("\n"));

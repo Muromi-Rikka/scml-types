@@ -6,9 +6,9 @@ const importModdedHairAddon = genImport("./ModdedHairAddon.d.ts", ["ModdedHairAd
 });
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", {
+  genInterface("Window", {
     addonModdedHairAddon: " ModdedHairAddon",
   })
 );
 
-writeFileSync("./type-dist/global.ts", [importModdedHairAddon, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importModdedHairAddon, globalNamespace].join("\n"));

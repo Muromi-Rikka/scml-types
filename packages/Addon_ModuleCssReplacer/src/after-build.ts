@@ -6,9 +6,9 @@ const importModuleCssReplacer = genImport("./ModuleCssReplacer.d.ts", ["ModuleCs
 });
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", {
+  genInterface("Window", {
     addonModuleCssReplacer: " ModuleCssReplacer",
   })
 );
 
-writeFileSync("./type-dist/global.ts", [importModuleCssReplacer, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importModuleCssReplacer, globalNamespace].join("\n"));

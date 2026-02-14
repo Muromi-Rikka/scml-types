@@ -16,7 +16,7 @@ const importSC2JsEvalContext = genImport("./SC2JsEvalContext.d.ts", ["SC2JsEvalC
 });
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", {
+  genInterface("Window", {
     jQuery: "JQueryStatic",
     $: "JQueryStatic",
     modSC2DataManager: "SC2DataManager",
@@ -29,7 +29,7 @@ const globalNamespace = genDeclareNamespace(
 );
 
 writeFileSync(
-  "./type-dist/global.ts",
+  "./type-dist/global.d.ts",
   [
     importJQueryStatic,
     importSC2DataManager,

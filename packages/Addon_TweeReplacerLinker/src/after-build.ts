@@ -6,7 +6,7 @@ const importTweeReplacerLinker = genImport("./TweeReplacerLinker.d.ts", ["TweeRe
 });
 const globalNamespace = genDeclareNamespace(
   "global",
-  genInterface("window", { addonTweeReplacerLinker: " TweeReplacerLinker" })
+  genInterface("Window", { addonTweeReplacerLinker: " TweeReplacerLinker" })
 );
 
-writeFileSync("./type-dist/global.ts", [importTweeReplacerLinker, globalNamespace].join("\n"));
+writeFileSync("./type-dist/global.d.ts", [importTweeReplacerLinker, globalNamespace].join("\n"));
