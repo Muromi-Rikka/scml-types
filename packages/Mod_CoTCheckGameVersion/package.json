@@ -1,0 +1,30 @@
+{
+  "name": "@scml/mod-cot-check-game-version",
+  "version": "1.0.0",
+  "private": false,
+  "description": "SugarCube 2 Mod Loader Workspace",
+  "license": "MIT",
+  "author": {
+    "name": "Rikka",
+    "email": "admin@rikka.cc",
+    "url": "https://github.com/Muromi-Rikka"
+  },
+  "files": [
+    "type-dist",
+    "README.md"
+  ],
+  "type": "module",
+  "types": "./type-dist/global.ts",
+  "exports": {
+    "./CheckGameVersion": "./type-dist/CheckGameVersion.d.ts"
+  },
+  "scripts": {
+    "download": "tsx src/download.ts",
+    "build": "tsdown && tsx src/after-build.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@scml/sc2-modloader": "workspace:*",
+    "@scml/utils": "workspace:*"
+  }
+}

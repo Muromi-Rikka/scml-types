@@ -1,0 +1,32 @@
+{
+  "name": "@scml/mod-i18n-twee-replacer",
+  "version": "1.0.0",
+  "private": false,
+  "description": "SugarCube 2 Mod Loader Workspace",
+  "license": "MIT",
+  "author": {
+    "name": "Rikka",
+    "email": "admin@rikka.cc",
+    "url": "https://github.com/Muromi-Rikka"
+  },
+  "files": [
+    "type-dist",
+    "README.md"
+  ],
+  "type": "module",
+  "types": "./type-dist/global.ts",
+  "exports": {
+    "./CustomReadonlyMapHelper": "./type-dist/CustomReadonlyMapHelper.d.ts",
+    "./I18nTweeReplacer": "./type-dist/I18nTweeReplacer.d.ts"
+  },
+  "scripts": {
+    "download": "tsx src/download.ts",
+    "build": "tsdown && tsx src/after-build.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@scml/addon-twee-replacer-linker": "workspace:*",
+    "@scml/sc2-modloader": "workspace:*",
+    "@scml/utils": "workspace:*"
+  }
+}

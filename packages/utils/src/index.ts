@@ -15,7 +15,7 @@ export const dolTypeAlias = {
   "../../../dist-BeforeSC2/DependenceChecker": "@scml/sc2-modloader/DependenceChecker",
   "../../../dist-BeforeSC2/SC2DataInfoCache": "@scml/sc2-modloader/SC2DataInfoCache",
   "../../TweeReplacerLinker/dist/TweeReplacerLinkerInterface":
-    "@scml/twee-replacer-linker-addon/TweeReplacerLinkerInterface",
+    "@scml/addon-twee-replacer-linker/TweeReplacerLinkerInterface",
   "../../../src/BeforeSC2/SugarCube2": "@scml/sc2-modloader/SugarCube2",
   "../../../dist-BeforeSC2/HtmlTagSrcHook": "@scml/sc2-modloader/HtmlTagSrcHook",
   "../../../dist-BeforeSC2/SC2ApiRef": "@scml/sc2-modloader/SC2ApiRef",
