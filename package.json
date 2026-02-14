@@ -1,0 +1,26 @@
+{
+  "name": "dol-type",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "giget": "^3.1.2",
+    "tsx": "^4.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "oxfmt": "^0.31.0",
+    "oxlint": "^1.46.0",
+    "oxlint-tsgolint": "^0.11.5",
+    "publint": "^0.3.17",
+    "tsdown": "^0.20.3",
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "pnpm@10.29.3"
+}

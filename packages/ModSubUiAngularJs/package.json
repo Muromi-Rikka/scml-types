@@ -1,0 +1,25 @@
+{
+  "name": "@dolcn/mod-sub-ui-angular-js",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    "./AppContainerManagerMethodsInterface": "./type-dist/AppContainerManagerMethodsInterface.d.ts",
+    "./ModSubUiAngularJs": "./type-dist/ModSubUiAngularJs.d.ts",
+    "./ModSubUiAngularJsBody": "./type-dist/ModSubUiAngularJsBody.d.ts",
+    "./ModSubUiAngularJsModeExportInterface": "./type-dist/ModSubUiAngularJsModeExportInterface.d.ts",
+    "./AngularJs/appInit": "./type-dist/AngularJs/appInit.d.ts",
+    "./AngularJs/ExternalComponentManager": "./type-dist/AngularJs/ExternalComponentManager.d.ts",
+    "./AngularJs/ExternalComponentManagerInterface": "./type-dist/AngularJs/ExternalComponentManagerInterface.d.ts",
+    "./AngularJs/Componnet/EnableOrderComponent": "./type-dist/AngularJs/Componnet/EnableOrderComponent.d.ts",
+    "./AngularJs/Componnet/OrderComponent": "./type-dist/AngularJs/Componnet/OrderComponent.d.ts",
+    "./AngularJs/Componnet/SimpleSelectComponent": "./type-dist/AngularJs/Componnet/SimpleSelectComponent.d.ts"
+  },
+  "scripts": {
+    "download": "tsx src/download.ts",
+    "compile": "tsc -p ./remote/tsconfig.json --declarationMap false --emitDeclarationOnly --noImplicitAny false --outDir type-dist",
+    "after": "tsx src/after.ts"
+  },
+  "dependencies": {
+    "@dolcn/sc2-modloader": "workspace:*"
+  }
+}
