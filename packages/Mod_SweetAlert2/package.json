@@ -9,6 +9,11 @@
     "email": "admin@rikka.cc",
     "url": "https://github.com/Muromi-Rikka"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Muromi-Rikka/scml-types.git",
+    "directory": "packages/Mod_SweetAlert2"
+  },
   "files": [
     "type-dist",
     "README.md"
