@@ -4,6 +4,6 @@
 
 Type definitions are from the repository:
 
-- https://github.com/Lyoko-Jeremie/CheckGameVersionCot（子路径 `/src`）
+- https://github.com/Lyoko-Jeremie/CheckGameVersionCot
 
 Fetched from the `master` branch by default. Build: `pnpm run download && pnpm run build`.

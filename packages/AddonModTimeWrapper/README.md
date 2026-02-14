@@ -4,6 +4,6 @@
 
 Type definitions are from the repository:
 
-- https://github.com/Lyoko-Jeremie/DoLTimeWrapperAddonMod（子路径 `/src`）
+- https://github.com/Lyoko-Jeremie/DoLTimeWrapperAddonMod
 
 Fetched from the `master` branch by default. Build: `pnpm run download && pnpm run build`.

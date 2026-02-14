@@ -4,6 +4,6 @@
 
 Type definitions are from the repository:
 
-- https://github.com/Lyoko-Jeremie/ImageLoaderHook2BeautySelectorAddon（子路径 `/src_inject`）
+- https://github.com/Lyoko-Jeremie/ImageLoaderHook2BeautySelectorAddon
 
 Fetched from the `master` branch by default. Build: `pnpm run download && pnpm run build`.
