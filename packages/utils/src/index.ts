@@ -12,4 +12,6 @@ export const dolTypeAlias = {
   "../../ModSubUiAngularJs/dist-ts/ModSubUiAngularJsModeExportInterface":
     "@dolcn/mod-sub-ui-angular-js/ModSubUiAngularJsModeExportInterface",
   "../../../dist-BeforeSC2/Sc2EventTracer": "@dolcn/sc2-modloader/Sc2EventTracer",
+  "../../../dist-BeforeSC2/DependenceChecker": "@dolcn/sc2-modloader/DependenceChecker",
+  "../../../dist-BeforeSC2/SC2DataInfoCache": "@dolcn/sc2-modloader/SC2DataInfoCache",
 };

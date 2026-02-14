@@ -1,0 +1,20 @@
+{
+  "name": "@dolcn/mod-diff3-way-merge",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    "./Diff3WayMerge": "./type-dist/Diff3WayMerge.d.ts",
+    "./Diff3WayMergeParams": "./type-dist/Diff3WayMergeParams.d.ts",
+    "./DiffFormat": "./type-dist/DiffFormat.d.ts",
+    "./diff_match_patch/diff_match_patch": "./type-dist/diff_match_patch/diff_match_patch.d.ts"
+  },
+  "scripts": {
+    "download": "tsx src/download.ts",
+    "build": "tsdown"
+  },
+  "dependencies": {
+    "@dol-type/utils": "workspace:*",
+    "@dolcn/mod-sub-ui-angular-js": "workspace:*",
+    "@dolcn/sc2-modloader": "workspace:*"
+  }
+}

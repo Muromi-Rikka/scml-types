@@ -11,6 +11,9 @@ importers:
       giget:
         specifier: ^3.1.2
         version: 3.1.2
+      knitwork-x:
+        specifier: ^0.3.1
+        version: 0.3.1
       tsx:
         specifier: ^4.21.0
         version: 4.21.0
@@ -39,6 +42,42 @@ importers:
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
+
+  packages/CoT_Mod_CheckGameVersion:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/mod-sub-ui-angular-js':
+        specifier: workspace:*
+        version: link:../ModSubUiAngularJs
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+
+  packages/ConflictCheckerAddon:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/mod-sub-ui-angular-js':
+        specifier: workspace:*
+        version: link:../ModSubUiAngularJs
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+
+  packages/DoLLinkButtonFilter:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/mod-sub-ui-angular-js':
+        specifier: workspace:*
+        version: link:../ModSubUiAngularJs
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
 
   packages/DoL_BeautySelectorAddonMod:
     dependencies:
@@ -97,6 +136,18 @@ importers:
       '@dol-type/utils':
         specifier: workspace:*
         version: link:../utils
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+
+  packages/Mod_Diff3WayMerge:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/mod-sub-ui-angular-js':
+        specifier: workspace:*
+        version: link:../ModSubUiAngularJs
       '@dolcn/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
@@ -847,6 +898,9 @@ packages:
   jszip@3.10.1:
     resolution: {integrity: sha512-xXDvecyTpGLrqFrvkrUSoxxfJI5AH7U8zxxtVclpsUtMCq4JQ290LY8AW5c7Ggnr/Y/oK+bQMbqK2qmtk3pN4g==}
 
+  knitwork-x@0.3.1:
+    resolution: {integrity: sha512-2ZSpGOZclbgJ6wnyWaPJFeYVD+oJ6A7fbcFImBmk7bOQ4Bk39/Yy7cALCnswjT5W/nnz39b2czkQkG/XRKPqWw==}
+
   libsodium-sumo@0.7.16:
     resolution: {integrity: sha512-x6atrz2AdXCJg6G709x9W9TTJRI6/0NcL5dD0l5GGVqNE48UJmDsjO4RUWYTeyXXUpg+NXZ2SHECaZnFRYzwGA==}
 
@@ -1515,6 +1569,8 @@ snapshots:
       pako: 1.0.11
       readable-stream: 2.3.8
       setimmediate: 1.0.5
+
+  knitwork-x@0.3.1: {}
 
   libsodium-sumo@0.7.16: {}
 
