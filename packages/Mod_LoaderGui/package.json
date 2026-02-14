@@ -43,10 +43,10 @@
   },
   "dependencies": {
     "@scml/mod-sub-ui-angular-js": "workspace:*",
-    "@scml/sc2-modloader": "workspace:*",
-    "@scml/utils": "workspace:*"
+    "@scml/sc2-modloader": "workspace:*"
   },
   "devDependencies": {
+    "@scml/utils": "workspace:*",
     "angular": "^1.8.3"
   }
 }

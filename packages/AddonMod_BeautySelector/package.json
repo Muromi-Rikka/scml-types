@@ -39,7 +39,9 @@
   },
   "dependencies": {
     "@scml/mod-sub-ui-angular-js": "workspace:*",
-    "@scml/sc2-modloader": "workspace:*",
+    "@scml/sc2-modloader": "workspace:*"
+  },
+  "devDependencies": {
     "@scml/utils": "workspace:*"
   }
 }
