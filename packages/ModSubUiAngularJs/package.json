@@ -19,6 +19,7 @@
     "build": "tsdown"
   },
   "dependencies": {
+    "@dol-type/utils": "workspace:*",
     "@dolcn/sc2-modloader": "workspace:*"
   }
 }

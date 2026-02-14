@@ -1,7 +1,10 @@
 {
-  "name": "@dolcn/mod-loader-gui",
+  "name": "@dolcn/mod-check-game-version",
   "version": "1.0.0",
   "type": "module",
+  "exports": {
+    "./CheckDoLCompressorDictionaries": "./type-dist/CheckDoLCompressorDictionaries.d.ts"
+  },
   "scripts": {
     "download": "tsx src/download.ts",
     "build": "tsdown"
@@ -10,8 +13,5 @@
     "@dol-type/utils": "workspace:*",
     "@dolcn/mod-sub-ui-angular-js": "workspace:*",
     "@dolcn/sc2-modloader": "workspace:*"
-  },
-  "devDependencies": {
-    "angular": "^1.8.3"
   }
 }
