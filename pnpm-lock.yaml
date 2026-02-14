@@ -115,6 +115,18 @@ importers:
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
 
+  packages/DoL_ImgLoaderHooker:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+      '@dolcn/twee-replacer-linker-addon':
+        specifier: workspace:*
+        version: link:../TweeReplacerLinkerAddon
+
   packages/DoL_Mod_CheckDoLCompressorDictionaries:
     dependencies:
       '@dol-type/utils':

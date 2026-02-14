@@ -16,4 +16,6 @@ export const dolTypeAlias = {
   "../../../dist-BeforeSC2/SC2DataInfoCache": "@dolcn/sc2-modloader/SC2DataInfoCache",
   "../../TweeReplacerLinker/dist/TweeReplacerLinkerInterface":
     "@dolcn/twee-replacer-linker-addon/TweeReplacerLinkerInterface",
+  "../../../src/BeforeSC2/SugarCube2": "@dolcn/sc2-modloader/SugarCube2",
+  "../../../dist-BeforeSC2/HtmlTagSrcHook": "@dolcn/sc2-modloader/HtmlTagSrcHook",
 };
