@@ -127,6 +127,15 @@ importers:
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
 
+  packages/DoL_Mod_ReplacePatch:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+
   packages/DoL_Mod_TweeReplacer:
     dependencies:
       '@dol-type/utils':
@@ -149,6 +158,24 @@ importers:
         version: link:../sugarcube-2-ModLoader
 
   packages/DoL_ModdedFeatsAddon:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+
+  packages/DoL_ModdedHairAddon:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+
+  packages/DoL_ModuleCssReplacerAddon:
     dependencies:
       '@dol-type/utils':
         specifier: workspace:*
@@ -222,6 +249,15 @@ importers:
         version: link:../sugarcube-2-ModLoader
 
   packages/Mod_Diff3WayMerge:
+    dependencies:
+      '@dol-type/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@dolcn/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+
+  packages/SweetAlert2Mod:
     dependencies:
       '@dol-type/utils':
         specifier: workspace:*

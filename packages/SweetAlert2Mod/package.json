@@ -1,0 +1,17 @@
+{
+  "name": "@dolcn/sweet-alert2-mod",
+  "version": "1.0.0",
+  "type": "module",
+  "types": "./type-dist/global.ts",
+  "exports": {
+    "./SweetAlert2Mod": "./type-dist/SweetAlert2Mod.d.ts"
+  },
+  "scripts": {
+    "download": "tsx src/download.ts",
+    "build": "tsdown && tsx src/after-build.ts"
+  },
+  "dependencies": {
+    "@dol-type/utils": "workspace:*",
+    "@dolcn/sc2-modloader": "workspace:*"
+  }
+}
