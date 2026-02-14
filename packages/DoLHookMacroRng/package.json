@@ -1,0 +1,18 @@
+{
+  "name": "@dolcn/time-wrapper-addon-mod",
+  "version": "1.0.0",
+  "type": "module",
+  "types": "./type-dist/global.ts",
+  "exports": {
+    "./HookMacroRng": "./type-dist/inject_early.d.ts"
+  },
+  "scripts": {
+    "download": "tsx src/download.ts",
+    "build": "tsdown && tsx src/after-build.ts"
+  },
+  "dependencies": {
+    "@dol-type/utils": "workspace:*",
+    "@dolcn/mod-sub-ui-angular-js": "workspace:*",
+    "@dolcn/sc2-modloader": "workspace:*"
+  }
+}
