@@ -10,7 +10,8 @@
     "url": "https://github.com/Muromi-Rikka"
   },
   "files": [
-    "type-dist"
+    "type-dist",
+    "README.md"
   ],
   "type": "module",
   "types": "./type-dist/global.ts",
