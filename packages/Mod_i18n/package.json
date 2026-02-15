@@ -29,7 +29,8 @@
   "scripts": {
     "download": "tsx src/download.ts",
     "build": "tsdown && tsx src/after-build.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "publint": "publint"
   },
   "dependencies": {
     "@scml/sc2-modloader": "workspace:*"

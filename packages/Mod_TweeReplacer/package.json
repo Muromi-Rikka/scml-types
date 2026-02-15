@@ -22,12 +22,13 @@
   "types": "./type-dist/global.d.ts",
   "exports": {
     ".": "./type-dist/global.d.ts",
-    "./I18nTweeList": "./type-dist/I18nTweeList.d.ts"
+    "./TweeReplacer": "./type-dist/TweeReplacer.d.ts"
   },
   "scripts": {
     "download": "tsx src/download.ts",
     "build": "tsdown && tsx src/after-build.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "publint": "publint"
   },
   "dependencies": {
     "@scml/addon-twee-replacer-linker": "workspace:*",

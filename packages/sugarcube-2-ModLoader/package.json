@@ -63,7 +63,8 @@
   "scripts": {
     "download": "tsx src/download.ts",
     "build": "tsdown && tsx src/after-build.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "publint": "publint"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.20",
