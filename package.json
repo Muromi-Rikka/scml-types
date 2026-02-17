@@ -12,7 +12,9 @@
   "scripts": {
     "build": "turbo build",
     "typecheck": "turbo typecheck",
-    "publint": "turbo run publint"
+    "publint": "turbo run publint",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix"
   },
   "dependencies": {
     "giget": "^3.1.2",

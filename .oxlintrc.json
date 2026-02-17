@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "ignorePatterns": ["node_modules/", "dist/", "publish/", "temp/", ".cache/"],
+  "ignorePatterns": ["node_modules/", "dist/", "publish/", "temp/", ".cache/", "type-dist/", "remote/"],
   "plugins": ["import", "jsdoc", "node", "oxc", "promise", "typescript", "unicorn"],
   "rules": {}
 }
