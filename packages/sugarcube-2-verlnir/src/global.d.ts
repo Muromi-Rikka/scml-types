@@ -3,34 +3,34 @@
 	testing for the object (e.g. `"SugarCube" in window`) and contains exported identifiers
 	for debugging purposes.
 */
-import type { AlertAPI } from './alert';
-import type { BrowserAPI } from './browser';
-import type { ConfigAPI } from './config';
-import type { DebugBarAPI } from './debugbar';
-import type { DialogAPI } from './dialog';
-import type { EngineAPI } from './engine';
-import type { FullscreenAPI } from './fullscreen';
-import type { HasAPI } from './has';
-import type { IdbAPI } from './idb';
-import type { L10nAPI } from './l10n';
-import type { LinksAPI } from './links';
-import type { LoadScreenAPI } from './loadscreen';
-import type { MacroAPI } from './macro';
-import type { PassageAPI, PassageConstructor } from './passage';
-import type { SaveAPI } from './save';
-import type { ScriptingAPI } from './scripting';
-import type { SettingAPI } from './setting';
-import type { SimpleAudioAPI } from './simpleaudio';
-import type { SimpleStoreAPI, SimpleStoreInstanceAPI } from './simplestore';
-import type { StateAPI } from './state';
-import type { StoryAPI } from './story';
-import type { TemplateAPI } from './template';
-import type { UIBarAPI } from './uibar';
-import type { UIAPI } from './ui';
-import type { UtilAPI } from './util';
-import type { VersionInfo } from './version';
-import type { VisibilityAPI } from './visibility';
-import type { WikifierAPI } from './wikifier';
+import type { AlertAPI } from './alert.d.ts';
+import type { BrowserAPI } from './browser.d.ts';
+import type { ConfigAPI } from './config.d.ts';
+import type { DebugBarAPI } from './debugbar.d.ts';
+import type { DialogAPI } from './dialog.d.ts';
+import type { EngineAPI } from './engine.d.ts';
+import type { FullscreenAPI } from './fullscreen.d.ts';
+import type { HasAPI } from './has.d.ts';
+import type { IdbAPI } from './idb.d.ts';
+import type { L10nAPI } from './l10n.d.ts';
+import type { LinksAPI } from './links.d.ts';
+import type { LoadScreenAPI } from './loadscreen.d.ts';
+import type { MacroAPI } from './macro.d.ts';
+import type { PassageAPI, PassageConstructor } from './passage.d.ts';
+import type { SaveAPI } from './save.d.ts';
+import type { ScriptingAPI } from './scripting.d.ts';
+import type { SettingAPI } from './setting.d.ts';
+import type { SimpleAudioAPI } from './simpleaudio.d.ts';
+import type { SimpleStoreAPI, SimpleStoreInstanceAPI } from './simplestore.d.ts';
+import type { StateAPI } from './state.d.ts';
+import type { StoryAPI } from './story.d.ts';
+import type { TemplateAPI } from './template.d.ts';
+import type { UIBarAPI } from './uibar.d.ts';
+import type { UIAPI } from './ui.d.ts';
+import type { UtilAPI } from './util.d.ts';
+import type { VersionInfo } from './version.d.ts';
+import type { VisibilityAPI } from './visibility.d.ts';
+import type { WikifierAPI } from './wikifier.d.ts';
 
 declare global {
 	const Alert: AlertAPI;

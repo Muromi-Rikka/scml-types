@@ -3,7 +3,7 @@
 	UI Functions, Built-ins.
 	Legacy Aliases.
 */
-import type { DialogAPI } from './dialog';
+import type { DialogAPI } from './dialog.d.ts';
 
 export interface UIAPI {
 	assembleLinkList(passage?: string): unknown;

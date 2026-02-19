@@ -3,7 +3,7 @@
 	Story Functions.
 	Passage Functions.
 */
-import type { PassageAPI } from './passage';
+import type { PassageAPI } from './passage.d.ts';
 
 export interface StoryAPI {
 	load(): void;

@@ -1,8 +1,8 @@
 {
   "name": "@scml/sc2-verlnir",
-  "version": "2.36.1",
+  "version": "1.0.4",
   "description": "TypeScript type definitions for SugarCube 2",
-  "license": "BSD-2-Clause",
+  "license": "MIT",
   "private": false,
   "type": "module",
   "author": {
