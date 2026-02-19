@@ -1,6 +1,6 @@
 {
   "name": "@scml/mod-check-game-version",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": false,
   "description": "SugarCube 2 Mod Loader Workspace",
   "license": "MIT",

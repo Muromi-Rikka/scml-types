@@ -1,6 +1,6 @@
 {
   "name": "@scml/workspace",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": true,
   "description": "SugarCube 2 Mod Loader Workspace",
   "license": "MIT",
