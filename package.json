@@ -22,13 +22,13 @@
     "tsx": "^4.21.0"
   },
   "devDependencies": {
-    "@types/node": "^25.2.3",
-    "oxfmt": "^0.32.0",
-    "oxlint": "^1.47.0",
-    "oxlint-tsgolint": "^0.12.2",
+    "@types/node": "^25.3.0",
+    "oxfmt": "^0.33.0",
+    "oxlint": "^1.48.0",
+    "oxlint-tsgolint": "^0.14.0",
     "publint": "^0.3.17",
     "tsdown": "^0.20.3",
-    "turbo": "^2.8.8",
+    "turbo": "^2.8.10",
     "typescript": "^5.9.3"
   },
   "packageManager": "pnpm@10.30.0"
