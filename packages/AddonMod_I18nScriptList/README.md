@@ -16,7 +16,7 @@ pnpm add -D @scml/addon-mod-i18n-script-list
 /// <reference types="@scml/addon-mod-i18n-script-list" />
 ```
 
-Main entry augments these global properties: `modI18nScriptList`
+Main entry augments these global properties: `modI18nScriptList` (instance of `I18nScriptList`).
 
 ### Subpath imports
 
@@ -30,6 +30,14 @@ import type { SomeType } from '@scml/addon-mod-i18n-script-list/I18nScriptList';
 |--------|------|
 | `.` | Main entry, augments Window/global |
 | `./I18nScriptList` | Type declarations |
+
+## Types
+
+### Main entry
+- **`modI18nScriptList`** – Addon managing i18n script lists for mods.
+
+### `./I18nScriptList`
+- **`I18nScriptList`** – Addon class for registering and managing i18n script list data.
 
 ## Type definition source
 

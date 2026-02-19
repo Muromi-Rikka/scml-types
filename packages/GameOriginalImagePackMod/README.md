@@ -16,7 +16,7 @@ pnpm add -D @scml/game-original-image-pack-mod
 /// <reference types="@scml/game-original-image-pack-mod" />
 ```
 
-Main entry augments these global properties: `modGameOriginalImagePack`
+Main entry augments these global properties: `modGameOriginalImagePack` (instance of `GameOriginalImagePack`).
 
 ### Subpath imports
 
@@ -30,6 +30,14 @@ import type { SomeType } from '@scml/game-original-image-pack-mod/GameOriginalIm
 |--------|------|
 | `.` | Main entry, augments Window/global |
 | `./GameOriginalImagePack` | Type declarations |
+
+## Types
+
+### Main entry
+- **`modGameOriginalImagePack`** – Provides access to the game’s original image pack.
+
+### `./GameOriginalImagePack`
+- **`GameOriginalImagePack`** – Mod class for loading and exposing original game images.
 
 ## Type definition source
 

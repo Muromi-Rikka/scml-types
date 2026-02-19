@@ -16,7 +16,7 @@ pnpm add -D @scml/addon-image-loader-hook-2-beauty-selector
 /// <reference types="@scml/addon-image-loader-hook-2-beauty-selector" />
 ```
 
-Main entry augments these global properties: `modImageLoaderHook2BeautySelectorAddon`
+Main entry augments these global properties: `modImageLoaderHook2BeautySelectorAddon` (instance of `ImageLoaderHook2BeautySelectorAddon`).
 
 ### Subpath imports
 
@@ -30,6 +30,14 @@ import type { SomeType } from '@scml/addon-image-loader-hook-2-beauty-selector/I
 |--------|------|
 | `.` | Main entry, augments Window/global |
 | `./ImageLoaderHook2BeautySelectorAddon` | Type declarations |
+
+## Types
+
+### Main entry
+- **`modImageLoaderHook2BeautySelectorAddon`** – Addon that bridges image loader hook to the beauty selector UI.
+
+### `./ImageLoaderHook2BeautySelectorAddon`
+- **`ImageLoaderHook2BeautySelectorAddon`** – Main addon class; extends image loader hook with beauty selector integration.
 
 ## Type definition source
 

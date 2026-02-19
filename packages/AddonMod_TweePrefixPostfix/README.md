@@ -16,7 +16,7 @@ pnpm add -D @scml/addon-mod-twee-prefix-postfix
 /// <reference types="@scml/addon-mod-twee-prefix-postfix" />
 ```
 
-Main entry augments these global properties: `addonTweePrefixPostfixAddon`
+Main entry augments these global properties: `addonTweePrefixPostfixAddon` (instance of `TweePrefixPostfixAddon`).
 
 ### Subpath imports
 
@@ -31,6 +31,17 @@ import type { SomeType } from '@scml/addon-mod-twee-prefix-postfix/TweePrefixPos
 | `.` | Main entry, augments Window/global |
 | `./TweePrefixPostfixAddon` | Type declarations |
 | `./TweePrefixPostfixAddonJsCallback` | Type declarations |
+
+## Types
+
+### Main entry
+- **`addonTweePrefixPostfixAddon`** – Addon that applies prefix/postfix transformations to Twee content.
+
+### `./TweePrefixPostfixAddon`
+- **`TweePrefixPostfixAddon`** – Addon class for prefix/postfix processing.
+
+### `./TweePrefixPostfixAddonJsCallback`
+- **`TweePrefixPostfixAddonJsCallback`** – Callback type for custom prefix/postfix logic.
 
 ## Type definition source
 

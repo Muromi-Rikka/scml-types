@@ -16,7 +16,7 @@ pnpm add -D @scml/addon-modded-feats
 /// <reference types="@scml/addon-modded-feats" />
 ```
 
-Main entry augments these global properties: `addonModdedFeatsAddon`
+Main entry augments these global properties: `addonModdedFeatsAddon` (instance of `ModdedFeatsAddon`).
 
 ### Subpath imports
 
@@ -31,6 +31,18 @@ import type { SomeType } from '@scml/addon-modded-feats/ModdedFeatsAddon';
 | `.` | Main entry, augments Window/global |
 | `./ModdedFeatsAddon` | Type declarations |
 | `./ModdedFeatsAddonParams` | Type declarations |
+
+## Types
+
+### Main entry
+- **`addonModdedFeatsAddon`** – Addon for adding and merging modded feats data.
+
+### `./ModdedFeatsAddon`
+- **`ModdedFeatsAddon`** – Addon plugin with `featsData: Map<string, FeatsObject>`. Methods: `registerMod()`, `exportDataZip()`, `init()`.
+- **`mergeFeatsObject()`**, **`appendFeatsObject()`** – Merge/append feats utilities.
+
+### `./ModdedFeatsAddonParams`
+- Params config for the addon; see subpath for type definitions.
 
 ## Type definition source
 

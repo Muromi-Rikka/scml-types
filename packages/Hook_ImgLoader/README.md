@@ -16,7 +16,7 @@ pnpm add -D @scml/hook-img-loader
 /// <reference types="@scml/hook-img-loader" />
 ```
 
-Main entry augments these global properties: `modImgLoaderHooker`
+Main entry augments these global properties: `modImgLoaderHooker` (instance of `ImgLoaderHooker`).
 
 ### Subpath imports
 
@@ -36,6 +36,20 @@ import type { SomeType } from '@scml/hook-img-loader/ImgLoaderHooker';
 | `./ImgLoaderHooker` | Type declarations |
 | `./CssReplacer` | Type declarations |
 | `./createFunctionFromCode` | Type declarations |
+
+## Types
+
+### Main entry
+- **`modImgLoaderHooker`** – Hooks into the image loader to allow mods to provide custom images.
+
+### `./ImgLoaderHooker`
+- **`ImgLoaderHooker`** – Extends `ImgLoaderHookerCore`; installs hook and waits for init. Methods: `init()`, `installHook()`.
+
+### `./ImgLoaderHookerCore` / `./NodeMutationObserver` / `./SimpleDolFunctionHook`
+- Core hook infrastructure and mutation/function hook utilities.
+
+### `./CssReplacer` / `./utils` / `./createFunctionFromCode`
+- CSS replacement helpers, utilities, and function-from-code factory.
 
 ## Type definition source
 

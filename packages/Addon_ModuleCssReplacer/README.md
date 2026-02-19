@@ -16,7 +16,7 @@ pnpm add -D @scml/addon-module-css-replacer
 /// <reference types="@scml/addon-module-css-replacer" />
 ```
 
-Main entry augments these global properties: `addonModuleCssReplacer`
+Main entry augments these global properties: `addonModuleCssReplacer` (instance of `ModuleCssReplacer`).
 
 ### Subpath imports
 
@@ -30,6 +30,14 @@ import type { SomeType } from '@scml/addon-module-css-replacer/ModuleCssReplacer
 |--------|------|
 | `.` | Main entry, augments Window/global |
 | `./ModuleCssReplacer` | Type declarations |
+
+## Types
+
+### Main entry
+- **`addonModuleCssReplacer`** – `ModuleCssReplacer` instance; replacer addon for module CSS files.
+
+### `./ModuleCssReplacer`
+- **`ModuleCssReplacer`** – Addon plugin that replaces content in module CSS. Exposes `ReplaceParams` (e.g. `cssName`, `findString`, `findRegex`, `replace`), `registerMod()`, `do_patch()`, `getAllModuleStyleNode()`.
 
 ## Type definition source
 

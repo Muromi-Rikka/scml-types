@@ -16,7 +16,7 @@ pnpm add -D @scml/mod-i18n
 /// <reference types="@scml/mod-i18n" />
 ```
 
-Main entry augments these global properties: `modI18N`
+Main entry augments these global properties: `modI18N` (instance of `ModI18N`).
 
 ### Subpath imports
 
@@ -32,6 +32,19 @@ import type { SomeType } from '@scml/mod-i18n/I18N';
 | `./GetPromiseWithResolvers` | Type declarations |
 | `./I18N` | Type declarations |
 | `./TypeB` | Type declarations |
+
+## Types
+
+### Main entry
+- **`modI18N`** – DoL i18n mod instance; handles translation and locale data.
+
+### `./I18N`
+- **`ModI18N`** – Main i18n class. Properties: `modUtils`, `modSC2DataManager`, `logger`, `idbRef`, `idbKeyValRef`, `typeB`. Methods: `patchVersionString()`, `readZipStream()`, `readZipSelf()`, `checkItem()`.
+- **`sleep()`** – Utility `Promise` delay.
+
+### `./GetPromiseWithResolvers` / `./TypeB`
+- **`GetPromiseWithResolvers`** – Promise resolver helper.
+- **`TypeB`** – Type definitions for i18n input/output and `ModI18NTypeB`, `TypeBI18NInputType`.
 
 ## Type definition source
 

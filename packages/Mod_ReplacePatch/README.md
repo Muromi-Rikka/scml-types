@@ -16,7 +16,7 @@ pnpm add -D @scml/mod-replacer-patch
 /// <reference types="@scml/mod-replacer-patch" />
 ```
 
-Main entry augments these global properties: `addonReplacePatcher`
+Main entry augments these global properties: `addonReplacePatcher` (instance of `ReplacePatcher`).
 
 ### Subpath imports
 
@@ -30,6 +30,14 @@ import type { SomeType } from '@scml/mod-replacer-patch/ReplacePatcher';
 |--------|------|
 | `.` | Main entry, augments Window/global |
 | `./ReplacePatcher` | Type declarations |
+
+## Types
+
+### Main entry
+- **`addonReplacePatcher`** – Performs search-and-replace patches on game/mod content.
+
+### `./ReplacePatcher`
+- **`ReplacePatcher`** – Addon class for applying replacement patches (find/replace over content).
 
 ## Type definition source
 

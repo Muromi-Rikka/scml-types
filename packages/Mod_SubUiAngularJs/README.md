@@ -16,7 +16,7 @@ pnpm add -D @scml/mod-sub-ui-angular-js
 /// <reference types="@scml/mod-sub-ui-angular-js" />
 ```
 
-Main entry augments these global properties: `diff3WayMerge`
+Main entry augments these global properties: `diff3WayMerge` (exposes `ModSubUiAngularJs`; note: global name may vary).
 
 ### Subpath imports
 
@@ -39,6 +39,19 @@ import type { SomeType } from '@scml/mod-sub-ui-angular-js/ModSubUiAngularJs';
 | `./AngularJs/Componnet/EnableOrderComponent` | Type declarations |
 | `./AngularJs/Componnet/OrderComponent` | Type declarations |
 | `./AngularJs/Componnet/SimpleSelectComponent` | Type declarations |
+
+## Types
+
+### Main entry
+- **`diff3WayMerge`** – AngularJS-based sub-UI manager (bootstrap/release, add/clean components).
+
+### Subpaths
+- **`./ModSubUiAngularJs`** / **`./ModSubUiAngularJsBody`** – Main sub-UI AngularJS module and body.
+- **`./AppContainerManagerMethodsInterface`** – Bootstrap/release/addComponent/cleanComponent/registryComponent for `ModGuiConfig` and `ModInGameConfig`.
+- **`./ModSubUiAngularJsModeExportInterface`** – Mode export interface.
+- **`./AngularJs/appInit`** – **`NgAppContainer`** – Angular app container.
+- **`./AngularJs/ExternalComponentManager`** – **`ExternalComponentManager`** – Registers and manages external components.
+- **`./AngularJs/Componnet/*`** – Order, enable order, simple select components.
 
 ## Type definition source
 

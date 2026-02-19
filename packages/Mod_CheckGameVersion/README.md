@@ -16,7 +16,7 @@ pnpm add -D @scml/mod-check-game-version
 /// <reference types="@scml/mod-check-game-version" />
 ```
 
-Main entry augments these global properties: `modCheckGameVersion`
+Main entry augments these global properties: `modCheckGameVersion` (instance of `CheckGameVersion`).
 
 ### Subpath imports
 
@@ -30,6 +30,14 @@ import type { SomeType } from '@scml/mod-check-game-version/CheckGameVersion';
 |--------|------|
 | `.` | Main entry, augments Window/global |
 | `./CheckGameVersion` | Type declarations |
+
+## Types
+
+### Main entry
+- **`modCheckGameVersion`** – Checks DoL game version compatibility.
+
+### `./CheckGameVersion`
+- **`CheckGameVersion`** – Implements `Sc2EventTracerCallback`. Methods: `checkGameVersion()`, `whenSC2StoryReady()`.
 
 ## Type definition source
 

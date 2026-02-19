@@ -16,7 +16,7 @@ pnpm add -D @scml/mod-diff3-way-merge
 /// <reference types="@scml/mod-diff3-way-merge" />
 ```
 
-Main entry augments these global properties: `diff3WayMerge`
+Main entry augments these global properties: `diff3WayMerge` (instance of `Diff3WayMerge`).
 
 ### Subpath imports
 
@@ -33,6 +33,18 @@ import type { SomeType } from '@scml/mod-diff3-way-merge/Diff3WayMerge';
 | `./Diff3WayMergeParams` | Type declarations |
 | `./DiffFormat` | Type declarations |
 | `./diff_match_patch/diff_match_patch` | Type declarations |
+
+## Types
+
+### Main entry
+- **`diff3WayMerge`** – Performs three-way merges (base + ours + theirs) for mod patches.
+
+### `./Diff3WayMerge`
+- **`Diff3WayMerge`** – Addon with `info: Map<string, ModMergeInfo>`. Methods: `registerMod()`, `afterPatchModToGame()`, `do_patch()`, `readOriginFile()`, `readModFile()`, `readDiffFormatFile()`.
+- **`ModMergeInfo`** – `{ addonName, mod, modZip }`.
+
+### `./Diff3WayMergeParams` / `./DiffFormat` / `./diff_match_patch/diff_match_patch`
+- Merge params, diff format types, and diff-match-patch library bindings.
 
 ## Type definition source
 

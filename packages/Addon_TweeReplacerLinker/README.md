@@ -16,7 +16,7 @@ pnpm add -D @scml/addon-twee-replacer-linker
 /// <reference types="@scml/addon-twee-replacer-linker" />
 ```
 
-Main entry augments these global properties: `addonTweeReplacerLinker`
+Main entry augments these global properties: `addonTweeReplacerLinker` (instance of `TweeReplacerLinker`).
 
 ### Subpath imports
 
@@ -31,6 +31,20 @@ import type { SomeType } from '@scml/addon-twee-replacer-linker/TweeReplacerLink
 | `.` | Main entry, augments Window/global |
 | `./TweeReplacerLinker` | Type declarations |
 | `./TweeReplacerLinkerInterface` | Type declarations |
+
+## Types
+
+### Main entry
+- **`addonTweeReplacerLinker`** – Links TweeReplacer clients; coordinates replacement callbacks across mods.
+
+### `./TweeReplacerLinker`
+- **`TweeReplacerLinker`** – Addon implementing `TweeReplacerLinkerInterface`. Methods: `registerClient()`, `addUserMod()`, `registerMod()`, `afterPatchModToGame()`.
+- **`TweeReplacerLinkerCallbackData`** – Callback registration data.
+
+### `./TweeReplacerLinkerInterface`
+- **`TweeReplacerLinkerInterface`** – `registerClient()`, `addUserMod()`.
+- **`TweeReplacerLinkerClientInterface`** – `enableLinkerMode()`.
+- **`TweeReplacerLinkerClientCallbackType`** – `(sc: SC2DataInfo) => Promise<any>`.
 
 ## Type definition source
 

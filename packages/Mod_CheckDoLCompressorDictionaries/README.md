@@ -16,7 +16,7 @@ pnpm add -D @scml/mod-check-dol-compressor-dictionaries
 /// <reference types="@scml/mod-check-dol-compressor-dictionaries" />
 ```
 
-Main entry augments these global properties: `modCheckDoLCompressorDictionaries`
+Main entry augments these global properties: `modCheckDoLCompressorDictionaries` (instance of `CheckDoLCompressorDictionaries`).
 
 ### Subpath imports
 
@@ -30,6 +30,14 @@ import type { SomeType } from '@scml/mod-check-dol-compressor-dictionaries/Check
 |--------|------|
 | `.` | Main entry, augments Window/global |
 | `./CheckDoLCompressorDictionaries` | Type declarations |
+
+## Types
+
+### Main entry
+- **`modCheckDoLCompressorDictionaries`** – Checks DoL compressor dictionary compatibility.
+
+### `./CheckDoLCompressorDictionaries`
+- **`CheckDoLCompressorDictionaries`** – Addon class that validates compressor dictionaries.
 
 ## Type definition source
 

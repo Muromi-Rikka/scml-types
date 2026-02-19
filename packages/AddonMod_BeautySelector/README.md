@@ -16,7 +16,7 @@ pnpm add -D @scml/addon-mod-beauty-selector
 /// <reference types="@scml/addon-mod-beauty-selector" />
 ```
 
-Main entry augments these global properties: `addonBeautySelectorAddon`
+Main entry augments these global properties: `addonBeautySelectorAddon` (instance of `BeautySelectorAddon`).
 
 ### Subpath imports
 
@@ -39,6 +39,28 @@ import type { SomeType } from '@scml/addon-mod-beauty-selector/BeautySelectorAdd
 | `./GUI_StringTable/CN` | Type declarations |
 | `./GUI_StringTable/EN` | Type declarations |
 | `./GUI_StringTable/StringTable` | Type declarations |
+
+## Types
+
+### Main entry
+- **`addonBeautySelectorAddon`** – Beauty selector addon integrating with Sub UI AngularJS and Mod Image Store.
+
+### `./BeautySelectorAddon`
+- **`BeautySelectorAddon`** – Main addon class; manages beauty options, params, and AngularJS components.
+
+### `./BeautySelectorAddonInterface`
+- Interface for beauty selector addon behavior.
+
+### `./BeautySelectorAddonType`
+- **`BeautySelectorAddonParamsType0`**, **`Type1`**, **`Type2`** – Param config types.
+- **`TypeOrderItem`**, **`BeautySelectorAddonParamsType2ATypeItem`**, **`Type2BTypeItem`** – Option item types.
+
+### `./ModImageStore`
+- **`ModImageStore`** – Image store for mod assets.
+- **`CachedFileList`** – Cached file list type.
+
+### `./extname` / `./utils/*` / `./GUI_StringTable/*`
+- Utility types and i18n string tables.
 
 ## Type definition source
 

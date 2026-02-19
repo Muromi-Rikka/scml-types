@@ -16,7 +16,7 @@ pnpm add -D @scml/sc2-modloader
 /// <reference types="@scml/sc2-modloader" />
 ```
 
-Main entry augments these global properties: `jQuery`, `$`, `modSC2DataManager`, `modUtils`, `jsPreloader`, `modModLoadController`, `modAddonPluginManager`, `modSC2JsEvalContext`
+Main entry augments these global properties: `jQuery`, `$`, `modSC2DataManager`, `modUtils`, `jsPreloader`, `modModLoadController`, `modAddonPluginManager`, `modSC2JsEvalContext`.
 
 ### Subpath imports
 
@@ -66,6 +66,32 @@ import type { SomeType } from '@scml/sc2-modloader/AddonPlugin';
 | `./SemVer/InfiniteSemVer` | Type declarations |
 | `./Utils/LazyIteratorAdaptor.d.ts` | Type declarations |
 | `./WeakRefPool/WeakRefPool` | Type declarations |
+
+## Types
+
+### Main entry
+- **`jQuery`** / **`$`** – jQuery on `window`.
+- **`modSC2DataManager`** – Core data manager for mods and game data.
+- **`modUtils`** – Mod loader utilities.
+- **`jsPreloader`** – Script preloader.
+- **`modModLoadController`** – Mod load lifecycle controller.
+- **`modAddonPluginManager`** – Manages addon plugins.
+- **`modSC2JsEvalContext`** – JS evaluation context for mods.
+
+### Core subpaths
+- **`./ModLoader`** – **`ModLoader`**, **`ModBootJson`**, **`ModBootJsonAddonPlugin`**, **`DependenceInfo`**, **`ModImg`**, **`IModImgGetter`** – Core mod loading types.
+- **`./SC2DataManager`** – **`SC2DataManager`** – Central data manager.
+- **`./ModLoadController`** – Load controller and **`LogWrapper`**.
+- **`./AddonPlugin`** – **`AddonPluginManager`**, **`AddonPluginHookPointEx`**, **`LifeTimeCircleHook`** – Addon plugin interfaces.
+- **`./ReplacePatcher`** – Patch/replace utilities.
+- **`./ModOrderContainer`** – **`ModOrderContainer`**, **`ModOrderItem`**, **`ModLoadFromSourceType`** – Load order types.
+- **`./ModZipReader`** – **`ModZipReader`**, **`LocalLoader`**, **`RemoteLoader`**, **`IndexDBLoader`** – Mod zip and loader types.
+- **`./SC2DataInfoCache`** – **`SC2DataInfo`**, **`CacheRecord`**, **`StyleTextFileItem`**, **`ScriptTextFileItem`**, **`PassageDataItem`** – Cached game data types.
+- **`./SugarCube2`** – **`Passage`** – SugarCube passage type.
+- **`./ModPack/*`** – **`ModPack`**, **`ModMeta`**, **`ModPackFileReaderInterface`** – Mod pack types.
+- **`./SemVer/InfiniteSemVer`** – **`InfiniteSemVer`** – Version parsing.
+- **`./Utils`** – **`ModUtils`** – Utility types.
+- Other subpaths: **`DecoratorUtils`**, **`DependenceChecker`**, **`export2window`**, **`expose-loader`**, **`extname`**, **`getGlobal`**, **`HtmlTagSrcHook`**, **`IdbKeyValRef`**, **`JqueryInjector`**, **`JsPreloader`**, **`JSZipLikeReadOnlyInterface`**, **`LanguageManager`**, **`MergeSC2DataInfoCache`**, **`PassageTracer`**, **`polyfill`**, **`SC2ApiRef`**, **`SC2DataInfoCache`**, **`Sc2EventTracer`**, **`SC2JsEvalContext`**, **`SimulateMerge`**, **`WikifyTracer`**, **`WeakRefPool`**.
 
 ## Type definition source
 

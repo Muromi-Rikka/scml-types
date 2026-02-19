@@ -16,7 +16,7 @@ pnpm add -D @scml/mod-cot-check-game-version
 /// <reference types="@scml/mod-cot-check-game-version" />
 ```
 
-Main entry augments these global properties: `modCheckGameVersion`
+Main entry augments these global properties: `modCheckGameVersion` (instance of `CheckGameVersion`).
 
 ### Subpath imports
 
@@ -30,6 +30,14 @@ import type { SomeType } from '@scml/mod-cot-check-game-version/CheckGameVersion
 |--------|------|
 | `.` | Main entry, augments Window/global |
 | `./CheckGameVersion` | Type declarations |
+
+## Types
+
+### Main entry
+- **`modCheckGameVersion`** – Checks CoT (Cape on the Tower) game version compatibility.
+
+### `./CheckGameVersion`
+- **`CheckGameVersion`** – Addon class that validates game version at runtime.
 
 ## Type definition source
 

@@ -16,7 +16,7 @@ pnpm add -D @scml/mod-twee-replacer
 /// <reference types="@scml/mod-twee-replacer" />
 ```
 
-Main entry augments these global properties: `addonTweeReplacer`
+Main entry augments these global properties: `addonTweeReplacer` (instance of `TweeReplacer`).
 
 ### Subpath imports
 
@@ -30,6 +30,18 @@ import type { SomeType } from '@scml/mod-twee-replacer/TweeReplacer';
 |--------|------|
 | `.` | Main entry, augments Window/global |
 | `./TweeReplacer` | Type declarations |
+
+## Types
+
+### Main entry
+- **`addonTweeReplacer`** – Performs find/replace on Twee passage content.
+
+### `./TweeReplacer`
+- **`TweeReplacer`** – Addon implementing `AddonPluginHookPointEx` and `TweeReplacerLinkerClientInterface`. Holds `info: Map<string, ReplaceInfo>`. Methods: `registerMod()`, `enableLinkerMode()`, `afterEarlyLoad()`, `afterPatchModToGame()`, `do_patch()`, `init()`.
+- **`ReplaceParams`** – `{ passage, findString?, findRegex?, regexFlag?, replace?, replaceFile?, debug?, all? }`.
+- **`ReplaceInfo`** – `{ addonName, mod, modZip }`.
+- **`ModBootJsonAddonPluginTweeReplacer`** – Boot config with `paramsFiles?: string[]`.
+- **`isReplaceParams()`** – Type guard.
 
 ## Type definition source
 

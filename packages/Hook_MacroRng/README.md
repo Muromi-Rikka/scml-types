@@ -16,7 +16,7 @@ pnpm add -D @scml/hook-macro-rng
 /// <reference types="@scml/hook-macro-rng" />
 ```
 
-Main entry augments these global properties: `hookMacroRng`
+Main entry augments these global properties: `hookMacroRng` (instance of `HookMacroRng`).
 
 ### Subpath imports
 
@@ -30,6 +30,14 @@ import type { SomeType } from '@scml/hook-macro-rng/HookMacroRng';
 |--------|------|
 | `.` | Main entry, augments Window/global |
 | `./HookMacroRng` | Type declarations |
+
+## Types
+
+### Main entry
+- **`hookMacroRng`** – Hooks the RNG used by SugarCube macros for deterministic or custom RNG behavior.
+
+### `./HookMacroRng`
+- **`HookMacroRng`** – Addon class that installs the macro RNG hook (exported from `inject_early.d.ts`).
 
 ## Type definition source
 

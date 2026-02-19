@@ -16,7 +16,12 @@ pnpm add -D @scml/mod-link-button-filter
 /// <reference types="@scml/mod-link-button-filter" />
 ```
 
-Main entry augments these global properties: `DoLLinkButtonFilter_patchLinkButton`
+Main entry augments these global properties: `DoLLinkButtonFilter_patchLinkButton` (function from `init.d.ts`).
+
+## Types
+
+### Main entry
+- **`DoLLinkButtonFilter_patchLinkButton`** – Patches the link button behavior in DoL; used to filter or modify link clicks.
 
 ## Exports
 
