@@ -1,9 +1,38 @@
-# DoL_Mod_ReplacePatch
+# @scml/mod-replacer-patch
+
+TypeScript type definitions for Replace patch.
+
+## Installation
+
+```bash
+pnpm add -D @scml/mod-replacer-patch
+```
+
+## Usage
+
+### Main entry (global types)
+
+```ts
+/// <reference types="@scml/mod-replacer-patch" />
+```
+
+Main entry augments these global properties: `addonReplacePatcher`
+
+### Subpath imports
+
+```ts
+import type { SomeType } from '@scml/mod-replacer-patch/ReplacePatcher';
+```
+
+## Exports
+
+| Subpath | Description |
+|--------|------|
+| `.` | Main entry, augments Window/global |
+| `./ReplacePatcher` | Type declarations |
 
 ## Type definition source
 
-Type definitions are from the repository:
-
-- https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_ReplacePatch
-
-Fetched from the `master` branch by default. Build: `pnpm run download && pnpm run build`.
+- Upstream: https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_ReplacePatch
+- Default branch: master
+- Build: `pnpm run download && pnpm run build`

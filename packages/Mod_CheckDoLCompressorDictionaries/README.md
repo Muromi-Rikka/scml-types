@@ -1,9 +1,38 @@
-# DoL_Mod_CheckDoLCompressorDictionaries
+# @scml/mod-check-dol-compressor-dictionaries
+
+TypeScript type definitions for DoL compressor dictionaries check.
+
+## Installation
+
+```bash
+pnpm add -D @scml/mod-check-dol-compressor-dictionaries
+```
+
+## Usage
+
+### Main entry (global types)
+
+```ts
+/// <reference types="@scml/mod-check-dol-compressor-dictionaries" />
+```
+
+Main entry augments these global properties: `modCheckDoLCompressorDictionaries`
+
+### Subpath imports
+
+```ts
+import type { SomeType } from '@scml/mod-check-dol-compressor-dictionaries/CheckDoLCompressorDictionaries';
+```
+
+## Exports
+
+| Subpath | Description |
+|--------|------|
+| `.` | Main entry, augments Window/global |
+| `./CheckDoLCompressorDictionaries` | Type declarations |
 
 ## Type definition source
 
-Type definitions are from the repository:
-
-- https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_CheckDoLCompressorDictionaries
-
-Fetched from the `master` branch by default. Build: `pnpm run download && pnpm run build`.
+- Upstream: https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_CheckDoLCompressorDictionaries
+- Default branch: master
+- Build: `pnpm run download && pnpm run build`

@@ -1,9 +1,39 @@
-# TweePrefixPostfixAddonMod
+# @scml/addon-mod-twee-prefix-postfix
+
+TypeScript type definitions for Twee prefix/postfix addon.
+
+## Installation
+
+```bash
+pnpm add -D @scml/addon-mod-twee-prefix-postfix
+```
+
+## Usage
+
+### Main entry (global types)
+
+```ts
+/// <reference types="@scml/addon-mod-twee-prefix-postfix" />
+```
+
+Main entry augments these global properties: `addonTweePrefixPostfixAddon`
+
+### Subpath imports
+
+```ts
+import type { SomeType } from '@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddon';
+```
+
+## Exports
+
+| Subpath | Description |
+|--------|------|
+| `.` | Main entry, augments Window/global |
+| `./TweePrefixPostfixAddon` | Type declarations |
+| `./TweePrefixPostfixAddonJsCallback` | Type declarations |
 
 ## Type definition source
 
-Type definitions are from the repository:
-
-- https://github.com/Lyoko-Jeremie/TweePrefixPostfixAddonMod
-
-Fetched from the `master` branch by default. Build: `pnpm run download && pnpm run build`.
+- Upstream: https://github.com/Lyoko-Jeremie/TweePrefixPostfixAddonMod
+- Default branch: master
+- Build: `pnpm run download && pnpm run build`
