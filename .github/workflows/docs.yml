@@ -1,4 +1,4 @@
-name: Publish to npm
+name: Deploy to CF Pages
 
 on:
   workflow_dispatch:
