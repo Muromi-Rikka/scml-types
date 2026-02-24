@@ -1,49 +1,103 @@
 ---
 title: Module CSS Replacer Addon
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-module-css-replacer
 
-Module CSS replacer addon 的 TypeScript 类型定义。
+Module CSS replacer addon 的 TypeScript 类型定义，用于替换模块 CSS 文件中的内容。
 
 ## 安装
 
 <PackageManagerTabs command="install -D @scml/addon-module-css-replacer" />
 
-## 用法
+## 快速开始
 
-### 主入口（全局类型）
+<Steps>
+
+### 添加类型引用
 
 ```ts
 /// <reference types="@scml/addon-module-css-replacer" />
 ```
 
-主入口增强以下全局属性：`addonModuleCssReplacer`（`ModuleCssReplacer` 实例）。
+### 使用全局实例
 
-### 子路径导入
+`addonModuleCssReplacer` 已挂载到 `window` 上。
+
+### 按需导入类型
 
 ```ts
-import type { SomeType } from '@scml/addon-module-css-replacer/ModuleCssReplacer';
+import type { ModuleCssReplacer, ReplaceParams } from '@scml/addon-module-css-replacer/ModuleCssReplacer';
 ```
 
-## 导出
+</Steps>
+
+## 全局类型 <Badge type="info" text="global" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `addonModuleCssReplacer` | `ModuleCssReplacer` | Addon 实例，替换模块 CSS |
+
+<Tabs>
+<Tab label="主入口">
+
+```ts
+/// <reference types="@scml/addon-module-css-replacer" />
+```
+
+</Tab>
+<Tab label="子路径导入">
+
+```ts
+import type { ModuleCssReplacer, ReplaceParams } from '@scml/addon-module-css-replacer/ModuleCssReplacer';
+```
+
+</Tab>
+</Tabs>
+
+## 子路径导出
 
 | 子路径 | 描述 |
 |--------|------|
 | `.` | 主入口，增强 Window/全局 |
-| `./ModuleCssReplacer` | 类型声明 |
+| `./ModuleCssReplacer` | 主类与 ReplaceParams |
 
-## 类型
+## API 参考
 
-### 主入口
-- **`addonModuleCssReplacer`** – `ModuleCssReplacer` 实例；模块 CSS 文件的替换 addon。
+### ./ModuleCssReplacer
 
-### `./ModuleCssReplacer`
-- **`ModuleCssReplacer`** – 替换模块 CSS 中内容的 Addon 插件。暴露 `ReplaceParams`（如 `cssName`、`findString`、`findRegex`、`replace`）、`registerMod()`、`do_patch()`、`getAllModuleStyleNode()`。
+#### ModuleCssReplacer <Badge text="类" />
+
+| 属性/方法 | 类型 | 说明 |
+|----------|------|------|
+| `info` | `Map<string, ReplaceInfo>` | 替换信息 |
+| `registerMod()` | `(addonName, mod, modZip) => Promise<void>` | 注册 mod |
+| `afterPreload()` | `() => Promise<void>` | 预加载后钩子 |
+| `getAllModuleStyleNode()` | `() => Map<string, HTMLStyleElement>` | 获取所有模块 style 节点 |
+| `do_patch()` | `(ri, ns) => Promise<void>` | 执行替换 |
+| `exportDataZip()` | `(zip: JSZip) => Promise<JSZip>` | 导出数据 |
+| `init()` | `() => void` | 初始化 |
+
+#### ReplaceParams <Badge text="接口" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `cssName` | `string` | CSS 文件名 |
+| `findString` | `string` | 查找字符串 |
+| `findRegex` | `string` | 查找正则 |
+| `replace` | `string` | 替换字符串 |
+| `replaceFile` | `string` | 替换文件路径 |
+| `debug` | `boolean` | 调试模式 |
+| `all` | `boolean` | 替换全部 |
 
 ## 类型定义来源
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/DoL_ModuleCssReplacerAddon" />
+
+:::info
 - 上游: https://github.com/Lyoko-Jeremie/DoL_ModuleCssReplacerAddon
 - 默认分支: master
 - 构建: `pnpm run download && pnpm run build`
+:::

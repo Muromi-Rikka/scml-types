@@ -1,55 +1,150 @@
 ---
 title: Conflict Checker Addon
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-conflict-checker
 
-Conflict checker addon 的 TypeScript 类型定义。
+Conflict checker addon 的 TypeScript 类型定义，用于检测和管理 mod 加载顺序冲突。
 
 ## 安装
 
 <PackageManagerTabs command="install -D @scml/addon-conflict-checker" />
 
-## 用法
+## 快速开始
 
-### 主入口（全局类型）
+<Steps>
+
+### 添加类型引用
+
+在项目中添加三斜杠指令以引入全局类型：
 
 ```ts
 /// <reference types="@scml/addon-conflict-checker" />
 ```
 
-主入口增强以下全局属性：`addonConflictChecker`（`ConflictChecker` 实例）。
+### 使用全局实例
 
-### 子路径导入
+`addonConflictChecker` 已挂载到 `window` 上，可访问 mod 冲突检测结果。
+
+### 按需导入类型
 
 ```ts
-import type { SomeType } from '@scml/addon-conflict-checker/ConflictChecker';
+import type { ConflictChecker } from '@scml/addon-conflict-checker/ConflictChecker';
+import type { ConflictCheckerParams, ModLimit } from '@scml/addon-conflict-checker/ConflictCheckerParams';
 ```
 
-## 导出
+</Steps>
+
+## 全局类型 <Badge type="info" text="global" />
+
+主入口通过 `/// <reference types="..." />` 扩展 `Window` 接口。 <Badge type="info" text="global" /> 以下属性挂载在 `window` 上：
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `addonConflictChecker` | `ConflictChecker` | Addon 实例，管理 mod 加载顺序约束 |
+
+```ts
+/// <reference types="@scml/addon-conflict-checker" />
+
+// 访问 mod 列表
+window.addonConflictChecker.modList;
+```
+
+<Tabs>
+<Tab label="主入口">
+
+```ts
+/// <reference types="@scml/addon-conflict-checker" />
+```
+
+</Tab>
+<Tab label="子路径导入">
+
+```ts
+import type { ConflictChecker } from '@scml/addon-conflict-checker/ConflictChecker';
+import type { ConflictCheckerParams, ModLimit } from '@scml/addon-conflict-checker/ConflictCheckerParams';
+```
+
+</Tab>
+</Tabs>
+
+## 子路径导出
 
 | 子路径 | 描述 |
 |--------|------|
 | `.` | 主入口，增强 Window/全局 |
-| `./ConflictChecker` | 类型声明 |
-| `./ConflictCheckerParams` | 类型声明 |
+| `./ConflictChecker` | ConflictChecker 类 |
+| `./ConflictCheckerParams` | 配置参数与类型守卫 |
 
-## 类型
+## API 参考
 
-### 主入口
-- **`addonConflictChecker`** – 暴露在 `window` 上的 `ConflictChecker` 实例。用于检测和管理 mod 加载顺序冲突。
+### ./ConflictChecker
 
-### `./ConflictChecker`
-- **`ConflictChecker`** – 实现 `LifeTimeCircleHook` 和 `AddonPluginHookPointEx` 的 Addon 插件类。持有 `modList: Map<string, ConflictCheckerParams>`，提供 `registerMod()`、`ModLoaderLoadEnd()`。
+#### ConflictChecker <Badge text="类" />
 
-### `./ConflictCheckerParams`
-- **`ConflictCheckerParams`** – 加载顺序约束配置：`mustBefore`、`mustAfter`、`optionalBefore`、`optionalAfter`、`blackBefore`、`blackAfter`（均为 `ModLimit[]`）。
-- **`ModLimit`** – `{ modName: string; version: string }`。
-- **`checkModLimit`**、**`checkParams`** – 类型守卫。
+实现 `LifeTimeCircleHook` 和 `AddonPluginHookPointEx` 的 Addon 插件类，用于 mod 加载顺序冲突检测。
+
+**构造函数**
+
+| 参数 | 类型 | 说明 |
+|------|------|------|
+| `gSC2DataManager` | `SC2DataManager` | Mod Loader 数据管理器 |
+| `gModUtils` | `ModUtils` | Mod 工具 |
+
+**属性**
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `gSC2DataManager` | `SC2DataManager` | 数据管理器引用 |
+| `gModUtils` | `ModUtils` | 工具引用 |
+| `logger` | `LogWrapper` | 日志 |
+| `infiniteSemVerApi` | `InfiniteSemVerApi` | 版本解析 API |
+| `modList` | `Map<string, ConflictCheckerParams>` | 按 mod 名存储的加载顺序约束 |
+
+**方法**
+
+| 方法 | 签名 | 说明 |
+|------|------|------|
+| `registerMod` | `(addonName: string, mod: ModInfo, modZip: ModZipReader) => Promise<void>` | 注册 mod，读取冲突配置 |
+| `ModLoaderLoadEnd` | `() => Promise<void>` | Mod Loader 加载完成时回调 |
+
+---
+
+### ./ConflictCheckerParams
+
+#### ConflictCheckerParams <Badge text="接口" />
+
+加载顺序约束配置，用于 mod 的 `mod.json` 或 addon 配置。
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `mustBefore` | `ModLimit[]` | 必须在此 mod 之前加载的 mod 列表 |
+| `mustAfter` | `ModLimit[]` | 必须在此 mod 之后加载的 mod 列表 |
+| `optionalBefore` | `ModLimit[]` | 建议在此 mod 之前加载 |
+| `optionalAfter` | `ModLimit[]` | 建议在此 mod 之后加载 |
+| `blackBefore` | `ModLimit[]` | 禁止在此 mod 之前加载 |
+| `blackAfter` | `ModLimit[]` | 禁止在此 mod 之后加载 |
+
+#### ModLimit <Badge text="接口" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `modName` | `string` | mod 名称 |
+| `version` | `string` | 版本号（SemVer） |
+
+#### checkModLimit() / checkParams() <Badge text="类型守卫" />
+
+- `checkModLimit(ml: any): ml is ModLimit`
+- `checkParams(a: any): a is ConflictCheckerParams`
 
 ## 类型定义来源
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/ConflictCheckerAddon" />
+
+:::info
 - 上游: https://github.com/Lyoko-Jeremie/ConflictCheckerAddon
 - 默认分支: master
 - 构建: `pnpm run download && pnpm run build`
+:::

@@ -1,56 +1,86 @@
 ---
 title: DoL i18n Mod
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/mod-i18n
 
-DoL i18n mod 的 TypeScript 类型定义。
+DoL i18n mod 的 TypeScript 类型定义，处理翻译与本地化数据。
 
 ## 安装
 
 <PackageManagerTabs command="install -D @scml/mod-i18n" />
 
-## 用法
+## 快速开始
 
-### 主入口（全局类型）
+<Steps>
+
+### 添加类型引用
 
 ```ts
 /// <reference types="@scml/mod-i18n" />
 ```
 
-主入口增强以下全局属性：`modI18N`（`ModI18N` 实例）。
+### 使用全局实例
 
-### 子路径导入
+`modI18N` 已挂载到 `window` 上。
+
+### 按需导入类型
 
 ```ts
-import type { SomeType } from '@scml/mod-i18n/I18N';
+import type { ModI18N } from '@scml/mod-i18n/I18N';
+import type { GetPromiseWithResolvers } from '@scml/mod-i18n/GetPromiseWithResolvers';
 ```
 
-## 导出
+</Steps>
+
+## 全局类型 <Badge type="info" text="global" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `modI18N` | `ModI18N` | DoL i18n mod 实例 |
+
+<Tabs>
+<Tab label="主入口">
+
+```ts
+/// <reference types="@scml/mod-i18n" />
+```
+
+</Tab>
+<Tab label="子路径导入">
+
+```ts
+import type { ModI18N } from '@scml/mod-i18n/I18N';
+```
+
+</Tab>
+</Tabs>
+
+## 子路径导出
 
 | 子路径 | 描述 |
 |--------|------|
 | `.` | 主入口，增强 Window/全局 |
-| `./GetPromiseWithResolvers` | 类型声明 |
-| `./I18N` | 类型声明 |
-| `./TypeB` | 类型声明 |
+| `./I18N` | ModI18N 主类 |
+| `./GetPromiseWithResolvers` | Promise 解析器辅助 |
+| `./TypeB` | i18n 输入/输出类型 |
 
-## 类型
+## API 参考
 
-### 主入口
-- **`modI18N`** – DoL i18n mod 实例；处理翻译与本地化数据。
+### ./I18N
 
-### `./I18N`
-- **`ModI18N`** – 主 i18n 类。属性：`modUtils`、`modSC2DataManager`、`logger`、`idbRef`、`idbKeyValRef`、`typeB`。方法：`patchVersionString()`、`readZipStream()`、`readZipSelf()`、`checkItem()`。
-- **`sleep()`** – `Promise` 延迟工具。
+#### ModI18N <Badge text="类" />
 
-### `./GetPromiseWithResolvers` / `./TypeB`
-- **`GetPromiseWithResolvers`** – Promise 解析器辅助。
-- **`TypeB`** – i18n 输入/输出类型定义，及 `ModI18NTypeB`、`TypeBI18NInputType`。
+主 i18n 类。属性：`modUtils`、`modSC2DataManager`、`logger`、`idbRef`、`idbKeyValRef`、`typeB`。方法：`patchVersionString()`、`readZipStream()`、`readZipSelf()`、`checkItem()` 等。
 
 ## 类型定义来源
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_i18nMod" />
+
+:::info
 - 上游: https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_i18nMod
 - 默认分支: master
 - 构建: `pnpm run download && pnpm run build`
+:::

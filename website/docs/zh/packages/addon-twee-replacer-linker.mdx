@@ -1,56 +1,113 @@
 ---
 title: Twee Replacer Linker Addon
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-twee-replacer-linker
 
-Twee replacer linker addon 的 TypeScript 类型定义。
+Twee replacer linker addon 的 TypeScript 类型定义，用于连接 TweeReplacer 客户端，协调跨 mod 的替换回调。
 
 ## 安装
 
 <PackageManagerTabs command="install -D @scml/addon-twee-replacer-linker" />
 
-## 用法
+## 快速开始
 
-### 主入口（全局类型）
+<Steps>
+
+### 添加类型引用
 
 ```ts
 /// <reference types="@scml/addon-twee-replacer-linker" />
 ```
 
-主入口增强以下全局属性：`addonTweeReplacerLinker`（`TweeReplacerLinker` 实例）。
+### 使用全局实例
 
-### 子路径导入
+`addonTweeReplacerLinker` 已挂载到 `window` 上。
+
+### 按需导入类型
 
 ```ts
-import type { SomeType } from '@scml/addon-twee-replacer-linker/TweeReplacerLinker';
+import type { TweeReplacerLinker } from '@scml/addon-twee-replacer-linker/TweeReplacerLinker';
+import type { TweeReplacerLinkerInterface, TweeReplacerLinkerClientInterface } from '@scml/addon-twee-replacer-linker/TweeReplacerLinkerInterface';
 ```
 
-## 导出
+</Steps>
+
+## 全局类型 <Badge type="info" text="global" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `addonTweeReplacerLinker` | `TweeReplacerLinker` | Addon 实例，协调 TweeReplacer 客户端 |
+
+<Tabs>
+<Tab label="主入口">
+
+```ts
+/// <reference types="@scml/addon-twee-replacer-linker" />
+```
+
+</Tab>
+<Tab label="子路径导入">
+
+```ts
+import type { TweeReplacerLinker } from '@scml/addon-twee-replacer-linker/TweeReplacerLinker';
+import type { TweeReplacerLinkerInterface } from '@scml/addon-twee-replacer-linker/TweeReplacerLinkerInterface';
+```
+
+</Tab>
+</Tabs>
+
+## 子路径导出
 
 | 子路径 | 描述 |
 |--------|------|
 | `.` | 主入口，增强 Window/全局 |
-| `./TweeReplacerLinker` | 类型声明 |
-| `./TweeReplacerLinkerInterface` | 类型声明 |
+| `./TweeReplacerLinker` | 主类 |
+| `./TweeReplacerLinkerInterface` | 接口与类型 |
 
-## 类型
+## API 参考
 
-### 主入口
-- **`addonTweeReplacerLinker`** – 连接 TweeReplacer 客户端；协调跨 mod 的替换回调。
+### ./TweeReplacerLinker
 
-### `./TweeReplacerLinker`
-- **`TweeReplacerLinker`** – 实现 `TweeReplacerLinkerInterface` 的 Addon。方法：`registerClient()`、`addUserMod()`、`registerMod()`、`afterPatchModToGame()`。
-- **`TweeReplacerLinkerCallbackData`** – 回调注册数据。
+#### TweeReplacerLinker <Badge text="类" />
 
-### `./TweeReplacerLinkerInterface`
-- **`TweeReplacerLinkerInterface`** – `registerClient()`、`addUserMod()`。
-- **`TweeReplacerLinkerClientInterface`** – `enableLinkerMode()`。
-- **`TweeReplacerLinkerClientCallbackType`** – `(sc: SC2DataInfo) => Promise<any>`。
+| 属性/方法 | 类型 | 说明 |
+|----------|------|------|
+| `canRegister` | `boolean` | 是否可注册 |
+| `userCallback` | `TweeReplacerLinkerCallbackData[]` | 用户回调列表 |
+| `registerClient()` | `(client) => Promise<boolean>` | 注册客户端 |
+| `addUserMod()` | `(clientName, userModName, callback) => Promise<boolean>` | 添加用户 mod 回调 |
+| `registerMod()` | `(addonName, mod, modZip) => Promise<void>` | 注册 mod |
+| `afterPatchModToGame()` | `() => Promise<void>` | patch 后钩子 |
+| `init()` | `() => void` | 初始化 |
+
+### ./TweeReplacerLinkerInterface
+
+#### TweeReplacerLinkerInterface <Badge text="接口" />
+
+| 方法 | 说明 |
+|------|------|
+| `registerClient(client)` | 注册客户端 |
+| `addUserMod(clientName, userModName, callback)` | 添加用户 mod 回调 |
+
+#### TweeReplacerLinkerClientInterface <Badge text="接口" />
+
+| 方法 | 说明 |
+|------|------|
+| `enableLinkerMode()` | 启用 linker 模式 |
+
+#### TweeReplacerLinkerClientCallbackType <Badge text="类型" />
+
+`(sc: SC2DataInfo) => Promise<any>` - 用户 mod 回调类型
 
 ## 类型定义来源
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/TweeReplacerLinkerAddon" />
+
+:::info
 - 上游: https://github.com/Lyoko-Jeremie/TweeReplacerLinkerAddon
 - 默认分支: master
 - 构建: `pnpm run download && pnpm run build`
+:::

@@ -1,54 +1,103 @@
 ---
 title: Modded Feats Addon
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-modded-feats
 
-Modded feats addon 的 TypeScript 类型定义。
+Modded feats addon 的 TypeScript 类型定义，用于添加并合并 modded 专长数据。
 
 ## 安装
 
 <PackageManagerTabs command="install -D @scml/addon-modded-feats" />
 
-## 用法
+## 快速开始
 
-### 主入口（全局类型）
+<Steps>
+
+### 添加类型引用
 
 ```ts
 /// <reference types="@scml/addon-modded-feats" />
 ```
 
-主入口增强以下全局属性：`addonModdedFeatsAddon`（`ModdedFeatsAddon` 实例）。
+### 使用全局实例
 
-### 子路径导入
+`addonModdedFeatsAddon` 已挂载到 `window` 上。
+
+### 按需导入类型
 
 ```ts
-import type { SomeType } from '@scml/addon-modded-feats/ModdedFeatsAddon';
+import type { ModdedFeatsAddon } from '@scml/addon-modded-feats/ModdedFeatsAddon';
+import type { ModdedClothesFeatsParams } from '@scml/addon-modded-feats/ModdedFeatsAddonParams';
 ```
 
-## 导出
+</Steps>
+
+## 全局类型 <Badge type="info" text="global" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `addonModdedFeatsAddon` | `ModdedFeatsAddon` | Addon 实例，管理专长数据 |
+
+<Tabs>
+<Tab label="主入口">
+
+```ts
+/// <reference types="@scml/addon-modded-feats" />
+```
+
+</Tab>
+<Tab label="子路径导入">
+
+```ts
+import type { ModdedFeatsAddon } from '@scml/addon-modded-feats/ModdedFeatsAddon';
+import type { ModdedClothesFeatsParams } from '@scml/addon-modded-feats/ModdedFeatsAddonParams';
+```
+
+</Tab>
+</Tabs>
+
+## 子路径导出
 
 | 子路径 | 描述 |
 |--------|------|
 | `.` | 主入口，增强 Window/全局 |
-| `./ModdedFeatsAddon` | 类型声明 |
-| `./ModdedFeatsAddonParams` | 类型声明 |
+| `./ModdedFeatsAddon` | 主类与工具函数 |
+| `./ModdedFeatsAddonParams` | 配置参数与类型守卫 |
 
-## 类型
+## API 参考
 
-### 主入口
-- **`addonModdedFeatsAddon`** – 添加并合并 modded 成就数据的 Addon。
+### ./ModdedFeatsAddon
 
-### `./ModdedFeatsAddon`
-- **`ModdedFeatsAddon`** – 持有 `featsData: Map<string, FeatsObject>` 的 Addon 插件。方法：`registerMod()`、`exportDataZip()`、`init()`。
-- **`mergeFeatsObject()`**、**`appendFeatsObject()`** – 合并/追加成就工具。
+#### ModdedFeatsAddon <Badge text="类" />
 
-### `./ModdedFeatsAddonParams`
-- Addon 参数配置；详见子路径类型定义。
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `featsData` | `Map<string, FeatsObject>` | 按 key 存储的专长数据 |
+| `registerMod()` | `(addonName, mod, modZip) => Promise<void>` | 注册 mod |
+| `exportDataZip()` | `(zip: JSZip) => Promise<JSZip>` | 导出数据 |
+| `init()` | `() => void` | 初始化 |
+
+#### mergeFeatsObject() / appendFeatsObject() <Badge text="方法" />
+
+### ./ModdedFeatsAddonParams
+
+#### ModdedClothesFeatsParams <Badge text="接口" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `feats` | `string[]` | 专长文件路径列表 |
+
+#### checkParams() / checkFeatsItem() <Badge text="类型守卫" />
 
 ## 类型定义来源
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/DoL_ModdedFeatsAddon" />
+
+:::info
 - 上游: https://github.com/Lyoko-Jeremie/DoL_ModdedFeatsAddon
 - 默认分支: master
 - 构建: `pnpm run download && pnpm run build`
+:::

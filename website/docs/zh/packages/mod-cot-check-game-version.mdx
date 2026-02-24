@@ -1,49 +1,58 @@
 ---
 title: CoT Game Version Check
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/mod-cot-check-game-version
 
-CoT 游戏版本检测的 TypeScript 类型定义。
+CoT（Cape on the Tower）游戏版本检测的 TypeScript 类型定义。
 
 ## 安装
 
 <PackageManagerTabs command="install -D @scml/mod-cot-check-game-version" />
 
-## 用法
+## 快速开始
 
-### 主入口（全局类型）
+<Steps>
+
+### 添加类型引用
 
 ```ts
 /// <reference types="@scml/mod-cot-check-game-version" />
 ```
 
-主入口增强以下全局属性：`modCheckGameVersion`（`CheckGameVersion` 实例）。
+### 使用全局实例
 
-### 子路径导入
+`modCheckGameVersion` 已挂载到 `window` 上。
 
-```ts
-import type { SomeType } from '@scml/mod-cot-check-game-version/CheckGameVersion';
-```
+</Steps>
 
-## 导出
+## 全局类型 <Badge type="info" text="global" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `modCheckGameVersion` | `CheckGameVersion` | CoT 版本检测 mod 实例 |
+
+## 子路径导出
 
 | 子路径 | 描述 |
 |--------|------|
-| `.` | 主入口，增强 Window/全局 |
-| `./CheckGameVersion` | 类型声明 |
+| `.` | 主入口 |
+| `./CheckGameVersion` | 主类 |
 
-## 类型
+## API 参考
 
-### 主入口
-- **`modCheckGameVersion`** – 检测 CoT（Cape on the Tower）游戏版本兼容性。
+#### CheckGameVersion <Badge text="类" />
 
-### `./CheckGameVersion`
-- **`CheckGameVersion`** – 在运行时验证游戏版本的 Addon 类。
+在运行时验证 CoT 游戏版本的 Addon 类。
 
 ## 类型定义来源
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/CheckGameVersionCot" />
+
+:::info
 - 上游: https://github.com/Lyoko-Jeremie/CheckGameVersionCot
 - 默认分支: master
 - 构建: `pnpm run download && pnpm run build`
+:::

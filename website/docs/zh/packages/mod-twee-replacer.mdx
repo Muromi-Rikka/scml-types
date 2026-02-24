@@ -1,53 +1,104 @@
 ---
 title: Twee Replacer
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/mod-twee-replacer
 
-Twee replacer 的 TypeScript 类型定义。
+Twee replacer 的 TypeScript 类型定义，对 Twee 段落内容执行查找/替换。
 
 ## 安装
 
 <PackageManagerTabs command="install -D @scml/mod-twee-replacer" />
 
-## 用法
+## 快速开始
 
-### 主入口（全局类型）
+<Steps>
+
+### 添加类型引用
 
 ```ts
 /// <reference types="@scml/mod-twee-replacer" />
 ```
 
-主入口增强以下全局属性：`addonTweeReplacer`（`TweeReplacer` 实例）。
+### 使用全局实例
 
-### 子路径导入
+`addonTweeReplacer` 已挂载到 `window` 上。
+
+### 按需导入类型
 
 ```ts
-import type { SomeType } from '@scml/mod-twee-replacer/TweeReplacer';
+import type { TweeReplacer, ReplaceParams, ReplaceInfo } from '@scml/mod-twee-replacer/TweeReplacer';
 ```
 
-## 导出
+</Steps>
+
+## 全局类型 <Badge type="info" text="global" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `addonTweeReplacer` | `TweeReplacer` | Addon 实例，执行 Twee 替换 |
+
+<Tabs>
+<Tab label="主入口">
+
+```ts
+/// <reference types="@scml/mod-twee-replacer" />
+```
+
+</Tab>
+<Tab label="子路径导入">
+
+```ts
+import type { TweeReplacer } from '@scml/mod-twee-replacer/TweeReplacer';
+```
+
+</Tab>
+</Tabs>
+
+## 子路径导出
 
 | 子路径 | 描述 |
 |--------|------|
 | `.` | 主入口，增强 Window/全局 |
-| `./TweeReplacer` | 类型声明 |
+| `./TweeReplacer` | 主类、ReplaceParams、ReplaceInfo 等 |
 
-## 类型
+## API 参考
 
-### 主入口
-- **`addonTweeReplacer`** – 对 Twee 段落内容执行查找/替换。
+### ./TweeReplacer
 
-### `./TweeReplacer`
-- **`TweeReplacer`** – 实现 `AddonPluginHookPointEx` 与 `TweeReplacerLinkerClientInterface` 的 Addon。持有 `info: Map<string, ReplaceInfo>`。方法：`registerMod()`、`enableLinkerMode()`、`afterEarlyLoad()`、`afterPatchModToGame()`、`do_patch()`、`init()`。
-- **`ReplaceParams`** – `{ passage, findString?, findRegex?, regexFlag?, replace?, replaceFile?, debug?, all? }`。
-- **`ReplaceInfo`** – `{ addonName, mod, modZip }`。
-- **`ModBootJsonAddonPluginTweeReplacer`** – 带 `paramsFiles?: string[]` 的引导配置。
-- **`isReplaceParams()`** – 类型守卫。
+#### TweeReplacer <Badge text="类" />
+
+| 属性/方法 | 说明 |
+|----------|------|
+| `info` | `Map<string, ReplaceInfo>` |
+| `registerMod()` | 注册 mod |
+| `enableLinkerMode()` | 启用 linker 模式 |
+| `afterEarlyLoad()` | EarlyLoad 后钩子 |
+| `afterPatchModToGame()` | patch 后钩子 |
+| `do_patch()` | 执行替换 |
+| `init()` | 初始化 |
+
+#### ReplaceParams <Badge text="接口" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `passage` | `string` | passage 名 |
+| `findString` | `string` | 查找字符串 |
+| `findRegex` | `string` | 查找正则 |
+| `regexFlag` | `string` | 正则标志 |
+| `replace` | `string` | 替换字符串 |
+| `replaceFile` | `string` | 替换文件路径 |
+| `debug` | `boolean` | 调试 |
+| `all` | `boolean` | 替换全部 |
 
 ## 类型定义来源
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_TweeReplacer" />
+
+:::info
 - 上游: https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_TweeReplacer
 - 默认分支: master
 - 构建: `pnpm run download && pnpm run build`
+:::

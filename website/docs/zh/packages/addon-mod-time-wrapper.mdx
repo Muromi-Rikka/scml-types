@@ -1,59 +1,102 @@
 ---
-title: Time Wrapper Addon
+title: DoL Time Wrapper Addon
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-mod-time-wrapper
 
-Time wrapper addon 的 TypeScript 类型定义。
+DoL Time Wrapper addon 的 TypeScript 类型定义，用于包装游戏时间相关函数，支持时间钩子与代理。
 
 ## 安装
 
 <PackageManagerTabs command="install -D @scml/addon-mod-time-wrapper" />
 
-## 用法
+## 快速开始
 
-### 主入口（全局类型）
+<Steps>
+
+### 添加类型引用
 
 ```ts
 /// <reference types="@scml/addon-mod-time-wrapper" />
 ```
 
-主入口增强以下全局属性：`addonDoLTimeWrapperAddon`（`DoLTimeWrapperAddon` 实例）。
+### 使用全局实例
 
-### 子路径导入
+`addonDoLTimeWrapperAddon` 已挂载到 `window` 上。
+
+### 按需导入类型
 
 ```ts
-import type { SomeType } from '@scml/addon-mod-time-wrapper/DoLTimeWrapperAddon';
+import type { DoLTimeWrapperAddon } from '@scml/addon-mod-time-wrapper/DoLTimeWrapperAddon';
+import type { TimeProxyManager, TimeHookType } from '@scml/addon-mod-time-wrapper/TimeProxyManager';
+import type { OldTimeFunctionHook } from '@scml/addon-mod-time-wrapper/OldTimeFunctionHook';
 ```
 
-## 导出
+</Steps>
+
+## 全局类型 <Badge type="info" text="global" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `addonDoLTimeWrapperAddon` | `DoLTimeWrapperAddon` | Addon 实例 |
+
+<Tabs>
+<Tab label="主入口">
+
+```ts
+/// <reference types="@scml/addon-mod-time-wrapper" />
+```
+
+</Tab>
+<Tab label="子路径导入">
+
+```ts
+import type { DoLTimeWrapperAddon } from '@scml/addon-mod-time-wrapper/DoLTimeWrapperAddon';
+```
+
+</Tab>
+</Tabs>
+
+## 子路径导出
 
 | 子路径 | 描述 |
 |--------|------|
 | `.` | 主入口，增强 Window/全局 |
-| `./OldTimeFunctionHook` | 类型声明 |
-| `./TimeProxyManager` | 类型声明 |
-| `./DoLTimeWrapperAddonPlugin` | 类型声明 |
-| `./DoLTimeWrapperAddon` | 类型声明 |
+| `./DoLTimeWrapperAddon` | 主 Addon 类 |
+| `./OldTimeFunctionHook` | 旧时间函数钩子 |
+| `./TimeProxyManager` | 时间代理管理器 |
+| `./DoLTimeWrapperAddonPlugin` | Addon 插件 |
 
-## 类型
+## API 参考
 
-### 主入口
-- **`addonDoLTimeWrapperAddon`** – 封装 DoL 时间相关函数；提供对时间 API 的 hook 与代理。
+### ./DoLTimeWrapperAddon
 
-### `./DoLTimeWrapperAddon`
-- **`DoLTimeWrapperAddon`** – 主 Addon 类。
+#### DoLTimeWrapperAddon <Badge text="类" />
 
-### `./DoLTimeWrapperAddonPlugin`
-- 时间 wrapper 的插件接口。
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `infinityLoopChecker` | `InfinityLoopChecker` | 无限循环检测 |
+| `timeProxyManager` | `TimeProxyManager` | 时间代理管理器 |
+| `timeHookManager` | `TimeHookManager` | 时间钩子管理器 |
+| `isInit` | `boolean` | 是否已初始化 |
+| `addTimeHook(hook)` | 添加时间钩子 |
+| `addFunctionHook(hook)` | 添加函数钩子 |
+| `makeCatchCode()` | 生成捕获代码 |
+| `init(oldTimeFunctionRef)` | 初始化，返回注入代码 |
 
-### `./OldTimeFunctionHook` / `./TimeProxyManager`
-- **`OldTimeFunctionHook`** – 原始时间函数的 hook。
-- **`TimeProxyManager`** – 管理时间函数代理。
+### ./TimeProxyManager
+
+时间代理与钩子管理，包含 `TimeProxyManager`、`TimeHookType`、`InfinityLoopChecker` 等。
+
+### ./OldTimeFunctionHook
+
+旧时间函数引用类型，用于 `init()` 参数。
 
 ## 类型定义来源
 
-- 上游: https://github.com/Lyoko-Jeremie/DoLTimeWrapperAddonMod
-- 默认分支: master
+:::info
+- 上游: 随 scml-types 发布
 - 构建: `pnpm run download && pnpm run build`
+:::

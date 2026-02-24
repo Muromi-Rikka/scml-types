@@ -1,39 +1,51 @@
 ---
 title: Link Button Filter
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/mod-link-button-filter
 
-Link button filter 的 TypeScript 类型定义。
+Link button filter 的 TypeScript 类型定义，修改 DoL 中链接按钮行为。
 
 ## 安装
 
 <PackageManagerTabs command="install -D @scml/mod-link-button-filter" />
 
-## 用法
+## 快速开始
 
-### 主入口（全局类型）
+<Steps>
+
+### 添加类型引用
 
 ```ts
 /// <reference types="@scml/mod-link-button-filter" />
 ```
 
-主入口增强以下全局属性：`DoLLinkButtonFilter_patchLinkButton`（来自 `init.d.ts` 的函数）。
+### 使用全局函数
 
-## 类型
+`DoLLinkButtonFilter_patchLinkButton` 已挂载到 `window` 上。
 
-### 主入口
-- **`DoLLinkButtonFilter_patchLinkButton`** – 修改 DoL 中链接按钮行为；用于过滤或修改链接点击。
+</Steps>
 
-## 导出
+## 全局类型 <Badge type="info" text="global" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `DoLLinkButtonFilter_patchLinkButton` | `typeof patchLinkButton` | 修改链接按钮行为，过滤或修改链接点击 |
+
+## 子路径导出
 
 | 子路径 | 描述 |
 |--------|------|
-| `.` | 主入口，增强 Window/全局 |
+| `.` | 主入口 |
 
 ## 类型定义来源
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/DoLLinkButtonFilter" />
+
+:::info
 - 上游: https://github.com/Lyoko-Jeremie/DoLLinkButtonFilter
 - 默认分支: master
 - 构建: `pnpm run download && pnpm run build`
+:::

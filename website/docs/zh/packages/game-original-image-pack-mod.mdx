@@ -1,49 +1,58 @@
 ---
 title: Game Original Image Pack Mod
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/game-original-image-pack-mod
 
-游戏原始图片包的 TypeScript 类型定义。
+游戏原始图片包的 TypeScript 类型定义，提供对游戏原始图片包的访问。
 
 ## 安装
 
 <PackageManagerTabs command="install -D @scml/game-original-image-pack-mod" />
 
-## 用法
+## 快速开始
 
-### 主入口（全局类型）
+<Steps>
+
+### 添加类型引用
 
 ```ts
 /// <reference types="@scml/game-original-image-pack-mod" />
 ```
 
-主入口增强以下全局属性：`modGameOriginalImagePack`（`GameOriginalImagePack` 实例）。
+### 使用全局实例
 
-### 子路径导入
+`modGameOriginalImagePack` 已挂载到 `window` 上。
 
-```ts
-import type { SomeType } from '@scml/game-original-image-pack-mod/GameOriginalImagePack';
-```
+</Steps>
 
-## 导出
+## 全局类型 <Badge type="info" text="global" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `modGameOriginalImagePack` | `GameOriginalImagePack` | 游戏原始图片包 Mod 实例 |
+
+## 子路径导出
 
 | 子路径 | 描述 |
 |--------|------|
-| `.` | 主入口，增强 Window/全局 |
-| `./GameOriginalImagePack` | 类型声明 |
+| `.` | 主入口 |
+| `./GameOriginalImagePack` | 主类 |
 
-## 类型
+## API 参考
 
-### 主入口
-- **`modGameOriginalImagePack`** – 提供对游戏原始图片包的访问。
+#### GameOriginalImagePack <Badge text="类" />
 
-### `./GameOriginalImagePack`
-- **`GameOriginalImagePack`** – 加载并暴露游戏原始图片的 Mod 类。
+加载并暴露游戏原始图片的 Mod 类。
 
 ## 类型定义来源
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/GameOriginalImagePackMod" />
+
+:::info
 - 上游: https://github.com/Lyoko-Jeremie/GameOriginalImagePackMod
 - 默认分支: master
 - 构建: `pnpm run download && pnpm run build`
+:::

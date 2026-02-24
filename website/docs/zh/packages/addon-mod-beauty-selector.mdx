@@ -1,72 +1,89 @@
 ---
 title: Beauty Selector Addon
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-mod-beauty-selector
 
-Beauty selector addon 的 TypeScript 类型定义。
+Beauty Selector addon 的 TypeScript 类型定义，用于图片选择器 UI 与 mod 图片管理。
 
 ## 安装
 
 <PackageManagerTabs command="install -D @scml/addon-mod-beauty-selector" />
 
-## 用法
+## 快速开始
 
-### 主入口（全局类型）
+<Steps>
+
+### 添加类型引用
 
 ```ts
 /// <reference types="@scml/addon-mod-beauty-selector" />
 ```
 
-主入口增强以下全局属性：`addonBeautySelectorAddon`（`BeautySelectorAddon` 实例）。
+### 使用全局实例
 
-### 子路径导入
+`addonBeautySelectorAddon` 已挂载到 `window` 上。
+
+### 按需导入类型
 
 ```ts
-import type { SomeType } from '@scml/addon-mod-beauty-selector/BeautySelectorAddon';
+import type { BeautySelectorAddon } from '@scml/addon-mod-beauty-selector/BeautySelectorAddon';
+import type { BeautySelectorAddonInterface } from '@scml/addon-mod-beauty-selector/BeautySelectorAddonInterface';
 ```
 
-## 导出
+</Steps>
+
+## 全局类型 <Badge type="info" text="global" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `addonBeautySelectorAddon` | `BeautySelectorAddon` | Addon 实例 |
+
+<Tabs>
+<Tab label="主入口">
+
+```ts
+/// <reference types="@scml/addon-mod-beauty-selector" />
+```
+
+</Tab>
+<Tab label="子路径导入">
+
+```ts
+import type { BeautySelectorAddon } from '@scml/addon-mod-beauty-selector/BeautySelectorAddon';
+```
+
+</Tab>
+</Tabs>
+
+## 子路径导出
 
 | 子路径 | 描述 |
 |--------|------|
 | `.` | 主入口，增强 Window/全局 |
-| `./BeautySelectorAddon` | 类型声明 |
-| `./BeautySelectorAddonInterface` | 类型声明 |
-| `./BeautySelectorAddonType` | 类型声明 |
-| `./extname` | 类型声明 |
-| `./ModImageStore` | 类型声明 |
-| `./utils/getRelativePath` | 类型声明 |
-| `./utils/traverseZipFolder` | 类型声明 |
-| `./GUI_StringTable/CN` | 类型声明 |
-| `./GUI_StringTable/EN` | 类型声明 |
-| `./GUI_StringTable/StringTable` | 类型声明 |
+| `./BeautySelectorAddon` | 主类 |
+| `./BeautySelectorAddonInterface` | 接口 |
+| `./BeautySelectorAddonType` | 类型定义 |
+| `./extname` | 扩展名工具 |
+| `./ModImageStore` | Mod 图片存储 |
+| `./utils/getRelativePath` | 相对路径工具 |
+| `./utils/traverseZipFolder` | 遍历 zip 文件夹 |
+| `./GUI_StringTable/*` | GUI 字符串表 |
 
-## 类型
+## API 参考
 
-### 主入口
-- **`addonBeautySelectorAddon`** – 与 Sub UI AngularJS 及 Mod Image Store 集成的 Beauty selector addon。
+### ./BeautySelectorAddon
 
-### `./BeautySelectorAddon`
-- **`BeautySelectorAddon`** – 主 Addon 类；管理 beauty 选项、参数及 AngularJS 组件。
-
-### `./BeautySelectorAddonInterface`
-- Beauty selector addon 行为的接口。
-
-### `./BeautySelectorAddonType`
-- **`BeautySelectorAddonParamsType0`**、**`Type1`**、**`Type2`** – 参数配置类型。
-- **`TypeOrderItem`**、**`BeautySelectorAddonParamsType2ATypeItem`**、**`Type2BTypeItem`** – 选项项类型。
-
-### `./ModImageStore`
-- **`ModImageStore`** – mod 资源的图片存储。
-- **`CachedFileList`** – 缓存文件列表类型。
-
-### `./extname` / `./utils/*` / `./GUI_StringTable/*`
-- 工具类型及 i18n 字符串表。
+Beauty Selector 主 Addon 类，实现 `BeautySelectorAddonInterface` 与 `AddonPluginHookPointEx`，提供图片选择器与 mod 图片管理功能。具体 API 见 `BeautySelectorAddonInterface` 及类型定义。
 
 ## 类型定义来源
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/DoL_BeautySelectorAddonMod" />
+
+:::info
 - 上游: https://github.com/Lyoko-Jeremie/DoL_BeautySelectorAddonMod
 - 默认分支: master
 - 构建: `pnpm run download && pnpm run build`
+:::

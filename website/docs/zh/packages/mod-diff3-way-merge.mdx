@@ -1,56 +1,71 @@
 ---
 title: Three-way Merge
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/mod-diff3-way-merge
 
-Three-way merge 的 TypeScript 类型定义。
+Three-way merge 的 TypeScript 类型定义，对 mod 补丁执行三路合并（base + ours + theirs）。
 
 ## 安装
 
 <PackageManagerTabs command="install -D @scml/mod-diff3-way-merge" />
 
-## 用法
+## 快速开始
 
-### 主入口（全局类型）
+<Steps>
+
+### 添加类型引用
 
 ```ts
 /// <reference types="@scml/mod-diff3-way-merge" />
 ```
 
-主入口增强以下全局属性：`diff3WayMerge`（`Diff3WayMerge` 实例）。
+### 使用全局实例
 
-### 子路径导入
+`diff3WayMerge` 已挂载到 `window` 上。
 
-```ts
-import type { SomeType } from '@scml/mod-diff3-way-merge/Diff3WayMerge';
-```
+</Steps>
 
-## 导出
+## 全局类型 <Badge type="info" text="global" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `diff3WayMerge` | `Diff3WayMerge` | 三路合并 Addon 实例 |
+
+## 子路径导出
 
 | 子路径 | 描述 |
 |--------|------|
-| `.` | 主入口，增强 Window/全局 |
-| `./Diff3WayMerge` | 类型声明 |
-| `./Diff3WayMergeParams` | 类型声明 |
-| `./DiffFormat` | 类型声明 |
-| `./diff_match_patch/diff_match_patch` | 类型声明 |
+| `.` | 主入口 |
+| `./Diff3WayMerge` | 主类 |
+| `./Diff3WayMergeParams` | 合并参数 |
+| `./DiffFormat` | diff 格式 |
+| `./diff_match_patch/diff_match_patch` | diff-match-patch 库 |
 
-## 类型
+## API 参考
 
-### 主入口
-- **`diff3WayMerge`** – 对 mod 补丁执行三路合并（base + ours + theirs）。
+#### Diff3WayMerge <Badge text="类" />
 
-### `./Diff3WayMerge`
-- **`Diff3WayMerge`** – 持有 `info: Map<string, ModMergeInfo>` 的 Addon。方法：`registerMod()`、`afterPatchModToGame()`、`do_patch()`、`readOriginFile()`、`readModFile()`、`readDiffFormatFile()`。
-- **`ModMergeInfo`** – `{ addonName, mod, modZip }`。
+| 属性/方法 | 说明 |
+|----------|------|
+| `info` | `Map<string, ModMergeInfo>` |
+| `registerMod()` | 注册 mod |
+| `afterPatchModToGame()` | patch 后钩子 |
+| `do_patch()` | 执行合并 |
+| `readOriginFile()` / `readModFile()` / `readDiffFormatFile()` | 读取文件 |
 
-### `./Diff3WayMergeParams` / `./DiffFormat` / `./diff_match_patch/diff_match_patch`
-- 合并参数、diff 格式类型及 diff-match-patch 库绑定。
+#### ModMergeInfo <Badge text="接口" />
+
+`{ addonName, mod, modZip }`
 
 ## 类型定义来源
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/Mod_Diff3WayMerge" />
+
+:::info
 - 上游: https://github.com/Lyoko-Jeremie/Mod_Diff3WayMerge
 - 默认分支: master
 - 构建: `pnpm run download && pnpm run build`
+:::

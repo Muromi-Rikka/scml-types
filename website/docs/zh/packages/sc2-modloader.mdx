@@ -1,103 +1,226 @@
 ---
 title: SugarCube 2 Mod Loader
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/sc2-modloader
 
-SugarCube 2 Mod Loader 的 TypeScript 类型定义。
+SugarCube 2 Mod Loader 的 TypeScript 类型定义，为 mod 与游戏数据管理提供类型支持。
 
 ## 安装
 
 <PackageManagerTabs command="install -D @scml/sc2-modloader" />
 
-## 用法
+## 快速开始
 
-### 主入口（全局类型）
+<Steps>
+
+### 添加类型引用
+
+在项目中添加三斜杠指令以引入全局类型：
 
 ```ts
 /// <reference types="@scml/sc2-modloader" />
 ```
 
-主入口增强以下全局属性：`jQuery`、`$`、`modSC2DataManager`、`modUtils`、`jsPreloader`、`modModLoadController`、`modAddonPluginManager`、`modSC2JsEvalContext`。
+### 使用全局对象
 
-### 子路径导入
+Mod Loader 将核心对象挂载到 `window`，可直接访问：
 
 ```ts
-import type { SomeType } from '@scml/sc2-modloader/AddonPlugin';
+window.modSC2DataManager;   // 数据管理器
+window.modUtils;            // Mod 工具
+window.modAddonPluginManager; // Addon 插件管理
 ```
 
-## 导出
+### 按需导入类型
+
+```ts
+import type { ModInfo, ModLoader } from '@scml/sc2-modloader/ModLoader';
+import type { AddonPluginHookPointEx } from '@scml/sc2-modloader/AddonPlugin';
+```
+
+</Steps>
+
+## 全局类型 <Badge type="info" text="global" />
+
+主入口通过 `/// <reference types="..." />` 扩展 `Window` 接口。 <Badge type="info" text="global" /> 以下属性挂载在 `window` 上：
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `jQuery` / `$` | `JQueryStatic` | jQuery 实例 |
+| `modSC2DataManager` | `SC2DataManager` | Mod 与游戏数据核心管理器 |
+| `modUtils` | `ModUtils` | Mod Loader 工具（获取 mod、passage 等） |
+| `jsPreloader` | `JsPreloader` | 脚本预加载器 |
+| `modModLoadController` | `ModLoadController` | Mod 加载生命周期控制器 |
+| `modAddonPluginManager` | `AddonPluginManager` | Addon 插件管理器 |
+| `modSC2JsEvalContext` | `SC2JsEvalContext` | mod 的 JS 求值上下文 |
+
+<Tabs>
+<Tab label="主入口">
+
+```ts
+/// <reference types="@scml/sc2-modloader" />
+```
+
+</Tab>
+<Tab label="子路径导入示例">
+
+```ts
+import type { AddonPluginHookPointEx } from '@scml/sc2-modloader/AddonPlugin';
+import type { ModInfo } from '@scml/sc2-modloader/ModLoader';
+import type { ModUtils } from '@scml/sc2-modloader/Utils';
+```
+
+</Tab>
+</Tabs>
+
+## 子路径导出
 
 | 子路径 | 描述 |
 |--------|------|
 | `.` | 主入口，增强 Window/全局 |
-| `./AddonPlugin` | 类型声明 |
-| `./DecoratorUtils` | 类型声明 |
-| `./DependenceChecker` | 类型声明 |
-| `./export2window` | 类型声明 |
-| `./expose-loader` | 类型声明 |
-| `./extname` | 类型声明 |
-| `./getGlobal` | 类型声明 |
-| `./HtmlTagSrcHook` | 类型声明 |
-| `./IdbKeyValRef` | 类型声明 |
-| `./JqueryInjector` | 类型声明 |
-| `./JsPreloader` | 类型声明 |
-| `./JSZipLikeReadOnlyInterface` | 类型声明 |
-| `./LanguageManager` | 类型声明 |
-| `./MergeSC2DataInfoCache` | 类型声明 |
-| `./ModLoadController` | 类型声明 |
-| `./ModLoader` | 类型声明 |
-| `./ModOrderContainer` | 类型声明 |
-| `./ModZipReader` | 类型声明 |
-| `./PassageTracer` | 类型声明 |
-| `./polyfill` | 类型声明 |
-| `./ReplacePatcher` | 类型声明 |
-| `./SC2ApiRef` | 类型声明 |
-| `./SC2DataInfoCache` | 类型声明 |
-| `./SC2DataManager` | 类型声明 |
-| `./Sc2EventTracer` | 类型声明 |
-| `./SC2JsEvalContext` | 类型声明 |
-| `./SimulateMerge` | 类型声明 |
-| `./SugarCube2` | 类型声明 |
-| `./Utils` | 类型声明 |
-| `./WikifyTracer` | 类型声明 |
-| `./ModPack/ModMeta` | 类型声明 |
-| `./ModPack/ModPack` | 类型声明 |
-| `./ModPack/ModPackFileReaderInterface` | 类型声明 |
-| `./ModPack/ModPackJsZipAdaptor` | 类型声明 |
-| `./SemVer/InfiniteSemVer` | 类型声明 |
-| `./Utils/LazyIteratorAdaptor.d.ts` | 类型声明 |
-| `./WeakRefPool/WeakRefPool` | 类型声明 |
+| `./AddonPlugin` | Addon 插件接口与管理器 |
+| `./ModLoader` | ModLoader、ModInfo、ModBootJson 等 |
+| `./SC2DataManager` | SC2DataManager 中心数据管理器 |
+| `./ModLoadController` | 加载控制器、LogWrapper |
+| `./ModZipReader` | ModZipReader、LocalLoader、RemoteLoader 等 |
+| `./ModOrderContainer` | ModOrderContainer、ModOrderItem、ModLoadFromSourceType |
+| `./SC2DataInfoCache` | SC2DataInfo、PassageDataItem、CacheRecord 等 |
+| `./SugarCube2` | Passage 段落类型 |
+| `./Utils` | ModUtils 工具类 |
+| `./ReplacePatcher` | 补丁/替换工具 |
+| `./ModPack/ModMeta` | ModMeta |
+| `./ModPack/ModPack` | ModPack |
+| `./ModPack/ModPackFileReaderInterface` | ModPack 文件读取接口 |
+| `./ModPack/ModPackJsZipAdaptor` | ModPack JSZip 适配器 |
+| `./SemVer/InfiniteSemVer` | InfiniteSemVer 版本解析 |
+| `./DecoratorUtils` | 装饰器工具 |
+| `./DependenceChecker` | 依赖检查 |
+| `./export2window` | 导出到 window |
+| `./expose-loader` | expose-loader |
+| `./extname` | 扩展名工具 |
+| `./getGlobal` | 获取全局对象 |
+| `./HtmlTagSrcHook` | HTML 标签 src 钩子 |
+| `./IdbKeyValRef` | IndexedDB 键值引用 |
+| `./JqueryInjector` | jQuery 注入器 |
+| `./JsPreloader` | 脚本预加载器 |
+| `./JSZipLikeReadOnlyInterface` | 只读 JSZip 接口 |
+| `./LanguageManager` | 语言管理 |
+| `./MergeSC2DataInfoCache` | SC2 数据合并缓存 |
+| `./PassageTracer` | Passage 追踪 |
+| `./polyfill` |  polyfill |
+| `./SC2ApiRef` | SC2 API 引用 |
+| `./Sc2EventTracer` | SC2 事件追踪 |
+| `./SC2JsEvalContext` | SC2 JS 求值上下文 |
+| `./SimulateMerge` | 模拟合并 |
+| `./WikifyTracer` | Wikify 追踪 |
+| `./Utils/LazyIteratorAdaptor.d.ts` | 惰性迭代器适配器 |
+| `./WeakRefPool/WeakRefPool` | 弱引用池 |
 
-## 类型
+## API 参考
 
-### 主入口
-- **`jQuery`** / **`$`** – `window` 上的 jQuery。
-- **`modSC2DataManager`** – mod 与游戏数据核心管理器。
-- **`modUtils`** – Mod Loader 工具。
-- **`jsPreloader`** – 脚本预加载器。
-- **`modModLoadController`** – Mod 加载生命周期控制器。
-- **`modAddonPluginManager`** – 管理 addon 插件。
-- **`modSC2JsEvalContext`** – mod 的 JS 求值上下文。
+### ./AddonPlugin
 
-### 核心子路径
-- **`./ModLoader`** – **`ModLoader`**、**`ModBootJson`**、**`ModBootJsonAddonPlugin`**、**`DependenceInfo`**、**`ModImg`**、**`IModImgGetter`** – 核心 mod 加载类型。
-- **`./SC2DataManager`** – **`SC2DataManager`** – 中心数据管理器。
-- **`./ModLoadController`** – 加载控制器与 **`LogWrapper`**。
-- **`./AddonPlugin`** – **`AddonPluginManager`**、**`AddonPluginHookPointEx`**、**`LifeTimeCircleHook`** – Addon 插件接口。
-- **`./ReplacePatcher`** – 补丁/替换工具。
-- **`./ModOrderContainer`** – **`ModOrderContainer`**、**`ModOrderItem`**、**`ModLoadFromSourceType`** – 加载顺序类型。
-- **`./ModZipReader`** – **`ModZipReader`**、**`LocalLoader`**、**`RemoteLoader`**、**`IndexDBLoader`** – Mod zip 与加载器类型。
-- **`./SC2DataInfoCache`** – **`SC2DataInfo`**、**`CacheRecord`**、**`StyleTextFileItem`**、**`ScriptTextFileItem`**、**`PassageDataItem`** – 缓存游戏数据类型。
-- **`./SugarCube2`** – **`Passage`** – SugarCube 段落类型。
-- **`./ModPack/*`** – **`ModPack`**、**`ModMeta`**、**`ModPackFileReaderInterface`** – Mod 包类型。
-- **`./SemVer/InfiniteSemVer`** – **`InfiniteSemVer`** – 版本解析。
-- **`./Utils`** – **`ModUtils`** – 工具类型。
-- 其他子路径：**`DecoratorUtils`**、**`DependenceChecker`**、**`export2window`**、**`expose-loader`**、**`extname`**、**`getGlobal`**、**`HtmlTagSrcHook`**、**`IdbKeyValRef`**、**`JqueryInjector`**、**`JsPreloader`**、**`JSZipLikeReadOnlyInterface`**、**`LanguageManager`**、**`MergeSC2DataInfoCache`**、**`PassageTracer`**、**`polyfill`**、**`SC2ApiRef`**、**`SC2DataInfoCache`**、**`Sc2EventTracer`**、**`SC2JsEvalContext`**、**`SimulateMerge`**、**`WikifyTracer`**、**`WeakRefPool`**。
+#### AddonPluginHookPointEx <Badge text="接口" />
+
+Addon 插件实现的接口，必须实现 `registerMod()`，可选实现各类生命周期钩子。
+
+| 钩子 | 类型 | 说明 |
+|------|------|------|
+| `registerMod` | `(addonName, mod, modZip) => Promise<any>` | 必须。mod 加载时调用 |
+| `afterInit` | `() => Promise<any>` | 可选 |
+| `afterModLoad` | `() => Promise<any>` | 可选 |
+| `beforePatchModToGame` | `() => Promise<any>` | 可选 |
+| `afterPatchModToGame` | `() => Promise<any>` | 可选 |
+| `exportDataZip` | `(zip: JSZip) => Promise<JSZip>` | 可选，导出 debug 数据 |
+| `whenSC2StoryReady` | `() => Promise<any>` | 可选，SC2 Story 就绪 |
+| `whenSC2PassageInit` | `(passage: Passage) => Promise<any>` | 可选 |
+| `whenSC2PassageStart` | `(passage, content) => Promise<any>` | 可选 |
+
+#### AddonPluginManager <Badge text="类" />
+
+| 方法 | 说明 |
+|------|------|
+| `registerAddonPlugin(modName, addonName, hookPoint)` | 注册 addon，须在 InjectEarlyLoad 时调用 |
+| `getAddonPlugin(modName, addonName)` | 获取 addon 的 hookPoint |
+
+---
+
+### ./SC2DataManager
+
+#### SC2DataManager <Badge text="类" />
+
+Mod 与游戏数据核心管理器。
+
+| 方法 | 说明 |
+|------|------|
+| `getModUtils()` | 获取 ModUtils |
+| `getModLoadController()` | 获取 ModLoadController |
+| `getModLoader()` | 获取 ModLoader |
+| `getAddonPluginManager()` | 获取 AddonPluginManager |
+| `getSC2DataInfoCache()` | 获取原始 SC2Data 缓存 |
+| `getSC2DataInfoAfterPatch()` | 获取已 patch 的 SC2Data |
+| `flushAfterPatchCache()` | 清除 patch 缓存 |
+| `patchModToGame()` | 将 mod 数据 patch 到游戏 |
+
+---
+
+### ./ModLoader
+
+#### ModInfo <Badge text="接口" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `name` | `string` | mod 名 |
+| `version` | `string` | 版本 |
+| `alias` | `string[]` | 别名 |
+| `cache` | `SC2DataInfo` | 缓存数据 |
+| `imgs` | `ModImg[]` | 图片列表 |
+| `scriptFileList_preload` | `[string, string][]` | 预加载脚本 |
+
+#### ModBootJson <Badge text="接口" />
+
+mod 的 `mod.json` 配置结构，包含 `styleFileList`、`scriptFileList`、`tweeFileList`、`addonPlugin` 等。
+
+---
+
+### ./Utils
+
+#### ModUtils <Badge text="类" />
+
+| 方法 | 说明 |
+|------|------|
+| `getModListName()` | 获取所有 mod 名（按加载顺序） |
+| `getMod(name)` | 获取指定 mod 的 ModInfo |
+| `getModZip(modName)` | 获取 mod 的 ModZipReader |
+| `getPassageData(name)` | 获取指定 passage |
+| `getAllPassageData()` | 获取所有 passage |
+| `createNewSC2DataInfoFromNow()` | 创建当前 SC2DataInfo |
+| `updatePassageData(name, content, tags, pid)` | 更新 passage 数据 |
+| `updatePassageDataMany(pd, replaceForce)` | 批量更新 passage |
+
+---
+
+### 其他子路径
+
+| 子路径 | 主要类型 |
+|--------|----------|
+| `./ModZipReader` | ModZipReader、LocalLoader、RemoteLoader、IndexDBLoader |
+| `./SC2DataInfoCache` | SC2DataInfo、PassageDataItem、CacheRecord、StyleTextFileItem |
+| `./SugarCube2` | Passage |
+| `./ReplacePatcher` | ReplacePatcher |
+| `./ModOrderContainer` | ModOrderContainer、ModOrderItem、ModLoadFromSourceType |
+| `./ModPack/*` | ModPack、ModMeta、ModPackFileReaderInterface |
+| `./SemVer/InfiniteSemVer` | InfiniteSemVer |
 
 ## 类型定义来源
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/sugarcube-2-ModLoader" />
+
+:::info
 - 上游: https://github.com/Lyoko-Jeremie/sugarcube-2-ModLoader
 - 默认分支: master
 - 构建: `pnpm run download && pnpm run build`
+:::

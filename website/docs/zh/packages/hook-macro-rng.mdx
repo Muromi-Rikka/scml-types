@@ -1,49 +1,58 @@
 ---
 title: Macro RNG Hook
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/hook-macro-rng
 
-Macro RNG hook 的 TypeScript 类型定义。
+Macro RNG hook 的 TypeScript 类型定义，挂载 SugarCube 宏使用的 RNG，以实现确定性或自定义 RNG 行为。
 
 ## 安装
 
 <PackageManagerTabs command="install -D @scml/hook-macro-rng" />
 
-## 用法
+## 快速开始
 
-### 主入口（全局类型）
+<Steps>
+
+### 添加类型引用
 
 ```ts
 /// <reference types="@scml/hook-macro-rng" />
 ```
 
-主入口增强以下全局属性：`hookMacroRng`（`HookMacroRng` 实例）。
+### 使用全局实例
 
-### 子路径导入
+`hookMacroRng` 已挂载到 `window` 上。
 
-```ts
-import type { SomeType } from '@scml/hook-macro-rng/HookMacroRng';
-```
+</Steps>
 
-## 导出
+## 全局类型 <Badge type="info" text="global" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `hookMacroRng` | `HookMacroRng` | Macro RNG Hook 实例 |
+
+## 子路径导出
 
 | 子路径 | 描述 |
 |--------|------|
-| `.` | 主入口，增强 Window/全局 |
-| `./HookMacroRng` | 类型声明 |
+| `.` | 主入口 |
+| `./HookMacroRng` | 类型声明（入口为 inject_early） |
 
-## 类型
+## API 参考
 
-### 主入口
-- **`hookMacroRng`** – 挂载 SugarCube 宏使用的 RNG，以实现确定性或自定义 RNG 行为。
+#### HookMacroRng <Badge text="类" />
 
-### `./HookMacroRng`
-- **`HookMacroRng`** – 安装 macro RNG hook 的 Addon 类（从 `inject_early.d.ts` 导出）。
+安装 macro RNG hook 的 Addon 类。
 
 ## 类型定义来源
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/DoLHookMacroRng" />
+
+:::info
 - 上游: https://github.com/Lyoko-Jeremie/DoLHookMacroRng
 - 默认分支: master
 - 构建: `pnpm run download && pnpm run build`
+:::

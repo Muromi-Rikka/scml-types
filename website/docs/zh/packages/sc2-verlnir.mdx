@@ -1,45 +1,74 @@
 ---
 title: SugarCube 2 Verlnir
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/sc2-verlnir
 
-SugarCube 2 API 的 TypeScript 类型定义（基于 verlnir）。
-
-此包直接使用仓库中 `src/` 的类型声明，无需 `download` 或 `build`。
+SugarCube 2 API 的 TypeScript 类型定义（基于 verlnir）。此包直接使用仓库中 `src/` 的类型声明，无需 `download` 或 `build`。
 
 ## 安装
 
 <PackageManagerTabs command="install -D @scml/sc2-verlnir" />
 
-## 用法
+## 快速开始
 
-### 主入口（全局 SugarCube 类型）
+<Steps>
+
+### 添加类型引用
 
 ```ts
 /// <reference types="@scml/sc2-verlnir" />
 ```
 
-主入口 `./src/global.d.ts` 声明了 SugarCube 2 的全局 API。
+### 使用全局 API
 
-## 类型
+SugarCube 2 通过 `declare global` 将 API 暴露到全局，如 `Story`、`Config`、`State`、`Passage` 等。
 
-### 全局 API（通过 `declare global`）
-- **`Story`** – `StoryAPI` – 故事与段落访问。
-- **`Config`** – `ConfigAPI` – 引擎配置。
-- **`State`** – `StateAPI` – 游戏状态、历史、临时变量。
-- **`Passage`** – `PassageConstructor` – 当前段落。
-- **`Save`** – `SaveAPI` – 保存/加载。
-- **`Dialog`** – `DialogAPI` – 对话框系统。
-- **`Engine`** – `EngineAPI` – 引擎控制。
-- **`Macro`** – `MacroAPI` – 宏定义。
-- **`Scripting`** – `ScriptingAPI` – 脚本求值。
-- **`Template`** – `TemplateAPI` – 模板引擎。
-- **`UI`** / **`UIBar`** – `UIAPI` / `UIBarAPI` – UI 组件。
-- **`Alert`**、**`Browser`**、**`Config`**、**`DebugBar`**、**`Fullscreen`**、**`Has`**、**`L10n`**、**`Links`**、**`LoadScreen`**、**`Setting`**、**`SimpleAudio`**、**`SimpleStore`**、**`Util`**、**`Visibility`**、**`Wikifier`** – 其他 SugarCube API。
-- **`version`** – `VersionInfo`。
-- **`session`**、**`storage`** – `SimpleStoreInstanceAPI | null`。
-- **`settings`**、**`setup`** – `Record<string, unknown>`。
-- **`idb`** – `IdbAPI`。
-- **`window.SugarCube`** – 包含上述所有 API 的对象，用于检测与调试。
+</Steps>
+
+## 全局类型 <Badge type="info" text="global" />
+
+主入口 `./src/global.d.ts` 声明 SugarCube 2 的全局 API，通过 `declare global` 扩展。 <Badge type="info" text="global" /> 以下为常见全局 API：
+
+| API | 类型 | 说明 |
+|-----|------|------|
+| `Story` | `StoryAPI` | 故事与段落访问 |
+| `Config` | `ConfigAPI` | 引擎配置 |
+| `State` | `StateAPI` | 游戏状态、历史、临时变量 |
+| `Passage` | `PassageConstructor` | 当前段落 |
+| `Save` | `SaveAPI` | 保存/加载 |
+| `Dialog` | `DialogAPI` | 对话框系统 |
+| `Engine` | `EngineAPI` | 引擎控制 |
+| `Macro` | `MacroAPI` | 宏定义 |
+| `Scripting` | `ScriptingAPI` | 脚本求值 |
+| `Template` | `TemplateAPI` | 模板引擎 |
+| `UI` / `UIBar` | `UIAPI` / `UIBarAPI` | UI 组件 |
+| `version` | `VersionInfo` | 版本信息 |
+| `session` / `storage` | `SimpleStoreInstanceAPI \| null` | 会话与存储 |
+| `settings` / `setup` | `Record<string, unknown>` | 设置与初始化 |
+| `window.SugarCube` | 对象 | 包含上述所有 API，用于检测与调试 |
+
+<Tabs>
+<Tab label="主入口">
+
+```ts
+/// <reference types="@scml/sc2-verlnir" />
+```
+
+</Tab>
+</Tabs>
+
+## 子路径导出
+
+| 子路径 | 描述 |
+|--------|------|
+| `.` | 主入口，SugarCube 2 全局类型 |
+
+## 类型定义来源
+
+:::info
+- 来源: 基于 verlnir 的 SugarCube 2 类型声明
+- 此包无 download/build 步骤，直接使用 src 目录
+:::

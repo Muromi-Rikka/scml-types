@@ -1,54 +1,106 @@
 ---
 title: Modded Hair Addon
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-modded-hair
 
-Modded hair addon 的 TypeScript 类型定义。
+Modded hair addon 的 TypeScript 类型定义，用于添加并合并 modded 发型数据。
 
 ## 安装
 
 <PackageManagerTabs command="install -D @scml/addon-modded-hair" />
 
-## 用法
+## 快速开始
 
-### 主入口（全局类型）
+<Steps>
+
+### 添加类型引用
 
 ```ts
 /// <reference types="@scml/addon-modded-hair" />
 ```
 
-主入口增强以下全局属性：`addonModdedHairAddon`（`ModdedHairAddon` 实例）。
+### 使用全局实例
 
-### 子路径导入
+`addonModdedHairAddon` 已挂载到 `window` 上。
+
+### 按需导入类型
 
 ```ts
-import type { SomeType } from '@scml/addon-modded-hair/ModdedHairAddon';
+import type { ModdedHairAddon, mergeHairObject } from '@scml/addon-modded-hair/ModdedHairAddon';
+import type { ModdedClothesHairParams } from '@scml/addon-modded-hair/ModdedHairAddonParams';
 ```
 
-## 导出
+</Steps>
+
+## 全局类型 <Badge type="info" text="global" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `addonModdedHairAddon` | `ModdedHairAddon` | Addon 实例，管理发型数据 |
+
+<Tabs>
+<Tab label="主入口">
+
+```ts
+/// <reference types="@scml/addon-modded-hair" />
+```
+
+</Tab>
+<Tab label="子路径导入">
+
+```ts
+import type { ModdedHairAddon } from '@scml/addon-modded-hair/ModdedHairAddon';
+import type { ModdedClothesHairParams } from '@scml/addon-modded-hair/ModdedHairAddonParams';
+```
+
+</Tab>
+</Tabs>
+
+## 子路径导出
 
 | 子路径 | 描述 |
 |--------|------|
 | `.` | 主入口，增强 Window/全局 |
-| `./ModdedHairAddon` | 类型声明 |
-| `./ModdedHairAddonParams` | 类型声明 |
+| `./ModdedHairAddon` | 主类与工具函数 |
+| `./ModdedHairAddonParams` | 配置参数与类型守卫 |
 
-## 类型
+## API 参考
 
-### 主入口
-- **`addonModdedHairAddon`** – 添加并合并 modded 发型数据的 Addon。
+### ./ModdedHairAddon
 
-### `./ModdedHairAddon`
-- **`ModdedHairAddon`** – 持有 `hairData: Map<string, HairObject>` 的 Addon 插件。方法：`registerMod()`、`exportDataZip()`、`init()`。
-- **`mergeHairObject()`**、**`appendHairObject()`** – 合并/追加发型工具。
+#### ModdedHairAddon <Badge text="类" />
 
-### `./ModdedHairAddonParams`
-- Addon 参数配置；详见子路径类型定义。
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `hairData` | `Map<string, HairObject>` | 按 key 存储的发型数据 |
+| `registerMod()` | `(addonName, mod, modZip) => Promise<void>` | 注册 mod |
+| `exportDataZip()` | `(zip: JSZip) => Promise<JSZip>` | 导出数据 |
+| `init()` | `() => void` | 初始化 |
+
+#### mergeHairObject() / appendHairObject() <Badge text="方法" />
+
+- `mergeHairObject(b, o, modName, logger)`：合并两个 HairObject，相同 key 报错
+- `appendHairObject(b, o, logger)`：将 o 追加到 b
+
+### ./ModdedHairAddonParams
+
+#### ModdedClothesHairParams <Badge text="接口" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `hair` | `string[]` | 发型文件路径列表 |
+
+#### checkParams() / checkHairItem() <Badge text="类型守卫" />
 
 ## 类型定义来源
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/DoL_ModdedHairAddon" />
+
+:::info
 - 上游: https://github.com/Lyoko-Jeremie/DoL_ModdedHairAddon
 - 默认分支: master
 - 构建: `pnpm run download && pnpm run build`
+:::

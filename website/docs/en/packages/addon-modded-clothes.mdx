@@ -1,58 +1,101 @@
 ---
 title: Modded Clothes Addon
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-modded-clothes
 
-TypeScript type definitions for Modded clothes addon.
+TypeScript type definitions for Modded clothes addon, for adding and patching modded clothes data.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/addon-modded-clothes" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
+
+Add triple-slash directive in your project:
 
 ```ts
 /// <reference types="@scml/addon-modded-clothes" />
 ```
 
-Main entry augments these global properties: `addonModdedClothesAddon` (instance of `ModdedClothesAddon`).
+### Use global instance
 
-### Subpath imports
+`addonModdedClothesAddon` is mounted on `window`:
 
 ```ts
-import type { SomeType } from '@scml/addon-modded-clothes/ModdedClothesAddon';
+window.addonModdedClothesAddon.addClothes(info);
 ```
 
-## Exports
+### Import types on demand
+
+```ts
+import type { ModdedClothesAddon, ClothesAddInfo } from '@scml/addon-modded-clothes/ModdedClothesAddon';
+import type { ModdedClothesAddonParams } from '@scml/addon-modded-clothes/ModdedClothesAddonParams';
+```
+
+</Steps>
+
+## Global Types <Badge type="info" text="global" />
+
+Main entry extends `Window` via `/// <reference types="..." />`. <Badge type="info" text="global" /> The following property is on `window`:
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `addonModdedClothesAddon` | `ModdedClothesAddon` | Addon instance for clothes add/patch |
+
+<Tabs>
+<Tab label="Main entry">
+
+```ts
+/// <reference types="@scml/addon-modded-clothes" />
+```
+
+</Tab>
+<Tab label="Subpath import">
+
+```ts
+import type { ModdedClothesAddon, ClothesAddInfo } from '@scml/addon-modded-clothes/ModdedClothesAddon';
+```
+
+</Tab>
+</Tabs>
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
+|---------|-------------|
 | `.` | Main entry, augments Window/global |
-| `./ModdedClothesAddon` | Type declarations |
-| `./ModdedClothesAddonParams` | Type declarations |
+| `./ModdedClothesAddon` | Main class, interfaces, utility functions |
+| `./ModdedClothesAddonParams` | Config params and type guards |
 
-## Types
+## API Reference
 
-### Main entry
-- **`addonModdedClothesAddon`** – Addon for adding and patching modded clothes data.
+### ./ModdedClothesAddon
 
-### `./ModdedClothesAddon`
-- **`ModdedClothesAddon`** – Addon plugin managing `clothesAddInfo: Map<string, ClothesAddInfo>`. Methods: `registerMod()`, `addClothes()`, `exportDataZip()`, `init()`.
-- **`ClothesAddInfo`** – `{ modName, clothes: ClothesInfo[], patch: ClothesPatchInfo[] }`.
-- **`ClothesInfo`** – `{ key, data: ClothesItem[] }`.
-- **`searchClothesByName()`**, **`checkForOutfitWarmth()`** – Utility functions.
+#### ModdedClothesAddon <Badge text="class" />
 
-### `./ModdedClothesAddonParams`
-- **`ModdedClothesAddonParams`** – Config: `clothes: AddClothesItem[]`, `patch?: string[]`.
-- **`AddClothesItem`**, **`ClothesPatchInfo`**, **`ClothesPatchUpdateType`** – Param types.
-- **`checkParams`**, **`checkAddClothesItem`**, **`checkClothesPatchInfo`** – Type guards.
+**Properties**: `clothesAddInfo`, `gSC2DataManager`, `gModUtils`, etc.  
+**Methods**: `registerMod()`, `addClothes()`, `exportDataZip()`, `init()`.
 
-## Type definition source
+#### ClothesAddInfo / ClothesInfo <Badge text="interface" />
 
+#### searchClothesByName() / checkForOutfitWarmth() <Badge text="method" />
+
+### ./ModdedClothesAddonParams
+
+#### ModdedClothesAddonParams / AddClothesItem / ClothesPatchInfo <Badge text="interface" />
+
+## Type Definition Source
+
+<SourceCode href="https://github.com/Lyoko-Jeremie/DoL_ModdedClothesAddon" />
+
+:::info
 - Upstream: https://github.com/Lyoko-Jeremie/DoL_ModdedClothesAddon
 - Default branch: master
 - Build: `pnpm run download && pnpm run build`
+:::

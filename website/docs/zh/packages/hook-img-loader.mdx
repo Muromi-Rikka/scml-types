@@ -1,61 +1,99 @@
 ---
 title: Image Loader Hook
 ---
-import { PackageManagerTabs } from '@rspress/core/theme';
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/hook-img-loader
 
-Image loader hook 的 TypeScript 类型定义。
+Image loader hook 的 TypeScript 类型定义，挂载图片加载器，允许 mod 提供自定义图片。
 
 ## 安装
 
 <PackageManagerTabs command="install -D @scml/hook-img-loader" />
 
-## 用法
+## 快速开始
 
-### 主入口（全局类型）
+<Steps>
+
+### 添加类型引用
 
 ```ts
 /// <reference types="@scml/hook-img-loader" />
 ```
 
-主入口增强以下全局属性：`modImgLoaderHooker`（`ImgLoaderHooker` 实例）。
+### 使用全局实例
 
-### 子路径导入
+`modImgLoaderHooker` 已挂载到 `window` 上。
+
+### 按需导入类型
 
 ```ts
-import type { SomeType } from '@scml/hook-img-loader/ImgLoaderHooker';
+import type { ImgLoaderHooker } from '@scml/hook-img-loader/ImgLoaderHooker';
+import type { ImgLoaderHookerCore } from '@scml/hook-img-loader/ImgLoaderHookerCore';
+import type { CssReplacer } from '@scml/hook-img-loader/CssReplacer';
 ```
 
-## 导出
+</Steps>
+
+## 全局类型 <Badge type="info" text="global" />
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `modImgLoaderHooker` | `ImgLoaderHooker` | 图片加载器 hook 实例 |
+
+<Tabs>
+<Tab label="主入口">
+
+```ts
+/// <reference types="@scml/hook-img-loader" />
+```
+
+</Tab>
+<Tab label="子路径导入">
+
+```ts
+import type { ImgLoaderHooker } from '@scml/hook-img-loader/ImgLoaderHooker';
+```
+
+</Tab>
+</Tabs>
+
+## 子路径导出
 
 | 子路径 | 描述 |
 |--------|------|
 | `.` | 主入口，增强 Window/全局 |
-| `./utils` | 类型声明 |
-| `./SimpleDolFunctionHook` | 类型声明 |
-| `./NodeMutationObserver` | 类型声明 |
-| `./ImgLoaderHookerCore` | 类型声明 |
-| `./ImgLoaderHooker` | 类型声明 |
-| `./CssReplacer` | 类型声明 |
-| `./createFunctionFromCode` | 类型声明 |
+| `./ImgLoaderHooker` | 主类 |
+| `./ImgLoaderHookerCore` | 核心实现 |
+| `./CssReplacer` | CSS 替换辅助 |
+| `./NodeMutationObserver` | DOM 监听 |
+| `./SimpleDolFunctionHook` | 函数 hook |
+| `./utils` | 工具 |
+| `./createFunctionFromCode` | 从代码生成函数 |
 
-## 类型
+## API 参考
 
-### 主入口
-- **`modImgLoaderHooker`** – 挂载图片加载器，允许 mod 提供自定义图片。
+### ./ImgLoaderHooker
 
-### `./ImgLoaderHooker`
-- **`ImgLoaderHooker`** – 继承 `ImgLoaderHookerCore`；安装 hook 并等待初始化。方法：`init()`、`installHook()`。
+#### ImgLoaderHooker <Badge text="类" />
 
-### `./ImgLoaderHookerCore` / `./NodeMutationObserver` / `./SimpleDolFunctionHook`
-- 核心 hook 基础设施及 mutation/函数 hook 工具。
+继承 `ImgLoaderHookerCore`，安装 hook 并等待初始化。方法：`init()`、`installHook()`。
 
-### `./CssReplacer` / `./utils` / `./createFunctionFromCode`
-- CSS 替换辅助、工具及从代码生成函数的工厂。
+### ./ImgLoaderHookerCore
+
+核心 hook 基础设施，提供图片加载与 DOM 监听能力。
+
+### ./CssReplacer
+
+CSS 替换辅助工具。
 
 ## 类型定义来源
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/DoL_ImgLoaderHooker" />
+
+:::info
 - 上游: https://github.com/Lyoko-Jeremie/DoL_ImgLoaderHooker
 - 默认分支: master
 - 构建: `pnpm run download && pnpm run build`
+:::
