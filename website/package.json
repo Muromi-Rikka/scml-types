@@ -4,14 +4,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "rspress build",
-    "dev": "rspress dev",
-    "preview": "rspress preview"
+    "doc:build": "rspress build",
+    "doc:dev": "rspress dev",
+    "doc:preview": "rspress preview"
   },
   "dependencies": {
     "@rspress/core": "^2.0.2"
   },
   "devDependencies": {
+    "@rspress/plugin-llms": "^2.0.3",
+    "@rspress/plugin-sitemap": "^2.0.3",
     "@types/node": "^22.8.1",
     "@types/react": "^19.2.13",
     "@types/react-dom": "^19.2.3",

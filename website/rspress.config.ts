@@ -1,8 +1,10 @@
 import * as path from "node:path";
 import { defineConfig } from "@rspress/core";
-
+import { pluginLlms } from "@rspress/plugin-llms";
+import { pluginSitemap } from "@rspress/plugin-sitemap";
 export default defineConfig({
   root: path.join(__dirname, "docs"),
+  plugins: [pluginLlms(), pluginSitemap({ siteUrl: "https://scml-type.pages.dev" })],
   lang: "en",
   locales: [
     {
@@ -16,22 +18,22 @@ export default defineConfig({
       lang: "zh",
       label: "简体中文",
       title: "SugarCube 2 ModLoader Type",
-      description:
-        "SugarCube 2 Mod Loader 及相关 Mod / Addon 的 TypeScript 类型声明",
+      description: "SugarCube 2 Mod Loader 及相关 Mod / Addon 的 TypeScript 类型声明",
     },
   ],
-  title: "My Site",
-  icon: "/rspress-icon.png",
+  title: "SugarCube 2 ModLoader Type",
+  icon: "/logo.png",
   logo: {
-    light: "/rspress-light-logo.png",
-    dark: "/rspress-dark-logo.png",
+    light: "/logo.png",
+    dark: "/logo.png",
   },
   themeConfig: {
+    llmsUI: true,
     socialLinks: [
       {
         icon: "github",
         mode: "link",
-        content: "https://github.com/web-infra-dev/rspress",
+        content: "https://github.com/Muromi-Rikka/scml-types",
       },
     ],
   },
