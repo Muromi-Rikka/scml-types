@@ -1,0 +1,49 @@
+---
+title: SweetAlert2 Mod
+---
+import { PackageManagerTabs } from '@rspress/core/theme';
+
+# @scml/mod-sweet-alert2
+
+SweetAlert2 mod 的 TypeScript 类型定义。
+
+## 安装
+
+<PackageManagerTabs command="install -D @scml/mod-sweet-alert2" />
+
+## 用法
+
+### 主入口（全局类型）
+
+```ts
+/// <reference types="@scml/mod-sweet-alert2" />
+```
+
+主入口增强以下全局属性：`modSweetAlert2Mod`（`SweetAlert2Mod` 实例）。
+
+### 子路径导入
+
+```ts
+import type { SomeType } from '@scml/mod-sweet-alert2/SweetAlert2Mod';
+```
+
+## 导出
+
+| 子路径 | 描述 |
+|--------|------|
+| `.` | 主入口，增强 Window/全局 |
+| `./SweetAlert2Mod` | 类型声明 |
+
+## 类型
+
+### 主入口
+- **`modSweetAlert2Mod`** – 封装 SweetAlert2，供 SugarCube mod 使用。
+
+### `./SweetAlert2Mod`
+- **`SweetAlert2Mod`** – 提供 `fire`（`typeof Swal.fire`）、`fireWithOptions(options: SweetAlertOptions)` 及 `Swal`（`typeof SweetAlert2`）。
+
+## 类型定义来源
+
+- 上游: https://github.com/Lyoko-Jeremie/SweetAlert2Mod
+- 默认分支: master
+- 构建: `pnpm run download && pnpm run build`

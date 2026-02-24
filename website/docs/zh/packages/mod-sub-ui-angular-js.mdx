@@ -1,0 +1,63 @@
+---
+title: Sub UI (AngularJS)
+---
+import { PackageManagerTabs } from '@rspress/core/theme';
+
+# @scml/mod-sub-ui-angular-js
+
+Sub UI (AngularJS) 的 TypeScript 类型定义。
+
+## 安装
+
+<PackageManagerTabs command="install -D @scml/mod-sub-ui-angular-js" />
+
+## 用法
+
+### 主入口（全局类型）
+
+```ts
+/// <reference types="@scml/mod-sub-ui-angular-js" />
+```
+
+主入口增强以下全局属性：`diff3WayMerge`（暴露 `ModSubUiAngularJs`；注：全局名称可能不同）。
+
+### 子路径导入
+
+```ts
+import type { SomeType } from '@scml/mod-sub-ui-angular-js/ModSubUiAngularJs';
+```
+
+## 导出
+
+| 子路径 | 描述 |
+|--------|------|
+| `.` | 主入口，增强 Window/全局 |
+| `./AppContainerManagerMethodsInterface` | 类型声明 |
+| `./ModSubUiAngularJs` | 类型声明 |
+| `./ModSubUiAngularJsBody` | 类型声明 |
+| `./ModSubUiAngularJsModeExportInterface` | 类型声明 |
+| `./AngularJs/appInit` | 类型声明 |
+| `./AngularJs/ExternalComponentManager` | 类型声明 |
+| `./AngularJs/ExternalComponentManagerInterface` | 类型声明 |
+| `./AngularJs/Componnet/EnableOrderComponent` | 类型声明 |
+| `./AngularJs/Componnet/OrderComponent` | 类型声明 |
+| `./AngularJs/Componnet/SimpleSelectComponent` | 类型声明 |
+
+## 类型
+
+### 主入口
+- **`diff3WayMerge`** – 基于 AngularJS 的子 UI 管理器（引导/释放，添加/清理组件）。
+
+### 子路径
+- **`./ModSubUiAngularJs`** / **`./ModSubUiAngularJsBody`** – 主 Sub UI AngularJS 模块与 body。
+- **`./AppContainerManagerMethodsInterface`** – 针对 `ModGuiConfig` 与 `ModInGameConfig` 的 bootstrap/release/addComponent/cleanComponent/registryComponent。
+- **`./ModSubUiAngularJsModeExportInterface`** – 模式导出接口。
+- **`./AngularJs/appInit`** – **`NgAppContainer`** – Angular 应用容器。
+- **`./AngularJs/ExternalComponentManager`** – **`ExternalComponentManager`** – 注册与管理外部组件。
+- **`./AngularJs/Componnet/*`** – 顺序、启用顺序、简单选择组件。
+
+## 类型定义来源
+
+- 上游: https://github.com/Lyoko-Jeremie/ModSubUiAngularJs
+- 默认分支: master
+- 构建: `pnpm run download && pnpm run build`

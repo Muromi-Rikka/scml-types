@@ -1,0 +1,53 @@
+---
+title: i18n Twee Replacer
+---
+import { PackageManagerTabs } from '@rspress/core/theme';
+
+# @scml/mod-i18n-twee-replacer
+
+i18n Twee replacer 的 TypeScript 类型定义。
+
+## 安装
+
+<PackageManagerTabs command="install -D @scml/mod-i18n-twee-replacer" />
+
+## 用法
+
+### 主入口（全局类型）
+
+```ts
+/// <reference types="@scml/mod-i18n-twee-replacer" />
+```
+
+主入口增强以下全局属性：`modI18nTweeList`（`I18nTweeList` 实例）。
+
+### 子路径导入
+
+```ts
+import type { SomeType } from '@scml/mod-i18n-twee-replacer/I18nTweeReplacer';
+```
+
+## 导出
+
+| 子路径 | 描述 |
+|--------|------|
+| `.` | 主入口，增强 Window/全局 |
+| `./CustomReadonlyMapHelper` | 类型声明 |
+| `./I18nTweeReplacer` | 类型声明 |
+
+## 类型
+
+### 主入口
+- **`modI18nTweeList`** – i18n Twee replacer；将 i18n 翻译合并到 Twee 内容中。
+
+### `./I18nTweeReplacer`
+- **`I18nTweeReplacer`** – 用翻译内容替换 Twee 文本的 Addon 类。
+
+### `./CustomReadonlyMapHelper`
+- 自定义只读 Map 行为的辅助类型。
+
+## 类型定义来源
+
+- 上游: https://github.com/Lyoko-Jeremie/I18nTweeReplacerMod
+- 默认分支: master
+- 构建: `pnpm run download && pnpm run build`

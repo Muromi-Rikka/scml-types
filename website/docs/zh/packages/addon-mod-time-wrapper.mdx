@@ -1,0 +1,59 @@
+---
+title: Time Wrapper Addon
+---
+import { PackageManagerTabs } from '@rspress/core/theme';
+
+# @scml/addon-mod-time-wrapper
+
+Time wrapper addon 的 TypeScript 类型定义。
+
+## 安装
+
+<PackageManagerTabs command="install -D @scml/addon-mod-time-wrapper" />
+
+## 用法
+
+### 主入口（全局类型）
+
+```ts
+/// <reference types="@scml/addon-mod-time-wrapper" />
+```
+
+主入口增强以下全局属性：`addonDoLTimeWrapperAddon`（`DoLTimeWrapperAddon` 实例）。
+
+### 子路径导入
+
+```ts
+import type { SomeType } from '@scml/addon-mod-time-wrapper/DoLTimeWrapperAddon';
+```
+
+## 导出
+
+| 子路径 | 描述 |
+|--------|------|
+| `.` | 主入口，增强 Window/全局 |
+| `./OldTimeFunctionHook` | 类型声明 |
+| `./TimeProxyManager` | 类型声明 |
+| `./DoLTimeWrapperAddonPlugin` | 类型声明 |
+| `./DoLTimeWrapperAddon` | 类型声明 |
+
+## 类型
+
+### 主入口
+- **`addonDoLTimeWrapperAddon`** – 封装 DoL 时间相关函数；提供对时间 API 的 hook 与代理。
+
+### `./DoLTimeWrapperAddon`
+- **`DoLTimeWrapperAddon`** – 主 Addon 类。
+
+### `./DoLTimeWrapperAddonPlugin`
+- 时间 wrapper 的插件接口。
+
+### `./OldTimeFunctionHook` / `./TimeProxyManager`
+- **`OldTimeFunctionHook`** – 原始时间函数的 hook。
+- **`TimeProxyManager`** – 管理时间函数代理。
+
+## 类型定义来源
+
+- 上游: https://github.com/Lyoko-Jeremie/DoLTimeWrapperAddonMod
+- 默认分支: master
+- 构建: `pnpm run download && pnpm run build`

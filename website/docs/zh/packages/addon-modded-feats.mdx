@@ -1,0 +1,54 @@
+---
+title: Modded Feats Addon
+---
+import { PackageManagerTabs } from '@rspress/core/theme';
+
+# @scml/addon-modded-feats
+
+Modded feats addon 的 TypeScript 类型定义。
+
+## 安装
+
+<PackageManagerTabs command="install -D @scml/addon-modded-feats" />
+
+## 用法
+
+### 主入口（全局类型）
+
+```ts
+/// <reference types="@scml/addon-modded-feats" />
+```
+
+主入口增强以下全局属性：`addonModdedFeatsAddon`（`ModdedFeatsAddon` 实例）。
+
+### 子路径导入
+
+```ts
+import type { SomeType } from '@scml/addon-modded-feats/ModdedFeatsAddon';
+```
+
+## 导出
+
+| 子路径 | 描述 |
+|--------|------|
+| `.` | 主入口，增强 Window/全局 |
+| `./ModdedFeatsAddon` | 类型声明 |
+| `./ModdedFeatsAddonParams` | 类型声明 |
+
+## 类型
+
+### 主入口
+- **`addonModdedFeatsAddon`** – 添加并合并 modded 成就数据的 Addon。
+
+### `./ModdedFeatsAddon`
+- **`ModdedFeatsAddon`** – 持有 `featsData: Map<string, FeatsObject>` 的 Addon 插件。方法：`registerMod()`、`exportDataZip()`、`init()`。
+- **`mergeFeatsObject()`**、**`appendFeatsObject()`** – 合并/追加成就工具。
+
+### `./ModdedFeatsAddonParams`
+- Addon 参数配置；详见子路径类型定义。
+
+## 类型定义来源
+
+- 上游: https://github.com/Lyoko-Jeremie/DoL_ModdedFeatsAddon
+- 默认分支: master
+- 构建: `pnpm run download && pnpm run build`

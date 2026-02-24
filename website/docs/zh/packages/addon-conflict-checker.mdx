@@ -1,0 +1,55 @@
+---
+title: Conflict Checker Addon
+---
+import { PackageManagerTabs } from '@rspress/core/theme';
+
+# @scml/addon-conflict-checker
+
+Conflict checker addon 的 TypeScript 类型定义。
+
+## 安装
+
+<PackageManagerTabs command="install -D @scml/addon-conflict-checker" />
+
+## 用法
+
+### 主入口（全局类型）
+
+```ts
+/// <reference types="@scml/addon-conflict-checker" />
+```
+
+主入口增强以下全局属性：`addonConflictChecker`（`ConflictChecker` 实例）。
+
+### 子路径导入
+
+```ts
+import type { SomeType } from '@scml/addon-conflict-checker/ConflictChecker';
+```
+
+## 导出
+
+| 子路径 | 描述 |
+|--------|------|
+| `.` | 主入口，增强 Window/全局 |
+| `./ConflictChecker` | 类型声明 |
+| `./ConflictCheckerParams` | 类型声明 |
+
+## 类型
+
+### 主入口
+- **`addonConflictChecker`** – 暴露在 `window` 上的 `ConflictChecker` 实例。用于检测和管理 mod 加载顺序冲突。
+
+### `./ConflictChecker`
+- **`ConflictChecker`** – 实现 `LifeTimeCircleHook` 和 `AddonPluginHookPointEx` 的 Addon 插件类。持有 `modList: Map<string, ConflictCheckerParams>`，提供 `registerMod()`、`ModLoaderLoadEnd()`。
+
+### `./ConflictCheckerParams`
+- **`ConflictCheckerParams`** – 加载顺序约束配置：`mustBefore`、`mustAfter`、`optionalBefore`、`optionalAfter`、`blackBefore`、`blackAfter`（均为 `ModLimit[]`）。
+- **`ModLimit`** – `{ modName: string; version: string }`。
+- **`checkModLimit`**、**`checkParams`** – 类型守卫。
+
+## 类型定义来源
+
+- 上游: https://github.com/Lyoko-Jeremie/ConflictCheckerAddon
+- 默认分支: master
+- 构建: `pnpm run download && pnpm run build`

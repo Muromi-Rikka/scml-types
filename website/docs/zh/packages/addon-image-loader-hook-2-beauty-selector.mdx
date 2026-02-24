@@ -1,0 +1,49 @@
+---
+title: Image Loader Hook → Beauty Selector
+---
+import { PackageManagerTabs } from '@rspress/core/theme';
+
+# @scml/addon-image-loader-hook-2-beauty-selector
+
+Image loader hook → beauty selector 的 TypeScript 类型定义。
+
+## 安装
+
+<PackageManagerTabs command="install -D @scml/addon-image-loader-hook-2-beauty-selector" />
+
+## 用法
+
+### 主入口（全局类型）
+
+```ts
+/// <reference types="@scml/addon-image-loader-hook-2-beauty-selector" />
+```
+
+主入口增强以下全局属性：`modImageLoaderHook2BeautySelectorAddon`（`ImageLoaderHook2BeautySelectorAddon` 实例）。
+
+### 子路径导入
+
+```ts
+import type { SomeType } from '@scml/addon-image-loader-hook-2-beauty-selector/ImageLoaderHook2BeautySelectorAddon';
+```
+
+## 导出
+
+| 子路径 | 描述 |
+|--------|------|
+| `.` | 主入口，增强 Window/全局 |
+| `./ImageLoaderHook2BeautySelectorAddon` | 类型声明 |
+
+## 类型
+
+### 主入口
+- **`modImageLoaderHook2BeautySelectorAddon`** – 将 image loader hook 桥接到 beauty selector UI 的 Addon。
+
+### `./ImageLoaderHook2BeautySelectorAddon`
+- **`ImageLoaderHook2BeautySelectorAddon`** – 主 Addon 类；扩展 image loader hook，集成 beauty selector。
+
+## 类型定义来源
+
+- 上游: https://github.com/Lyoko-Jeremie/ImageLoaderHook2BeautySelectorAddon
+- 默认分支: master
+- 构建: `pnpm run download && pnpm run build`

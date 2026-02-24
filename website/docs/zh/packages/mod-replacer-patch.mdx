@@ -1,0 +1,49 @@
+---
+title: Replace Patch
+---
+import { PackageManagerTabs } from '@rspress/core/theme';
+
+# @scml/mod-replacer-patch
+
+Replace patch 的 TypeScript 类型定义。
+
+## 安装
+
+<PackageManagerTabs command="install -D @scml/mod-replacer-patch" />
+
+## 用法
+
+### 主入口（全局类型）
+
+```ts
+/// <reference types="@scml/mod-replacer-patch" />
+```
+
+主入口增强以下全局属性：`addonReplacePatcher`（`ReplacePatcher` 实例）。
+
+### 子路径导入
+
+```ts
+import type { SomeType } from '@scml/mod-replacer-patch/ReplacePatcher';
+```
+
+## 导出
+
+| 子路径 | 描述 |
+|--------|------|
+| `.` | 主入口，增强 Window/全局 |
+| `./ReplacePatcher` | 类型声明 |
+
+## 类型
+
+### 主入口
+- **`addonReplacePatcher`** – 对游戏/mod 内容执行查找替换补丁。
+
+### `./ReplacePatcher`
+- **`ReplacePatcher`** – 应用替换补丁的 Addon 类（对内容进行查找/替换）。
+
+## 类型定义来源
+
+- 上游: https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_ReplacePatch
+- 默认分支: master
+- 构建: `pnpm run download && pnpm run build`

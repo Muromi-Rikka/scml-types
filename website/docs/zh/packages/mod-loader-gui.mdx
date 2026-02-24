@@ -1,0 +1,71 @@
+---
+title: Mod Loader GUI
+---
+import { PackageManagerTabs } from '@rspress/core/theme';
+
+# @scml/mod-loader-gui
+
+Mod Loader GUI 的 TypeScript 类型定义。
+
+## 安装
+
+<PackageManagerTabs command="install -D @scml/mod-loader-gui" />
+
+## 用法
+
+### 主入口（全局类型）
+
+```ts
+/// <reference types="@scml/mod-loader-gui" />
+```
+
+主入口增强以下全局属性：`modLoaderGui_LoadingProgress`、`modLoaderGui_PassageTracer`、`modLoaderGui`、`modLoaderGui_ModSubUiAngularJsService`。
+
+### 子路径导入
+
+```ts
+import type { SomeType } from '@scml/mod-loader-gui/Gui';
+```
+
+## 导出
+
+| 子路径 | 描述 |
+|--------|------|
+| `.` | 主入口，增强 Window/全局 |
+| `./DebugExport` | 类型声明 |
+| `./Gui` | 类型声明 |
+| `./KeyFilter` | 类型声明 |
+| `./LoadingProgress` | 类型声明 |
+| `./ModLoadSwitch` | 类型声明 |
+| `./ModManagerSubUi` | 类型声明 |
+| `./ModSubUiAngularJsService` | 类型声明 |
+| `./ModSubUiAngularJsServiceInterface` | 类型声明 |
+| `./PassageTracer` | 类型声明 |
+| `./GUI_StringTable/CN` | 类型声明 |
+| `./GUI_StringTable/EN` | 类型声明 |
+| `./GUI_StringTable/StringTable` | 类型声明 |
+| `./GM_config_TS/gm_config` | 类型声明 |
+| `./GM_config_TS/Greasemonkey` | 类型声明 |
+
+## 类型
+
+### 主入口
+- **`modLoaderGui_LoadingProgress`** – 加载进度 UI 组件。
+- **`modLoaderGui_PassageTracer`** – 追踪段落导航。
+- **`modLoaderGui`** – 主 GUI 控制器（`Gui`）。
+- **`modLoaderGui_ModSubUiAngularJsService`** – mod 子 UI 的 AngularJS 服务。
+
+### 子路径
+- **`./Gui`** – 主 GUI 类。
+- **`./ModLoadSwitch`**、**`./ModManagerSubUi`** – Mod 加载开关与管理器 UI。
+- **`./LoadingProgress`**、**`./PassageTracer`**、**`./KeyFilter`** – UI 与追踪组件。
+- **`./DebugExport`** – 调试工具。
+- **`./ModSubUiAngularJsService`** – AngularJS 服务接口。
+- **`./GUI_StringTable/*`** – i18n 字符串表（CN、EN、StringTable）。
+- **`./GM_config_TS/*`** – GM_config 与 Greasemonkey 类型。
+
+## 类型定义来源
+
+- 上游: https://github.com/Lyoko-Jeremie/sugarcube-2-ModLoaderGui
+- 默认分支: master
+- 构建: `pnpm run download && pnpm run build`

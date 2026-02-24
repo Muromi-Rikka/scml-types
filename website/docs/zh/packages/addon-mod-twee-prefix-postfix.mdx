@@ -1,0 +1,53 @@
+---
+title: Twee Prefix/Postfix Addon
+---
+import { PackageManagerTabs } from '@rspress/core/theme';
+
+# @scml/addon-mod-twee-prefix-postfix
+
+Twee prefix/postfix addon 的 TypeScript 类型定义。
+
+## 安装
+
+<PackageManagerTabs command="install -D @scml/addon-mod-twee-prefix-postfix" />
+
+## 用法
+
+### 主入口（全局类型）
+
+```ts
+/// <reference types="@scml/addon-mod-twee-prefix-postfix" />
+```
+
+主入口增强以下全局属性：`addonTweePrefixPostfixAddon`（`TweePrefixPostfixAddon` 实例）。
+
+### 子路径导入
+
+```ts
+import type { SomeType } from '@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddon';
+```
+
+## 导出
+
+| 子路径 | 描述 |
+|--------|------|
+| `.` | 主入口，增强 Window/全局 |
+| `./TweePrefixPostfixAddon` | 类型声明 |
+| `./TweePrefixPostfixAddonJsCallback` | 类型声明 |
+
+## 类型
+
+### 主入口
+- **`addonTweePrefixPostfixAddon`** – 对 Twee 内容应用 prefix/postfix 转换的 Addon。
+
+### `./TweePrefixPostfixAddon`
+- **`TweePrefixPostfixAddon`** – 用于 prefix/postfix 处理的 Addon 类。
+
+### `./TweePrefixPostfixAddonJsCallback`
+- **`TweePrefixPostfixAddonJsCallback`** – 自定义 prefix/postfix 逻辑的回调类型。
+
+## 类型定义来源
+
+- 上游: https://github.com/Lyoko-Jeremie/TweePrefixPostfixAddonMod
+- 默认分支: master
+- 构建: `pnpm run download && pnpm run build`

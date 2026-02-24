@@ -1,0 +1,53 @@
+---
+title: Twee Replacer
+---
+import { PackageManagerTabs } from '@rspress/core/theme';
+
+# @scml/mod-twee-replacer
+
+Twee replacer 的 TypeScript 类型定义。
+
+## 安装
+
+<PackageManagerTabs command="install -D @scml/mod-twee-replacer" />
+
+## 用法
+
+### 主入口（全局类型）
+
+```ts
+/// <reference types="@scml/mod-twee-replacer" />
+```
+
+主入口增强以下全局属性：`addonTweeReplacer`（`TweeReplacer` 实例）。
+
+### 子路径导入
+
+```ts
+import type { SomeType } from '@scml/mod-twee-replacer/TweeReplacer';
+```
+
+## 导出
+
+| 子路径 | 描述 |
+|--------|------|
+| `.` | 主入口，增强 Window/全局 |
+| `./TweeReplacer` | 类型声明 |
+
+## 类型
+
+### 主入口
+- **`addonTweeReplacer`** – 对 Twee 段落内容执行查找/替换。
+
+### `./TweeReplacer`
+- **`TweeReplacer`** – 实现 `AddonPluginHookPointEx` 与 `TweeReplacerLinkerClientInterface` 的 Addon。持有 `info: Map<string, ReplaceInfo>`。方法：`registerMod()`、`enableLinkerMode()`、`afterEarlyLoad()`、`afterPatchModToGame()`、`do_patch()`、`init()`。
+- **`ReplaceParams`** – `{ passage, findString?, findRegex?, regexFlag?, replace?, replaceFile?, debug?, all? }`。
+- **`ReplaceInfo`** – `{ addonName, mod, modZip }`。
+- **`ModBootJsonAddonPluginTweeReplacer`** – 带 `paramsFiles?: string[]` 的引导配置。
+- **`isReplaceParams()`** – 类型守卫。
+
+## 类型定义来源
+
+- 上游: https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_TweeReplacer
+- 默认分支: master
+- 构建: `pnpm run download && pnpm run build`

@@ -1,0 +1,49 @@
+---
+title: CoT Game Version Check
+---
+import { PackageManagerTabs } from '@rspress/core/theme';
+
+# @scml/mod-cot-check-game-version
+
+CoT 游戏版本检测的 TypeScript 类型定义。
+
+## 安装
+
+<PackageManagerTabs command="install -D @scml/mod-cot-check-game-version" />
+
+## 用法
+
+### 主入口（全局类型）
+
+```ts
+/// <reference types="@scml/mod-cot-check-game-version" />
+```
+
+主入口增强以下全局属性：`modCheckGameVersion`（`CheckGameVersion` 实例）。
+
+### 子路径导入
+
+```ts
+import type { SomeType } from '@scml/mod-cot-check-game-version/CheckGameVersion';
+```
+
+## 导出
+
+| 子路径 | 描述 |
+|--------|------|
+| `.` | 主入口，增强 Window/全局 |
+| `./CheckGameVersion` | 类型声明 |
+
+## 类型
+
+### 主入口
+- **`modCheckGameVersion`** – 检测 CoT（Cape on the Tower）游戏版本兼容性。
+
+### `./CheckGameVersion`
+- **`CheckGameVersion`** – 在运行时验证游戏版本的 Addon 类。
+
+## 类型定义来源
+
+- 上游: https://github.com/Lyoko-Jeremie/CheckGameVersionCot
+- 默认分支: master
+- 构建: `pnpm run download && pnpm run build`

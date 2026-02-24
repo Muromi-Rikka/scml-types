@@ -1,0 +1,103 @@
+---
+title: SugarCube 2 Mod Loader
+---
+import { PackageManagerTabs } from '@rspress/core/theme';
+
+# @scml/sc2-modloader
+
+SugarCube 2 Mod Loader 的 TypeScript 类型定义。
+
+## 安装
+
+<PackageManagerTabs command="install -D @scml/sc2-modloader" />
+
+## 用法
+
+### 主入口（全局类型）
+
+```ts
+/// <reference types="@scml/sc2-modloader" />
+```
+
+主入口增强以下全局属性：`jQuery`、`$`、`modSC2DataManager`、`modUtils`、`jsPreloader`、`modModLoadController`、`modAddonPluginManager`、`modSC2JsEvalContext`。
+
+### 子路径导入
+
+```ts
+import type { SomeType } from '@scml/sc2-modloader/AddonPlugin';
+```
+
+## 导出
+
+| 子路径 | 描述 |
+|--------|------|
+| `.` | 主入口，增强 Window/全局 |
+| `./AddonPlugin` | 类型声明 |
+| `./DecoratorUtils` | 类型声明 |
+| `./DependenceChecker` | 类型声明 |
+| `./export2window` | 类型声明 |
+| `./expose-loader` | 类型声明 |
+| `./extname` | 类型声明 |
+| `./getGlobal` | 类型声明 |
+| `./HtmlTagSrcHook` | 类型声明 |
+| `./IdbKeyValRef` | 类型声明 |
+| `./JqueryInjector` | 类型声明 |
+| `./JsPreloader` | 类型声明 |
+| `./JSZipLikeReadOnlyInterface` | 类型声明 |
+| `./LanguageManager` | 类型声明 |
+| `./MergeSC2DataInfoCache` | 类型声明 |
+| `./ModLoadController` | 类型声明 |
+| `./ModLoader` | 类型声明 |
+| `./ModOrderContainer` | 类型声明 |
+| `./ModZipReader` | 类型声明 |
+| `./PassageTracer` | 类型声明 |
+| `./polyfill` | 类型声明 |
+| `./ReplacePatcher` | 类型声明 |
+| `./SC2ApiRef` | 类型声明 |
+| `./SC2DataInfoCache` | 类型声明 |
+| `./SC2DataManager` | 类型声明 |
+| `./Sc2EventTracer` | 类型声明 |
+| `./SC2JsEvalContext` | 类型声明 |
+| `./SimulateMerge` | 类型声明 |
+| `./SugarCube2` | 类型声明 |
+| `./Utils` | 类型声明 |
+| `./WikifyTracer` | 类型声明 |
+| `./ModPack/ModMeta` | 类型声明 |
+| `./ModPack/ModPack` | 类型声明 |
+| `./ModPack/ModPackFileReaderInterface` | 类型声明 |
+| `./ModPack/ModPackJsZipAdaptor` | 类型声明 |
+| `./SemVer/InfiniteSemVer` | 类型声明 |
+| `./Utils/LazyIteratorAdaptor.d.ts` | 类型声明 |
+| `./WeakRefPool/WeakRefPool` | 类型声明 |
+
+## 类型
+
+### 主入口
+- **`jQuery`** / **`$`** – `window` 上的 jQuery。
+- **`modSC2DataManager`** – mod 与游戏数据核心管理器。
+- **`modUtils`** – Mod Loader 工具。
+- **`jsPreloader`** – 脚本预加载器。
+- **`modModLoadController`** – Mod 加载生命周期控制器。
+- **`modAddonPluginManager`** – 管理 addon 插件。
+- **`modSC2JsEvalContext`** – mod 的 JS 求值上下文。
+
+### 核心子路径
+- **`./ModLoader`** – **`ModLoader`**、**`ModBootJson`**、**`ModBootJsonAddonPlugin`**、**`DependenceInfo`**、**`ModImg`**、**`IModImgGetter`** – 核心 mod 加载类型。
+- **`./SC2DataManager`** – **`SC2DataManager`** – 中心数据管理器。
+- **`./ModLoadController`** – 加载控制器与 **`LogWrapper`**。
+- **`./AddonPlugin`** – **`AddonPluginManager`**、**`AddonPluginHookPointEx`**、**`LifeTimeCircleHook`** – Addon 插件接口。
+- **`./ReplacePatcher`** – 补丁/替换工具。
+- **`./ModOrderContainer`** – **`ModOrderContainer`**、**`ModOrderItem`**、**`ModLoadFromSourceType`** – 加载顺序类型。
+- **`./ModZipReader`** – **`ModZipReader`**、**`LocalLoader`**、**`RemoteLoader`**、**`IndexDBLoader`** – Mod zip 与加载器类型。
+- **`./SC2DataInfoCache`** – **`SC2DataInfo`**、**`CacheRecord`**、**`StyleTextFileItem`**、**`ScriptTextFileItem`**、**`PassageDataItem`** – 缓存游戏数据类型。
+- **`./SugarCube2`** – **`Passage`** – SugarCube 段落类型。
+- **`./ModPack/*`** – **`ModPack`**、**`ModMeta`**、**`ModPackFileReaderInterface`** – Mod 包类型。
+- **`./SemVer/InfiniteSemVer`** – **`InfiniteSemVer`** – 版本解析。
+- **`./Utils`** – **`ModUtils`** – 工具类型。
+- 其他子路径：**`DecoratorUtils`**、**`DependenceChecker`**、**`export2window`**、**`expose-loader`**、**`extname`**、**`getGlobal`**、**`HtmlTagSrcHook`**、**`IdbKeyValRef`**、**`JqueryInjector`**、**`JsPreloader`**、**`JSZipLikeReadOnlyInterface`**、**`LanguageManager`**、**`MergeSC2DataInfoCache`**、**`PassageTracer`**、**`polyfill`**、**`SC2ApiRef`**、**`SC2DataInfoCache`**、**`Sc2EventTracer`**、**`SC2JsEvalContext`**、**`SimulateMerge`**、**`WikifyTracer`**、**`WeakRefPool`**。
+
+## 类型定义来源
+
+- 上游: https://github.com/Lyoko-Jeremie/sugarcube-2-ModLoader
+- 默认分支: master
+- 构建: `pnpm run download && pnpm run build`

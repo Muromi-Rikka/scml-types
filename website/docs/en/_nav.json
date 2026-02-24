@@ -1,0 +1,4 @@
+[
+  { "text": "home", "link": "/", "activeMatch": "^/$" },
+  { "text": "packages", "link": "/packages/", "activeMatch": "^/packages/" }
+]

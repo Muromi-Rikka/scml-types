@@ -1,0 +1,45 @@
+---
+title: SugarCube 2 Verlnir
+---
+import { PackageManagerTabs } from '@rspress/core/theme';
+
+# @scml/sc2-verlnir
+
+SugarCube 2 API 的 TypeScript 类型定义（基于 verlnir）。
+
+此包直接使用仓库中 `src/` 的类型声明，无需 `download` 或 `build`。
+
+## 安装
+
+<PackageManagerTabs command="install -D @scml/sc2-verlnir" />
+
+## 用法
+
+### 主入口（全局 SugarCube 类型）
+
+```ts
+/// <reference types="@scml/sc2-verlnir" />
+```
+
+主入口 `./src/global.d.ts` 声明了 SugarCube 2 的全局 API。
+
+## 类型
+
+### 全局 API（通过 `declare global`）
+- **`Story`** – `StoryAPI` – 故事与段落访问。
+- **`Config`** – `ConfigAPI` – 引擎配置。
+- **`State`** – `StateAPI` – 游戏状态、历史、临时变量。
+- **`Passage`** – `PassageConstructor` – 当前段落。
+- **`Save`** – `SaveAPI` – 保存/加载。
+- **`Dialog`** – `DialogAPI` – 对话框系统。
+- **`Engine`** – `EngineAPI` – 引擎控制。
+- **`Macro`** – `MacroAPI` – 宏定义。
+- **`Scripting`** – `ScriptingAPI` – 脚本求值。
+- **`Template`** – `TemplateAPI` – 模板引擎。
+- **`UI`** / **`UIBar`** – `UIAPI` / `UIBarAPI` – UI 组件。
+- **`Alert`**、**`Browser`**、**`Config`**、**`DebugBar`**、**`Fullscreen`**、**`Has`**、**`L10n`**、**`Links`**、**`LoadScreen`**、**`Setting`**、**`SimpleAudio`**、**`SimpleStore`**、**`Util`**、**`Visibility`**、**`Wikifier`** – 其他 SugarCube API。
+- **`version`** – `VersionInfo`。
+- **`session`**、**`storage`** – `SimpleStoreInstanceAPI | null`。
+- **`settings`**、**`setup`** – `Record<string, unknown>`。
+- **`idb`** – `IdbAPI`。
+- **`window.SugarCube`** – 包含上述所有 API 的对象，用于检测与调试。

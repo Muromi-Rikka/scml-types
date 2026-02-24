@@ -1,0 +1,6 @@
+{
+  "packages": { "en": "Package Docs", "zh": "包文档" },
+  "overview": { "en": "Overview", "zh": "概述" },
+  "home": { "en": "Home", "zh": "首页" },
+  "github": { "en": "GitHub", "zh": "GitHub" }
+}
