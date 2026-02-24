@@ -1,7 +1,3 @@
 # @scml/utils
 
-Workspace internal utility library shared by other packages. Types and source are maintained in this repository; there is no external source fetch (no `download` script). Other packages can depend on it via `workspace:*`.
-
-## Types
-
-Utility types and helpers used by other packages in the monorepo (e.g. build scripts, shared type helpers). See `src/` for the source and exported types.
+Workspace internal utility library. See [Package Docs](https://scml-type.pages.dev/packages/) for related documentation.
