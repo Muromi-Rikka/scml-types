@@ -1,39 +1,51 @@
 ---
 title: Link Button Filter
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/mod-link-button-filter
 
-TypeScript type definitions for Link button filter.
+TypeScript type definitions for Link button filter, modifying link button behavior in DoL.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/mod-link-button-filter" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/mod-link-button-filter" />
 ```
 
-Main entry augments these global properties: `DoLLinkButtonFilter_patchLinkButton` (function from `init.d.ts`).
+### Use global function
 
-## Types
+`DoLLinkButtonFilter_patchLinkButton` is mounted on `window`.
 
-### Main entry
-- **`DoLLinkButtonFilter_patchLinkButton`** – Patches the link button behavior in DoL; used to filter or modify link clicks.
+</Steps>
 
-## Exports
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `DoLLinkButtonFilter_patchLinkButton` | `typeof patchLinkButton` | Modifies link button behavior; filters or modifies link clicks |
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
-| `.` | Main entry, augments Window/global |
+|---------|-------------|
+| `.` | Main entry |
 
-## Type definition source
+## Type Definition Source
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/DoLLinkButtonFilter" />
+
+:::info
 - Upstream: https://github.com/Lyoko-Jeremie/DoLLinkButtonFilter
 - Default branch: master
 - Build: `pnpm run download && pnpm run build`
+:::

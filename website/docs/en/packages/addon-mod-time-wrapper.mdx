@@ -1,59 +1,102 @@
 ---
-title: Time Wrapper Addon
+title: DoL Time Wrapper Addon
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-mod-time-wrapper
 
-TypeScript type definitions for Time wrapper addon.
+TypeScript type definitions for DoL Time Wrapper addon, for wrapping game time-related functions with time hooks and proxies.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/addon-mod-time-wrapper" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/addon-mod-time-wrapper" />
 ```
 
-Main entry augments these global properties: `addonDoLTimeWrapperAddon` (instance of `DoLTimeWrapperAddon`).
+### Use global instance
 
-### Subpath imports
+`addonDoLTimeWrapperAddon` is mounted on `window`.
+
+### Import types on demand
 
 ```ts
-import type { SomeType } from '@scml/addon-mod-time-wrapper/DoLTimeWrapperAddon';
+import type { DoLTimeWrapperAddon } from '@scml/addon-mod-time-wrapper/DoLTimeWrapperAddon';
+import type { TimeProxyManager, TimeHookType } from '@scml/addon-mod-time-wrapper/TimeProxyManager';
+import type { OldTimeFunctionHook } from '@scml/addon-mod-time-wrapper/OldTimeFunctionHook';
 ```
 
-## Exports
+</Steps>
+
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `addonDoLTimeWrapperAddon` | `DoLTimeWrapperAddon` | Addon instance |
+
+<Tabs>
+<Tab label="Main entry">
+
+```ts
+/// <reference types="@scml/addon-mod-time-wrapper" />
+```
+
+</Tab>
+<Tab label="Subpath import">
+
+```ts
+import type { DoLTimeWrapperAddon } from '@scml/addon-mod-time-wrapper/DoLTimeWrapperAddon';
+```
+
+</Tab>
+</Tabs>
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
+|---------|-------------|
 | `.` | Main entry, augments Window/global |
-| `./OldTimeFunctionHook` | Type declarations |
-| `./TimeProxyManager` | Type declarations |
-| `./DoLTimeWrapperAddonPlugin` | Type declarations |
-| `./DoLTimeWrapperAddon` | Type declarations |
+| `./DoLTimeWrapperAddon` | Main Addon class |
+| `./OldTimeFunctionHook` | Old time function hook |
+| `./TimeProxyManager` | Time proxy manager |
+| `./DoLTimeWrapperAddonPlugin` | Addon plugin |
 
-## Types
+## API Reference
 
-### Main entry
-- **`addonDoLTimeWrapperAddon`** – Wraps DoL time-related functions; provides hooking and proxy for time APIs.
+### ./DoLTimeWrapperAddon
 
-### `./DoLTimeWrapperAddon`
-- **`DoLTimeWrapperAddon`** – Main addon class.
+#### DoLTimeWrapperAddon <Badge text="class" />
 
-### `./DoLTimeWrapperAddonPlugin`
-- Plugin interface for the time wrapper.
+| Property | Type | Description |
+|----------|------|-------------|
+| `infinityLoopChecker` | `InfinityLoopChecker` | Infinite loop detection |
+| `timeProxyManager` | `TimeProxyManager` | Time proxy manager |
+| `timeHookManager` | `TimeHookManager` | Time hook manager |
+| `isInit` | `boolean` | Whether initialized |
+| `addTimeHook(hook)` | Add time hook |
+| `addFunctionHook(hook)` | Add function hook |
+| `makeCatchCode()` | Generate catch code |
+| `init(oldTimeFunctionRef)` | Initialize, returns injection code |
 
-### `./OldTimeFunctionHook` / `./TimeProxyManager`
-- **`OldTimeFunctionHook`** – Hook for original time functions.
-- **`TimeProxyManager`** – Manages time function proxies.
+### ./TimeProxyManager
 
-## Type definition source
+Time proxy and hook management, including `TimeProxyManager`, `TimeHookType`, `InfinityLoopChecker`, etc.
 
-- Upstream: https://github.com/Lyoko-Jeremie/DoLTimeWrapperAddonMod
-- Default branch: master
+### ./OldTimeFunctionHook
+
+Old time function reference type, used for `init()` parameter.
+
+## Type Definition Source
+
+:::info
+- Upstream: Bundled with scml-types
 - Build: `pnpm run download && pnpm run build`
+:::

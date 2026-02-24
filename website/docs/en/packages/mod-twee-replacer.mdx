@@ -1,53 +1,104 @@
 ---
 title: Twee Replacer
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/mod-twee-replacer
 
-TypeScript type definitions for Twee replacer.
+TypeScript type definitions for Twee replacer, for find/replace on Twee passage content.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/mod-twee-replacer" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/mod-twee-replacer" />
 ```
 
-Main entry augments these global properties: `addonTweeReplacer` (instance of `TweeReplacer`).
+### Use global instance
 
-### Subpath imports
+`addonTweeReplacer` is mounted on `window`.
+
+### Import types on demand
 
 ```ts
-import type { SomeType } from '@scml/mod-twee-replacer/TweeReplacer';
+import type { TweeReplacer, ReplaceParams, ReplaceInfo } from '@scml/mod-twee-replacer/TweeReplacer';
 ```
 
-## Exports
+</Steps>
+
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `addonTweeReplacer` | `TweeReplacer` | Addon instance, performs Twee replace |
+
+<Tabs>
+<Tab label="Main entry">
+
+```ts
+/// <reference types="@scml/mod-twee-replacer" />
+```
+
+</Tab>
+<Tab label="Subpath import">
+
+```ts
+import type { TweeReplacer } from '@scml/mod-twee-replacer/TweeReplacer';
+```
+
+</Tab>
+</Tabs>
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
+|---------|-------------|
 | `.` | Main entry, augments Window/global |
-| `./TweeReplacer` | Type declarations |
+| `./TweeReplacer` | Main class, ReplaceParams, ReplaceInfo, etc. |
 
-## Types
+## API Reference
 
-### Main entry
-- **`addonTweeReplacer`** – Performs find/replace on Twee passage content.
+### ./TweeReplacer
 
-### `./TweeReplacer`
-- **`TweeReplacer`** – Addon implementing `AddonPluginHookPointEx` and `TweeReplacerLinkerClientInterface`. Holds `info: Map<string, ReplaceInfo>`. Methods: `registerMod()`, `enableLinkerMode()`, `afterEarlyLoad()`, `afterPatchModToGame()`, `do_patch()`, `init()`.
-- **`ReplaceParams`** – `{ passage, findString?, findRegex?, regexFlag?, replace?, replaceFile?, debug?, all? }`.
-- **`ReplaceInfo`** – `{ addonName, mod, modZip }`.
-- **`ModBootJsonAddonPluginTweeReplacer`** – Boot config with `paramsFiles?: string[]`.
-- **`isReplaceParams()`** – Type guard.
+#### TweeReplacer <Badge text="class" />
 
-## Type definition source
+| Property/Method | Description |
+|-----------------|-------------|
+| `info` | `Map<string, ReplaceInfo>` |
+| `registerMod()` | Register mod |
+| `enableLinkerMode()` | Enable linker mode |
+| `afterEarlyLoad()` | After EarlyLoad hook |
+| `afterPatchModToGame()` | After patch hook |
+| `do_patch()` | Execute replace |
+| `init()` | Initialize |
 
+#### ReplaceParams <Badge text="interface" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `passage` | `string` | Passage name |
+| `findString` | `string` | Find string |
+| `findRegex` | `string` | Find regex |
+| `regexFlag` | `string` | Regex flags |
+| `replace` | `string` | Replace string |
+| `replaceFile` | `string` | Replace file path |
+| `debug` | `boolean` | Debug |
+| `all` | `boolean` | Replace all |
+
+## Type Definition Source
+
+<SourceCode href="https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_TweeReplacer" />
+
+:::info
 - Upstream: https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_TweeReplacer
 - Default branch: master
 - Build: `pnpm run download && pnpm run build`
+:::

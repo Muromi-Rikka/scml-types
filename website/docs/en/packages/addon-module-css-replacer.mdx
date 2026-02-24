@@ -1,49 +1,103 @@
 ---
 title: Module CSS Replacer Addon
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-module-css-replacer
 
-TypeScript type definitions for Module CSS replacer addon.
+TypeScript type definitions for Module CSS replacer addon, for replacing content in module CSS files.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/addon-module-css-replacer" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/addon-module-css-replacer" />
 ```
 
-Main entry augments these global properties: `addonModuleCssReplacer` (instance of `ModuleCssReplacer`).
+### Use global instance
 
-### Subpath imports
+`addonModuleCssReplacer` is mounted on `window`.
+
+### Import types on demand
 
 ```ts
-import type { SomeType } from '@scml/addon-module-css-replacer/ModuleCssReplacer';
+import type { ModuleCssReplacer, ReplaceParams } from '@scml/addon-module-css-replacer/ModuleCssReplacer';
 ```
 
-## Exports
+</Steps>
+
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `addonModuleCssReplacer` | `ModuleCssReplacer` | Addon instance, replaces module CSS |
+
+<Tabs>
+<Tab label="Main entry">
+
+```ts
+/// <reference types="@scml/addon-module-css-replacer" />
+```
+
+</Tab>
+<Tab label="Subpath import">
+
+```ts
+import type { ModuleCssReplacer, ReplaceParams } from '@scml/addon-module-css-replacer/ModuleCssReplacer';
+```
+
+</Tab>
+</Tabs>
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
+|---------|-------------|
 | `.` | Main entry, augments Window/global |
-| `./ModuleCssReplacer` | Type declarations |
+| `./ModuleCssReplacer` | Main class and ReplaceParams |
 
-## Types
+## API Reference
 
-### Main entry
-- **`addonModuleCssReplacer`** – `ModuleCssReplacer` instance; replacer addon for module CSS files.
+### ./ModuleCssReplacer
 
-### `./ModuleCssReplacer`
-- **`ModuleCssReplacer`** – Addon plugin that replaces content in module CSS. Exposes `ReplaceParams` (e.g. `cssName`, `findString`, `findRegex`, `replace`), `registerMod()`, `do_patch()`, `getAllModuleStyleNode()`.
+#### ModuleCssReplacer <Badge text="class" />
 
-## Type definition source
+| Property/Method | Type | Description |
+|-----------------|------|-------------|
+| `info` | `Map<string, ReplaceInfo>` | Replace info |
+| `registerMod()` | `(addonName, mod, modZip) => Promise<void>` | Register mod |
+| `afterPreload()` | `() => Promise<void>` | After-preload hook |
+| `getAllModuleStyleNode()` | `() => Map<string, HTMLStyleElement>` | Get all module style nodes |
+| `do_patch()` | `(ri, ns) => Promise<void>` | Execute replace |
+| `exportDataZip()` | `(zip: JSZip) => Promise<JSZip>` | Export data |
+| `init()` | `() => void` | Initialize |
 
+#### ReplaceParams <Badge text="interface" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `cssName` | `string` | CSS file name |
+| `findString` | `string` | Find string |
+| `findRegex` | `string` | Find regex |
+| `replace` | `string` | Replace string |
+| `replaceFile` | `string` | Replace file path |
+| `debug` | `boolean` | Debug mode |
+| `all` | `boolean` | Replace all |
+
+## Type Definition Source
+
+<SourceCode href="https://github.com/Lyoko-Jeremie/DoL_ModuleCssReplacerAddon" />
+
+:::info
 - Upstream: https://github.com/Lyoko-Jeremie/DoL_ModuleCssReplacerAddon
 - Default branch: master
 - Build: `pnpm run download && pnpm run build`
+:::

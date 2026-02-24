@@ -1,56 +1,86 @@
 ---
 title: DoL i18n Mod
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/mod-i18n
 
-TypeScript type definitions for DoL i18n mod.
+TypeScript type definitions for DoL i18n mod, handling translation and localization data.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/mod-i18n" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/mod-i18n" />
 ```
 
-Main entry augments these global properties: `modI18N` (instance of `ModI18N`).
+### Use global instance
 
-### Subpath imports
+`modI18N` is mounted on `window`.
+
+### Import types on demand
 
 ```ts
-import type { SomeType } from '@scml/mod-i18n/I18N';
+import type { ModI18N } from '@scml/mod-i18n/I18N';
+import type { GetPromiseWithResolvers } from '@scml/mod-i18n/GetPromiseWithResolvers';
 ```
 
-## Exports
+</Steps>
+
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `modI18N` | `ModI18N` | DoL i18n mod instance |
+
+<Tabs>
+<Tab label="Main entry">
+
+```ts
+/// <reference types="@scml/mod-i18n" />
+```
+
+</Tab>
+<Tab label="Subpath import">
+
+```ts
+import type { ModI18N } from '@scml/mod-i18n/I18N';
+```
+
+</Tab>
+</Tabs>
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
+|---------|-------------|
 | `.` | Main entry, augments Window/global |
-| `./GetPromiseWithResolvers` | Type declarations |
-| `./I18N` | Type declarations |
-| `./TypeB` | Type declarations |
+| `./I18N` | ModI18N main class |
+| `./GetPromiseWithResolvers` | Promise resolver helper |
+| `./TypeB` | i18n input/output types |
 
-## Types
+## API Reference
 
-### Main entry
-- **`modI18N`** – DoL i18n mod instance; handles translation and locale data.
+### ./I18N
 
-### `./I18N`
-- **`ModI18N`** – Main i18n class. Properties: `modUtils`, `modSC2DataManager`, `logger`, `idbRef`, `idbKeyValRef`, `typeB`. Methods: `patchVersionString()`, `readZipStream()`, `readZipSelf()`, `checkItem()`.
-- **`sleep()`** – Utility `Promise` delay.
+#### ModI18N <Badge text="class" />
 
-### `./GetPromiseWithResolvers` / `./TypeB`
-- **`GetPromiseWithResolvers`** – Promise resolver helper.
-- **`TypeB`** – Type definitions for i18n input/output and `ModI18NTypeB`, `TypeBI18NInputType`.
+Main i18n class. Properties: `modUtils`, `modSC2DataManager`, `logger`, `idbRef`, `idbKeyValRef`, `typeB`. Methods: `patchVersionString()`, `readZipStream()`, `readZipSelf()`, `checkItem()`, etc.
 
-## Type definition source
+## Type Definition Source
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_i18nMod" />
+
+:::info
 - Upstream: https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_i18nMod
 - Default branch: master
 - Build: `pnpm run download && pnpm run build`
+:::

@@ -1,11 +1,12 @@
 ---
 title: Conflict Checker Addon
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-conflict-checker
 
-TypeScript type definitions for Conflict checker addon.
+TypeScript type definitions for Conflict checker addon, for detecting and managing mod load-order conflicts.
 
 ## Installation
 
@@ -17,44 +18,128 @@ TypeScript type definitions for Conflict checker addon.
 
 ### Add type reference
 
+Add triple-slash directive in your project to bring in global types:
+
 ```ts
 /// <reference types="@scml/addon-conflict-checker" />
 ```
 
 ### Use global instance
 
-`addonConflictChecker` is mounted on `window`.
+`addonConflictChecker` is mounted on `window`; you can access mod conflict detection results.
+
+### Import types on demand
+
+```ts
+import type { ConflictChecker } from '@scml/addon-conflict-checker/ConflictChecker';
+import type { ConflictCheckerParams, ModLimit } from '@scml/addon-conflict-checker/ConflictCheckerParams';
+```
 
 </Steps>
 
 ## Global Types <Badge type="info" text="global" />
 
+Main entry extends `Window` via `/// <reference types="..." />`. <Badge type="info" text="global" /> The following property is on `window`:
+
 | Property | Type | Description |
 |----------|------|-------------|
-| `addonConflictChecker` | `ConflictChecker` | Addon instance |
+| `addonConflictChecker` | `ConflictChecker` | Addon instance, manages mod load-order constraints |
 
-## Exports
+```ts
+/// <reference types="@scml/addon-conflict-checker" />
+
+// Access mod list
+window.addonConflictChecker.modList;
+```
+
+<Tabs>
+<Tab label="Main entry">
+
+```ts
+/// <reference types="@scml/addon-conflict-checker" />
+```
+
+</Tab>
+<Tab label="Subpath import">
+
+```ts
+import type { ConflictChecker } from '@scml/addon-conflict-checker/ConflictChecker';
+import type { ConflictCheckerParams, ModLimit } from '@scml/addon-conflict-checker/ConflictCheckerParams';
+```
+
+</Tab>
+</Tabs>
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
+|---------|-------------|
 | `.` | Main entry, augments Window/global |
-| `./ConflictChecker` | Type declarations |
-| `./ConflictCheckerParams` | Type declarations |
+| `./ConflictChecker` | ConflictChecker class |
+| `./ConflictCheckerParams` | Config params and type guards |
 
-## Types
+## API Reference
 
-### Main entry
-- **`addonConflictChecker`** – `ConflictChecker` instance exposed on `window`. Used to detect and manage mod load-order conflicts.
+### ./ConflictChecker
 
-### `./ConflictChecker`
-- **`ConflictChecker`** – Addon plugin class implementing `LifeTimeCircleHook` and `AddonPluginHookPointEx`. Holds `modList: Map<string, ConflictCheckerParams>`, provides `registerMod()`, `ModLoaderLoadEnd()`.
+#### ConflictChecker <Badge text="class" />
 
-### `./ConflictCheckerParams`
-- **`ConflictCheckerParams`** – Config for load-order constraints: `mustBefore`, `mustAfter`, `optionalBefore`, `optionalAfter`, `blackBefore`, `blackAfter` (all `ModLimit[]`).
-- **`ModLimit`** – `{ modName: string; version: string }`.
-- **`checkModLimit`**, **`checkParams`** – Type guards.
+Addon plugin class implementing `LifeTimeCircleHook` and `AddonPluginHookPointEx`, for mod load-order conflict detection.
 
-## Type definition source
+**Constructor**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `gSC2DataManager` | `SC2DataManager` | Mod Loader data manager |
+| `gModUtils` | `ModUtils` | Mod utilities |
+
+**Properties**
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `gSC2DataManager` | `SC2DataManager` | Data manager reference |
+| `gModUtils` | `ModUtils` | Utilities reference |
+| `logger` | `LogWrapper` | Logger |
+| `infiniteSemVerApi` | `InfiniteSemVerApi` | Version resolution API |
+| `modList` | `Map<string, ConflictCheckerParams>` | Load-order constraints by mod name |
+
+**Methods**
+
+| Method | Signature | Description |
+|--------|-----------|-------------|
+| `registerMod` | `(addonName: string, mod: ModInfo, modZip: ModZipReader) => Promise<void>` | Register mod, read conflict config |
+| `ModLoaderLoadEnd` | `() => Promise<void>` | Callback when Mod Loader finishes loading |
+
+---
+
+### ./ConflictCheckerParams
+
+#### ConflictCheckerParams <Badge text="interface" />
+
+Load-order constraint config for mod's `mod.json` or addon config.
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `mustBefore` | `ModLimit[]` | Mods that must load before this mod |
+| `mustAfter` | `ModLimit[]` | Mods that must load after this mod |
+| `optionalBefore` | `ModLimit[]` | Recommended before this mod |
+| `optionalAfter` | `ModLimit[]` | Recommended after this mod |
+| `blackBefore` | `ModLimit[]` | Forbidden before this mod |
+| `blackAfter` | `ModLimit[]` | Forbidden after this mod |
+
+#### ModLimit <Badge text="interface" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `modName` | `string` | Mod name |
+| `version` | `string` | Version (SemVer) |
+
+#### checkModLimit() / checkParams() <Badge text="type guard" />
+
+- `checkModLimit(ml: any): ml is ModLimit`
+- `checkParams(a: any): a is ConflictCheckerParams`
+
+## Type Definition Source
 
 <SourceCode href="https://github.com/Lyoko-Jeremie/ConflictCheckerAddon" />
 

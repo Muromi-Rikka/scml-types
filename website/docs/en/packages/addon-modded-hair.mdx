@@ -1,54 +1,106 @@
 ---
 title: Modded Hair Addon
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-modded-hair
 
-TypeScript type definitions for Modded hair addon.
+TypeScript type definitions for Modded hair addon, for adding and merging modded hair data.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/addon-modded-hair" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/addon-modded-hair" />
 ```
 
-Main entry augments these global properties: `addonModdedHairAddon` (instance of `ModdedHairAddon`).
+### Use global instance
 
-### Subpath imports
+`addonModdedHairAddon` is mounted on `window`.
+
+### Import types on demand
 
 ```ts
-import type { SomeType } from '@scml/addon-modded-hair/ModdedHairAddon';
+import type { ModdedHairAddon, mergeHairObject } from '@scml/addon-modded-hair/ModdedHairAddon';
+import type { ModdedClothesHairParams } from '@scml/addon-modded-hair/ModdedHairAddonParams';
 ```
 
-## Exports
+</Steps>
+
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `addonModdedHairAddon` | `ModdedHairAddon` | Addon instance, manages hair data |
+
+<Tabs>
+<Tab label="Main entry">
+
+```ts
+/// <reference types="@scml/addon-modded-hair" />
+```
+
+</Tab>
+<Tab label="Subpath import">
+
+```ts
+import type { ModdedHairAddon } from '@scml/addon-modded-hair/ModdedHairAddon';
+import type { ModdedClothesHairParams } from '@scml/addon-modded-hair/ModdedHairAddonParams';
+```
+
+</Tab>
+</Tabs>
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
+|---------|-------------|
 | `.` | Main entry, augments Window/global |
-| `./ModdedHairAddon` | Type declarations |
-| `./ModdedHairAddonParams` | Type declarations |
+| `./ModdedHairAddon` | Main class and utility functions |
+| `./ModdedHairAddonParams` | Config params and type guards |
 
-## Types
+## API Reference
 
-### Main entry
-- **`addonModdedHairAddon`** – Addon for adding and merging modded hair data.
+### ./ModdedHairAddon
 
-### `./ModdedHairAddon`
-- **`ModdedHairAddon`** – Addon plugin with `hairData: Map<string, HairObject>`. Methods: `registerMod()`, `exportDataZip()`, `init()`.
-- **`mergeHairObject()`**, **`appendHairObject()`** – Merge/append hair utilities.
+#### ModdedHairAddon <Badge text="class" />
 
-### `./ModdedHairAddonParams`
-- Params config for the addon; see subpath for type definitions.
+| Property | Type | Description |
+|----------|------|-------------|
+| `hairData` | `Map<string, HairObject>` | Hair data by key |
+| `registerMod()` | `(addonName, mod, modZip) => Promise<void>` | Register mod |
+| `exportDataZip()` | `(zip: JSZip) => Promise<JSZip>` | Export data |
+| `init()` | `() => void` | Initialize |
 
-## Type definition source
+#### mergeHairObject() / appendHairObject() <Badge text="method" />
 
+- `mergeHairObject(b, o, modName, logger)`: Merge two HairObject; errors on same key
+- `appendHairObject(b, o, logger)`: Append o to b
+
+### ./ModdedHairAddonParams
+
+#### ModdedClothesHairParams <Badge text="interface" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `hair` | `string[]` | Hair file path list |
+
+#### checkParams() / checkHairItem() <Badge text="type guard" />
+
+## Type Definition Source
+
+<SourceCode href="https://github.com/Lyoko-Jeremie/DoL_ModdedHairAddon" />
+
+:::info
 - Upstream: https://github.com/Lyoko-Jeremie/DoL_ModdedHairAddon
 - Default branch: master
 - Build: `pnpm run download && pnpm run build`
+:::

@@ -1,54 +1,103 @@
 ---
 title: Modded Feats Addon
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-modded-feats
 
-TypeScript type definitions for Modded feats addon.
+TypeScript type definitions for Modded feats addon, for adding and merging modded feats data.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/addon-modded-feats" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/addon-modded-feats" />
 ```
 
-Main entry augments these global properties: `addonModdedFeatsAddon` (instance of `ModdedFeatsAddon`).
+### Use global instance
 
-### Subpath imports
+`addonModdedFeatsAddon` is mounted on `window`.
+
+### Import types on demand
 
 ```ts
-import type { SomeType } from '@scml/addon-modded-feats/ModdedFeatsAddon';
+import type { ModdedFeatsAddon } from '@scml/addon-modded-feats/ModdedFeatsAddon';
+import type { ModdedClothesFeatsParams } from '@scml/addon-modded-feats/ModdedFeatsAddonParams';
 ```
 
-## Exports
+</Steps>
+
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `addonModdedFeatsAddon` | `ModdedFeatsAddon` | Addon instance, manages feats data |
+
+<Tabs>
+<Tab label="Main entry">
+
+```ts
+/// <reference types="@scml/addon-modded-feats" />
+```
+
+</Tab>
+<Tab label="Subpath import">
+
+```ts
+import type { ModdedFeatsAddon } from '@scml/addon-modded-feats/ModdedFeatsAddon';
+import type { ModdedClothesFeatsParams } from '@scml/addon-modded-feats/ModdedFeatsAddonParams';
+```
+
+</Tab>
+</Tabs>
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
+|---------|-------------|
 | `.` | Main entry, augments Window/global |
-| `./ModdedFeatsAddon` | Type declarations |
-| `./ModdedFeatsAddonParams` | Type declarations |
+| `./ModdedFeatsAddon` | Main class and utility functions |
+| `./ModdedFeatsAddonParams` | Config params and type guards |
 
-## Types
+## API Reference
 
-### Main entry
-- **`addonModdedFeatsAddon`** – Addon for adding and merging modded feats data.
+### ./ModdedFeatsAddon
 
-### `./ModdedFeatsAddon`
-- **`ModdedFeatsAddon`** – Addon plugin with `featsData: Map<string, FeatsObject>`. Methods: `registerMod()`, `exportDataZip()`, `init()`.
-- **`mergeFeatsObject()`**, **`appendFeatsObject()`** – Merge/append feats utilities.
+#### ModdedFeatsAddon <Badge text="class" />
 
-### `./ModdedFeatsAddonParams`
-- Params config for the addon; see subpath for type definitions.
+| Property | Type | Description |
+|----------|------|-------------|
+| `featsData` | `Map<string, FeatsObject>` | Feats data by key |
+| `registerMod()` | `(addonName, mod, modZip) => Promise<void>` | Register mod |
+| `exportDataZip()` | `(zip: JSZip) => Promise<JSZip>` | Export data |
+| `init()` | `() => void` | Initialize |
 
-## Type definition source
+#### mergeFeatsObject() / appendFeatsObject() <Badge text="method" />
 
+### ./ModdedFeatsAddonParams
+
+#### ModdedClothesFeatsParams <Badge text="interface" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `feats` | `string[]` | Feats file path list |
+
+#### checkParams() / checkFeatsItem() <Badge text="type guard" />
+
+## Type Definition Source
+
+<SourceCode href="https://github.com/Lyoko-Jeremie/DoL_ModdedFeatsAddon" />
+
+:::info
 - Upstream: https://github.com/Lyoko-Jeremie/DoL_ModdedFeatsAddon
 - Default branch: master
 - Build: `pnpm run download && pnpm run build`
+:::

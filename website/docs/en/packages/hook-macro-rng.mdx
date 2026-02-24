@@ -1,49 +1,58 @@
 ---
 title: Macro RNG Hook
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/hook-macro-rng
 
-TypeScript type definitions for Macro RNG hook.
+TypeScript type definitions for Macro RNG hook, mounting RNG used by SugarCube macros for deterministic or custom RNG behavior.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/hook-macro-rng" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/hook-macro-rng" />
 ```
 
-Main entry augments these global properties: `hookMacroRng` (instance of `HookMacroRng`).
+### Use global instance
 
-### Subpath imports
+`hookMacroRng` is mounted on `window`.
 
-```ts
-import type { SomeType } from '@scml/hook-macro-rng/HookMacroRng';
-```
+</Steps>
 
-## Exports
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `hookMacroRng` | `HookMacroRng` | Macro RNG Hook instance |
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
-| `.` | Main entry, augments Window/global |
-| `./HookMacroRng` | Type declarations |
+|---------|-------------|
+| `.` | Main entry |
+| `./HookMacroRng` | Type declarations (entry: inject_early) |
 
-## Types
+## API Reference
 
-### Main entry
-- **`hookMacroRng`** – Hooks the RNG used by SugarCube macros for deterministic or custom RNG behavior.
+#### HookMacroRng <Badge text="class" />
 
-### `./HookMacroRng`
-- **`HookMacroRng`** – Addon class that installs the macro RNG hook (exported from `inject_early.d.ts`).
+Addon class that installs macro RNG hook.
 
-## Type definition source
+## Type Definition Source
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/DoLHookMacroRng" />
+
+:::info
 - Upstream: https://github.com/Lyoko-Jeremie/DoLHookMacroRng
 - Default branch: master
 - Build: `pnpm run download && pnpm run build`
+:::

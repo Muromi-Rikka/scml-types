@@ -1,61 +1,99 @@
 ---
 title: Image Loader Hook
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/hook-img-loader
 
-TypeScript type definitions for Image loader hook.
+TypeScript type definitions for Image loader hook, mounting image loader and allowing mods to provide custom images.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/hook-img-loader" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/hook-img-loader" />
 ```
 
-Main entry augments these global properties: `modImgLoaderHooker` (instance of `ImgLoaderHooker`).
+### Use global instance
 
-### Subpath imports
+`modImgLoaderHooker` is mounted on `window`.
+
+### Import types on demand
 
 ```ts
-import type { SomeType } from '@scml/hook-img-loader/ImgLoaderHooker';
+import type { ImgLoaderHooker } from '@scml/hook-img-loader/ImgLoaderHooker';
+import type { ImgLoaderHookerCore } from '@scml/hook-img-loader/ImgLoaderHookerCore';
+import type { CssReplacer } from '@scml/hook-img-loader/CssReplacer';
 ```
 
-## Exports
+</Steps>
+
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `modImgLoaderHooker` | `ImgLoaderHooker` | Image loader hook instance |
+
+<Tabs>
+<Tab label="Main entry">
+
+```ts
+/// <reference types="@scml/hook-img-loader" />
+```
+
+</Tab>
+<Tab label="Subpath import">
+
+```ts
+import type { ImgLoaderHooker } from '@scml/hook-img-loader/ImgLoaderHooker';
+```
+
+</Tab>
+</Tabs>
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
+|---------|-------------|
 | `.` | Main entry, augments Window/global |
-| `./utils` | Type declarations |
-| `./SimpleDolFunctionHook` | Type declarations |
-| `./NodeMutationObserver` | Type declarations |
-| `./ImgLoaderHookerCore` | Type declarations |
-| `./ImgLoaderHooker` | Type declarations |
-| `./CssReplacer` | Type declarations |
-| `./createFunctionFromCode` | Type declarations |
+| `./ImgLoaderHooker` | Main class |
+| `./ImgLoaderHookerCore` | Core implementation |
+| `./CssReplacer` | CSS replace helpers |
+| `./NodeMutationObserver` | DOM observer |
+| `./SimpleDolFunctionHook` | Function hook |
+| `./utils` | Utilities |
+| `./createFunctionFromCode` | Generate function from code |
 
-## Types
+## API Reference
 
-### Main entry
-- **`modImgLoaderHooker`** – Hooks into the image loader to allow mods to provide custom images.
+### ./ImgLoaderHooker
 
-### `./ImgLoaderHooker`
-- **`ImgLoaderHooker`** – Extends `ImgLoaderHookerCore`; installs hook and waits for init. Methods: `init()`, `installHook()`.
+#### ImgLoaderHooker <Badge text="class" />
 
-### `./ImgLoaderHookerCore` / `./NodeMutationObserver` / `./SimpleDolFunctionHook`
-- Core hook infrastructure and mutation/function hook utilities.
+Extends `ImgLoaderHookerCore`, installs hook and waits for init. Methods: `init()`, `installHook()`.
 
-### `./CssReplacer` / `./utils` / `./createFunctionFromCode`
-- CSS replacement helpers, utilities, and function-from-code factory.
+### ./ImgLoaderHookerCore
 
-## Type definition source
+Core hook infrastructure for image loading and DOM observation.
 
+### ./CssReplacer
+
+CSS replace helper utilities.
+
+## Type Definition Source
+
+<SourceCode href="https://github.com/Lyoko-Jeremie/DoL_ImgLoaderHooker" />
+
+:::info
 - Upstream: https://github.com/Lyoko-Jeremie/DoL_ImgLoaderHooker
 - Default branch: master
 - Build: `pnpm run download && pnpm run build`
+:::

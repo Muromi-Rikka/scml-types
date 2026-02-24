@@ -1,49 +1,108 @@
 ---
-title: i18n Twee List Addon
+title: I18n Twee List Addon
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-mod-i18n-twee-list
 
-TypeScript type definitions for i18n Twee list addon.
+TypeScript type definitions for I18n Twee List addon, for loading different twee file lists by language.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/addon-mod-i18n-twee-list" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/addon-mod-i18n-twee-list" />
 ```
 
-Main entry augments these global properties: `modI18nTweeList` (instance of `I18nTweeList`).
+### Use global instance
 
-### Subpath imports
+`modI18nTweeList` is mounted on `window`.
+
+### Import types on demand
 
 ```ts
-import type { SomeType } from '@scml/addon-mod-i18n-twee-list/I18nTweeList';
+import type { I18nTweeList, I18nTweeListParams } from '@scml/addon-mod-i18n-twee-list/I18nTweeList';
 ```
 
-## Exports
+</Steps>
+
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `modI18nTweeList` | `I18nTweeList` | Addon instance |
+
+<Tabs>
+<Tab label="Main entry">
+
+```ts
+/// <reference types="@scml/addon-mod-i18n-twee-list" />
+```
+
+</Tab>
+<Tab label="Subpath import">
+
+```ts
+import type { I18nTweeList, I18nTweeListParams } from '@scml/addon-mod-i18n-twee-list/I18nTweeList';
+```
+
+</Tab>
+</Tabs>
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
+|---------|-------------|
 | `.` | Main entry, augments Window/global |
-| `./I18nTweeList` | Type declarations |
+| `./I18nTweeList` | Main class, interfaces, utilities |
 
-## Types
+## API Reference
 
-### Main entry
-- **`modI18nTweeList`** – Addon managing i18n Twee lists for mods.
+### ./I18nTweeList
 
-### `./I18nTweeList`
-- **`I18nTweeList`** – Addon class for registering and managing i18n Twee list data.
+#### I18nTweeList <Badge text="class" />
 
-## Type definition source
+| Property | Type | Description |
+|----------|------|-------------|
+| `info` | `ModRecord[]` | Mod record list |
+| `registerMod()` | `(addonName, mod, modZip) => Promise<void>` | Register mod |
+| `beforePatchModToGame()` | `() => Promise<void>` | Before-patch hook |
+| `init()` | `() => void` | Initialize |
 
-- Upstream: https://github.com/Lyoko-Jeremie/I18nTweeListAddonMod
-- Default branch: master
+#### I18nTweeListParams <Badge text="interface" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `mainLanguage` | `string` | Main language |
+| `languageFile` | `LanguageFileItem[]` | Language to twee file mapping |
+
+#### LanguageFileItem <Badge text="interface" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `language` | `string` | Language code |
+| `tweeFileList` | `string[]` | Twee file path list |
+
+#### ModLanguageState <Badge text="class" />
+
+| Property/Method | Description |
+|-----------------|-------------|
+| `modName` | Mod name |
+| `language` | Current language |
+| `fallbackLanguage` | Fallback language |
+| `updateModTweeList()` | Update mod twee list |
+
+## Type Definition Source
+
+:::info
+- Upstream: Bundled with scml-types
 - Build: `pnpm run download && pnpm run build`
+:::

@@ -1,6 +1,7 @@
 ---
 title: Modded Clothes Addon
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-modded-clothes
@@ -17,7 +18,7 @@ TypeScript type definitions for Modded clothes addon, for adding and patching mo
 
 ### Add type reference
 
-Add triple-slash directive in your project:
+Add triple-slash directive in your project to bring in global types:
 
 ```ts
 /// <reference types="@scml/addon-modded-clothes" />
@@ -25,13 +26,15 @@ Add triple-slash directive in your project:
 
 ### Use global instance
 
-`addonModdedClothesAddon` is mounted on `window`:
+`addonModdedClothesAddon` is mounted on `window`; you can call its methods directly:
 
 ```ts
 window.addonModdedClothesAddon.addClothes(info);
 ```
 
 ### Import types on demand
+
+If you only need to import specific types, use subpaths:
 
 ```ts
 import type { ModdedClothesAddon, ClothesAddInfo } from '@scml/addon-modded-clothes/ModdedClothesAddon';
@@ -48,6 +51,13 @@ Main entry extends `Window` via `/// <reference types="..." />`. <Badge type="in
 |----------|------|-------------|
 | `addonModdedClothesAddon` | `ModdedClothesAddon` | Addon instance for clothes add/patch |
 
+```ts
+/// <reference types="@scml/addon-modded-clothes" />
+
+// Usage example
+window.addonModdedClothesAddon.addClothes({ modName: 'myMod', clothes: [], patch: [] });
+```
+
 <Tabs>
 <Tab label="Main entry">
 
@@ -60,6 +70,7 @@ Main entry extends `Window` via `/// <reference types="..." />`. <Badge type="in
 
 ```ts
 import type { ModdedClothesAddon, ClothesAddInfo } from '@scml/addon-modded-clothes/ModdedClothesAddon';
+import type { ModdedClothesAddonParams, AddClothesItem } from '@scml/addon-modded-clothes/ModdedClothesAddonParams';
 ```
 
 </Tab>
@@ -79,16 +90,98 @@ import type { ModdedClothesAddon, ClothesAddInfo } from '@scml/addon-modded-clot
 
 #### ModdedClothesAddon <Badge text="class" />
 
-**Properties**: `clothesAddInfo`, `gSC2DataManager`, `gModUtils`, etc.  
-**Methods**: `registerMod()`, `addClothes()`, `exportDataZip()`, `init()`.
+Addon plugin class implementing `LifeTimeCircleHook` and `AddonPluginHookPointEx`, manages `clothesAddInfo`.
 
-#### ClothesAddInfo / ClothesInfo <Badge text="interface" />
+**Constructor**
 
-#### searchClothesByName() / checkForOutfitWarmth() <Badge text="method" />
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `gSC2DataManager` | `SC2DataManager` | Mod Loader data manager |
+| `gModUtils` | `ModUtils` | Mod utilities |
+
+**Properties**
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `gSC2DataManager` | `SC2DataManager` | Data manager reference |
+| `gModUtils` | `ModUtils` | Utilities reference |
+| `logger` | `LogWrapper` | Logger |
+| `isInit` | `boolean` | Whether initialized |
+| `changedPaths` | `Set<string>` | Set of changed paths |
+| `clothesAddInfo` | `Map<string, ClothesAddInfo>` | Clothes info by mod name |
+
+**Methods**
+
+| Method | Signature | Description |
+|--------|-----------|-------------|
+| `registerMod` | `(addonName: string, mod: ModInfo, modZip: ModZipReader) => Promise<void>` | Register mod, load clothes config |
+| `addClothes` | `(info: ClothesAddInfo) => void` | Add clothes data |
+| `exportDataZip` | `(zip: JSZip) => Promise<JSZip>` | Export data to zip |
+| `init` | `() => void` | Initialize |
+
+#### ClothesAddInfo <Badge text="interface" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `modName` | `string` | Mod name |
+| `clothes` | `ClothesInfo[]` | Clothes list |
+| `patch` | `ClothesPatchInfo[]` | Patch config |
+
+#### ClothesInfo <Badge text="interface" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `key` | `string` | Clothes key |
+| `data` | `ClothesItem[]` | Clothes item array |
+
+#### searchClothesByName() <Badge text="method" />
+
+- **Signature**: `searchClothesByName(name: string): { c: ClothesItem; t: string }[]`
+- **Parameter**: `name` - Clothes name
+- **Returns**: Matched clothes items with keys
+
+#### checkForOutfitWarmth() <Badge text="method" />
+
+- **Signature**: `checkForOutfitWarmth(logger: LogWrapper): void`
+- **Description**: Run outfit warmth check for `window.getTrueWarmth()`
+
+---
 
 ### ./ModdedClothesAddonParams
 
-#### ModdedClothesAddonParams / AddClothesItem / ClothesPatchInfo <Badge text="interface" />
+#### ModdedClothesAddonParams <Badge text="interface" />
+
+Mod config params for `mod.json` or similar.
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `clothes` | `AddClothesItem[]` | Clothes to add |
+| `patch` | `string[]` | Optional patch file paths |
+
+#### AddClothesItem <Badge text="interface" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `key` | `string` | Clothes key |
+| `filePath` | `string` | File path |
+| `data` | `ClothesItem[]` | Optional clothes items |
+
+#### ClothesPatchInfo <Badge text="interface" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `key` | `string` | Clothes key |
+| `data` | `ClothesPatchUpdateType[]` | Patch update data |
+
+#### ClothesPatchUpdateType <Badge text="type" />
+
+Partial update type for `ClothesItem`; keys are `ClothesItem` properties, values are new value or `null`.
+
+#### checkParams() / checkAddClothesItem() / checkClothesPatchInfo() <Badge text="type guard" />
+
+- `checkParams(a: any): a is ModdedClothesAddonParams`
+- `checkAddClothesItem(a: any): a is AddClothesItem`
+- `checkClothesPatchInfo(a: any): a is ClothesPatchInfo`
 
 ## Type Definition Source
 

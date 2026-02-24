@@ -1,63 +1,64 @@
 ---
 title: Sub UI (AngularJS)
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/mod-sub-ui-angular-js
 
-TypeScript type definitions for Sub UI (AngularJS).
+TypeScript type definitions for Sub UI (AngularJS), AngularJS-based sub UI manager.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/mod-sub-ui-angular-js" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/mod-sub-ui-angular-js" />
 ```
 
-Main entry augments these global properties: `diff3WayMerge` (exposes `ModSubUiAngularJs`; note: global name may vary).
+### Use global instance
 
-### Subpath imports
+Main entry augments `diff3WayMerge` (`ModSubUiAngularJs`).
 
-```ts
-import type { SomeType } from '@scml/mod-sub-ui-angular-js/ModSubUiAngularJs';
-```
+</Steps>
 
-## Exports
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `diff3WayMerge` | `ModSubUiAngularJs` | Sub UI AngularJS manager |
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
-| `.` | Main entry, augments Window/global |
-| `./AppContainerManagerMethodsInterface` | Type declarations |
-| `./ModSubUiAngularJs` | Type declarations |
-| `./ModSubUiAngularJsBody` | Type declarations |
-| `./ModSubUiAngularJsModeExportInterface` | Type declarations |
-| `./AngularJs/appInit` | Type declarations |
-| `./AngularJs/ExternalComponentManager` | Type declarations |
-| `./AngularJs/ExternalComponentManagerInterface` | Type declarations |
-| `./AngularJs/Componnet/EnableOrderComponent` | Type declarations |
-| `./AngularJs/Componnet/OrderComponent` | Type declarations |
-| `./AngularJs/Componnet/SimpleSelectComponent` | Type declarations |
+|---------|-------------|
+| `.` | Main entry |
+| `./ModSubUiAngularJs` | Main class |
+| `./ModSubUiAngularJsBody` | Body type |
+| `./AppContainerManagerMethodsInterface` | App container manager interface |
+| `./ModSubUiAngularJsModeExportInterface` | Mode export interface |
+| `./AngularJs/appInit` | Angular app init |
+| `./AngularJs/ExternalComponentManager` | External component manager |
+| `./AngularJs/Componnet/*` | UI components |
 
-## Types
+## API Reference
 
-### Main entry
-- **`diff3WayMerge`** – AngularJS-based sub-UI manager (bootstrap/release, add/clean components).
+### AppContainerManagerMethodsInterface
 
-### Subpaths
-- **`./ModSubUiAngularJs`** / **`./ModSubUiAngularJsBody`** – Main sub-UI AngularJS module and body.
-- **`./AppContainerManagerMethodsInterface`** – Bootstrap/release/addComponent/cleanComponent/registryComponent for `ModGuiConfig` and `ModInGameConfig`.
-- **`./ModSubUiAngularJsModeExportInterface`** – Mode export interface.
-- **`./AngularJs/appInit`** – **`NgAppContainer`** – Angular app container.
-- **`./AngularJs/ExternalComponentManager`** – **`ExternalComponentManager`** – Registers and manages external components.
-- **`./AngularJs/Componnet/*`** – Order, enable order, simple select components.
+bootstrap/release/addComponent/cleanComponent/registryComponent for `ModGuiConfig` and `ModInGameConfig`.
 
-## Type definition source
+## Type Definition Source
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/ModSubUiAngularJs" />
+
+:::info
 - Upstream: https://github.com/Lyoko-Jeremie/ModSubUiAngularJs
 - Default branch: master
 - Build: `pnpm run download && pnpm run build`
+:::

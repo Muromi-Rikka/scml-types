@@ -1,53 +1,98 @@
 ---
-title: Twee Prefix/Postfix Addon
+title: Twee Prefix Postfix Addon
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-mod-twee-prefix-postfix
 
-TypeScript type definitions for Twee prefix/postfix addon.
+TypeScript type definitions for Twee prefix/postfix addon, for adding prefix/postfix to passage or widget text.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/addon-mod-twee-prefix-postfix" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/addon-mod-twee-prefix-postfix" />
 ```
 
-Main entry augments these global properties: `addonTweePrefixPostfixAddon` (instance of `TweePrefixPostfixAddon`).
+### Use global instance
 
-### Subpath imports
+`addonTweePrefixPostfixAddon` is mounted on `window`.
+
+### Import types on demand
 
 ```ts
-import type { SomeType } from '@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddon';
+import type { TweePrefixPostfixAddon, TweePrefixPostfixAddonParams } from '@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddon';
+import type { TweePrefixPostfixAddonCallback } from '@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddonJsCallback';
 ```
 
-## Exports
+</Steps>
+
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `addonTweePrefixPostfixAddon` | `TweePrefixPostfixAddon` | Addon instance |
+
+<Tabs>
+<Tab label="Main entry">
+
+```ts
+/// <reference types="@scml/addon-mod-twee-prefix-postfix" />
+```
+
+</Tab>
+<Tab label="Subpath import">
+
+```ts
+import type { TweePrefixPostfixAddon } from '@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddon';
+```
+
+</Tab>
+</Tabs>
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
+|---------|-------------|
 | `.` | Main entry, augments Window/global |
-| `./TweePrefixPostfixAddon` | Type declarations |
-| `./TweePrefixPostfixAddonJsCallback` | Type declarations |
+| `./TweePrefixPostfixAddon` | Main class and params |
+| `./TweePrefixPostfixAddonJsCallback` | JS callback types |
 
-## Types
+## API Reference
 
-### Main entry
-- **`addonTweePrefixPostfixAddon`** – Addon that applies prefix/postfix transformations to Twee content.
+### ./TweePrefixPostfixAddon
 
-### `./TweePrefixPostfixAddon`
-- **`TweePrefixPostfixAddon`** – Addon class for prefix/postfix processing.
+#### TweePrefixPostfixAddon <Badge text="class" />
 
-### `./TweePrefixPostfixAddonJsCallback`
-- **`TweePrefixPostfixAddonJsCallback`** – Callback type for custom prefix/postfix logic.
+| Method | Description |
+|--------|-------------|
+| `addCallback(key, callback)` | Add callback |
+| `registerMod()` | Register mod |
+| `init()` | Initialize |
+| `beforePassage()` / `afterPassage()` | Wikify hooks |
+| `beforeWikify()` / `afterWikify()` | Wikify hooks |
+| `beforeWidget()` / `afterWidget()` | Widget hooks |
 
-## Type definition source
+#### TweePrefixPostfixAddonParams <Badge text="interface" />
 
-- Upstream: https://github.com/Lyoko-Jeremie/TweePrefixPostfixAddonMod
-- Default branch: master
+| Property | Type | Description |
+|----------|------|-------------|
+| `passageName` | `string` | Passage name |
+| `widgetName` | `string` | Widget name |
+| `prefix` | `string` | Prefix |
+| `postfix` | `string` | Postfix |
+
+## Type Definition Source
+
+:::info
+- Upstream: Bundled with scml-types
 - Build: `pnpm run download && pnpm run build`
+:::

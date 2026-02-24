@@ -1,49 +1,58 @@
 ---
 title: SweetAlert2 Mod
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/mod-sweet-alert2
 
-TypeScript type definitions for SweetAlert2 mod.
+TypeScript type definitions for SweetAlert2 mod, wrapping SweetAlert2 for SugarCube mod use.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/mod-sweet-alert2" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/mod-sweet-alert2" />
 ```
 
-Main entry augments these global properties: `modSweetAlert2Mod` (instance of `SweetAlert2Mod`).
+### Use global instance
 
-### Subpath imports
+`modSweetAlert2Mod` is mounted on `window`.
 
-```ts
-import type { SomeType } from '@scml/mod-sweet-alert2/SweetAlert2Mod';
-```
+</Steps>
 
-## Exports
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `modSweetAlert2Mod` | `SweetAlert2Mod` | SweetAlert2 mod instance |
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
-| `.` | Main entry, augments Window/global |
-| `./SweetAlert2Mod` | Type declarations |
+|---------|-------------|
+| `.` | Main entry |
+| `./SweetAlert2Mod` | Main class |
 
-## Types
+## API Reference
 
-### Main entry
-- **`modSweetAlert2Mod`** – Wraps SweetAlert2 for use in SugarCube mods.
+#### SweetAlert2Mod <Badge text="class" />
 
-### `./SweetAlert2Mod`
-- **`SweetAlert2Mod`** – Provides `fire` (typeof `Swal.fire`), `fireWithOptions(options: SweetAlertOptions)`, and `Swal` (typeof SweetAlert2).
+Provides `fire` (`typeof Swal.fire`), `fireWithOptions(options)`, and `Swal` (`typeof SweetAlert2`).
 
-## Type definition source
+## Type Definition Source
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/SweetAlert2Mod" />
+
+:::info
 - Upstream: https://github.com/Lyoko-Jeremie/SweetAlert2Mod
 - Default branch: master
 - Build: `pnpm run download && pnpm run build`
+:::

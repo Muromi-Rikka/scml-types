@@ -1,49 +1,99 @@
 ---
-title: i18n Script List Addon
+title: I18n Script List Addon
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-mod-i18n-script-list
 
-TypeScript type definitions for i18n script list addon.
+TypeScript type definitions for I18n Script List addon, for loading different script file lists by language.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/addon-mod-i18n-script-list" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/addon-mod-i18n-script-list" />
 ```
 
-Main entry augments these global properties: `modI18nScriptList` (instance of `I18nScriptList`).
+### Use global instance
 
-### Subpath imports
+`modI18nScriptList` is mounted on `window`.
+
+### Import types on demand
 
 ```ts
-import type { SomeType } from '@scml/addon-mod-i18n-script-list/I18nScriptList';
+import type { I18nScriptList, I18nScriptListParams } from '@scml/addon-mod-i18n-script-list/I18nScriptList';
 ```
 
-## Exports
+</Steps>
+
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `modI18nScriptList` | `I18nScriptList` | Addon instance |
+
+<Tabs>
+<Tab label="Main entry">
+
+```ts
+/// <reference types="@scml/addon-mod-i18n-script-list" />
+```
+
+</Tab>
+<Tab label="Subpath import">
+
+```ts
+import type { I18nScriptList } from '@scml/addon-mod-i18n-script-list/I18nScriptList';
+```
+
+</Tab>
+</Tabs>
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
+|---------|-------------|
 | `.` | Main entry, augments Window/global |
-| `./I18nScriptList` | Type declarations |
+| `./I18nScriptList` | Main class, interfaces, utilities |
 
-## Types
+## API Reference
 
-### Main entry
-- **`modI18nScriptList`** – Addon managing i18n script lists for mods.
+### ./I18nScriptList
 
-### `./I18nScriptList`
-- **`I18nScriptList`** – Addon class for registering and managing i18n script list data.
+#### I18nScriptList <Badge text="class" />
 
-## Type definition source
+| Property | Type | Description |
+|----------|------|-------------|
+| `info` | `ModRecord[]` | Mod record list |
+| `registerMod()` | `(addonName, mod, modZip) => Promise<void>` | Register mod |
+| `beforePatchModToGame()` | `() => Promise<void>` | Before-patch hook |
+| `init()` | `() => void` | Initialize |
 
-- Upstream: https://github.com/Lyoko-Jeremie/I18nScriptListAddonMod
-- Default branch: master
+#### I18nScriptListParams <Badge text="interface" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `mainLanguage` | `string` | Main language |
+| `languageFile` | `LanguageFileItem[]` | Language to script file mapping |
+
+#### LanguageFileItem <Badge text="interface" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `language` | `string` | Language code |
+| `scriptFileList` | `string[]` | Script file path list |
+
+## Type Definition Source
+
+:::info
+- Upstream: Bundled with scml-types
 - Build: `pnpm run download && pnpm run build`
+:::

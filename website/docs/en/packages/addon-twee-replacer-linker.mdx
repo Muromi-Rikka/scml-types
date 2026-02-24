@@ -1,56 +1,113 @@
 ---
 title: Twee Replacer Linker Addon
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-twee-replacer-linker
 
-TypeScript type definitions for Twee replacer linker addon.
+TypeScript type definitions for Twee replacer linker addon, for connecting TweeReplacer clients and coordinating replace callbacks across mods.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/addon-twee-replacer-linker" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/addon-twee-replacer-linker" />
 ```
 
-Main entry augments these global properties: `addonTweeReplacerLinker` (instance of `TweeReplacerLinker`).
+### Use global instance
 
-### Subpath imports
+`addonTweeReplacerLinker` is mounted on `window`.
+
+### Import types on demand
 
 ```ts
-import type { SomeType } from '@scml/addon-twee-replacer-linker/TweeReplacerLinker';
+import type { TweeReplacerLinker } from '@scml/addon-twee-replacer-linker/TweeReplacerLinker';
+import type { TweeReplacerLinkerInterface, TweeReplacerLinkerClientInterface } from '@scml/addon-twee-replacer-linker/TweeReplacerLinkerInterface';
 ```
 
-## Exports
+</Steps>
+
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `addonTweeReplacerLinker` | `TweeReplacerLinker` | Addon instance, coordinates TweeReplacer clients |
+
+<Tabs>
+<Tab label="Main entry">
+
+```ts
+/// <reference types="@scml/addon-twee-replacer-linker" />
+```
+
+</Tab>
+<Tab label="Subpath import">
+
+```ts
+import type { TweeReplacerLinker } from '@scml/addon-twee-replacer-linker/TweeReplacerLinker';
+import type { TweeReplacerLinkerInterface } from '@scml/addon-twee-replacer-linker/TweeReplacerLinkerInterface';
+```
+
+</Tab>
+</Tabs>
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
+|---------|-------------|
 | `.` | Main entry, augments Window/global |
-| `./TweeReplacerLinker` | Type declarations |
-| `./TweeReplacerLinkerInterface` | Type declarations |
+| `./TweeReplacerLinker` | Main class |
+| `./TweeReplacerLinkerInterface` | Interfaces and types |
 
-## Types
+## API Reference
 
-### Main entry
-- **`addonTweeReplacerLinker`** – Links TweeReplacer clients; coordinates replacement callbacks across mods.
+### ./TweeReplacerLinker
 
-### `./TweeReplacerLinker`
-- **`TweeReplacerLinker`** – Addon implementing `TweeReplacerLinkerInterface`. Methods: `registerClient()`, `addUserMod()`, `registerMod()`, `afterPatchModToGame()`.
-- **`TweeReplacerLinkerCallbackData`** – Callback registration data.
+#### TweeReplacerLinker <Badge text="class" />
 
-### `./TweeReplacerLinkerInterface`
-- **`TweeReplacerLinkerInterface`** – `registerClient()`, `addUserMod()`.
-- **`TweeReplacerLinkerClientInterface`** – `enableLinkerMode()`.
-- **`TweeReplacerLinkerClientCallbackType`** – `(sc: SC2DataInfo) => Promise<any>`.
+| Property/Method | Type | Description |
+|-----------------|------|-------------|
+| `canRegister` | `boolean` | Whether registrable |
+| `userCallback` | `TweeReplacerLinkerCallbackData[]` | User callback list |
+| `registerClient()` | `(client) => Promise<boolean>` | Register client |
+| `addUserMod()` | `(clientName, userModName, callback) => Promise<boolean>` | Add user mod callback |
+| `registerMod()` | `(addonName, mod, modZip) => Promise<void>` | Register mod |
+| `afterPatchModToGame()` | `() => Promise<void>` | After-patch hook |
+| `init()` | `() => void` | Initialize |
 
-## Type definition source
+### ./TweeReplacerLinkerInterface
 
+#### TweeReplacerLinkerInterface <Badge text="interface" />
+
+| Method | Description |
+|--------|-------------|
+| `registerClient(client)` | Register client |
+| `addUserMod(clientName, userModName, callback)` | Add user mod callback |
+
+#### TweeReplacerLinkerClientInterface <Badge text="interface" />
+
+| Method | Description |
+|--------|-------------|
+| `enableLinkerMode()` | Enable linker mode |
+
+#### TweeReplacerLinkerClientCallbackType <Badge text="type" />
+
+`(sc: SC2DataInfo) => Promise<any>` - User mod callback type
+
+## Type Definition Source
+
+<SourceCode href="https://github.com/Lyoko-Jeremie/TweeReplacerLinkerAddon" />
+
+:::info
 - Upstream: https://github.com/Lyoko-Jeremie/TweeReplacerLinkerAddon
 - Default branch: master
 - Build: `pnpm run download && pnpm run build`
+:::

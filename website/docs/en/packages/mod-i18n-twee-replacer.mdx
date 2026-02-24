@@ -1,53 +1,59 @@
 ---
 title: i18n Twee Replacer
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/mod-i18n-twee-replacer
 
-TypeScript type definitions for i18n Twee replacer.
+TypeScript type definitions for i18n Twee replacer, merging i18n translations into Twee content.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/mod-i18n-twee-replacer" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/mod-i18n-twee-replacer" />
 ```
 
-Main entry augments these global properties: `modI18nTweeList` (instance of `I18nTweeList`).
+### Use global instance
 
-### Subpath imports
+`modI18nTweeList` is mounted on `window`.
 
-```ts
-import type { SomeType } from '@scml/mod-i18n-twee-replacer/I18nTweeReplacer';
-```
+</Steps>
 
-## Exports
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `modI18nTweeList` | `I18nTweeList` | i18n Twee replacer instance |
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
-| `.` | Main entry, augments Window/global |
-| `./CustomReadonlyMapHelper` | Type declarations |
-| `./I18nTweeReplacer` | Type declarations |
+|---------|-------------|
+| `.` | Main entry |
+| `./I18nTweeReplacer` | Main class |
+| `./CustomReadonlyMapHelper` | Helper types |
 
-## Types
+## API Reference
 
-### Main entry
-- **`modI18nTweeList`** – i18n Twee replacer; merges i18n translations into Twee content.
+#### I18nTweeReplacer <Badge text="class" />
 
-### `./I18nTweeReplacer`
-- **`I18nTweeReplacer`** – Addon class that replaces Twee text with translated content.
+Addon class that replaces Twee text with translated content.
 
-### `./CustomReadonlyMapHelper`
-- Helper types for custom readonly map behavior.
+## Type Definition Source
 
-## Type definition source
+<SourceCode href="https://github.com/Lyoko-Jeremie/I18nTweeReplacerMod" />
 
+:::info
 - Upstream: https://github.com/Lyoko-Jeremie/I18nTweeReplacerMod
 - Default branch: master
 - Build: `pnpm run download && pnpm run build`
+:::

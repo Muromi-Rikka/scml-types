@@ -1,56 +1,71 @@
 ---
 title: Three-way Merge
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/mod-diff3-way-merge
 
-TypeScript type definitions for Three-way merge.
+TypeScript type definitions for Three-way merge, performing 3-way merge (base + ours + theirs) on mod patches.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/mod-diff3-way-merge" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/mod-diff3-way-merge" />
 ```
 
-Main entry augments these global properties: `diff3WayMerge` (instance of `Diff3WayMerge`).
+### Use global instance
 
-### Subpath imports
+`diff3WayMerge` is mounted on `window`.
 
-```ts
-import type { SomeType } from '@scml/mod-diff3-way-merge/Diff3WayMerge';
-```
+</Steps>
 
-## Exports
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `diff3WayMerge` | `Diff3WayMerge` | 3-way merge Addon instance |
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
-| `.` | Main entry, augments Window/global |
-| `./Diff3WayMerge` | Type declarations |
-| `./Diff3WayMergeParams` | Type declarations |
-| `./DiffFormat` | Type declarations |
-| `./diff_match_patch/diff_match_patch` | Type declarations |
+|---------|-------------|
+| `.` | Main entry |
+| `./Diff3WayMerge` | Main class |
+| `./Diff3WayMergeParams` | Merge params |
+| `./DiffFormat` | Diff format |
+| `./diff_match_patch/diff_match_patch` | diff-match-patch library |
 
-## Types
+## API Reference
 
-### Main entry
-- **`diff3WayMerge`** – Performs three-way merges (base + ours + theirs) for mod patches.
+#### Diff3WayMerge <Badge text="class" />
 
-### `./Diff3WayMerge`
-- **`Diff3WayMerge`** – Addon with `info: Map<string, ModMergeInfo>`. Methods: `registerMod()`, `afterPatchModToGame()`, `do_patch()`, `readOriginFile()`, `readModFile()`, `readDiffFormatFile()`.
-- **`ModMergeInfo`** – `{ addonName, mod, modZip }`.
+| Property/Method | Description |
+|-----------------|-------------|
+| `info` | `Map<string, ModMergeInfo>` |
+| `registerMod()` | Register mod |
+| `afterPatchModToGame()` | After patch hook |
+| `do_patch()` | Execute merge |
+| `readOriginFile()` / `readModFile()` / `readDiffFormatFile()` | Read files |
 
-### `./Diff3WayMergeParams` / `./DiffFormat` / `./diff_match_patch/diff_match_patch`
-- Merge params, diff format types, and diff-match-patch library bindings.
+#### ModMergeInfo <Badge text="interface" />
 
-## Type definition source
+`{ addonName, mod, modZip }`
 
+## Type Definition Source
+
+<SourceCode href="https://github.com/Lyoko-Jeremie/Mod_Diff3WayMerge" />
+
+:::info
 - Upstream: https://github.com/Lyoko-Jeremie/Mod_Diff3WayMerge
 - Default branch: master
 - Build: `pnpm run download && pnpm run build`
+:::

@@ -1,49 +1,58 @@
 ---
 title: Replace Patch
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/mod-replacer-patch
 
-TypeScript type definitions for Replace patch.
+TypeScript type definitions for Replace patch, applying find/replace patches to game/mod content.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/mod-replacer-patch" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/mod-replacer-patch" />
 ```
 
-Main entry augments these global properties: `addonReplacePatcher` (instance of `ReplacePatcher`).
+### Use global instance
 
-### Subpath imports
+`addonReplacePatcher` is mounted on `window`.
 
-```ts
-import type { SomeType } from '@scml/mod-replacer-patch/ReplacePatcher';
-```
+</Steps>
 
-## Exports
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `addonReplacePatcher` | `ReplacePatcher` | Replace patch Addon instance |
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
-| `.` | Main entry, augments Window/global |
-| `./ReplacePatcher` | Type declarations |
+|---------|-------------|
+| `.` | Main entry |
+| `./ReplacePatcher` | Main class |
 
-## Types
+## API Reference
 
-### Main entry
-- **`addonReplacePatcher`** – Performs search-and-replace patches on game/mod content.
+#### ReplacePatcher <Badge text="class" />
 
-### `./ReplacePatcher`
-- **`ReplacePatcher`** – Addon class for applying replacement patches (find/replace over content).
+Addon class that applies replace patches to js/css/twee content.
 
-## Type definition source
+## Type Definition Source
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_ReplacePatch" />
+
+:::info
 - Upstream: https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_ReplacePatch
 - Default branch: master
 - Build: `pnpm run download && pnpm run build`
+:::

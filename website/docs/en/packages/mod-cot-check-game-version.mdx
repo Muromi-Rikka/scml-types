@@ -1,49 +1,58 @@
 ---
 title: CoT Game Version Check
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/mod-cot-check-game-version
 
-TypeScript type definitions for CoT game version check.
+TypeScript type definitions for CoT (Cape on the Tower) game version check.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/mod-cot-check-game-version" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/mod-cot-check-game-version" />
 ```
 
-Main entry augments these global properties: `modCheckGameVersion` (instance of `CheckGameVersion`).
+### Use global instance
 
-### Subpath imports
+`modCheckGameVersion` is mounted on `window`.
 
-```ts
-import type { SomeType } from '@scml/mod-cot-check-game-version/CheckGameVersion';
-```
+</Steps>
 
-## Exports
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `modCheckGameVersion` | `CheckGameVersion` | CoT version check mod instance |
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
-| `.` | Main entry, augments Window/global |
-| `./CheckGameVersion` | Type declarations |
+|---------|-------------|
+| `.` | Main entry |
+| `./CheckGameVersion` | Main class |
 
-## Types
+## API Reference
 
-### Main entry
-- **`modCheckGameVersion`** – Checks CoT (Cape on the Tower) game version compatibility.
+#### CheckGameVersion <Badge text="class" />
 
-### `./CheckGameVersion`
-- **`CheckGameVersion`** – Addon class that validates game version at runtime.
+Addon class that validates CoT game version at runtime.
 
-## Type definition source
+## Type Definition Source
 
+<SourceCode href="https://github.com/Lyoko-Jeremie/CheckGameVersionCot" />
+
+:::info
 - Upstream: https://github.com/Lyoko-Jeremie/CheckGameVersionCot
 - Default branch: master
 - Build: `pnpm run download && pnpm run build`
+:::

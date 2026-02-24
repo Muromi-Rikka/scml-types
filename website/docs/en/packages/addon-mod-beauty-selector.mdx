@@ -1,72 +1,89 @@
 ---
 title: Beauty Selector Addon
 ---
+
 import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
 
 # @scml/addon-mod-beauty-selector
 
-TypeScript type definitions for Beauty selector addon.
+TypeScript type definitions for Beauty Selector addon, for image selector UI and mod image management.
 
 ## Installation
 
 <PackageManagerTabs command="install -D @scml/addon-mod-beauty-selector" />
 
-## Usage
+## Quick Start
 
-### Main entry (global types)
+<Steps>
+
+### Add type reference
 
 ```ts
 /// <reference types="@scml/addon-mod-beauty-selector" />
 ```
 
-Main entry augments these global properties: `addonBeautySelectorAddon` (instance of `BeautySelectorAddon`).
+### Use global instance
 
-### Subpath imports
+`addonBeautySelectorAddon` is mounted on `window`.
+
+### Import types on demand
 
 ```ts
-import type { SomeType } from '@scml/addon-mod-beauty-selector/BeautySelectorAddon';
+import type { BeautySelectorAddon } from '@scml/addon-mod-beauty-selector/BeautySelectorAddon';
+import type { BeautySelectorAddonInterface } from '@scml/addon-mod-beauty-selector/BeautySelectorAddonInterface';
 ```
 
-## Exports
+</Steps>
+
+## Global Types <Badge type="info" text="global" />
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `addonBeautySelectorAddon` | `BeautySelectorAddon` | Addon instance |
+
+<Tabs>
+<Tab label="Main entry">
+
+```ts
+/// <reference types="@scml/addon-mod-beauty-selector" />
+```
+
+</Tab>
+<Tab label="Subpath import">
+
+```ts
+import type { BeautySelectorAddon } from '@scml/addon-mod-beauty-selector/BeautySelectorAddon';
+```
+
+</Tab>
+</Tabs>
+
+## Subpath Exports
 
 | Subpath | Description |
-|--------|------|
+|---------|-------------|
 | `.` | Main entry, augments Window/global |
-| `./BeautySelectorAddon` | Type declarations |
-| `./BeautySelectorAddonInterface` | Type declarations |
-| `./BeautySelectorAddonType` | Type declarations |
-| `./extname` | Type declarations |
-| `./ModImageStore` | Type declarations |
-| `./utils/getRelativePath` | Type declarations |
-| `./utils/traverseZipFolder` | Type declarations |
-| `./GUI_StringTable/CN` | Type declarations |
-| `./GUI_StringTable/EN` | Type declarations |
-| `./GUI_StringTable/StringTable` | Type declarations |
+| `./BeautySelectorAddon` | Main class |
+| `./BeautySelectorAddonInterface` | Interfaces |
+| `./BeautySelectorAddonType` | Type definitions |
+| `./extname` | Extension utilities |
+| `./ModImageStore` | Mod image store |
+| `./utils/getRelativePath` | Relative path utilities |
+| `./utils/traverseZipFolder` | Traverse zip folder |
+| `./GUI_StringTable/*` | GUI string tables |
 
-## Types
+## API Reference
 
-### Main entry
-- **`addonBeautySelectorAddon`** – Beauty selector addon integrating with Sub UI AngularJS and Mod Image Store.
+### ./BeautySelectorAddon
 
-### `./BeautySelectorAddon`
-- **`BeautySelectorAddon`** – Main addon class; manages beauty options, params, and AngularJS components.
+Main Beauty Selector Addon class implementing `BeautySelectorAddonInterface` and `AddonPluginHookPointEx`, providing image selector and mod image management. See `BeautySelectorAddonInterface` and type definitions for detailed API.
 
-### `./BeautySelectorAddonInterface`
-- Interface for beauty selector addon behavior.
+## Type Definition Source
 
-### `./BeautySelectorAddonType`
-- **`BeautySelectorAddonParamsType0`**, **`Type1`**, **`Type2`** – Param config types.
-- **`TypeOrderItem`**, **`BeautySelectorAddonParamsType2ATypeItem`**, **`Type2BTypeItem`** – Option item types.
+<SourceCode href="https://github.com/Lyoko-Jeremie/DoL_BeautySelectorAddonMod" />
 
-### `./ModImageStore`
-- **`ModImageStore`** – Image store for mod assets.
-- **`CachedFileList`** – Cached file list type.
-
-### `./extname` / `./utils/*` / `./GUI_StringTable/*`
-- Utility types and i18n string tables.
-
-## Type definition source
-
+:::info
 - Upstream: https://github.com/Lyoko-Jeremie/DoL_BeautySelectorAddonMod
 - Default branch: master
 - Build: `pnpm run download && pnpm run build`
+:::
