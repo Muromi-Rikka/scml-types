@@ -29,6 +29,13 @@ export default defineConfig({
   },
   themeConfig: {
     llmsUI: true,
+    lastUpdated: true,
+    enableContentAnimation: true,
+    enableAppearanceAnimation: true,
+    enableScrollToTop: true,
+    editLink: {
+      docRepoBaseUrl: "https://github.com/Muromi-Rikka/scml-types/tree/master/website/docs",
+    },
     socialLinks: [
       {
         icon: "github",
