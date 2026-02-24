@@ -29,7 +29,8 @@
     "publint": "^0.3.17",
     "tsdown": "^0.20.3",
     "turbo": "^2.8.10",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "wrangler": "^4.68.0"
   },
   "packageManager": "pnpm@10.30.2"
 }
