@@ -1,34 +1,11 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
+import { importList, windowInterface } from "./global-data.js";
 
-const importLoadingProgress = genImport("./LoadingProgress.d.ts", ["LoadingProgress"], {
-  type: true,
-});
-const importPassageTracer = genImport("./PassageTracer.d.ts", ["PassageTracer"], { type: true });
-const importGui = genImport("./Gui.d.ts", ["Gui"], { type: true });
-const importModSubUiAngularJsService = genImport(
-  "./ModSubUiAngularJsService.d.ts",
-  ["ModSubUiAngularJsService"],
-  { type: true }
+const importListStr = importList.map(([specifier, imports, options]) =>
+  genImport(specifier, imports, options)
 );
 
-const globalNamespace = genDeclareNamespace(
-  "global",
-  genInterface("Window", {
-    modLoaderGui_LoadingProgress: "LoadingProgress",
-    modLoaderGui_PassageTracer: "PassageTracer",
-    modLoaderGui: "Gui",
-    modLoaderGui_ModSubUiAngularJsService: "ModSubUiAngularJsService",
-  })
-);
+const globalNamespace = genDeclareNamespace("global", genInterface("Window", windowInterface));
 
-writeFileSync(
-  "./type-dist/global.d.ts",
-  [
-    importLoadingProgress,
-    importPassageTracer,
-    importGui,
-    importModSubUiAngularJsService,
-    globalNamespace,
-  ].join("\n")
-);
+writeFileSync("./type-dist/global.d.ts", [...importListStr, globalNamespace].join("\n"));

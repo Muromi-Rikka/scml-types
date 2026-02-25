@@ -1,13 +1,11 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
+import { importList, windowInterface } from "./global-data.js";
 
-const importDiff3WayMerge = genImport("./Diff3WayMerge.d.ts", ["Diff3WayMerge"], { type: true });
-
-const globalNamespace = genDeclareNamespace(
-  "global",
-  genInterface("Window", {
-    diff3WayMerge: "Diff3WayMerge",
-  })
+const importListStr = importList.map(([specifier, imports, options]) =>
+  genImport(specifier, imports, options)
 );
 
-writeFileSync("./type-dist/global.d.ts", [importDiff3WayMerge, globalNamespace].join("\n"));
+const globalNamespace = genDeclareNamespace("global", genInterface("Window", windowInterface));
+
+writeFileSync("./type-dist/global.d.ts", [...importListStr, globalNamespace].join("\n"));

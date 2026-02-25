@@ -18,6 +18,9 @@ importers:
         specifier: ^4.21.0
         version: 4.21.0
     devDependencies:
+      '@scml/utils':
+        specifier: workspace:*
+        version: link:packages/utils
       '@types/node':
         specifier: ^25.3.0
         version: 25.3.0
@@ -51,10 +54,6 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/AddonMod_BeautySelector:
     dependencies:
@@ -64,180 +63,108 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/AddonMod_I18nScriptList:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/AddonMod_I18nTweeList:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/AddonMod_TweePrefixPostfix:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Addon_ConflictChecker:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Addon_ImageLoaderHook2BeautySelector:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Addon_ModdedClothes:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Addon_ModdedFeats:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Addon_ModdedHair:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Addon_ModuleCssReplacer:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Addon_TweeReplacerLinker:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/GameOriginalImagePackMod:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Hook_ImgLoader:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Hook_MacroRng:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Mod_CheckDoLCompressorDictionaries:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Mod_CheckGameVersion:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Mod_CoTCheckGameVersion:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Mod_Diff3WayMerge:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Mod_I18nTweeReplacer:
     dependencies:
@@ -247,20 +174,12 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Mod_LinkButtonFilter:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Mod_LoaderGui:
     dependencies:
@@ -271,9 +190,6 @@ importers:
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
     devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
       angular:
         specifier: ^1.8.3
         version: 1.8.3
@@ -283,30 +199,18 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Mod_SubUiAngularJs:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Mod_SweetAlert2:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Mod_TweeReplacer:
     dependencies:
@@ -316,20 +220,12 @@ importers:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/Mod_i18n:
     dependencies:
       '@scml/sc2-modloader':
         specifier: workspace:*
         version: link:../sugarcube-2-ModLoader
-    devDependencies:
-      '@scml/utils':
-        specifier: workspace:*
-        version: link:../utils
 
   packages/sugarcube-2-ModLoader:
     devDependencies:

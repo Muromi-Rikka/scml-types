@@ -1,14 +1,11 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
+import { importList, windowInterface } from "./global-data.js";
 
-const importModdedFeatsAddon = genImport("./ModdedFeatsAddon.d.ts", ["ModdedFeatsAddon"], {
-  type: true,
-});
-const globalNamespace = genDeclareNamespace(
-  "global",
-  genInterface("Window", {
-    addonModdedFeatsAddon: " ModdedFeatsAddon",
-  })
+const importListStr = importList.map(([specifier, imports, options]) =>
+  genImport(specifier, imports, options)
 );
 
-writeFileSync("./type-dist/global.d.ts", [importModdedFeatsAddon, globalNamespace].join("\n"));
+const globalNamespace = genDeclareNamespace("global", genInterface("Window", windowInterface));
+
+writeFileSync("./type-dist/global.d.ts", [...importListStr, globalNamespace].join("\n"));

@@ -1,3 +1,5 @@
+import type { ESMCodeGenOptions, ESMImport } from "knitwork-x";
+
 export const dolTypeAlias = {
   "../../../dist-BeforeSC2/SC2DataManager": "@scml/sc2-modloader/SC2DataManager",
   "../../../dist-BeforeSC2/Utils": "@scml/sc2-modloader/Utils",
@@ -22,3 +24,9 @@ export const dolTypeAlias = {
   "../../../dist-BeforeSC2/WikifyTracer": "@scml/sc2-modloader/WikifyTracer",
   "../../../dist-BeforeSC2/IdbKeyValRef": "@scml/sc2-modloader/IdbKeyValRef",
 };
+
+export type GlobalImportItem = [
+  specifier: string,
+  imports?: ESMImport | ESMImport[],
+  options?: ESMCodeGenOptions,
+];

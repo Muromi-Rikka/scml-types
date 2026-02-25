@@ -35,8 +35,5 @@
   },
   "dependencies": {
     "@scml/sc2-modloader": "workspace:*"
-  },
-  "devDependencies": {
-    "@scml/utils": "workspace:*"
   }
 }

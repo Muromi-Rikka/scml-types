@@ -1,14 +1,11 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
+import { importList, windowInterface } from "./global-data.js";
 
-const importSweetAlert2Mod = genImport("./SweetAlert2Mod.d.ts", ["SweetAlert2Mod"], {
-  type: true,
-});
-const globalNamespace = genDeclareNamespace(
-  "global",
-  genInterface("Window", {
-    modSweetAlert2Mod: " SweetAlert2Mod",
-  })
+const importListStr = importList.map(([specifier, imports, options]) =>
+  genImport(specifier, imports, options)
 );
 
-writeFileSync("./type-dist/global.d.ts", [importSweetAlert2Mod, globalNamespace].join("\n"));
+const globalNamespace = genDeclareNamespace("global", genInterface("Window", windowInterface));
+
+writeFileSync("./type-dist/global.d.ts", [...importListStr, globalNamespace].join("\n"));

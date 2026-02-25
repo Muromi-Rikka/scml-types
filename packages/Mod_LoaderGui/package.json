@@ -48,7 +48,6 @@
     "@scml/sc2-modloader": "workspace:*"
   },
   "devDependencies": {
-    "@scml/utils": "workspace:*",
     "angular": "^1.8.3"
   }
 }

@@ -1,21 +1,11 @@
 import { genDeclareNamespace, genInterface, genImport } from "knitwork-x";
 import { writeFileSync } from "node:fs";
+import { importList, windowInterface } from "./global-data.js";
 
-const importImageLoaderHook2BeautySelectorAddon = genImport(
-  "./ImageLoaderHook2BeautySelectorAddon.d.ts",
-  ["ImageLoaderHook2BeautySelectorAddon"],
-  {
-    type: true,
-  }
-);
-const globalNamespace = genDeclareNamespace(
-  "global",
-  genInterface("Window", {
-    modImageLoaderHook2BeautySelectorAddon: " ImageLoaderHook2BeautySelectorAddon",
-  })
+const importListStr = importList.map(([specifier, imports, options]) =>
+  genImport(specifier, imports, options)
 );
 
-writeFileSync(
-  "./type-dist/global.d.ts",
-  [importImageLoaderHook2BeautySelectorAddon, globalNamespace].join("\n")
-);
+const globalNamespace = genDeclareNamespace("global", genInterface("Window", windowInterface));
+
+writeFileSync("./type-dist/global.d.ts", [...importListStr, globalNamespace].join("\n"));
