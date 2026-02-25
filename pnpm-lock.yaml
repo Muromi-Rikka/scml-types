@@ -275,6 +275,103 @@ importers:
         specifier: '*'
         version: 3.5.33
 
+  packages/types:
+    dependencies:
+      '@scml/addon-conflict-checker':
+        specifier: workspace:*
+        version: link:../Addon_ConflictChecker
+      '@scml/addon-image-loader-hook-2-beauty-selector':
+        specifier: workspace:*
+        version: link:../Addon_ImageLoaderHook2BeautySelector
+      '@scml/addon-mod-beauty-selector':
+        specifier: workspace:*
+        version: link:../AddonMod_BeautySelector
+      '@scml/addon-mod-i18n-script-list':
+        specifier: workspace:*
+        version: link:../AddonMod_I18nScriptList
+      '@scml/addon-mod-i18n-twee-list':
+        specifier: workspace:*
+        version: link:../AddonMod_I18nTweeList
+      '@scml/addon-mod-time-wrapper':
+        specifier: workspace:*
+        version: link:../AddonModTimeWrapper
+      '@scml/addon-mod-twee-prefix-postfix':
+        specifier: workspace:*
+        version: link:../AddonMod_TweePrefixPostfix
+      '@scml/addon-modded-clothes':
+        specifier: workspace:*
+        version: link:../Addon_ModdedClothes
+      '@scml/addon-modded-feats':
+        specifier: workspace:*
+        version: link:../Addon_ModdedFeats
+      '@scml/addon-modded-hair':
+        specifier: workspace:*
+        version: link:../Addon_ModdedHair
+      '@scml/addon-module-css-replacer':
+        specifier: workspace:*
+        version: link:../Addon_ModuleCssReplacer
+      '@scml/addon-twee-replacer-linker':
+        specifier: workspace:*
+        version: link:../Addon_TweeReplacerLinker
+      '@scml/game-original-image-pack-mod':
+        specifier: workspace:*
+        version: link:../GameOriginalImagePackMod
+      '@scml/hook-img-loader':
+        specifier: workspace:*
+        version: link:../Hook_ImgLoader
+      '@scml/hook-macro-rng':
+        specifier: workspace:*
+        version: link:../Hook_MacroRng
+      '@scml/mod-check-dol-compressor-dictionaries':
+        specifier: workspace:*
+        version: link:../Mod_CheckDoLCompressorDictionaries
+      '@scml/mod-check-game-version':
+        specifier: workspace:*
+        version: link:../Mod_CheckGameVersion
+      '@scml/mod-cot-check-game-version':
+        specifier: workspace:*
+        version: link:../Mod_CoTCheckGameVersion
+      '@scml/mod-diff3-way-merge':
+        specifier: workspace:*
+        version: link:../Mod_Diff3WayMerge
+      '@scml/mod-i18n':
+        specifier: workspace:*
+        version: link:../Mod_i18n
+      '@scml/mod-i18n-twee-replacer':
+        specifier: workspace:*
+        version: link:../Mod_I18nTweeReplacer
+      '@scml/mod-link-button-filter':
+        specifier: workspace:*
+        version: link:../Mod_LinkButtonFilter
+      '@scml/mod-loader-gui':
+        specifier: workspace:*
+        version: link:../Mod_LoaderGui
+      '@scml/mod-replacer-patch':
+        specifier: workspace:*
+        version: link:../Mod_ReplacePatch
+      '@scml/mod-sub-ui-angular-js':
+        specifier: workspace:*
+        version: link:../Mod_SubUiAngularJs
+      '@scml/mod-sweet-alert2':
+        specifier: workspace:*
+        version: link:../Mod_SweetAlert2
+      '@scml/mod-twee-replacer':
+        specifier: workspace:*
+        version: link:../Mod_TweeReplacer
+      '@scml/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+      '@scml/sc2-verlnir':
+        specifier: workspace:*
+        version: link:../sugarcube-2-verlnir
+    devDependencies:
+      defu:
+        specifier: ^6.1.4
+        version: 6.1.4
+      pkg-types:
+        specifier: ^2.3.0
+        version: 2.3.0
+
   packages/utils: {}
 
   website:
@@ -1407,6 +1504,9 @@ packages:
   compute-scroll-into-view@3.1.1:
     resolution: {integrity: sha512-VRhuHOLoKYOy4UbilLbUzbYg93XLjv2PncJC50EuTWPA3gaja1UjBsUP/D/9/juV3vQFr6XBEzn9KCAHdUvOHw==}
 
+  confbox@0.2.4:
+    resolution: {integrity: sha512-ysOGlgTFbN2/Y6Cg3Iye8YKulHw+R2fNXHrgSmXISQdMnomY6eNDprVdW9R5xBguEqI954+S6709UyiO7B+6OQ==}
+
   cookie@1.1.1:
     resolution: {integrity: sha512-ei8Aos7ja0weRpFzJnEA9UHJ/7XQmqglbRwnf2ATjcB9Wq874VKH9kfjjirM6UhU2/E5fFYadylyhFldcqSidQ==}
     engines: {node: '>=18'}
@@ -1509,6 +1609,9 @@ packages:
 
   estree-walker@3.0.3:
     resolution: {integrity: sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g==}
+
+  exsolve@1.0.8:
+    resolution: {integrity: sha512-LmDxfWXwcTArk8fUEnOfSZpHOJ6zOMUJKOtFLFqJLoKJetuQG874Uc7/Kki7zFLzYybmZhp1M7+98pfMqeX8yA==}
 
   extend-shallow@2.0.1:
     resolution: {integrity: sha512-zCnTtlxNoAiDc3gqY2aYAWFx7XWWiasuF2K8Me5WbN8otHKTUKBwjPtNpRs/rbUZm7KxWAaNj7P1a/p52GbVug==}
@@ -1954,6 +2057,9 @@ packages:
   picomatch@4.0.3:
     resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
+
+  pkg-types@2.3.0:
+    resolution: {integrity: sha512-SIqCzDRg0s9npO5XQ3tNZioRY1uK06lA41ynBC1YmFTmnY6FjUjVt6s4LoADmwoig1qqD0oK8h1p/8mlMx8Oig==}
 
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
@@ -3217,6 +3323,8 @@ snapshots:
 
   compute-scroll-into-view@3.1.1: {}
 
+  confbox@0.2.4: {}
+
   cookie@1.1.1: {}
 
   copy-to-clipboard@3.3.3:
@@ -3336,6 +3444,8 @@ snapshots:
   estree-walker@3.0.3:
     dependencies:
       '@types/estree': 1.0.8
+
+  exsolve@1.0.8: {}
 
   extend-shallow@2.0.1:
     dependencies:
@@ -4132,6 +4242,12 @@ snapshots:
   picomatch@2.3.1: {}
 
   picomatch@4.0.3: {}
+
+  pkg-types@2.3.0:
+    dependencies:
+      confbox: 0.2.4
+      exsolve: 1.0.8
+      pathe: 2.0.3
 
   process-nextick-args@2.0.1: {}
 
