@@ -1,7 +1,7 @@
 {
   "name": "@scml/types",
   "version": "1.0.6",
-  "private": true,
+  "private": false,
   "description": "",
   "license": "MIT",
   "author": {
