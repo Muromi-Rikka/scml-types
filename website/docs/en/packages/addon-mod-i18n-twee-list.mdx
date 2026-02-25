@@ -2,7 +2,7 @@
 title: I18n Twee List Addon
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/addon-mod-i18n-twee-list
 
@@ -29,15 +29,15 @@ TypeScript type definitions for I18n Twee List addon, for loading different twee
 ### Import types on demand
 
 ```ts
-import type { I18nTweeList, I18nTweeListParams } from '@scml/addon-mod-i18n-twee-list/I18nTweeList';
+import type { I18nTweeList, I18nTweeListParams } from "@scml/addon-mod-i18n-twee-list/I18nTweeList";
 ```
 
 </Steps>
 
 ## Global Types <Badge type="info" text="global" />
 
-| Property | Type | Description |
-|----------|------|-------------|
+| Property          | Type           | Description    |
+| ----------------- | -------------- | -------------- |
 | `modI18nTweeList` | `I18nTweeList` | Addon instance |
 
 <Tabs>
@@ -51,7 +51,7 @@ import type { I18nTweeList, I18nTweeListParams } from '@scml/addon-mod-i18n-twee
 <Tab label="Subpath import">
 
 ```ts
-import type { I18nTweeList, I18nTweeListParams } from '@scml/addon-mod-i18n-twee-list/I18nTweeList';
+import type { I18nTweeList, I18nTweeListParams } from "@scml/addon-mod-i18n-twee-list/I18nTweeList";
 ```
 
 </Tab>
@@ -59,10 +59,10 @@ import type { I18nTweeList, I18nTweeListParams } from '@scml/addon-mod-i18n-twee
 
 ## Subpath Exports
 
-| Subpath | Description |
-|---------|-------------|
-| `.` | Main entry, augments Window/global |
-| `./I18nTweeList` | Main class, interfaces, utilities |
+| Subpath          | Description                        |
+| ---------------- | ---------------------------------- |
+| `.`              | Main entry, augments Window/global |
+| `./I18nTweeList` | Main class, interfaces, utilities  |
 
 ## API Reference
 
@@ -70,38 +70,39 @@ import type { I18nTweeList, I18nTweeListParams } from '@scml/addon-mod-i18n-twee
 
 #### I18nTweeList <Badge text="class" />
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `info` | `ModRecord[]` | Mod record list |
-| `registerMod()` | `(addonName, mod, modZip) => Promise<void>` | Register mod |
-| `beforePatchModToGame()` | `() => Promise<void>` | Before-patch hook |
-| `init()` | `() => void` | Initialize |
+| Property                 | Type                                        | Description       |
+| ------------------------ | ------------------------------------------- | ----------------- |
+| `info`                   | `ModRecord[]`                               | Mod record list   |
+| `registerMod()`          | `(addonName, mod, modZip) => Promise<void>` | Register mod      |
+| `beforePatchModToGame()` | `() => Promise<void>`                       | Before-patch hook |
+| `init()`                 | `() => void`                                | Initialize        |
 
 #### I18nTweeListParams <Badge text="interface" />
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `mainLanguage` | `string` | Main language |
+| Property       | Type                 | Description                   |
+| -------------- | -------------------- | ----------------------------- |
+| `mainLanguage` | `string`             | Main language                 |
 | `languageFile` | `LanguageFileItem[]` | Language to twee file mapping |
 
 #### LanguageFileItem <Badge text="interface" />
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `language` | `string` | Language code |
+| Property       | Type       | Description         |
+| -------------- | ---------- | ------------------- |
+| `language`     | `string`   | Language code       |
 | `tweeFileList` | `string[]` | Twee file path list |
 
 #### ModLanguageState <Badge text="class" />
 
-| Property/Method | Description |
-|-----------------|-------------|
-| `modName` | Mod name |
-| `language` | Current language |
-| `fallbackLanguage` | Fallback language |
+| Property/Method       | Description          |
+| --------------------- | -------------------- |
+| `modName`             | Mod name             |
+| `language`            | Current language     |
+| `fallbackLanguage`    | Fallback language    |
 | `updateModTweeList()` | Update mod twee list |
 
 ## Type Definition Source
 
 > [!INFO]
+>
 > - Upstream: Bundled with scml-types
 > - Build: `pnpm run download && pnpm run build`

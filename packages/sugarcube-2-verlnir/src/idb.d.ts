@@ -10,25 +10,25 @@
  * generally though, just adding a "saveList" id or class to the div element where the saves should appear and replacing the function/macro that populates that div with "if (idb.active) idb.saveList(); else old-custom-way-of-building-save-menu" should be enough to make it work.
  */
 export interface IdbAPI {
-	dbName: string;
-	lock: boolean;
-	active: boolean;
-	listLength: number;
-	listPage: number;
-	footerHTML: string | false;
-	readonly baddies: unknown;
-	init(dbName?: string): Promise<unknown>;
-	getSaveDetails(): Promise<unknown>;
-	getAllSaves(): Promise<unknown>;
-	saveList(): void;
-	saveState(): Promise<unknown>;
-	loadState(): Promise<unknown>;
-	setItem(slot: number, value: unknown): Promise<void>;
-	getItem(slot: number): Promise<unknown>;
-	deleteItem(slot: number): Promise<void>;
-	clearAll(): Promise<void>;
-	updateSettings(): void;
-	funNuke(): void;
-	ekuNnuf(): void;
-	importFromLocalStorage(): Promise<void>;
+  dbName: string;
+  lock: boolean;
+  active: boolean;
+  listLength: number;
+  listPage: number;
+  footerHTML: string | false;
+  readonly baddies: unknown;
+  init(dbName?: string): Promise<unknown>;
+  getSaveDetails(): Promise<unknown>;
+  getAllSaves(): Promise<unknown>;
+  saveList(): void;
+  saveState(): Promise<unknown>;
+  loadState(): Promise<unknown>;
+  setItem(slot: number, value: unknown): Promise<void>;
+  getItem(slot: number): Promise<unknown>;
+  deleteItem(slot: number): Promise<void>;
+  clearAll(): Promise<void>;
+  updateSettings(): void;
+  funNuke(): void;
+  ekuNnuf(): void;
+  importFromLocalStorage(): Promise<void>;
 }

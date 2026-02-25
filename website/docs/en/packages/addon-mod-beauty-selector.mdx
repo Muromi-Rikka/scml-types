@@ -2,7 +2,7 @@
 title: Beauty Selector Addon
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/addon-mod-beauty-selector
 
@@ -29,16 +29,16 @@ TypeScript type definitions for Beauty Selector addon, for image selector UI and
 ### Import types on demand
 
 ```ts
-import type { BeautySelectorAddon } from '@scml/addon-mod-beauty-selector/BeautySelectorAddon';
-import type { BeautySelectorAddonInterface } from '@scml/addon-mod-beauty-selector/BeautySelectorAddonInterface';
+import type { BeautySelectorAddon } from "@scml/addon-mod-beauty-selector/BeautySelectorAddon";
+import type { BeautySelectorAddonInterface } from "@scml/addon-mod-beauty-selector/BeautySelectorAddonInterface";
 ```
 
 </Steps>
 
 ## Global Types <Badge type="info" text="global" />
 
-| Property | Type | Description |
-|----------|------|-------------|
+| Property                   | Type                  | Description    |
+| -------------------------- | --------------------- | -------------- |
 | `addonBeautySelectorAddon` | `BeautySelectorAddon` | Addon instance |
 
 <Tabs>
@@ -52,7 +52,7 @@ import type { BeautySelectorAddonInterface } from '@scml/addon-mod-beauty-select
 <Tab label="Subpath import">
 
 ```ts
-import type { BeautySelectorAddon } from '@scml/addon-mod-beauty-selector/BeautySelectorAddon';
+import type { BeautySelectorAddon } from "@scml/addon-mod-beauty-selector/BeautySelectorAddon";
 ```
 
 </Tab>
@@ -60,17 +60,17 @@ import type { BeautySelectorAddon } from '@scml/addon-mod-beauty-selector/Beauty
 
 ## Subpath Exports
 
-| Subpath | Description |
-|---------|-------------|
-| `.` | Main entry, augments Window/global |
-| `./BeautySelectorAddon` | Main class |
-| `./BeautySelectorAddonInterface` | Interfaces |
-| `./BeautySelectorAddonType` | Type definitions |
-| `./extname` | Extension utilities |
-| `./ModImageStore` | Mod image store |
-| `./utils/getRelativePath` | Relative path utilities |
-| `./utils/traverseZipFolder` | Traverse zip folder |
-| `./GUI_StringTable/*` | GUI string tables |
+| Subpath                          | Description                        |
+| -------------------------------- | ---------------------------------- |
+| `.`                              | Main entry, augments Window/global |
+| `./BeautySelectorAddon`          | Main class                         |
+| `./BeautySelectorAddonInterface` | Interfaces                         |
+| `./BeautySelectorAddonType`      | Type definitions                   |
+| `./extname`                      | Extension utilities                |
+| `./ModImageStore`                | Mod image store                    |
+| `./utils/getRelativePath`        | Relative path utilities            |
+| `./utils/traverseZipFolder`      | Traverse zip folder                |
+| `./GUI_StringTable/*`            | GUI string tables                  |
 
 ## API Reference
 
@@ -83,6 +83,7 @@ Main Beauty Selector Addon class implementing `BeautySelectorAddonInterface` and
 <SourceCode href="https://github.com/Lyoko-Jeremie/DoL_BeautySelectorAddonMod" />
 
 > [!INFO]
+>
 > - Upstream: https://github.com/Lyoko-Jeremie/DoL_BeautySelectorAddonMod
 > - Default branch: master
 > - Build: `pnpm run download && pnpm run build`

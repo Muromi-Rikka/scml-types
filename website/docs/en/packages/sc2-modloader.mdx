@@ -2,7 +2,7 @@
 title: SugarCube 2 Mod Loader
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/sc2-modloader
 
@@ -29,16 +29,16 @@ Add triple-slash directive in your project to bring in global types:
 Mod Loader mounts core objects on `window`; access directly:
 
 ```ts
-window.modSC2DataManager;   // Data manager
-window.modUtils;            // Mod utilities
+window.modSC2DataManager; // Data manager
+window.modUtils; // Mod utilities
 window.modAddonPluginManager; // Addon plugin manager
 ```
 
 ### Import types on demand
 
 ```ts
-import type { ModInfo, ModLoader } from '@scml/sc2-modloader/ModLoader';
-import type { AddonPluginHookPointEx } from '@scml/sc2-modloader/AddonPlugin';
+import type { ModInfo, ModLoader } from "@scml/sc2-modloader/ModLoader";
+import type { AddonPluginHookPointEx } from "@scml/sc2-modloader/AddonPlugin";
 ```
 
 </Steps>
@@ -47,15 +47,15 @@ import type { AddonPluginHookPointEx } from '@scml/sc2-modloader/AddonPlugin';
 
 Main entry extends `Window` via `/// <reference types="..." />`. <Badge type="info" text="global" /> The following properties are on `window`:
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `jQuery` / `$` | `JQueryStatic` | jQuery instance |
-| `modSC2DataManager` | `SC2DataManager` | Mod and game data manager |
-| `modUtils` | `ModUtils` | Mod Loader utilities (get mod, passage, etc.) |
-| `jsPreloader` | `JsPreloader` | Script preloader |
-| `modModLoadController` | `ModLoadController` | Mod load lifecycle controller |
-| `modAddonPluginManager` | `AddonPluginManager` | Addon plugin manager |
-| `modSC2JsEvalContext` | `SC2JsEvalContext` | Mod JS eval context |
+| Property                | Type                 | Description                                   |
+| ----------------------- | -------------------- | --------------------------------------------- |
+| `jQuery` / `$`          | `JQueryStatic`       | jQuery instance                               |
+| `modSC2DataManager`     | `SC2DataManager`     | Mod and game data manager                     |
+| `modUtils`              | `ModUtils`           | Mod Loader utilities (get mod, passage, etc.) |
+| `jsPreloader`           | `JsPreloader`        | Script preloader                              |
+| `modModLoadController`  | `ModLoadController`  | Mod load lifecycle controller                 |
+| `modAddonPluginManager` | `AddonPluginManager` | Addon plugin manager                          |
+| `modSC2JsEvalContext`   | `SC2JsEvalContext`   | Mod JS eval context                           |
 
 <Tabs>
 <Tab label="Main entry">
@@ -68,9 +68,9 @@ Main entry extends `Window` via `/// <reference types="..." />`. <Badge type="in
 <Tab label="Subpath import example">
 
 ```ts
-import type { AddonPluginHookPointEx } from '@scml/sc2-modloader/AddonPlugin';
-import type { ModInfo } from '@scml/sc2-modloader/ModLoader';
-import type { ModUtils } from '@scml/sc2-modloader/Utils';
+import type { AddonPluginHookPointEx } from "@scml/sc2-modloader/AddonPlugin";
+import type { ModInfo } from "@scml/sc2-modloader/ModLoader";
+import type { ModUtils } from "@scml/sc2-modloader/Utils";
 ```
 
 </Tab>
@@ -78,22 +78,22 @@ import type { ModUtils } from '@scml/sc2-modloader/Utils';
 
 ## Subpath Exports
 
-| Subpath | Description |
-|---------|-------------|
-| `.` | Main entry, augments Window/global |
-| `./AddonPlugin` | Addon plugin interfaces and manager |
-| `./ModLoader` | ModLoader, ModInfo, ModBootJson, etc. |
-| `./SC2DataManager` | SC2DataManager central data manager |
-| `./ModLoadController` | Load controller, LogWrapper |
-| `./ModZipReader` | ModZipReader, LocalLoader, RemoteLoader, etc. |
-| `./ModOrderContainer` | ModOrderContainer, ModOrderItem, ModLoadFromSourceType |
-| `./SC2DataInfoCache` | SC2DataInfo, PassageDataItem, CacheRecord, etc. |
-| `./SugarCube2` | Passage types |
-| `./Utils` | ModUtils utility class |
-| `./ReplacePatcher` | Patch/replace utilities |
-| `./ModPack/*` | ModPack, ModMeta, etc. |
-| `./SemVer/InfiniteSemVer` | InfiniteSemVer version parsing |
-| and more... | See package exports |
+| Subpath                   | Description                                            |
+| ------------------------- | ------------------------------------------------------ |
+| `.`                       | Main entry, augments Window/global                     |
+| `./AddonPlugin`           | Addon plugin interfaces and manager                    |
+| `./ModLoader`             | ModLoader, ModInfo, ModBootJson, etc.                  |
+| `./SC2DataManager`        | SC2DataManager central data manager                    |
+| `./ModLoadController`     | Load controller, LogWrapper                            |
+| `./ModZipReader`          | ModZipReader, LocalLoader, RemoteLoader, etc.          |
+| `./ModOrderContainer`     | ModOrderContainer, ModOrderItem, ModLoadFromSourceType |
+| `./SC2DataInfoCache`      | SC2DataInfo, PassageDataItem, CacheRecord, etc.        |
+| `./SugarCube2`            | Passage types                                          |
+| `./Utils`                 | ModUtils utility class                                 |
+| `./ReplacePatcher`        | Patch/replace utilities                                |
+| `./ModPack/*`             | ModPack, ModMeta, etc.                                 |
+| `./SemVer/InfiniteSemVer` | InfiniteSemVer version parsing                         |
+| and more...               | See package exports                                    |
 
 ## API Reference
 
@@ -117,13 +117,13 @@ Mod and game data manager. Methods: `getModUtils()`, `getModLoadController()`, `
 
 #### ModInfo <Badge text="interface" />
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `name` | `string` | Mod name |
-| `version` | `string` | Version |
-| `alias` | `string[]` | Aliases |
-| `cache` | `SC2DataInfo` | Cache data |
-| `imgs` | `ModImg[]` | Image list |
+| Property                 | Type                 | Description     |
+| ------------------------ | -------------------- | --------------- |
+| `name`                   | `string`             | Mod name        |
+| `version`                | `string`             | Version         |
+| `alias`                  | `string[]`           | Aliases         |
+| `cache`                  | `SC2DataInfo`        | Cache data      |
+| `imgs`                   | `ModImg[]`           | Image list      |
 | `scriptFileList_preload` | `[string, string][]` | Preload scripts |
 
 ### ./Utils
@@ -141,6 +141,7 @@ Methods: `getModListName()`, `getMod()`, `getModZip()`, `getPassageData()`, `get
 <SourceCode href="https://github.com/Lyoko-Jeremie/sugarcube-2-ModLoader" />
 
 > [!INFO]
+>
 > - Upstream: https://github.com/Lyoko-Jeremie/sugarcube-2-ModLoader
 > - Default branch: master
 > - Build: `pnpm run download && pnpm run build`

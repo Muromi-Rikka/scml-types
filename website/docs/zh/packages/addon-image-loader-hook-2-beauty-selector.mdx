@@ -2,7 +2,7 @@
 title: ImageLoader Hook 2 Beauty Selector Addon
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/addon-image-loader-hook-2-beauty-selector
 
@@ -29,15 +29,18 @@ ImageLoader Hook 2 Beauty Selector addon 的 TypeScript 类型定义，桥接 Im
 ### 按需导入类型
 
 ```ts
-import type { ImageLoaderHook2BeautySelectorAddon, AddonParams } from '@scml/addon-image-loader-hook-2-beauty-selector/ImageLoaderHook2BeautySelectorAddon';
+import type {
+  ImageLoaderHook2BeautySelectorAddon,
+  AddonParams,
+} from "@scml/addon-image-loader-hook-2-beauty-selector/ImageLoaderHook2BeautySelectorAddon";
 ```
 
 </Steps>
 
 ## 全局类型 <Badge type="info" text="global" />
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
+| 属性                                     | 类型                                  | 说明       |
+| ---------------------------------------- | ------------------------------------- | ---------- |
 | `modImageLoaderHook2BeautySelectorAddon` | `ImageLoaderHook2BeautySelectorAddon` | Addon 实例 |
 
 <Tabs>
@@ -51,7 +54,7 @@ import type { ImageLoaderHook2BeautySelectorAddon, AddonParams } from '@scml/add
 <Tab label="子路径导入">
 
 ```ts
-import type { ImageLoaderHook2BeautySelectorAddon } from '@scml/addon-image-loader-hook-2-beauty-selector/ImageLoaderHook2BeautySelectorAddon';
+import type { ImageLoaderHook2BeautySelectorAddon } from "@scml/addon-image-loader-hook-2-beauty-selector/ImageLoaderHook2BeautySelectorAddon";
 ```
 
 </Tab>
@@ -59,10 +62,10 @@ import type { ImageLoaderHook2BeautySelectorAddon } from '@scml/addon-image-load
 
 ## 子路径导出
 
-| 子路径 | 描述 |
-|--------|------|
-| `.` | 主入口，增强 Window/全局 |
-| `./ImageLoaderHook2BeautySelectorAddon` | 主类与 AddonParams |
+| 子路径                                  | 描述                     |
+| --------------------------------------- | ------------------------ |
+| `.`                                     | 主入口，增强 Window/全局 |
+| `./ImageLoaderHook2BeautySelectorAddon` | 主类与 AddonParams       |
 
 ## API 参考
 
@@ -70,23 +73,24 @@ import type { ImageLoaderHook2BeautySelectorAddon } from '@scml/addon-image-load
 
 #### ImageLoaderHook2BeautySelectorAddon <Badge text="类" />
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| `modImageLoaderHookRef` | `any` | ImageLoader Hook 引用 |
-| `nameSetImageLoaderHook` | `Set<string>` | 已注册的 ImageLoader Hook 名称 |
-| `convertedModeNameList` | `string[]` | 已转换的 mod 名列表 |
-| `registerMod()` | `(addonName, mod, modZip) => Promise<any>` | 注册 mod |
-| `canLoadThisMod()` | `(bootJson, zip) => Promise<boolean>` | 是否可加载该 mod |
-| `ModLoaderLoadEnd()` | `() => Promise<void>` | Mod Loader 加载完成回调 |
+| 属性                     | 类型                                       | 说明                           |
+| ------------------------ | ------------------------------------------ | ------------------------------ |
+| `modImageLoaderHookRef`  | `any`                                      | ImageLoader Hook 引用          |
+| `nameSetImageLoaderHook` | `Set<string>`                              | 已注册的 ImageLoader Hook 名称 |
+| `convertedModeNameList`  | `string[]`                                 | 已转换的 mod 名列表            |
+| `registerMod()`          | `(addonName, mod, modZip) => Promise<any>` | 注册 mod                       |
+| `canLoadThisMod()`       | `(bootJson, zip) => Promise<boolean>`      | 是否可加载该 mod               |
+| `ModLoaderLoadEnd()`     | `() => Promise<void>`                      | Mod Loader 加载完成回调        |
 
 #### AddonParams <Badge text="接口" />
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
+| 属性           | 类型      | 说明         |
+| -------------- | --------- | ------------ |
 | `dontCovertMe` | `boolean` | 不转换该 mod |
 
 ## 类型定义来源
 
 > [!INFO]
+>
 > - 上游: 与 DoL_ImgLoaderHooker 和 DoL_BeautySelectorAddonMod 集成
 > - 构建: `pnpm run download && pnpm run build`

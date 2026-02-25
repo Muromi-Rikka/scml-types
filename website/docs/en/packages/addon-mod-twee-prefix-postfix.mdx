@@ -2,7 +2,7 @@
 title: Twee Prefix Postfix Addon
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/addon-mod-twee-prefix-postfix
 
@@ -29,16 +29,19 @@ TypeScript type definitions for Twee prefix/postfix addon, for adding prefix/pos
 ### Import types on demand
 
 ```ts
-import type { TweePrefixPostfixAddon, TweePrefixPostfixAddonParams } from '@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddon';
-import type { TweePrefixPostfixAddonCallback } from '@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddonJsCallback';
+import type {
+  TweePrefixPostfixAddon,
+  TweePrefixPostfixAddonParams,
+} from "@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddon";
+import type { TweePrefixPostfixAddonCallback } from "@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddonJsCallback";
 ```
 
 </Steps>
 
 ## Global Types <Badge type="info" text="global" />
 
-| Property | Type | Description |
-|----------|------|-------------|
+| Property                      | Type                     | Description    |
+| ----------------------------- | ------------------------ | -------------- |
 | `addonTweePrefixPostfixAddon` | `TweePrefixPostfixAddon` | Addon instance |
 
 <Tabs>
@@ -52,7 +55,7 @@ import type { TweePrefixPostfixAddonCallback } from '@scml/addon-mod-twee-prefix
 <Tab label="Subpath import">
 
 ```ts
-import type { TweePrefixPostfixAddon } from '@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddon';
+import type { TweePrefixPostfixAddon } from "@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddon";
 ```
 
 </Tab>
@@ -60,11 +63,11 @@ import type { TweePrefixPostfixAddon } from '@scml/addon-mod-twee-prefix-postfix
 
 ## Subpath Exports
 
-| Subpath | Description |
-|---------|-------------|
-| `.` | Main entry, augments Window/global |
-| `./TweePrefixPostfixAddon` | Main class and params |
-| `./TweePrefixPostfixAddonJsCallback` | JS callback types |
+| Subpath                              | Description                        |
+| ------------------------------------ | ---------------------------------- |
+| `.`                                  | Main entry, augments Window/global |
+| `./TweePrefixPostfixAddon`           | Main class and params              |
+| `./TweePrefixPostfixAddonJsCallback` | JS callback types                  |
 
 ## API Reference
 
@@ -72,26 +75,27 @@ import type { TweePrefixPostfixAddon } from '@scml/addon-mod-twee-prefix-postfix
 
 #### TweePrefixPostfixAddon <Badge text="class" />
 
-| Method | Description |
-|--------|-------------|
-| `addCallback(key, callback)` | Add callback |
-| `registerMod()` | Register mod |
-| `init()` | Initialize |
+| Method                               | Description  |
+| ------------------------------------ | ------------ |
+| `addCallback(key, callback)`         | Add callback |
+| `registerMod()`                      | Register mod |
+| `init()`                             | Initialize   |
 | `beforePassage()` / `afterPassage()` | Wikify hooks |
-| `beforeWikify()` / `afterWikify()` | Wikify hooks |
-| `beforeWidget()` / `afterWidget()` | Widget hooks |
+| `beforeWikify()` / `afterWikify()`   | Wikify hooks |
+| `beforeWidget()` / `afterWidget()`   | Widget hooks |
 
 #### TweePrefixPostfixAddonParams <Badge text="interface" />
 
-| Property | Type | Description |
-|----------|------|-------------|
+| Property      | Type     | Description  |
+| ------------- | -------- | ------------ |
 | `passageName` | `string` | Passage name |
-| `widgetName` | `string` | Widget name |
-| `prefix` | `string` | Prefix |
-| `postfix` | `string` | Postfix |
+| `widgetName`  | `string` | Widget name  |
+| `prefix`      | `string` | Prefix       |
+| `postfix`     | `string` | Postfix      |
 
 ## Type Definition Source
 
 > [!INFO]
+>
 > - Upstream: Bundled with scml-types
 > - Build: `pnpm run download && pnpm run build`

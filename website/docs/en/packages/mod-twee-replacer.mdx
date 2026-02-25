@@ -2,7 +2,7 @@
 title: Twee Replacer
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/mod-twee-replacer
 
@@ -29,15 +29,19 @@ TypeScript type definitions for Twee replacer, for find/replace on Twee passage 
 ### Import types on demand
 
 ```ts
-import type { TweeReplacer, ReplaceParams, ReplaceInfo } from '@scml/mod-twee-replacer/TweeReplacer';
+import type {
+  TweeReplacer,
+  ReplaceParams,
+  ReplaceInfo,
+} from "@scml/mod-twee-replacer/TweeReplacer";
 ```
 
 </Steps>
 
 ## Global Types <Badge type="info" text="global" />
 
-| Property | Type | Description |
-|----------|------|-------------|
+| Property            | Type           | Description                           |
+| ------------------- | -------------- | ------------------------------------- |
 | `addonTweeReplacer` | `TweeReplacer` | Addon instance, performs Twee replace |
 
 <Tabs>
@@ -51,7 +55,7 @@ import type { TweeReplacer, ReplaceParams, ReplaceInfo } from '@scml/mod-twee-re
 <Tab label="Subpath import">
 
 ```ts
-import type { TweeReplacer } from '@scml/mod-twee-replacer/TweeReplacer';
+import type { TweeReplacer } from "@scml/mod-twee-replacer/TweeReplacer";
 ```
 
 </Tab>
@@ -59,9 +63,9 @@ import type { TweeReplacer } from '@scml/mod-twee-replacer/TweeReplacer';
 
 ## Subpath Exports
 
-| Subpath | Description |
-|---------|-------------|
-| `.` | Main entry, augments Window/global |
+| Subpath          | Description                                  |
+| ---------------- | -------------------------------------------- |
+| `.`              | Main entry, augments Window/global           |
 | `./TweeReplacer` | Main class, ReplaceParams, ReplaceInfo, etc. |
 
 ## API Reference
@@ -70,34 +74,35 @@ import type { TweeReplacer } from '@scml/mod-twee-replacer/TweeReplacer';
 
 #### TweeReplacer <Badge text="class" />
 
-| Property/Method | Description |
-|-----------------|-------------|
-| `info` | `Map<string, ReplaceInfo>` |
-| `registerMod()` | Register mod |
-| `enableLinkerMode()` | Enable linker mode |
-| `afterEarlyLoad()` | After EarlyLoad hook |
-| `afterPatchModToGame()` | After patch hook |
-| `do_patch()` | Execute replace |
-| `init()` | Initialize |
+| Property/Method         | Description                |
+| ----------------------- | -------------------------- |
+| `info`                  | `Map<string, ReplaceInfo>` |
+| `registerMod()`         | Register mod               |
+| `enableLinkerMode()`    | Enable linker mode         |
+| `afterEarlyLoad()`      | After EarlyLoad hook       |
+| `afterPatchModToGame()` | After patch hook           |
+| `do_patch()`            | Execute replace            |
+| `init()`                | Initialize                 |
 
 #### ReplaceParams <Badge text="interface" />
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `passage` | `string` | Passage name |
-| `findString` | `string` | Find string |
-| `findRegex` | `string` | Find regex |
-| `regexFlag` | `string` | Regex flags |
-| `replace` | `string` | Replace string |
-| `replaceFile` | `string` | Replace file path |
-| `debug` | `boolean` | Debug |
-| `all` | `boolean` | Replace all |
+| Property      | Type      | Description       |
+| ------------- | --------- | ----------------- |
+| `passage`     | `string`  | Passage name      |
+| `findString`  | `string`  | Find string       |
+| `findRegex`   | `string`  | Find regex        |
+| `regexFlag`   | `string`  | Regex flags       |
+| `replace`     | `string`  | Replace string    |
+| `replaceFile` | `string`  | Replace file path |
+| `debug`       | `boolean` | Debug             |
+| `all`         | `boolean` | Replace all       |
 
 ## Type Definition Source
 
 <SourceCode href="https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_TweeReplacer" />
 
 > [!INFO]
+>
 > - Upstream: https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_TweeReplacer
 > - Default branch: master
 > - Build: `pnpm run download && pnpm run build`

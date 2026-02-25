@@ -1,10 +1,9 @@
 {
   "name": "@scml/sc2-verlnir",
   "version": "1.0.6",
+  "private": false,
   "description": "TypeScript type definitions for SugarCube 2",
   "license": "MIT",
-  "private": false,
-  "type": "module",
   "author": {
     "name": "Rikka",
     "email": "admin@rikka.cc",
@@ -15,7 +14,11 @@
     "url": "https://github.com/Muromi-Rikka/scml-types.git",
     "directory": "packages/sugarcube-2-verlnir"
   },
-  "files": ["src", "README.md"],
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "type": "module",
   "types": "./src/global.d.ts",
   "exports": {
     ".": "./src/global.d.ts"

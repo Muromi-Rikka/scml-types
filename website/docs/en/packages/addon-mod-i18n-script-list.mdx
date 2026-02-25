@@ -2,7 +2,7 @@
 title: I18n Script List Addon
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/addon-mod-i18n-script-list
 
@@ -29,15 +29,18 @@ TypeScript type definitions for I18n Script List addon, for loading different sc
 ### Import types on demand
 
 ```ts
-import type { I18nScriptList, I18nScriptListParams } from '@scml/addon-mod-i18n-script-list/I18nScriptList';
+import type {
+  I18nScriptList,
+  I18nScriptListParams,
+} from "@scml/addon-mod-i18n-script-list/I18nScriptList";
 ```
 
 </Steps>
 
 ## Global Types <Badge type="info" text="global" />
 
-| Property | Type | Description |
-|----------|------|-------------|
+| Property            | Type             | Description    |
+| ------------------- | ---------------- | -------------- |
 | `modI18nScriptList` | `I18nScriptList` | Addon instance |
 
 <Tabs>
@@ -51,7 +54,7 @@ import type { I18nScriptList, I18nScriptListParams } from '@scml/addon-mod-i18n-
 <Tab label="Subpath import">
 
 ```ts
-import type { I18nScriptList } from '@scml/addon-mod-i18n-script-list/I18nScriptList';
+import type { I18nScriptList } from "@scml/addon-mod-i18n-script-list/I18nScriptList";
 ```
 
 </Tab>
@@ -59,10 +62,10 @@ import type { I18nScriptList } from '@scml/addon-mod-i18n-script-list/I18nScript
 
 ## Subpath Exports
 
-| Subpath | Description |
-|---------|-------------|
-| `.` | Main entry, augments Window/global |
-| `./I18nScriptList` | Main class, interfaces, utilities |
+| Subpath            | Description                        |
+| ------------------ | ---------------------------------- |
+| `.`                | Main entry, augments Window/global |
+| `./I18nScriptList` | Main class, interfaces, utilities  |
 
 ## API Reference
 
@@ -70,29 +73,30 @@ import type { I18nScriptList } from '@scml/addon-mod-i18n-script-list/I18nScript
 
 #### I18nScriptList <Badge text="class" />
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `info` | `ModRecord[]` | Mod record list |
-| `registerMod()` | `(addonName, mod, modZip) => Promise<void>` | Register mod |
-| `beforePatchModToGame()` | `() => Promise<void>` | Before-patch hook |
-| `init()` | `() => void` | Initialize |
+| Property                 | Type                                        | Description       |
+| ------------------------ | ------------------------------------------- | ----------------- |
+| `info`                   | `ModRecord[]`                               | Mod record list   |
+| `registerMod()`          | `(addonName, mod, modZip) => Promise<void>` | Register mod      |
+| `beforePatchModToGame()` | `() => Promise<void>`                       | Before-patch hook |
+| `init()`                 | `() => void`                                | Initialize        |
 
 #### I18nScriptListParams <Badge text="interface" />
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `mainLanguage` | `string` | Main language |
+| Property       | Type                 | Description                     |
+| -------------- | -------------------- | ------------------------------- |
+| `mainLanguage` | `string`             | Main language                   |
 | `languageFile` | `LanguageFileItem[]` | Language to script file mapping |
 
 #### LanguageFileItem <Badge text="interface" />
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `language` | `string` | Language code |
+| Property         | Type       | Description           |
+| ---------------- | ---------- | --------------------- |
+| `language`       | `string`   | Language code         |
 | `scriptFileList` | `string[]` | Script file path list |
 
 ## Type Definition Source
 
 > [!INFO]
+>
 > - Upstream: Bundled with scml-types
 > - Build: `pnpm run download && pnpm run build`

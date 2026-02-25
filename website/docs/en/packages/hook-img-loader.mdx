@@ -2,7 +2,7 @@
 title: Image Loader Hook
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/hook-img-loader
 
@@ -29,17 +29,17 @@ TypeScript type definitions for Image loader hook, mounting image loader and all
 ### Import types on demand
 
 ```ts
-import type { ImgLoaderHooker } from '@scml/hook-img-loader/ImgLoaderHooker';
-import type { ImgLoaderHookerCore } from '@scml/hook-img-loader/ImgLoaderHookerCore';
-import type { CssReplacer } from '@scml/hook-img-loader/CssReplacer';
+import type { ImgLoaderHooker } from "@scml/hook-img-loader/ImgLoaderHooker";
+import type { ImgLoaderHookerCore } from "@scml/hook-img-loader/ImgLoaderHookerCore";
+import type { CssReplacer } from "@scml/hook-img-loader/CssReplacer";
 ```
 
 </Steps>
 
 ## Global Types <Badge type="info" text="global" />
 
-| Property | Type | Description |
-|----------|------|-------------|
+| Property             | Type              | Description                |
+| -------------------- | ----------------- | -------------------------- |
 | `modImgLoaderHooker` | `ImgLoaderHooker` | Image loader hook instance |
 
 <Tabs>
@@ -53,7 +53,7 @@ import type { CssReplacer } from '@scml/hook-img-loader/CssReplacer';
 <Tab label="Subpath import">
 
 ```ts
-import type { ImgLoaderHooker } from '@scml/hook-img-loader/ImgLoaderHooker';
+import type { ImgLoaderHooker } from "@scml/hook-img-loader/ImgLoaderHooker";
 ```
 
 </Tab>
@@ -61,16 +61,16 @@ import type { ImgLoaderHooker } from '@scml/hook-img-loader/ImgLoaderHooker';
 
 ## Subpath Exports
 
-| Subpath | Description |
-|---------|-------------|
-| `.` | Main entry, augments Window/global |
-| `./ImgLoaderHooker` | Main class |
-| `./ImgLoaderHookerCore` | Core implementation |
-| `./CssReplacer` | CSS replace helpers |
-| `./NodeMutationObserver` | DOM observer |
-| `./SimpleDolFunctionHook` | Function hook |
-| `./utils` | Utilities |
-| `./createFunctionFromCode` | Generate function from code |
+| Subpath                    | Description                        |
+| -------------------------- | ---------------------------------- |
+| `.`                        | Main entry, augments Window/global |
+| `./ImgLoaderHooker`        | Main class                         |
+| `./ImgLoaderHookerCore`    | Core implementation                |
+| `./CssReplacer`            | CSS replace helpers                |
+| `./NodeMutationObserver`   | DOM observer                       |
+| `./SimpleDolFunctionHook`  | Function hook                      |
+| `./utils`                  | Utilities                          |
+| `./createFunctionFromCode` | Generate function from code        |
 
 ## API Reference
 
@@ -93,6 +93,7 @@ CSS replace helper utilities.
 <SourceCode href="https://github.com/Lyoko-Jeremie/DoL_ImgLoaderHooker" />
 
 > [!INFO]
+>
 > - Upstream: https://github.com/Lyoko-Jeremie/DoL_ImgLoaderHooker
 > - Default branch: master
 > - Build: `pnpm run download && pnpm run build`

@@ -2,7 +2,7 @@
 title: Conflict Checker Addon
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/addon-conflict-checker
 
@@ -31,8 +31,11 @@ Add triple-slash directive in your project to bring in global types:
 ### Import types on demand
 
 ```ts
-import type { ConflictChecker } from '@scml/addon-conflict-checker/ConflictChecker';
-import type { ConflictCheckerParams, ModLimit } from '@scml/addon-conflict-checker/ConflictCheckerParams';
+import type { ConflictChecker } from "@scml/addon-conflict-checker/ConflictChecker";
+import type {
+  ConflictCheckerParams,
+  ModLimit,
+} from "@scml/addon-conflict-checker/ConflictCheckerParams";
 ```
 
 </Steps>
@@ -41,8 +44,8 @@ import type { ConflictCheckerParams, ModLimit } from '@scml/addon-conflict-check
 
 Main entry extends `Window` via `/// <reference types="..." />`. <Badge type="info" text="global" /> The following property is on `window`:
 
-| Property | Type | Description |
-|----------|------|-------------|
+| Property               | Type              | Description                                        |
+| ---------------------- | ----------------- | -------------------------------------------------- |
 | `addonConflictChecker` | `ConflictChecker` | Addon instance, manages mod load-order constraints |
 
 ```ts
@@ -63,8 +66,11 @@ window.addonConflictChecker.modList;
 <Tab label="Subpath import">
 
 ```ts
-import type { ConflictChecker } from '@scml/addon-conflict-checker/ConflictChecker';
-import type { ConflictCheckerParams, ModLimit } from '@scml/addon-conflict-checker/ConflictCheckerParams';
+import type { ConflictChecker } from "@scml/addon-conflict-checker/ConflictChecker";
+import type {
+  ConflictCheckerParams,
+  ModLimit,
+} from "@scml/addon-conflict-checker/ConflictCheckerParams";
 ```
 
 </Tab>
@@ -72,11 +78,11 @@ import type { ConflictCheckerParams, ModLimit } from '@scml/addon-conflict-check
 
 ## Subpath Exports
 
-| Subpath | Description |
-|---------|-------------|
-| `.` | Main entry, augments Window/global |
-| `./ConflictChecker` | ConflictChecker class |
-| `./ConflictCheckerParams` | Config params and type guards |
+| Subpath                   | Description                        |
+| ------------------------- | ---------------------------------- |
+| `.`                       | Main entry, augments Window/global |
+| `./ConflictChecker`       | ConflictChecker class              |
+| `./ConflictCheckerParams` | Config params and type guards      |
 
 ## API Reference
 
@@ -88,27 +94,27 @@ Addon plugin class implementing `LifeTimeCircleHook` and `AddonPluginHookPointEx
 
 **Constructor**
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
+| Parameter         | Type             | Description             |
+| ----------------- | ---------------- | ----------------------- |
 | `gSC2DataManager` | `SC2DataManager` | Mod Loader data manager |
-| `gModUtils` | `ModUtils` | Mod utilities |
+| `gModUtils`       | `ModUtils`       | Mod utilities           |
 
 **Properties**
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `gSC2DataManager` | `SC2DataManager` | Data manager reference |
-| `gModUtils` | `ModUtils` | Utilities reference |
-| `logger` | `LogWrapper` | Logger |
-| `infiniteSemVerApi` | `InfiniteSemVerApi` | Version resolution API |
-| `modList` | `Map<string, ConflictCheckerParams>` | Load-order constraints by mod name |
+| Property            | Type                                 | Description                        |
+| ------------------- | ------------------------------------ | ---------------------------------- |
+| `gSC2DataManager`   | `SC2DataManager`                     | Data manager reference             |
+| `gModUtils`         | `ModUtils`                           | Utilities reference                |
+| `logger`            | `LogWrapper`                         | Logger                             |
+| `infiniteSemVerApi` | `InfiniteSemVerApi`                  | Version resolution API             |
+| `modList`           | `Map<string, ConflictCheckerParams>` | Load-order constraints by mod name |
 
 **Methods**
 
-| Method | Signature | Description |
-|--------|-----------|-------------|
-| `registerMod` | `(addonName: string, mod: ModInfo, modZip: ModZipReader) => Promise<void>` | Register mod, read conflict config |
-| `ModLoaderLoadEnd` | `() => Promise<void>` | Callback when Mod Loader finishes loading |
+| Method             | Signature                                                                  | Description                               |
+| ------------------ | -------------------------------------------------------------------------- | ----------------------------------------- |
+| `registerMod`      | `(addonName: string, mod: ModInfo, modZip: ModZipReader) => Promise<void>` | Register mod, read conflict config        |
+| `ModLoaderLoadEnd` | `() => Promise<void>`                                                      | Callback when Mod Loader finishes loading |
 
 ---
 
@@ -118,20 +124,20 @@ Addon plugin class implementing `LifeTimeCircleHook` and `AddonPluginHookPointEx
 
 Load-order constraint config for mod's `mod.json` or addon config.
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `mustBefore` | `ModLimit[]` | Mods that must load before this mod |
-| `mustAfter` | `ModLimit[]` | Mods that must load after this mod |
-| `optionalBefore` | `ModLimit[]` | Recommended before this mod |
-| `optionalAfter` | `ModLimit[]` | Recommended after this mod |
-| `blackBefore` | `ModLimit[]` | Forbidden before this mod |
-| `blackAfter` | `ModLimit[]` | Forbidden after this mod |
+| Property         | Type         | Description                         |
+| ---------------- | ------------ | ----------------------------------- |
+| `mustBefore`     | `ModLimit[]` | Mods that must load before this mod |
+| `mustAfter`      | `ModLimit[]` | Mods that must load after this mod  |
+| `optionalBefore` | `ModLimit[]` | Recommended before this mod         |
+| `optionalAfter`  | `ModLimit[]` | Recommended after this mod          |
+| `blackBefore`    | `ModLimit[]` | Forbidden before this mod           |
+| `blackAfter`     | `ModLimit[]` | Forbidden after this mod            |
 
 #### ModLimit <Badge text="interface" />
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `modName` | `string` | Mod name |
+| Property  | Type     | Description      |
+| --------- | -------- | ---------------- |
+| `modName` | `string` | Mod name         |
 | `version` | `string` | Version (SemVer) |
 
 #### checkModLimit() / checkParams() <Badge text="type guard" />
@@ -144,6 +150,7 @@ Load-order constraint config for mod's `mod.json` or addon config.
 <SourceCode href="https://github.com/Lyoko-Jeremie/ConflictCheckerAddon" />
 
 > [!INFO]
+>
 > - Upstream: https://github.com/Lyoko-Jeremie/ConflictCheckerAddon
 > - Default branch: master
 > - Build: `pnpm run download && pnpm run build`

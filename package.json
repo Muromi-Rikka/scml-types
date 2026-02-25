@@ -14,7 +14,9 @@
     "typecheck": "turbo typecheck",
     "publint": "turbo run publint",
     "lint": "oxlint",
-    "lint:fix": "oxlint --fix"
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
   },
   "dependencies": {
     "giget": "^3.1.2",

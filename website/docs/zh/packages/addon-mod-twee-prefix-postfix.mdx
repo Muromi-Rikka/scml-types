@@ -2,7 +2,7 @@
 title: Twee Prefix Postfix Addon
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/addon-mod-twee-prefix-postfix
 
@@ -29,16 +29,19 @@ Twee prefix/postfix addon 的 TypeScript 类型定义，用于在 passage 或 wi
 ### 按需导入类型
 
 ```ts
-import type { TweePrefixPostfixAddon, TweePrefixPostfixAddonParams } from '@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddon';
-import type { TweePrefixPostfixAddonCallback } from '@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddonJsCallback';
+import type {
+  TweePrefixPostfixAddon,
+  TweePrefixPostfixAddonParams,
+} from "@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddon";
+import type { TweePrefixPostfixAddonCallback } from "@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddonJsCallback";
 ```
 
 </Steps>
 
 ## 全局类型 <Badge type="info" text="global" />
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
+| 属性                          | 类型                     | 说明       |
+| ----------------------------- | ------------------------ | ---------- |
 | `addonTweePrefixPostfixAddon` | `TweePrefixPostfixAddon` | Addon 实例 |
 
 <Tabs>
@@ -52,7 +55,7 @@ import type { TweePrefixPostfixAddonCallback } from '@scml/addon-mod-twee-prefix
 <Tab label="子路径导入">
 
 ```ts
-import type { TweePrefixPostfixAddon } from '@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddon';
+import type { TweePrefixPostfixAddon } from "@scml/addon-mod-twee-prefix-postfix/TweePrefixPostfixAddon";
 ```
 
 </Tab>
@@ -60,11 +63,11 @@ import type { TweePrefixPostfixAddon } from '@scml/addon-mod-twee-prefix-postfix
 
 ## 子路径导出
 
-| 子路径 | 描述 |
-|--------|------|
-| `.` | 主入口，增强 Window/全局 |
-| `./TweePrefixPostfixAddon` | 主类与参数 |
-| `./TweePrefixPostfixAddonJsCallback` | JS 回调类型 |
+| 子路径                               | 描述                     |
+| ------------------------------------ | ------------------------ |
+| `.`                                  | 主入口，增强 Window/全局 |
+| `./TweePrefixPostfixAddon`           | 主类与参数               |
+| `./TweePrefixPostfixAddonJsCallback` | JS 回调类型              |
 
 ## API 参考
 
@@ -72,26 +75,27 @@ import type { TweePrefixPostfixAddon } from '@scml/addon-mod-twee-prefix-postfix
 
 #### TweePrefixPostfixAddon <Badge text="类" />
 
-| 方法 | 说明 |
-|------|------|
-| `addCallback(key, callback)` | 添加回调 |
-| `registerMod()` | 注册 mod |
-| `init()` | 初始化 |
+| 方法                                 | 说明        |
+| ------------------------------------ | ----------- |
+| `addCallback(key, callback)`         | 添加回调    |
+| `registerMod()`                      | 注册 mod    |
+| `init()`                             | 初始化      |
 | `beforePassage()` / `afterPassage()` | Wikify 钩子 |
-| `beforeWikify()` / `afterWikify()` | Wikify 钩子 |
-| `beforeWidget()` / `afterWidget()` | Widget 钩子 |
+| `beforeWikify()` / `afterWikify()`   | Wikify 钩子 |
+| `beforeWidget()` / `afterWidget()`   | Widget 钩子 |
 
 #### TweePrefixPostfixAddonParams <Badge text="接口" />
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
+| 属性          | 类型     | 说明       |
+| ------------- | -------- | ---------- |
 | `passageName` | `string` | passage 名 |
-| `widgetName` | `string` | widget 名 |
-| `prefix` | `string` | 前缀 |
-| `postfix` | `string` | 后缀 |
+| `widgetName`  | `string` | widget 名  |
+| `prefix`      | `string` | 前缀       |
+| `postfix`     | `string` | 后缀       |
 
 ## 类型定义来源
 
 > [!INFO]
+>
 > - 上游: 随 scml-types 发布
 > - 构建: `pnpm run download && pnpm run build`

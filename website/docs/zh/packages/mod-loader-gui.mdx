@@ -2,7 +2,7 @@
 title: Mod Loader GUI
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/mod-loader-gui
 
@@ -30,27 +30,27 @@ Mod Loader GUI 的 TypeScript 类型定义。
 
 ## 全局类型 <Badge type="info" text="global" />
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| `modLoaderGui_LoadingProgress` | - | 加载进度 UI 组件 |
-| `modLoaderGui_PassageTracer` | - | 段落追踪 |
-| `modLoaderGui` | `Gui` | 主 GUI 控制器 |
-| `modLoaderGui_ModSubUiAngularJsService` | - | mod 子 UI AngularJS 服务 |
+| 属性                                    | 类型  | 说明                     |
+| --------------------------------------- | ----- | ------------------------ |
+| `modLoaderGui_LoadingProgress`          | -     | 加载进度 UI 组件         |
+| `modLoaderGui_PassageTracer`            | -     | 段落追踪                 |
+| `modLoaderGui`                          | `Gui` | 主 GUI 控制器            |
+| `modLoaderGui_ModSubUiAngularJsService` | -     | mod 子 UI AngularJS 服务 |
 
 ## 子路径导出
 
-| 子路径 | 描述 |
-|--------|------|
-| `.` | 主入口 |
-| `./Gui` | 主 GUI 类 |
-| `./LoadingProgress` | 加载进度 |
-| `./PassageTracer` | 段落追踪 |
-| `./ModLoadSwitch` | Mod 加载开关 |
-| `./ModManagerSubUi` | Mod 管理器 UI |
+| 子路径                       | 描述           |
+| ---------------------------- | -------------- |
+| `.`                          | 主入口         |
+| `./Gui`                      | 主 GUI 类      |
+| `./LoadingProgress`          | 加载进度       |
+| `./PassageTracer`            | 段落追踪       |
+| `./ModLoadSwitch`            | Mod 加载开关   |
+| `./ModManagerSubUi`          | Mod 管理器 UI  |
 | `./ModSubUiAngularJsService` | AngularJS 服务 |
-| `./DebugExport` | 调试工具 |
-| `./GUI_StringTable/*` | 字符串表 |
-| `./GM_config_TS/*` | GM_config 类型 |
+| `./DebugExport`              | 调试工具       |
+| `./GUI_StringTable/*`        | 字符串表       |
+| `./GM_config_TS/*`           | GM_config 类型 |
 
 ## API 参考
 
@@ -63,6 +63,7 @@ Mod Loader GUI 的 TypeScript 类型定义。
 <SourceCode href="https://github.com/Lyoko-Jeremie/sugarcube-2-ModLoaderGui" />
 
 > [!INFO]
+>
 > - 上游: https://github.com/Lyoko-Jeremie/sugarcube-2-ModLoaderGui
 > - 默认分支: master
 > - 构建: `pnpm run download && pnpm run build`

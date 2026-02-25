@@ -2,7 +2,7 @@
 title: DoL Time Wrapper Addon
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/addon-mod-time-wrapper
 
@@ -29,17 +29,17 @@ DoL Time Wrapper addon 的 TypeScript 类型定义，用于包装游戏时间相
 ### 按需导入类型
 
 ```ts
-import type { DoLTimeWrapperAddon } from '@scml/addon-mod-time-wrapper/DoLTimeWrapperAddon';
-import type { TimeProxyManager, TimeHookType } from '@scml/addon-mod-time-wrapper/TimeProxyManager';
-import type { OldTimeFunctionHook } from '@scml/addon-mod-time-wrapper/OldTimeFunctionHook';
+import type { DoLTimeWrapperAddon } from "@scml/addon-mod-time-wrapper/DoLTimeWrapperAddon";
+import type { TimeProxyManager, TimeHookType } from "@scml/addon-mod-time-wrapper/TimeProxyManager";
+import type { OldTimeFunctionHook } from "@scml/addon-mod-time-wrapper/OldTimeFunctionHook";
 ```
 
 </Steps>
 
 ## 全局类型 <Badge type="info" text="global" />
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
+| 属性                       | 类型                  | 说明       |
+| -------------------------- | --------------------- | ---------- |
 | `addonDoLTimeWrapperAddon` | `DoLTimeWrapperAddon` | Addon 实例 |
 
 <Tabs>
@@ -53,7 +53,7 @@ import type { OldTimeFunctionHook } from '@scml/addon-mod-time-wrapper/OldTimeFu
 <Tab label="子路径导入">
 
 ```ts
-import type { DoLTimeWrapperAddon } from '@scml/addon-mod-time-wrapper/DoLTimeWrapperAddon';
+import type { DoLTimeWrapperAddon } from "@scml/addon-mod-time-wrapper/DoLTimeWrapperAddon";
 ```
 
 </Tab>
@@ -61,13 +61,13 @@ import type { DoLTimeWrapperAddon } from '@scml/addon-mod-time-wrapper/DoLTimeWr
 
 ## 子路径导出
 
-| 子路径 | 描述 |
-|--------|------|
-| `.` | 主入口，增强 Window/全局 |
-| `./DoLTimeWrapperAddon` | 主 Addon 类 |
-| `./OldTimeFunctionHook` | 旧时间函数钩子 |
-| `./TimeProxyManager` | 时间代理管理器 |
-| `./DoLTimeWrapperAddonPlugin` | Addon 插件 |
+| 子路径                        | 描述                     |
+| ----------------------------- | ------------------------ |
+| `.`                           | 主入口，增强 Window/全局 |
+| `./DoLTimeWrapperAddon`       | 主 Addon 类              |
+| `./OldTimeFunctionHook`       | 旧时间函数钩子           |
+| `./TimeProxyManager`          | 时间代理管理器           |
+| `./DoLTimeWrapperAddonPlugin` | Addon 插件               |
 
 ## API 参考
 
@@ -75,16 +75,16 @@ import type { DoLTimeWrapperAddon } from '@scml/addon-mod-time-wrapper/DoLTimeWr
 
 #### DoLTimeWrapperAddon <Badge text="类" />
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| `infinityLoopChecker` | `InfinityLoopChecker` | 无限循环检测 |
-| `timeProxyManager` | `TimeProxyManager` | 时间代理管理器 |
-| `timeHookManager` | `TimeHookManager` | 时间钩子管理器 |
-| `isInit` | `boolean` | 是否已初始化 |
-| `addTimeHook(hook)` | 添加时间钩子 |
-| `addFunctionHook(hook)` | 添加函数钩子 |
-| `makeCatchCode()` | 生成捕获代码 |
-| `init(oldTimeFunctionRef)` | 初始化，返回注入代码 |
+| 属性                       | 类型                  | 说明           |
+| -------------------------- | --------------------- | -------------- |
+| `infinityLoopChecker`      | `InfinityLoopChecker` | 无限循环检测   |
+| `timeProxyManager`         | `TimeProxyManager`    | 时间代理管理器 |
+| `timeHookManager`          | `TimeHookManager`     | 时间钩子管理器 |
+| `isInit`                   | `boolean`             | 是否已初始化   |
+| `addTimeHook(hook)`        | 添加时间钩子          |
+| `addFunctionHook(hook)`    | 添加函数钩子          |
+| `makeCatchCode()`          | 生成捕获代码          |
+| `init(oldTimeFunctionRef)` | 初始化，返回注入代码  |
 
 ### ./TimeProxyManager
 
@@ -97,5 +97,6 @@ import type { DoLTimeWrapperAddon } from '@scml/addon-mod-time-wrapper/DoLTimeWr
 ## 类型定义来源
 
 > [!INFO]
+>
 > - 上游: 随 scml-types 发布
 > - 构建: `pnpm run download && pnpm run build`

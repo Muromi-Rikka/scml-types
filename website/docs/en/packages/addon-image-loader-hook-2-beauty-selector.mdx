@@ -2,7 +2,7 @@
 title: ImageLoader Hook 2 Beauty Selector Addon
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/addon-image-loader-hook-2-beauty-selector
 
@@ -29,15 +29,18 @@ TypeScript type definitions for ImageLoader Hook 2 Beauty Selector addon, bridgi
 ### Import types on demand
 
 ```ts
-import type { ImageLoaderHook2BeautySelectorAddon, AddonParams } from '@scml/addon-image-loader-hook-2-beauty-selector/ImageLoaderHook2BeautySelectorAddon';
+import type {
+  ImageLoaderHook2BeautySelectorAddon,
+  AddonParams,
+} from "@scml/addon-image-loader-hook-2-beauty-selector/ImageLoaderHook2BeautySelectorAddon";
 ```
 
 </Steps>
 
 ## Global Types <Badge type="info" text="global" />
 
-| Property | Type | Description |
-|----------|------|-------------|
+| Property                                 | Type                                  | Description    |
+| ---------------------------------------- | ------------------------------------- | -------------- |
 | `modImageLoaderHook2BeautySelectorAddon` | `ImageLoaderHook2BeautySelectorAddon` | Addon instance |
 
 <Tabs>
@@ -51,7 +54,7 @@ import type { ImageLoaderHook2BeautySelectorAddon, AddonParams } from '@scml/add
 <Tab label="Subpath import">
 
 ```ts
-import type { ImageLoaderHook2BeautySelectorAddon } from '@scml/addon-image-loader-hook-2-beauty-selector/ImageLoaderHook2BeautySelectorAddon';
+import type { ImageLoaderHook2BeautySelectorAddon } from "@scml/addon-image-loader-hook-2-beauty-selector/ImageLoaderHook2BeautySelectorAddon";
 ```
 
 </Tab>
@@ -59,10 +62,10 @@ import type { ImageLoaderHook2BeautySelectorAddon } from '@scml/addon-image-load
 
 ## Subpath Exports
 
-| Subpath | Description |
-|---------|-------------|
-| `.` | Main entry, augments Window/global |
-| `./ImageLoaderHook2BeautySelectorAddon` | Main class and AddonParams |
+| Subpath                                 | Description                        |
+| --------------------------------------- | ---------------------------------- |
+| `.`                                     | Main entry, augments Window/global |
+| `./ImageLoaderHook2BeautySelectorAddon` | Main class and AddonParams         |
 
 ## API Reference
 
@@ -70,23 +73,24 @@ import type { ImageLoaderHook2BeautySelectorAddon } from '@scml/addon-image-load
 
 #### ImageLoaderHook2BeautySelectorAddon <Badge text="class" />
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `modImageLoaderHookRef` | `any` | ImageLoader Hook reference |
-| `nameSetImageLoaderHook` | `Set<string>` | Registered ImageLoader Hook names |
-| `convertedModeNameList` | `string[]` | Converted mod name list |
-| `registerMod()` | `(addonName, mod, modZip) => Promise<any>` | Register mod |
-| `canLoadThisMod()` | `(bootJson, zip) => Promise<boolean>` | Whether this mod can be loaded |
-| `ModLoaderLoadEnd()` | `() => Promise<void>` | Mod Loader load-end callback |
+| Property                 | Type                                       | Description                       |
+| ------------------------ | ------------------------------------------ | --------------------------------- |
+| `modImageLoaderHookRef`  | `any`                                      | ImageLoader Hook reference        |
+| `nameSetImageLoaderHook` | `Set<string>`                              | Registered ImageLoader Hook names |
+| `convertedModeNameList`  | `string[]`                                 | Converted mod name list           |
+| `registerMod()`          | `(addonName, mod, modZip) => Promise<any>` | Register mod                      |
+| `canLoadThisMod()`       | `(bootJson, zip) => Promise<boolean>`      | Whether this mod can be loaded    |
+| `ModLoaderLoadEnd()`     | `() => Promise<void>`                      | Mod Loader load-end callback      |
 
 #### AddonParams <Badge text="interface" />
 
-| Property | Type | Description |
-|----------|------|-------------|
+| Property       | Type      | Description             |
+| -------------- | --------- | ----------------------- |
 | `dontCovertMe` | `boolean` | Do not convert this mod |
 
 ## Type Definition Source
 
 > [!INFO]
+>
 > - Upstream: Integrates with DoL_ImgLoaderHooker and DoL_BeautySelectorAddonMod
 > - Build: `pnpm run download && pnpm run build`

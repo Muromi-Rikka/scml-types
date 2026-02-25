@@ -2,7 +2,7 @@
 title: SugarCube 2 Verlnir
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/sc2-verlnir
 
@@ -32,23 +32,23 @@ SugarCube 2 exposes APIs globally via `declare global`, e.g. `Story`, `Config`, 
 
 Main entry `./src/global.d.ts` declares SugarCube 2 global APIs via `declare global`. <Badge type="info" text="global" /> Common global APIs:
 
-| API | Type | Description |
-|-----|------|-------------|
-| `Story` | `StoryAPI` | Story and passage access |
-| `Config` | `ConfigAPI` | Engine configuration |
-| `State` | `StateAPI` | Game state, history, temp variables |
-| `Passage` | `PassageConstructor` | Current passage |
-| `Save` | `SaveAPI` | Save/load |
-| `Dialog` | `DialogAPI` | Dialog system |
-| `Engine` | `EngineAPI` | Engine control |
-| `Macro` | `MacroAPI` | Macro definitions |
-| `Scripting` | `ScriptingAPI` | Script evaluation |
-| `Template` | `TemplateAPI` | Template engine |
-| `UI` / `UIBar` | `UIAPI` / `UIBarAPI` | UI components |
-| `version` | `VersionInfo` | Version info |
-| `session` / `storage` | `SimpleStoreInstanceAPI \| null` | Session and storage |
-| `settings` / `setup` | `Record<string, unknown>` | Settings and init |
-| `window.SugarCube` | object | Contains all above APIs for detection and debugging |
+| API                   | Type                             | Description                                         |
+| --------------------- | -------------------------------- | --------------------------------------------------- |
+| `Story`               | `StoryAPI`                       | Story and passage access                            |
+| `Config`              | `ConfigAPI`                      | Engine configuration                                |
+| `State`               | `StateAPI`                       | Game state, history, temp variables                 |
+| `Passage`             | `PassageConstructor`             | Current passage                                     |
+| `Save`                | `SaveAPI`                        | Save/load                                           |
+| `Dialog`              | `DialogAPI`                      | Dialog system                                       |
+| `Engine`              | `EngineAPI`                      | Engine control                                      |
+| `Macro`               | `MacroAPI`                       | Macro definitions                                   |
+| `Scripting`           | `ScriptingAPI`                   | Script evaluation                                   |
+| `Template`            | `TemplateAPI`                    | Template engine                                     |
+| `UI` / `UIBar`        | `UIAPI` / `UIBarAPI`             | UI components                                       |
+| `version`             | `VersionInfo`                    | Version info                                        |
+| `session` / `storage` | `SimpleStoreInstanceAPI \| null` | Session and storage                                 |
+| `settings` / `setup`  | `Record<string, unknown>`        | Settings and init                                   |
+| `window.SugarCube`    | object                           | Contains all above APIs for detection and debugging |
 
 <Tabs>
 <Tab label="Main entry">
@@ -62,12 +62,13 @@ Main entry `./src/global.d.ts` declares SugarCube 2 global APIs via `declare glo
 
 ## Subpath Exports
 
-| Subpath | Description |
-|---------|-------------|
-| `.` | Main entry, SugarCube 2 global types |
+| Subpath | Description                          |
+| ------- | ------------------------------------ |
+| `.`     | Main entry, SugarCube 2 global types |
 
 ## Type Definition Source
 
 > [!INFO]
+>
 > - Source: SugarCube 2 type declarations based on verlnir
 > - This package has no download/build steps; uses src directory directly

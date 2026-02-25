@@ -2,7 +2,7 @@
 title: Beauty Selector Addon
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/addon-mod-beauty-selector
 
@@ -29,16 +29,16 @@ Beauty Selector addon 的 TypeScript 类型定义，用于图片选择器 UI 与
 ### 按需导入类型
 
 ```ts
-import type { BeautySelectorAddon } from '@scml/addon-mod-beauty-selector/BeautySelectorAddon';
-import type { BeautySelectorAddonInterface } from '@scml/addon-mod-beauty-selector/BeautySelectorAddonInterface';
+import type { BeautySelectorAddon } from "@scml/addon-mod-beauty-selector/BeautySelectorAddon";
+import type { BeautySelectorAddonInterface } from "@scml/addon-mod-beauty-selector/BeautySelectorAddonInterface";
 ```
 
 </Steps>
 
 ## 全局类型 <Badge type="info" text="global" />
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
+| 属性                       | 类型                  | 说明       |
+| -------------------------- | --------------------- | ---------- |
 | `addonBeautySelectorAddon` | `BeautySelectorAddon` | Addon 实例 |
 
 <Tabs>
@@ -52,7 +52,7 @@ import type { BeautySelectorAddonInterface } from '@scml/addon-mod-beauty-select
 <Tab label="子路径导入">
 
 ```ts
-import type { BeautySelectorAddon } from '@scml/addon-mod-beauty-selector/BeautySelectorAddon';
+import type { BeautySelectorAddon } from "@scml/addon-mod-beauty-selector/BeautySelectorAddon";
 ```
 
 </Tab>
@@ -60,17 +60,17 @@ import type { BeautySelectorAddon } from '@scml/addon-mod-beauty-selector/Beauty
 
 ## 子路径导出
 
-| 子路径 | 描述 |
-|--------|------|
-| `.` | 主入口，增强 Window/全局 |
-| `./BeautySelectorAddon` | 主类 |
-| `./BeautySelectorAddonInterface` | 接口 |
-| `./BeautySelectorAddonType` | 类型定义 |
-| `./extname` | 扩展名工具 |
-| `./ModImageStore` | Mod 图片存储 |
-| `./utils/getRelativePath` | 相对路径工具 |
-| `./utils/traverseZipFolder` | 遍历 zip 文件夹 |
-| `./GUI_StringTable/*` | GUI 字符串表 |
+| 子路径                           | 描述                     |
+| -------------------------------- | ------------------------ |
+| `.`                              | 主入口，增强 Window/全局 |
+| `./BeautySelectorAddon`          | 主类                     |
+| `./BeautySelectorAddonInterface` | 接口                     |
+| `./BeautySelectorAddonType`      | 类型定义                 |
+| `./extname`                      | 扩展名工具               |
+| `./ModImageStore`                | Mod 图片存储             |
+| `./utils/getRelativePath`        | 相对路径工具             |
+| `./utils/traverseZipFolder`      | 遍历 zip 文件夹          |
+| `./GUI_StringTable/*`            | GUI 字符串表             |
 
 ## API 参考
 
@@ -83,6 +83,7 @@ Beauty Selector 主 Addon 类，实现 `BeautySelectorAddonInterface` 与 `Addon
 <SourceCode href="https://github.com/Lyoko-Jeremie/DoL_BeautySelectorAddonMod" />
 
 > [!INFO]
+>
 > - 上游: https://github.com/Lyoko-Jeremie/DoL_BeautySelectorAddonMod
 > - 默认分支: master
 > - 构建: `pnpm run download && pnpm run build`

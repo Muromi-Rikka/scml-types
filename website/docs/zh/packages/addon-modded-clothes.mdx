@@ -2,7 +2,7 @@
 title: Modded Clothes Addon
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/addon-modded-clothes
 
@@ -37,8 +37,11 @@ window.addonModdedClothesAddon.addClothes(info);
 若只需导入部分类型，可使用子路径：
 
 ```ts
-import type { ModdedClothesAddon, ClothesAddInfo } from '@scml/addon-modded-clothes/ModdedClothesAddon';
-import type { ModdedClothesAddonParams } from '@scml/addon-modded-clothes/ModdedClothesAddonParams';
+import type {
+  ModdedClothesAddon,
+  ClothesAddInfo,
+} from "@scml/addon-modded-clothes/ModdedClothesAddon";
+import type { ModdedClothesAddonParams } from "@scml/addon-modded-clothes/ModdedClothesAddonParams";
 ```
 
 </Steps>
@@ -47,15 +50,15 @@ import type { ModdedClothesAddonParams } from '@scml/addon-modded-clothes/Modded
 
 主入口通过 `/// <reference types="..." />` 扩展 `Window` 接口。 <Badge type="info" text="global" /> 以下属性挂载在 `window` 上：
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
+| 属性                      | 类型                 | 说明                           |
+| ------------------------- | -------------------- | ------------------------------ |
 | `addonModdedClothesAddon` | `ModdedClothesAddon` | Addon 实例，管理服装添加与修补 |
 
 ```ts
 /// <reference types="@scml/addon-modded-clothes" />
 
 // 使用示例
-window.addonModdedClothesAddon.addClothes({ modName: 'myMod', clothes: [], patch: [] });
+window.addonModdedClothesAddon.addClothes({ modName: "myMod", clothes: [], patch: [] });
 ```
 
 <Tabs>
@@ -69,8 +72,14 @@ window.addonModdedClothesAddon.addClothes({ modName: 'myMod', clothes: [], patch
 <Tab label="子路径导入">
 
 ```ts
-import type { ModdedClothesAddon, ClothesAddInfo } from '@scml/addon-modded-clothes/ModdedClothesAddon';
-import type { ModdedClothesAddonParams, AddClothesItem } from '@scml/addon-modded-clothes/ModdedClothesAddonParams';
+import type {
+  ModdedClothesAddon,
+  ClothesAddInfo,
+} from "@scml/addon-modded-clothes/ModdedClothesAddon";
+import type {
+  ModdedClothesAddonParams,
+  AddClothesItem,
+} from "@scml/addon-modded-clothes/ModdedClothesAddonParams";
 ```
 
 </Tab>
@@ -78,11 +87,11 @@ import type { ModdedClothesAddonParams, AddClothesItem } from '@scml/addon-modde
 
 ## 子路径导出
 
-| 子路径 | 描述 |
-|--------|------|
-| `.` | 主入口，增强 Window/全局 |
-| `./ModdedClothesAddon` | 主类、接口及工具函数 |
-| `./ModdedClothesAddonParams` | 配置参数与类型守卫 |
+| 子路径                       | 描述                     |
+| ---------------------------- | ------------------------ |
+| `.`                          | 主入口，增强 Window/全局 |
+| `./ModdedClothesAddon`       | 主类、接口及工具函数     |
+| `./ModdedClothesAddonParams` | 配置参数与类型守卫       |
 
 ## API 参考
 
@@ -94,44 +103,44 @@ import type { ModdedClothesAddonParams, AddClothesItem } from '@scml/addon-modde
 
 **构造函数**
 
-| 参数 | 类型 | 说明 |
-|------|------|------|
+| 参数              | 类型             | 说明                  |
+| ----------------- | ---------------- | --------------------- |
 | `gSC2DataManager` | `SC2DataManager` | Mod Loader 数据管理器 |
-| `gModUtils` | `ModUtils` | Mod 工具 |
+| `gModUtils`       | `ModUtils`       | Mod 工具              |
 
 **属性**
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| `gSC2DataManager` | `SC2DataManager` | 数据管理器引用 |
-| `gModUtils` | `ModUtils` | 工具引用 |
-| `logger` | `LogWrapper` | 日志 |
-| `isInit` | `boolean` | 是否已初始化 |
-| `changedPaths` | `Set<string>` | 变更路径集合 |
-| `clothesAddInfo` | `Map<string, ClothesAddInfo>` | 按 mod 名存储的服装信息 |
+| 属性              | 类型                          | 说明                    |
+| ----------------- | ----------------------------- | ----------------------- |
+| `gSC2DataManager` | `SC2DataManager`              | 数据管理器引用          |
+| `gModUtils`       | `ModUtils`                    | 工具引用                |
+| `logger`          | `LogWrapper`                  | 日志                    |
+| `isInit`          | `boolean`                     | 是否已初始化            |
+| `changedPaths`    | `Set<string>`                 | 变更路径集合            |
+| `clothesAddInfo`  | `Map<string, ClothesAddInfo>` | 按 mod 名存储的服装信息 |
 
 **方法**
 
-| 方法 | 签名 | 说明 |
-|------|------|------|
-| `registerMod` | `(addonName: string, mod: ModInfo, modZip: ModZipReader) => Promise<void>` | 注册 mod，加载服装配置 |
-| `addClothes` | `(info: ClothesAddInfo) => void` | 添加服装数据 |
-| `exportDataZip` | `(zip: JSZip) => Promise<JSZip>` | 导出数据到 zip |
-| `init` | `() => void` | 初始化 |
+| 方法            | 签名                                                                       | 说明                   |
+| --------------- | -------------------------------------------------------------------------- | ---------------------- |
+| `registerMod`   | `(addonName: string, mod: ModInfo, modZip: ModZipReader) => Promise<void>` | 注册 mod，加载服装配置 |
+| `addClothes`    | `(info: ClothesAddInfo) => void`                                           | 添加服装数据           |
+| `exportDataZip` | `(zip: JSZip) => Promise<JSZip>`                                           | 导出数据到 zip         |
+| `init`          | `() => void`                                                               | 初始化                 |
 
 #### ClothesAddInfo <Badge text="接口" />
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| `modName` | `string` | mod 名称 |
-| `clothes` | `ClothesInfo[]` | 服装列表 |
-| `patch` | `ClothesPatchInfo[]` | 修补配置 |
+| 属性      | 类型                 | 说明     |
+| --------- | -------------------- | -------- |
+| `modName` | `string`             | mod 名称 |
+| `clothes` | `ClothesInfo[]`      | 服装列表 |
+| `patch`   | `ClothesPatchInfo[]` | 修补配置 |
 
 #### ClothesInfo <Badge text="接口" />
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| `key` | `string` | 服装 key |
+| 属性   | 类型            | 说明         |
+| ------ | --------------- | ------------ |
+| `key`  | `string`        | 服装 key     |
 | `data` | `ClothesItem[]` | 服装条目数组 |
 
 #### searchClothesByName() <Badge text="方法" />
@@ -153,24 +162,24 @@ import type { ModdedClothesAddonParams, AddClothesItem } from '@scml/addon-modde
 
 mod 配置参数，用于 `mod.json` 或类似配置。
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| `clothes` | `AddClothesItem[]` | 要添加的服装 |
-| `patch` | `string[]` | 可选的修补文件路径列表 |
+| 属性      | 类型               | 说明                   |
+| --------- | ------------------ | ---------------------- |
+| `clothes` | `AddClothesItem[]` | 要添加的服装           |
+| `patch`   | `string[]`         | 可选的修补文件路径列表 |
 
 #### AddClothesItem <Badge text="接口" />
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| `key` | `string` | 服装 key |
-| `filePath` | `string` | 文件路径 |
-| `data` | `ClothesItem[]` | 可选的服装条目 |
+| 属性       | 类型            | 说明           |
+| ---------- | --------------- | -------------- |
+| `key`      | `string`        | 服装 key       |
+| `filePath` | `string`        | 文件路径       |
+| `data`     | `ClothesItem[]` | 可选的服装条目 |
 
 #### ClothesPatchInfo <Badge text="接口" />
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| `key` | `string` | 服装 key |
+| 属性   | 类型                       | 说明         |
+| ------ | -------------------------- | ------------ |
+| `key`  | `string`                   | 服装 key     |
 | `data` | `ClothesPatchUpdateType[]` | 修补更新数据 |
 
 #### ClothesPatchUpdateType <Badge text="类型" />
@@ -188,6 +197,7 @@ mod 配置参数，用于 `mod.json` 或类似配置。
 <SourceCode href="https://github.com/Lyoko-Jeremie/DoL_ModdedClothesAddon" />
 
 > [!INFO]
+>
 > - 上游: https://github.com/Lyoko-Jeremie/DoL_ModdedClothesAddon
 > - 默认分支: master
 > - 构建: `pnpm run download && pnpm run build`

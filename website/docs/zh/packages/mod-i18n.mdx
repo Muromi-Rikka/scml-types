@@ -2,7 +2,7 @@
 title: DoL i18n Mod
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/mod-i18n
 
@@ -29,16 +29,16 @@ DoL i18n mod 的 TypeScript 类型定义，处理翻译与本地化数据。
 ### 按需导入类型
 
 ```ts
-import type { ModI18N } from '@scml/mod-i18n/I18N';
-import type { GetPromiseWithResolvers } from '@scml/mod-i18n/GetPromiseWithResolvers';
+import type { ModI18N } from "@scml/mod-i18n/I18N";
+import type { GetPromiseWithResolvers } from "@scml/mod-i18n/GetPromiseWithResolvers";
 ```
 
 </Steps>
 
 ## 全局类型 <Badge type="info" text="global" />
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
+| 属性      | 类型      | 说明              |
+| --------- | --------- | ----------------- |
 | `modI18N` | `ModI18N` | DoL i18n mod 实例 |
 
 <Tabs>
@@ -52,7 +52,7 @@ import type { GetPromiseWithResolvers } from '@scml/mod-i18n/GetPromiseWithResol
 <Tab label="子路径导入">
 
 ```ts
-import type { ModI18N } from '@scml/mod-i18n/I18N';
+import type { ModI18N } from "@scml/mod-i18n/I18N";
 ```
 
 </Tab>
@@ -60,12 +60,12 @@ import type { ModI18N } from '@scml/mod-i18n/I18N';
 
 ## 子路径导出
 
-| 子路径 | 描述 |
-|--------|------|
-| `.` | 主入口，增强 Window/全局 |
-| `./I18N` | ModI18N 主类 |
-| `./GetPromiseWithResolvers` | Promise 解析器辅助 |
-| `./TypeB` | i18n 输入/输出类型 |
+| 子路径                      | 描述                     |
+| --------------------------- | ------------------------ |
+| `.`                         | 主入口，增强 Window/全局 |
+| `./I18N`                    | ModI18N 主类             |
+| `./GetPromiseWithResolvers` | Promise 解析器辅助       |
+| `./TypeB`                   | i18n 输入/输出类型       |
 
 ## API 参考
 
@@ -80,6 +80,7 @@ import type { ModI18N } from '@scml/mod-i18n/I18N';
 <SourceCode href="https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_i18nMod" />
 
 > [!INFO]
+>
 > - 上游: https://github.com/Lyoko-Jeremie/Degrees-of-Lewdity_Mod_i18nMod
 > - 默认分支: master
 > - 构建: `pnpm run download && pnpm run build`

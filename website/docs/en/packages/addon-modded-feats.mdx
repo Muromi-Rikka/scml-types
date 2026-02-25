@@ -2,7 +2,7 @@
 title: Modded Feats Addon
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/addon-modded-feats
 
@@ -29,16 +29,16 @@ TypeScript type definitions for Modded feats addon, for adding and merging modde
 ### Import types on demand
 
 ```ts
-import type { ModdedFeatsAddon } from '@scml/addon-modded-feats/ModdedFeatsAddon';
-import type { ModdedClothesFeatsParams } from '@scml/addon-modded-feats/ModdedFeatsAddonParams';
+import type { ModdedFeatsAddon } from "@scml/addon-modded-feats/ModdedFeatsAddon";
+import type { ModdedClothesFeatsParams } from "@scml/addon-modded-feats/ModdedFeatsAddonParams";
 ```
 
 </Steps>
 
 ## Global Types <Badge type="info" text="global" />
 
-| Property | Type | Description |
-|----------|------|-------------|
+| Property                | Type               | Description                        |
+| ----------------------- | ------------------ | ---------------------------------- |
 | `addonModdedFeatsAddon` | `ModdedFeatsAddon` | Addon instance, manages feats data |
 
 <Tabs>
@@ -52,8 +52,8 @@ import type { ModdedClothesFeatsParams } from '@scml/addon-modded-feats/ModdedFe
 <Tab label="Subpath import">
 
 ```ts
-import type { ModdedFeatsAddon } from '@scml/addon-modded-feats/ModdedFeatsAddon';
-import type { ModdedClothesFeatsParams } from '@scml/addon-modded-feats/ModdedFeatsAddonParams';
+import type { ModdedFeatsAddon } from "@scml/addon-modded-feats/ModdedFeatsAddon";
+import type { ModdedClothesFeatsParams } from "@scml/addon-modded-feats/ModdedFeatsAddonParams";
 ```
 
 </Tab>
@@ -61,11 +61,11 @@ import type { ModdedClothesFeatsParams } from '@scml/addon-modded-feats/ModdedFe
 
 ## Subpath Exports
 
-| Subpath | Description |
-|---------|-------------|
-| `.` | Main entry, augments Window/global |
-| `./ModdedFeatsAddon` | Main class and utility functions |
-| `./ModdedFeatsAddonParams` | Config params and type guards |
+| Subpath                    | Description                        |
+| -------------------------- | ---------------------------------- |
+| `.`                        | Main entry, augments Window/global |
+| `./ModdedFeatsAddon`       | Main class and utility functions   |
+| `./ModdedFeatsAddonParams` | Config params and type guards      |
 
 ## API Reference
 
@@ -73,12 +73,12 @@ import type { ModdedClothesFeatsParams } from '@scml/addon-modded-feats/ModdedFe
 
 #### ModdedFeatsAddon <Badge text="class" />
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `featsData` | `Map<string, FeatsObject>` | Feats data by key |
-| `registerMod()` | `(addonName, mod, modZip) => Promise<void>` | Register mod |
-| `exportDataZip()` | `(zip: JSZip) => Promise<JSZip>` | Export data |
-| `init()` | `() => void` | Initialize |
+| Property          | Type                                        | Description       |
+| ----------------- | ------------------------------------------- | ----------------- |
+| `featsData`       | `Map<string, FeatsObject>`                  | Feats data by key |
+| `registerMod()`   | `(addonName, mod, modZip) => Promise<void>` | Register mod      |
+| `exportDataZip()` | `(zip: JSZip) => Promise<JSZip>`            | Export data       |
+| `init()`          | `() => void`                                | Initialize        |
 
 #### mergeFeatsObject() / appendFeatsObject() <Badge text="method" />
 
@@ -86,9 +86,9 @@ import type { ModdedClothesFeatsParams } from '@scml/addon-modded-feats/ModdedFe
 
 #### ModdedClothesFeatsParams <Badge text="interface" />
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `feats` | `string[]` | Feats file path list |
+| Property | Type       | Description          |
+| -------- | ---------- | -------------------- |
+| `feats`  | `string[]` | Feats file path list |
 
 #### checkParams() / checkFeatsItem() <Badge text="type guard" />
 
@@ -97,6 +97,7 @@ import type { ModdedClothesFeatsParams } from '@scml/addon-modded-feats/ModdedFe
 <SourceCode href="https://github.com/Lyoko-Jeremie/DoL_ModdedFeatsAddon" />
 
 > [!INFO]
+>
 > - Upstream: https://github.com/Lyoko-Jeremie/DoL_ModdedFeatsAddon
 > - Default branch: master
 > - Build: `pnpm run download && pnpm run build`

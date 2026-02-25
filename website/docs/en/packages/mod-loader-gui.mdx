@@ -2,7 +2,7 @@
 title: Mod Loader GUI
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/mod-loader-gui
 
@@ -30,27 +30,27 @@ Main entry augments the following global properties.
 
 ## Global Types <Badge type="info" text="global" />
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `modLoaderGui_LoadingProgress` | - | Loading progress UI component |
-| `modLoaderGui_PassageTracer` | - | Passage tracer |
-| `modLoaderGui` | `Gui` | Main GUI controller |
-| `modLoaderGui_ModSubUiAngularJsService` | - | Mod sub UI AngularJS service |
+| Property                                | Type  | Description                   |
+| --------------------------------------- | ----- | ----------------------------- |
+| `modLoaderGui_LoadingProgress`          | -     | Loading progress UI component |
+| `modLoaderGui_PassageTracer`            | -     | Passage tracer                |
+| `modLoaderGui`                          | `Gui` | Main GUI controller           |
+| `modLoaderGui_ModSubUiAngularJsService` | -     | Mod sub UI AngularJS service  |
 
 ## Subpath Exports
 
-| Subpath | Description |
-|---------|-------------|
-| `.` | Main entry |
-| `./Gui` | Main GUI class |
-| `./LoadingProgress` | Loading progress |
-| `./PassageTracer` | Passage tracer |
-| `./ModLoadSwitch` | Mod load switch |
-| `./ModManagerSubUi` | Mod manager UI |
+| Subpath                      | Description       |
+| ---------------------------- | ----------------- |
+| `.`                          | Main entry        |
+| `./Gui`                      | Main GUI class    |
+| `./LoadingProgress`          | Loading progress  |
+| `./PassageTracer`            | Passage tracer    |
+| `./ModLoadSwitch`            | Mod load switch   |
+| `./ModManagerSubUi`          | Mod manager UI    |
 | `./ModSubUiAngularJsService` | AngularJS service |
-| `./DebugExport` | Debug utilities |
-| `./GUI_StringTable/*` | String tables |
-| `./GM_config_TS/*` | GM_config types |
+| `./DebugExport`              | Debug utilities   |
+| `./GUI_StringTable/*`        | String tables     |
+| `./GM_config_TS/*`           | GM_config types   |
 
 ## API Reference
 
@@ -63,6 +63,7 @@ Main GUI class controlling Mod Loader interface.
 <SourceCode href="https://github.com/Lyoko-Jeremie/sugarcube-2-ModLoaderGui" />
 
 > [!INFO]
+>
 > - Upstream: https://github.com/Lyoko-Jeremie/sugarcube-2-ModLoaderGui
 > - Default branch: master
 > - Build: `pnpm run download && pnpm run build`

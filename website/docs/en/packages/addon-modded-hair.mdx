@@ -2,7 +2,7 @@
 title: Modded Hair Addon
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/addon-modded-hair
 
@@ -29,16 +29,16 @@ TypeScript type definitions for Modded hair addon, for adding and merging modded
 ### Import types on demand
 
 ```ts
-import type { ModdedHairAddon, mergeHairObject } from '@scml/addon-modded-hair/ModdedHairAddon';
-import type { ModdedClothesHairParams } from '@scml/addon-modded-hair/ModdedHairAddonParams';
+import type { ModdedHairAddon, mergeHairObject } from "@scml/addon-modded-hair/ModdedHairAddon";
+import type { ModdedClothesHairParams } from "@scml/addon-modded-hair/ModdedHairAddonParams";
 ```
 
 </Steps>
 
 ## Global Types <Badge type="info" text="global" />
 
-| Property | Type | Description |
-|----------|------|-------------|
+| Property               | Type              | Description                       |
+| ---------------------- | ----------------- | --------------------------------- |
 | `addonModdedHairAddon` | `ModdedHairAddon` | Addon instance, manages hair data |
 
 <Tabs>
@@ -52,8 +52,8 @@ import type { ModdedClothesHairParams } from '@scml/addon-modded-hair/ModdedHair
 <Tab label="Subpath import">
 
 ```ts
-import type { ModdedHairAddon } from '@scml/addon-modded-hair/ModdedHairAddon';
-import type { ModdedClothesHairParams } from '@scml/addon-modded-hair/ModdedHairAddonParams';
+import type { ModdedHairAddon } from "@scml/addon-modded-hair/ModdedHairAddon";
+import type { ModdedClothesHairParams } from "@scml/addon-modded-hair/ModdedHairAddonParams";
 ```
 
 </Tab>
@@ -61,11 +61,11 @@ import type { ModdedClothesHairParams } from '@scml/addon-modded-hair/ModdedHair
 
 ## Subpath Exports
 
-| Subpath | Description |
-|---------|-------------|
-| `.` | Main entry, augments Window/global |
-| `./ModdedHairAddon` | Main class and utility functions |
-| `./ModdedHairAddonParams` | Config params and type guards |
+| Subpath                   | Description                        |
+| ------------------------- | ---------------------------------- |
+| `.`                       | Main entry, augments Window/global |
+| `./ModdedHairAddon`       | Main class and utility functions   |
+| `./ModdedHairAddonParams` | Config params and type guards      |
 
 ## API Reference
 
@@ -73,12 +73,12 @@ import type { ModdedClothesHairParams } from '@scml/addon-modded-hair/ModdedHair
 
 #### ModdedHairAddon <Badge text="class" />
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `hairData` | `Map<string, HairObject>` | Hair data by key |
-| `registerMod()` | `(addonName, mod, modZip) => Promise<void>` | Register mod |
-| `exportDataZip()` | `(zip: JSZip) => Promise<JSZip>` | Export data |
-| `init()` | `() => void` | Initialize |
+| Property          | Type                                        | Description      |
+| ----------------- | ------------------------------------------- | ---------------- |
+| `hairData`        | `Map<string, HairObject>`                   | Hair data by key |
+| `registerMod()`   | `(addonName, mod, modZip) => Promise<void>` | Register mod     |
+| `exportDataZip()` | `(zip: JSZip) => Promise<JSZip>`            | Export data      |
+| `init()`          | `() => void`                                | Initialize       |
 
 #### mergeHairObject() / appendHairObject() <Badge text="method" />
 
@@ -89,9 +89,9 @@ import type { ModdedClothesHairParams } from '@scml/addon-modded-hair/ModdedHair
 
 #### ModdedClothesHairParams <Badge text="interface" />
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `hair` | `string[]` | Hair file path list |
+| Property | Type       | Description         |
+| -------- | ---------- | ------------------- |
+| `hair`   | `string[]` | Hair file path list |
 
 #### checkParams() / checkHairItem() <Badge text="type guard" />
 
@@ -100,6 +100,7 @@ import type { ModdedClothesHairParams } from '@scml/addon-modded-hair/ModdedHair
 <SourceCode href="https://github.com/Lyoko-Jeremie/DoL_ModdedHairAddon" />
 
 > [!INFO]
+>
 > - Upstream: https://github.com/Lyoko-Jeremie/DoL_ModdedHairAddon
 > - Default branch: master
 > - Build: `pnpm run download && pnpm run build`

@@ -2,7 +2,7 @@
 title: Image Loader Hook
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/hook-img-loader
 
@@ -29,17 +29,17 @@ Image loader hook 的 TypeScript 类型定义，挂载图片加载器，允许 m
 ### 按需导入类型
 
 ```ts
-import type { ImgLoaderHooker } from '@scml/hook-img-loader/ImgLoaderHooker';
-import type { ImgLoaderHookerCore } from '@scml/hook-img-loader/ImgLoaderHookerCore';
-import type { CssReplacer } from '@scml/hook-img-loader/CssReplacer';
+import type { ImgLoaderHooker } from "@scml/hook-img-loader/ImgLoaderHooker";
+import type { ImgLoaderHookerCore } from "@scml/hook-img-loader/ImgLoaderHookerCore";
+import type { CssReplacer } from "@scml/hook-img-loader/CssReplacer";
 ```
 
 </Steps>
 
 ## 全局类型 <Badge type="info" text="global" />
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
+| 属性                 | 类型              | 说明                 |
+| -------------------- | ----------------- | -------------------- |
 | `modImgLoaderHooker` | `ImgLoaderHooker` | 图片加载器 hook 实例 |
 
 <Tabs>
@@ -53,7 +53,7 @@ import type { CssReplacer } from '@scml/hook-img-loader/CssReplacer';
 <Tab label="子路径导入">
 
 ```ts
-import type { ImgLoaderHooker } from '@scml/hook-img-loader/ImgLoaderHooker';
+import type { ImgLoaderHooker } from "@scml/hook-img-loader/ImgLoaderHooker";
 ```
 
 </Tab>
@@ -61,16 +61,16 @@ import type { ImgLoaderHooker } from '@scml/hook-img-loader/ImgLoaderHooker';
 
 ## 子路径导出
 
-| 子路径 | 描述 |
-|--------|------|
-| `.` | 主入口，增强 Window/全局 |
-| `./ImgLoaderHooker` | 主类 |
-| `./ImgLoaderHookerCore` | 核心实现 |
-| `./CssReplacer` | CSS 替换辅助 |
-| `./NodeMutationObserver` | DOM 监听 |
-| `./SimpleDolFunctionHook` | 函数 hook |
-| `./utils` | 工具 |
-| `./createFunctionFromCode` | 从代码生成函数 |
+| 子路径                     | 描述                     |
+| -------------------------- | ------------------------ |
+| `.`                        | 主入口，增强 Window/全局 |
+| `./ImgLoaderHooker`        | 主类                     |
+| `./ImgLoaderHookerCore`    | 核心实现                 |
+| `./CssReplacer`            | CSS 替换辅助             |
+| `./NodeMutationObserver`   | DOM 监听                 |
+| `./SimpleDolFunctionHook`  | 函数 hook                |
+| `./utils`                  | 工具                     |
+| `./createFunctionFromCode` | 从代码生成函数           |
 
 ## API 参考
 
@@ -93,6 +93,7 @@ CSS 替换辅助工具。
 <SourceCode href="https://github.com/Lyoko-Jeremie/DoL_ImgLoaderHooker" />
 
 > [!INFO]
+>
 > - 上游: https://github.com/Lyoko-Jeremie/DoL_ImgLoaderHooker
 > - 默认分支: master
 > - 构建: `pnpm run download && pnpm run build`

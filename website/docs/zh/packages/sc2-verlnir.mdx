@@ -2,7 +2,7 @@
 title: SugarCube 2 Verlnir
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/sc2-verlnir
 
@@ -32,23 +32,23 @@ SugarCube 2 通过 `declare global` 将 API 暴露到全局，如 `Story`、`Con
 
 主入口 `./src/global.d.ts` 声明 SugarCube 2 的全局 API，通过 `declare global` 扩展。 <Badge type="info" text="global" /> 以下为常见全局 API：
 
-| API | 类型 | 说明 |
-|-----|------|------|
-| `Story` | `StoryAPI` | 故事与段落访问 |
-| `Config` | `ConfigAPI` | 引擎配置 |
-| `State` | `StateAPI` | 游戏状态、历史、临时变量 |
-| `Passage` | `PassageConstructor` | 当前段落 |
-| `Save` | `SaveAPI` | 保存/加载 |
-| `Dialog` | `DialogAPI` | 对话框系统 |
-| `Engine` | `EngineAPI` | 引擎控制 |
-| `Macro` | `MacroAPI` | 宏定义 |
-| `Scripting` | `ScriptingAPI` | 脚本求值 |
-| `Template` | `TemplateAPI` | 模板引擎 |
-| `UI` / `UIBar` | `UIAPI` / `UIBarAPI` | UI 组件 |
-| `version` | `VersionInfo` | 版本信息 |
-| `session` / `storage` | `SimpleStoreInstanceAPI \| null` | 会话与存储 |
-| `settings` / `setup` | `Record<string, unknown>` | 设置与初始化 |
-| `window.SugarCube` | 对象 | 包含上述所有 API，用于检测与调试 |
+| API                   | 类型                             | 说明                             |
+| --------------------- | -------------------------------- | -------------------------------- |
+| `Story`               | `StoryAPI`                       | 故事与段落访问                   |
+| `Config`              | `ConfigAPI`                      | 引擎配置                         |
+| `State`               | `StateAPI`                       | 游戏状态、历史、临时变量         |
+| `Passage`             | `PassageConstructor`             | 当前段落                         |
+| `Save`                | `SaveAPI`                        | 保存/加载                        |
+| `Dialog`              | `DialogAPI`                      | 对话框系统                       |
+| `Engine`              | `EngineAPI`                      | 引擎控制                         |
+| `Macro`               | `MacroAPI`                       | 宏定义                           |
+| `Scripting`           | `ScriptingAPI`                   | 脚本求值                         |
+| `Template`            | `TemplateAPI`                    | 模板引擎                         |
+| `UI` / `UIBar`        | `UIAPI` / `UIBarAPI`             | UI 组件                          |
+| `version`             | `VersionInfo`                    | 版本信息                         |
+| `session` / `storage` | `SimpleStoreInstanceAPI \| null` | 会话与存储                       |
+| `settings` / `setup`  | `Record<string, unknown>`        | 设置与初始化                     |
+| `window.SugarCube`    | 对象                             | 包含上述所有 API，用于检测与调试 |
 
 <Tabs>
 <Tab label="主入口">
@@ -62,12 +62,13 @@ SugarCube 2 通过 `declare global` 将 API 暴露到全局，如 `Story`、`Con
 
 ## 子路径导出
 
-| 子路径 | 描述 |
-|--------|------|
-| `.` | 主入口，SugarCube 2 全局类型 |
+| 子路径 | 描述                         |
+| ------ | ---------------------------- |
+| `.`    | 主入口，SugarCube 2 全局类型 |
 
 ## 类型定义来源
 
 > [!INFO]
+>
 > - 来源: 基于 verlnir 的 SugarCube 2 类型声明
 > - 此包无 download/build 步骤，直接使用 src 目录

@@ -1,4 +1,4 @@
-  {
+{
   "compilerOptions": {
     "lib": ["DOM", "ES2020"],
     "jsx": "react-jsx",
@@ -22,7 +22,7 @@
     "noUnusedParameters": true,
     "paths": {
       "@packages/*": ["../packages/*"]
-    },
+    }
   },
   "include": ["docs", "theme", "rspress.config.ts"],
   "mdx": {

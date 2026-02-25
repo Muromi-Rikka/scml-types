@@ -2,7 +2,7 @@
 title: Module CSS Replacer Addon
 ---
 
-import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from '@rspress/core/theme';
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps, SourceCode } from "@rspress/core/theme";
 
 # @scml/addon-module-css-replacer
 
@@ -29,15 +29,18 @@ TypeScript type definitions for Module CSS replacer addon, for replacing content
 ### Import types on demand
 
 ```ts
-import type { ModuleCssReplacer, ReplaceParams } from '@scml/addon-module-css-replacer/ModuleCssReplacer';
+import type {
+  ModuleCssReplacer,
+  ReplaceParams,
+} from "@scml/addon-module-css-replacer/ModuleCssReplacer";
 ```
 
 </Steps>
 
 ## Global Types <Badge type="info" text="global" />
 
-| Property | Type | Description |
-|----------|------|-------------|
+| Property                 | Type                | Description                         |
+| ------------------------ | ------------------- | ----------------------------------- |
 | `addonModuleCssReplacer` | `ModuleCssReplacer` | Addon instance, replaces module CSS |
 
 <Tabs>
@@ -51,7 +54,10 @@ import type { ModuleCssReplacer, ReplaceParams } from '@scml/addon-module-css-re
 <Tab label="Subpath import">
 
 ```ts
-import type { ModuleCssReplacer, ReplaceParams } from '@scml/addon-module-css-replacer/ModuleCssReplacer';
+import type {
+  ModuleCssReplacer,
+  ReplaceParams,
+} from "@scml/addon-module-css-replacer/ModuleCssReplacer";
 ```
 
 </Tab>
@@ -59,10 +65,10 @@ import type { ModuleCssReplacer, ReplaceParams } from '@scml/addon-module-css-re
 
 ## Subpath Exports
 
-| Subpath | Description |
-|---------|-------------|
-| `.` | Main entry, augments Window/global |
-| `./ModuleCssReplacer` | Main class and ReplaceParams |
+| Subpath               | Description                        |
+| --------------------- | ---------------------------------- |
+| `.`                   | Main entry, augments Window/global |
+| `./ModuleCssReplacer` | Main class and ReplaceParams       |
 
 ## API Reference
 
@@ -70,33 +76,34 @@ import type { ModuleCssReplacer, ReplaceParams } from '@scml/addon-module-css-re
 
 #### ModuleCssReplacer <Badge text="class" />
 
-| Property/Method | Type | Description |
-|-----------------|------|-------------|
-| `info` | `Map<string, ReplaceInfo>` | Replace info |
-| `registerMod()` | `(addonName, mod, modZip) => Promise<void>` | Register mod |
-| `afterPreload()` | `() => Promise<void>` | After-preload hook |
-| `getAllModuleStyleNode()` | `() => Map<string, HTMLStyleElement>` | Get all module style nodes |
-| `do_patch()` | `(ri, ns) => Promise<void>` | Execute replace |
-| `exportDataZip()` | `(zip: JSZip) => Promise<JSZip>` | Export data |
-| `init()` | `() => void` | Initialize |
+| Property/Method           | Type                                        | Description                |
+| ------------------------- | ------------------------------------------- | -------------------------- |
+| `info`                    | `Map<string, ReplaceInfo>`                  | Replace info               |
+| `registerMod()`           | `(addonName, mod, modZip) => Promise<void>` | Register mod               |
+| `afterPreload()`          | `() => Promise<void>`                       | After-preload hook         |
+| `getAllModuleStyleNode()` | `() => Map<string, HTMLStyleElement>`       | Get all module style nodes |
+| `do_patch()`              | `(ri, ns) => Promise<void>`                 | Execute replace            |
+| `exportDataZip()`         | `(zip: JSZip) => Promise<JSZip>`            | Export data                |
+| `init()`                  | `() => void`                                | Initialize                 |
 
 #### ReplaceParams <Badge text="interface" />
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `cssName` | `string` | CSS file name |
-| `findString` | `string` | Find string |
-| `findRegex` | `string` | Find regex |
-| `replace` | `string` | Replace string |
-| `replaceFile` | `string` | Replace file path |
-| `debug` | `boolean` | Debug mode |
-| `all` | `boolean` | Replace all |
+| Property      | Type      | Description       |
+| ------------- | --------- | ----------------- |
+| `cssName`     | `string`  | CSS file name     |
+| `findString`  | `string`  | Find string       |
+| `findRegex`   | `string`  | Find regex        |
+| `replace`     | `string`  | Replace string    |
+| `replaceFile` | `string`  | Replace file path |
+| `debug`       | `boolean` | Debug mode        |
+| `all`         | `boolean` | Replace all       |
 
 ## Type Definition Source
 
 <SourceCode href="https://github.com/Lyoko-Jeremie/DoL_ModuleCssReplacerAddon" />
 
 > [!INFO]
+>
 > - Upstream: https://github.com/Lyoko-Jeremie/DoL_ModuleCssReplacerAddon
 > - Default branch: master
 > - Build: `pnpm run download && pnpm run build`
