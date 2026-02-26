@@ -1,6 +1,6 @@
 import { GlobalImportItem } from "@scml/utils";
 import { defu } from "defu";
-import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from "fs";
+import { cpSync, writeFileSync } from "fs";
 import { genDeclareNamespace, genImport, genInterface } from "knitwork-x";
 import { allTypes } from "./constant.js";
 

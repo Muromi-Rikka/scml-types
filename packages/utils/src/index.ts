@@ -27,6 +27,30 @@ export const dolTypeAlias = {
   "../../../dist-BeforeSC2/IdbKeyValRef": "@scml/sc2-modloader/IdbKeyValRef",
 };
 
+export const typeAliasReverce = {
+  "@scml/sc2-modloader/SC2DataManager": "../sugarcube-2-ModLoader/SC2DataManager.d.ts",
+  "@scml/sc2-modloader/Utils": "../sugarcube-2-ModLoader/Utils.d.ts",
+  "@scml/sc2-modloader/AddonPlugin": "../sugarcube-2-ModLoader/AddonPlugin.d.ts",
+  "@scml/sc2-modloader/ModLoadController": "../sugarcube-2-ModLoader/ModLoadController.d.ts",
+  "@scml/sc2-modloader/ModOrderContainer": "../sugarcube-2-ModLoader/ModOrderContainer.d.ts",
+  "@scml/sc2-modloader/ModLoader": "../sugarcube-2-ModLoader/ModLoader.d.ts",
+  "@scml/sc2-modloader/ModZipReader": "../sugarcube-2-ModLoader/ModZipReader.d.ts",
+  "@scml/sc2-modloader/JSZipLikeReadOnlyInterface":
+    "../sugarcube-2-ModLoader/JSZipLikeReadOnlyInterface.d.ts",
+  "@scml/mod-sub-ui-angular-js/ModSubUiAngularJsModeExportInterface":
+    "../Mod_SubUiAngularJs/ModSubUiAngularJsModeExportInterface.d.ts",
+  "@scml/sc2-modloader/Sc2EventTracer": "../sugarcube-2-ModLoader/Sc2EventTracer.d.ts",
+  "@scml/sc2-modloader/DependenceChecker": "../sugarcube-2-ModLoader/DependenceChecker.d.ts",
+  "@scml/sc2-modloader/SC2DataInfoCache": "../sugarcube-2-ModLoader/SC2DataInfoCache.d.ts",
+  "@scml/addon-twee-replacer-linker/TweeReplacerLinkerInterface":
+    "../Addon_TweeReplacerLinker/TweeReplacerLinkerInterface.d.ts",
+  "@scml/sc2-modloader/SugarCube2": "../sugarcube-2-ModLoader/SugarCube2.d.ts",
+  "@scml/sc2-modloader/HtmlTagSrcHook": "../sugarcube-2-ModLoader/HtmlTagSrcHook.d.ts",
+  "@scml/sc2-modloader/SC2ApiRef": "../sugarcube-2-ModLoader/SC2ApiRef.d.ts",
+  "@scml/sc2-modloader/WikifyTracer": "../sugarcube-2-ModLoader/WikifyTracer.d.ts",
+  "@scml/sc2-modloader/IdbKeyValRef": "../sugarcube-2-ModLoader/IdbKeyValRef.d.ts",
+};
+
 /** 使用 dolTypeAlias 的 tsdown 包默认 external 列表（三方包不参与 dts 打包，改为引用 node_modules 中的类型） */
 export const dolTypeTsdownExternal = [
   "lodash",

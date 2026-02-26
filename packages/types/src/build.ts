@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync, rmSync } from "fs";
 import { generateGlobal } from "./global.js";
 import { generateExports } from "./exports.js";
+import { runReplace } from "./replace.js";
 
 if (existsSync("./type-dist")) {
   rmSync("./type-dist", { recursive: true });
@@ -8,4 +9,5 @@ if (existsSync("./type-dist")) {
 mkdirSync("./type-dist", { recursive: true });
 
 await generateGlobal();
+await runReplace();
 await generateExports();

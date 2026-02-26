@@ -143,39 +143,9 @@
     "typecheck": "tsc --noEmit",
     "publint": "publint"
   },
-  "dependencies": {
-    "@scml/addon-conflict-checker": "workspace:*",
-    "@scml/addon-image-loader-hook-2-beauty-selector": "workspace:*",
-    "@scml/addon-mod-beauty-selector": "workspace:*",
-    "@scml/addon-mod-i18n-script-list": "workspace:*",
-    "@scml/addon-mod-i18n-twee-list": "workspace:*",
-    "@scml/addon-mod-time-wrapper": "workspace:*",
-    "@scml/addon-mod-twee-prefix-postfix": "workspace:*",
-    "@scml/addon-modded-clothes": "workspace:*",
-    "@scml/addon-modded-feats": "workspace:*",
-    "@scml/addon-modded-hair": "workspace:*",
-    "@scml/addon-module-css-replacer": "workspace:*",
-    "@scml/addon-twee-replacer-linker": "workspace:*",
-    "@scml/game-original-image-pack-mod": "workspace:*",
-    "@scml/hook-img-loader": "workspace:*",
-    "@scml/hook-macro-rng": "workspace:*",
-    "@scml/mod-check-dol-compressor-dictionaries": "workspace:*",
-    "@scml/mod-check-game-version": "workspace:*",
-    "@scml/mod-cot-check-game-version": "workspace:*",
-    "@scml/mod-diff3-way-merge": "workspace:*",
-    "@scml/mod-i18n": "workspace:*",
-    "@scml/mod-i18n-twee-replacer": "workspace:*",
-    "@scml/mod-link-button-filter": "workspace:*",
-    "@scml/mod-loader-gui": "workspace:*",
-    "@scml/mod-replacer-patch": "workspace:*",
-    "@scml/mod-sub-ui-angular-js": "workspace:*",
-    "@scml/mod-sweet-alert2": "workspace:*",
-    "@scml/mod-twee-replacer": "workspace:*",
-    "@scml/sc2-modloader": "workspace:*",
-    "@scml/sc2-verlnir": "workspace:*"
-  },
   "devDependencies": {
     "defu": "^6.1.4",
+    "fast-glob": "^3.3.3",
     "pkg-types": "^2.3.0"
   }
 }
