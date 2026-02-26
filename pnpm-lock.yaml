@@ -277,6 +277,93 @@ importers:
 
   packages/types:
     devDependencies:
+      '@scml/addon-conflict-checker':
+        specifier: workspace:*
+        version: link:../Addon_ConflictChecker
+      '@scml/addon-image-loader-hook-2-beauty-selector':
+        specifier: workspace:*
+        version: link:../Addon_ImageLoaderHook2BeautySelector
+      '@scml/addon-mod-beauty-selector':
+        specifier: workspace:*
+        version: link:../AddonMod_BeautySelector
+      '@scml/addon-mod-i18n-script-list':
+        specifier: workspace:*
+        version: link:../AddonMod_I18nScriptList
+      '@scml/addon-mod-i18n-twee-list':
+        specifier: workspace:*
+        version: link:../AddonMod_I18nTweeList
+      '@scml/addon-mod-time-wrapper':
+        specifier: workspace:*
+        version: link:../AddonModTimeWrapper
+      '@scml/addon-mod-twee-prefix-postfix':
+        specifier: workspace:*
+        version: link:../AddonMod_TweePrefixPostfix
+      '@scml/addon-modded-clothes':
+        specifier: workspace:*
+        version: link:../Addon_ModdedClothes
+      '@scml/addon-modded-feats':
+        specifier: workspace:*
+        version: link:../Addon_ModdedFeats
+      '@scml/addon-modded-hair':
+        specifier: workspace:*
+        version: link:../Addon_ModdedHair
+      '@scml/addon-module-css-replacer':
+        specifier: workspace:*
+        version: link:../Addon_ModuleCssReplacer
+      '@scml/addon-twee-replacer-linker':
+        specifier: workspace:*
+        version: link:../Addon_TweeReplacerLinker
+      '@scml/game-original-image-pack-mod':
+        specifier: workspace:*
+        version: link:../GameOriginalImagePackMod
+      '@scml/hook-img-loader':
+        specifier: workspace:*
+        version: link:../Hook_ImgLoader
+      '@scml/hook-macro-rng':
+        specifier: workspace:*
+        version: link:../Hook_MacroRng
+      '@scml/mod-check-dol-compressor-dictionaries':
+        specifier: workspace:*
+        version: link:../Mod_CheckDoLCompressorDictionaries
+      '@scml/mod-check-game-version':
+        specifier: workspace:*
+        version: link:../Mod_CheckGameVersion
+      '@scml/mod-cot-check-game-version':
+        specifier: workspace:*
+        version: link:../Mod_CoTCheckGameVersion
+      '@scml/mod-diff3-way-merge':
+        specifier: workspace:*
+        version: link:../Mod_Diff3WayMerge
+      '@scml/mod-i18n':
+        specifier: workspace:*
+        version: link:../Mod_i18n
+      '@scml/mod-i18n-twee-replacer':
+        specifier: workspace:*
+        version: link:../Mod_I18nTweeReplacer
+      '@scml/mod-link-button-filter':
+        specifier: workspace:*
+        version: link:../Mod_LinkButtonFilter
+      '@scml/mod-loader-gui':
+        specifier: workspace:*
+        version: link:../Mod_LoaderGui
+      '@scml/mod-replacer-patch':
+        specifier: workspace:*
+        version: link:../Mod_ReplacePatch
+      '@scml/mod-sub-ui-angular-js':
+        specifier: workspace:*
+        version: link:../Mod_SubUiAngularJs
+      '@scml/mod-sweet-alert2':
+        specifier: workspace:*
+        version: link:../Mod_SweetAlert2
+      '@scml/mod-twee-replacer':
+        specifier: workspace:*
+        version: link:../Mod_TweeReplacer
+      '@scml/sc2-modloader':
+        specifier: workspace:*
+        version: link:../sugarcube-2-ModLoader
+      '@scml/sc2-verlnir':
+        specifier: workspace:*
+        version: link:../sugarcube-2-verlnir
       defu:
         specifier: ^6.1.4
         version: 6.1.4
