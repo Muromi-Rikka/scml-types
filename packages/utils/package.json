@@ -2,7 +2,18 @@
   "name": "@scml/utils",
   "version": "1.0.6",
   "private": true,
-  "description": "SugarCube 2 Mod Loader Workspace",
+  "description": "Shared utilities for SugarCube 2 Mod Loader workspace",
+  "keywords": [
+    "dol",
+    "mod-loader",
+    "scml",
+    "sugarcube",
+    "typescript"
+  ],
+  "homepage": "https://github.com/Muromi-Rikka/scml-types/tree/main/packages/utils#readme",
+  "bugs": {
+    "url": "https://github.com/Muromi-Rikka/scml-types/issues"
+  },
   "license": "MIT",
   "author": {
     "name": "Rikka",

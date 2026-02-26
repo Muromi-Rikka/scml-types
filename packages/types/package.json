@@ -2,7 +2,19 @@
   "name": "@scml/types",
   "version": "1.0.6",
   "private": false,
-  "description": "",
+  "description": "Unified TypeScript type definitions for the SugarCube 2 Mod Loader ecosystem",
+  "keywords": [
+    "dol",
+    "mod-loader",
+    "scml",
+    "sugarcube",
+    "types",
+    "typescript"
+  ],
+  "homepage": "https://github.com/Muromi-Rikka/scml-types/tree/main/packages/types#readme",
+  "bugs": {
+    "url": "https://github.com/Muromi-Rikka/scml-types/issues"
+  },
   "license": "MIT",
   "author": {
     "name": "Rikka",
@@ -19,6 +31,7 @@
     "README.md"
   ],
   "type": "module",
+  "sideEffects": false,
   "types": "./type-dist/global.d.ts",
   "exports": {
     ".": "./type-dist/global.d.ts",
@@ -137,6 +150,9 @@
     "./Mod_SubUiAngularJs/AngularJs/Componnet/SimpleSelectComponent": "./type-dist/Mod_SubUiAngularJs/AngularJs/Componnet/SimpleSelectComponent.d.ts",
     "./Mod_SweetAlert2/SweetAlert2Mod": "./type-dist/Mod_SweetAlert2/SweetAlert2Mod.d.ts",
     "./Mod_TweeReplacer/TweeReplacer": "./type-dist/Mod_TweeReplacer/TweeReplacer.d.ts"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsx src/build.ts",

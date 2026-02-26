@@ -2,6 +2,11 @@
 
 **Unified TypeScript type definitions** for the SugarCube 2 Mod Loader ecosystem. This package does not fetch upstream source on its own; it aggregates `.d.ts` output from other packages in the monorepo and exposes a single entry point plus subpath exports.
 
+## Documentation
+
+- [Documentation (English)](https://scml-type.pages.dev/en/packages/types)
+- [文档（简体中文）](https://scml-type.pages.dev/zh/packages/types)
+
 ## Features
 
 - **Aggregated types**: Copies each sub-package’s `type-dist/` (e.g. `sugarcube-2-ModLoader`, Addons/Mods/Hooks) into this package’s `type-dist/<package-name>/`
@@ -64,23 +69,23 @@ This package’s build (`pnpm run build` → `tsx src/build.ts`) does the follow
 
 ### Scripts
 
-| Command | Description |
-|---------|-------------|
-| `pnpm run build` | Generate `type-dist/` and update `package.json` exports |
-| `pnpm run typecheck` | `tsc --noEmit` |
-| `pnpm run publint` | Run publint |
+| Command              | Description                                             |
+| -------------------- | ------------------------------------------------------- |
+| `pnpm run build`     | Generate `type-dist/` and update `package.json` exports |
+| `pnpm run typecheck` | `tsc --noEmit`                                          |
+| `pnpm run publint`   | Run publint                                             |
 
 ## Packages included in the bundle
 
 The list in `src/constant.ts` (`allTypes`) controls which packages are aggregated. Currently:
 
 - **sugarcube-2-ModLoader** (Mod Loader core)
-- **Addon_***: ConflictChecker, ImageLoaderHook2BeautySelector, ModdedClothes, ModdedFeats, ModdedHair, ModuleCssReplacer, TweeReplacerLinker
-- **AddonMod_***: BeautySelector, I18nScriptList, I18nTweeList, TweePrefixPostfix
+- **Addon\_\***: ConflictChecker, ImageLoaderHook2BeautySelector, ModdedClothes, ModdedFeats, ModdedHair, ModuleCssReplacer, TweeReplacerLinker
+- **AddonMod\_\***: BeautySelector, I18nScriptList, I18nTweeList, TweePrefixPostfix
 - **AddonModTimeWrapper**
 - **GameOriginalImagePackMod**
-- **Hook_***: ImgLoader, MacroRng
-- **Mod_***: CheckDoLCompressorDictionaries, CheckGameVersion, CoTCheckGameVersion, Diff3WayMerge, i18n, I18nTweeReplacer, LoaderGui, ReplacePatch, SubUiAngularJs, SweetAlert2, TweeReplacer
+- **Hook\_\***: ImgLoader, MacroRng
+- **Mod\_\***: CheckDoLCompressorDictionaries, CheckGameVersion, CoTCheckGameVersion, Diff3WayMerge, i18n, I18nTweeReplacer, LoaderGui, ReplacePatch, SubUiAngularJs, SweetAlert2, TweeReplacer
 
 To add or remove a package, update `allTypes` in `constant.ts` and run `pnpm run build` again.
 

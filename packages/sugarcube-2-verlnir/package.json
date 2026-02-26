@@ -3,6 +3,18 @@
   "version": "1.0.6",
   "private": false,
   "description": "TypeScript type definitions for SugarCube 2",
+  "keywords": [
+    "dol",
+    "mod-loader",
+    "scml",
+    "sugarcube",
+    "typescript",
+    "verlnir"
+  ],
+  "homepage": "https://github.com/Muromi-Rikka/scml-types/tree/main/packages/sugarcube-2-verlnir#readme",
+  "bugs": {
+    "url": "https://github.com/Muromi-Rikka/scml-types/issues"
+  },
   "license": "MIT",
   "author": {
     "name": "Rikka",
@@ -19,9 +31,13 @@
     "README.md"
   ],
   "type": "module",
+  "sideEffects": false,
   "types": "./src/global.d.ts",
   "exports": {
     ".": "./src/global.d.ts"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "typecheck": "tsc --noEmit",

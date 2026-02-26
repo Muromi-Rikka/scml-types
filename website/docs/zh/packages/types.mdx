@@ -89,23 +89,23 @@ pnpm build
 
 ### 脚本
 
-| 命令 | 说明 |
-|------|------|
-| `pnpm run build` | 生成 `type-dist/` 并更新 `package.json` 的 exports |
-| `pnpm run typecheck` | `tsc --noEmit` |
-| `pnpm run publint` | 运行 publint |
+| 命令                 | 说明                                               |
+| -------------------- | -------------------------------------------------- |
+| `pnpm run build`     | 生成 `type-dist/` 并更新 `package.json` 的 exports |
+| `pnpm run typecheck` | `tsc --noEmit`                                     |
+| `pnpm run publint`   | 运行 publint                                       |
 
 ## 参与聚合的子包
 
 `src/constant.ts` 中的 `allTypes` 决定了参与聚合的包，当前包括：
 
 - **sugarcube-2-ModLoader**（Mod Loader 核心）
-- **Addon_***：ConflictChecker、ImageLoaderHook2BeautySelector、ModdedClothes、ModdedFeats、ModdedHair、ModuleCssReplacer、TweeReplacerLinker
-- **AddonMod_***：BeautySelector、I18nScriptList、I18nTweeList、TweePrefixPostfix
+- **Addon\_\***：ConflictChecker、ImageLoaderHook2BeautySelector、ModdedClothes、ModdedFeats、ModdedHair、ModuleCssReplacer、TweeReplacerLinker
+- **AddonMod\_\***：BeautySelector、I18nScriptList、I18nTweeList、TweePrefixPostfix
 - **AddonModTimeWrapper**
 - **GameOriginalImagePackMod**
-- **Hook_***：ImgLoader、MacroRng
-- **Mod_***：CheckDoLCompressorDictionaries、CheckGameVersion、CoTCheckGameVersion、Diff3WayMerge、i18n、I18nTweeReplacer、LoaderGui、ReplacePatch、SubUiAngularJs、SweetAlert2、TweeReplacer
+- **Hook\_\***：ImgLoader、MacroRng
+- **Mod\_\***：CheckDoLCompressorDictionaries、CheckGameVersion、CoTCheckGameVersion、Diff3WayMerge、i18n、I18nTweeReplacer、LoaderGui、ReplacePatch、SubUiAngularJs、SweetAlert2、TweeReplacer
 
 新增或移除聚合包时，需修改 `constant.ts` 的 `allTypes` 并重新执行 `pnpm run build`。
 
