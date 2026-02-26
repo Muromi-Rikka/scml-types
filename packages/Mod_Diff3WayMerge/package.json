@@ -1,6 +1,6 @@
 {
   "name": "@scml/mod-diff3-way-merge",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": false,
   "description": "TypeScript type definitions for 3-way diff merge mod",
   "keywords": [

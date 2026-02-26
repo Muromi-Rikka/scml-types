@@ -1,6 +1,6 @@
 {
   "name": "@scml/mod-sub-ui-angular-js",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": false,
   "description": "TypeScript type definitions for sub UI AngularJS mod",
   "keywords": [

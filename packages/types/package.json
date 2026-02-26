@@ -1,6 +1,6 @@
 {
   "name": "@scml/types",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": false,
   "description": "Unified TypeScript type definitions for the SugarCube 2 Mod Loader ecosystem",
   "keywords": [

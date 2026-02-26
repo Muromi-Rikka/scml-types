@@ -1,6 +1,6 @@
 {
   "name": "@scml/mod-check-dol-compressor-dictionaries",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": false,
   "description": "TypeScript type definitions for DoL compressor dictionaries checker mod",
   "keywords": [

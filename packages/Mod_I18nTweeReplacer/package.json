@@ -1,6 +1,6 @@
 {
   "name": "@scml/mod-i18n-twee-replacer",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": false,
   "description": "TypeScript type definitions for i18n twee replacer mod",
   "keywords": [

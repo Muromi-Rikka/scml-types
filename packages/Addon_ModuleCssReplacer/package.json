@@ -1,6 +1,6 @@
 {
   "name": "@scml/addon-module-css-replacer",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": false,
   "description": "TypeScript type definitions for module CSS replacer addon",
   "keywords": [

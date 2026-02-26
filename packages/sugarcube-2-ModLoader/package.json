@@ -1,6 +1,6 @@
 {
   "name": "@scml/sc2-modloader",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": false,
   "description": "TypeScript type definitions for SugarCube 2 Mod Loader core",
   "keywords": [

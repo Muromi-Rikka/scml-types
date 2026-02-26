@@ -1,6 +1,6 @@
 {
   "name": "@scml/mod-loader-gui",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": false,
   "description": "TypeScript type definitions for mod loader GUI",
   "keywords": [
