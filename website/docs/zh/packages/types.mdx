@@ -1,0 +1,115 @@
+---
+title: 统一类型 (@scml/types)
+---
+
+import { Badge, Tab, Tabs, PackageManagerTabs, Steps } from "@rspress/core/theme";
+
+# @scml/types
+
+SugarCube 2 Mod Loader 生态的**统一 TypeScript 类型定义包**。本包不单独拉取上游源码，而是聚合 monorepo 内各子包生成的 `.d.ts`，并对外提供单一入口与子路径导出。
+
+## 功能
+
+- **聚合类型**：从各子包（如 `sugarcube-2-ModLoader`、各类 Addon/Mod/Hook）的 `type-dist/` 拷贝到本包的 `type-dist/<包名>/`
+- **全局类型**：根据各包的 `global-data.js` 生成统一的 `global.d.ts`，扩展 `Window` 等全局接口
+- **子路径导出**：在 `package.json` 的 `exports` 中为每个子包的模块提供独立导出路径，便于按需引用
+- **类型别名替换**：构建时通过 `@scml/utils` 的 `typeAliasReverce` 对 `type-dist` 内声明文件做统一替换
+
+## 安装
+
+<PackageManagerTabs command="install -D @scml/types" />
+
+## 使用
+
+<Steps>
+
+### 主入口（全局类型）
+
+引入主入口即可获得扩展后的全局类型（如 `Window` 上的挂载）：
+
+```ts
+import "@scml/types";
+// 之后可享受各包在 global-data 中声明的 Window 等全局类型
+```
+
+### 子路径导出（按模块引用）
+
+需要具体模块类型时，使用对应子路径：
+
+```ts
+import type { ModLoader } from "@scml/types/sugarcube-2-ModLoader/ModLoader";
+import type { AddonPlugin } from "@scml/types/sugarcube-2-ModLoader/AddonPlugin";
+import type { ConflictChecker } from "@scml/types/Addon_ConflictChecker/ConflictChecker";
+import type { TweeReplacer } from "@scml/types/Mod_TweeReplacer/TweeReplacer";
+// 其他导出见 package.json 的 "exports" 字段
+```
+
+</Steps>
+
+`package.json` 的 `exports` 中列出了所有可用的子路径，格式为：
+
+- `@scml/types/sugarcube-2-ModLoader/<模块名>`
+- `@scml/types/Addon_ConflictChecker/<模块名>`
+- `@scml/types/Addon_ImageLoaderHook2BeautySelector/<模块名>`
+- … 以及其余 Addon / Mod / Hook 包下的模块
+
+<Tabs>
+<Tab label="主入口">
+
+```ts
+import "@scml/types";
+```
+
+</Tab>
+<Tab label="子路径导入示例">
+
+```ts
+import type { ModLoader } from "@scml/types/sugarcube-2-ModLoader/ModLoader";
+import type { ConflictChecker } from "@scml/types/Addon_ConflictChecker/ConflictChecker";
+import type { TweeReplacer } from "@scml/types/Mod_TweeReplacer/TweeReplacer";
+```
+
+</Tab>
+</Tabs>
+
+## 构建
+
+本包依赖同 monorepo 下其他包先完成构建（生成各自的 `type-dist/`）。通常在仓库根目录执行：
+
+```bash
+pnpm build
+```
+
+本包构建流程（`pnpm run build` → `tsx src/build.ts`）：
+
+1. 清空并创建 `type-dist/`
+2. **generateGlobal**：从各子包拷贝 `type-dist`，读取各包 `global-data.js`，生成 `type-dist/global.d.ts`
+3. **runReplace**：对 `type-dist/**/*.d.ts` 执行类型别名反向替换
+4. **generateExports**：根据 `constant.ts` 中的 `allTypes` 与各子包 `package.json` 的 `exports` 生成本包 `package.json` 的 `exports`
+
+### 脚本
+
+| 命令 | 说明 |
+|------|------|
+| `pnpm run build` | 生成 `type-dist/` 并更新 `package.json` 的 exports |
+| `pnpm run typecheck` | `tsc --noEmit` |
+| `pnpm run publint` | 运行 publint |
+
+## 参与聚合的子包
+
+`src/constant.ts` 中的 `allTypes` 决定了参与聚合的包，当前包括：
+
+- **sugarcube-2-ModLoader**（Mod Loader 核心）
+- **Addon_***：ConflictChecker、ImageLoaderHook2BeautySelector、ModdedClothes、ModdedFeats、ModdedHair、ModuleCssReplacer、TweeReplacerLinker
+- **AddonMod_***：BeautySelector、I18nScriptList、I18nTweeList、TweePrefixPostfix
+- **AddonModTimeWrapper**
+- **GameOriginalImagePackMod**
+- **Hook_***：ImgLoader、MacroRng
+- **Mod_***：CheckDoLCompressorDictionaries、CheckGameVersion、CoTCheckGameVersion、Diff3WayMerge、i18n、I18nTweeReplacer、LoaderGui、ReplacePatch、SubUiAngularJs、SweetAlert2、TweeReplacer
+
+新增或移除聚合包时，需修改 `constant.ts` 的 `allTypes` 并重新执行 `pnpm run build`。
+
+## 发布与文件
+
+- **发布到 npm 的文件**：`files` 仅包含 `type-dist` 与 `README.md`
+- **类型入口**：`types` 指向 `./type-dist/global.d.ts`

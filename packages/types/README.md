@@ -1,0 +1,94 @@
+# @scml/types
+
+**Unified TypeScript type definitions** for the SugarCube 2 Mod Loader ecosystem. This package does not fetch upstream source on its own; it aggregates `.d.ts` output from other packages in the monorepo and exposes a single entry point plus subpath exports.
+
+## Features
+
+- **Aggregated types**: Copies each sub-package’s `type-dist/` (e.g. `sugarcube-2-ModLoader`, Addons/Mods/Hooks) into this package’s `type-dist/<package-name>/`
+- **Global types**: Generates a single `global.d.ts` from each package’s `global-data.js`, extending global interfaces such as `Window`
+- **Subpath exports**: Exposes each sub-package’s modules via separate export paths in `package.json` `exports` for on-demand imports
+- **Type alias replacement**: At build time, applies `@scml/utils`’s `typeAliasReverce` to all declaration files under `type-dist`
+
+## Installation
+
+```bash
+pnpm add @scml/types
+# or
+npm i @scml/types
+```
+
+## Usage
+
+### Main entry (global types)
+
+Import the main entry to get the extended global types (e.g. `Window` augmentations):
+
+```ts
+import "@scml/types";
+// You then get the Window and other global types declared in each package’s global-data
+```
+
+### Subpath exports (per-module imports)
+
+For specific module types, use the corresponding subpath:
+
+```ts
+import type { ModLoader } from "@scml/types/sugarcube-2-ModLoader/ModLoader";
+import type { AddonPlugin } from "@scml/types/sugarcube-2-ModLoader/AddonPlugin";
+import type { ConflictChecker } from "@scml/types/Addon_ConflictChecker/ConflictChecker";
+import type { TweeReplacer } from "@scml/types/Mod_TweeReplacer/TweeReplacer";
+// See package.json "exports" for all available paths
+```
+
+All available subpaths are listed in `package.json` under `exports`. They follow patterns like:
+
+- `@scml/types/sugarcube-2-ModLoader/<module-name>`
+- `@scml/types/Addon_ConflictChecker/<module-name>`
+- `@scml/types/Addon_ImageLoaderHook2BeautySelector/<module-name>`
+- … and other Addon / Mod / Hook packages
+
+## Build
+
+This package depends on other packages in the monorepo being built first (each producing its own `type-dist/`). From the repo root, run:
+
+```bash
+pnpm build
+```
+
+This package’s build (`pnpm run build` → `tsx src/build.ts`) does the following:
+
+1. Clears and recreates `type-dist/`
+2. **generateGlobal**: Copies each sub-package’s `type-dist`, reads each package’s `global-data.js`, and writes `type-dist/global.d.ts`
+3. **runReplace**: Applies type-alias reverse replacement to `type-dist/**/*.d.ts`
+4. **generateExports**: Generates this package’s `package.json` `exports` from `constant.ts`’s `allTypes` and each sub-package’s `package.json` `exports`
+
+### Scripts
+
+| Command | Description |
+|---------|-------------|
+| `pnpm run build` | Generate `type-dist/` and update `package.json` exports |
+| `pnpm run typecheck` | `tsc --noEmit` |
+| `pnpm run publint` | Run publint |
+
+## Packages included in the bundle
+
+The list in `src/constant.ts` (`allTypes`) controls which packages are aggregated. Currently:
+
+- **sugarcube-2-ModLoader** (Mod Loader core)
+- **Addon_***: ConflictChecker, ImageLoaderHook2BeautySelector, ModdedClothes, ModdedFeats, ModdedHair, ModuleCssReplacer, TweeReplacerLinker
+- **AddonMod_***: BeautySelector, I18nScriptList, I18nTweeList, TweePrefixPostfix
+- **AddonModTimeWrapper**
+- **GameOriginalImagePackMod**
+- **Hook_***: ImgLoader, MacroRng
+- **Mod_***: CheckDoLCompressorDictionaries, CheckGameVersion, CoTCheckGameVersion, Diff3WayMerge, i18n, I18nTweeReplacer, LoaderGui, ReplacePatch, SubUiAngularJs, SweetAlert2, TweeReplacer
+
+To add or remove a package, update `allTypes` in `constant.ts` and run `pnpm run build` again.
+
+## Publishing and files
+
+- **Published files**: `files` includes only `type-dist` and `README.md`
+- **Types entry**: `types` points to `./type-dist/global.d.ts`
+
+## License
+
+MIT

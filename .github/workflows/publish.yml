@@ -40,3 +40,13 @@ jobs:
 
       - name: Publish to npm
         run: pnpm -r publish --no-git-checks --access public
+
+      - name: Build
+        run: pnpm --filter @scml/docs doc:build
+
+      - name: Publish to CF Pages dolcn
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.ACCOUNT_ID }}
+          command: pages deploy website/doc_build --project-name=scml-type --branch main
